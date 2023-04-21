@@ -1,0 +1,98 @@
+version: '3.2'
+services:
+  wordpress:
+    container_name: 'local-wordpress'
+    image: wordpress:${WP_VERSION}
+    restart: always
+    links:
+      - database:mysql
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: database:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: root
+      WORDPRESS_USER: root
+      WORDPRESS_DB_name: wordpress
+
+      WORDPRESS_CONFIG_EXTRA: |
+        # Use dispatch port by default
+        if ('${CODESPACE_NAME}') {
+          define('WP_HOME', 'https://${CODESPACE_NAME}-8080.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}');
+          define('WP_SITEURL', 'https://${CODESPACE_NAME}-8080.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}');
+        } else {
+          define('WP_HOME', 'http://localhost:8080');
+          define('WP_SITEURL', 'http://localhost:8080');
+        }
+    depends_on:
+      - database
+    networks:
+      - backend
+    volumes:
+      - ./src:/var/www/html/wp-content/${WP_MOD_TYPE}s/${WP_MOD_NAME}
+      - wp_data:/var/www/html
+
+
+  database:
+    container_name: 'local-wordpress-db'
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - backend
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    container_name: local-phpmyadmin
+    environment:
+      PMA_HOST: database
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+    image: phpmyadmin/phpmyadmin
+    networks:
+      - backend
+    ports:
+      - "8003:80"
+
+  composer:
+    command: 'true'
+    container_name: local-composer
+    depends_on:
+      - wordpress
+    image: composer
+    restart: "no"
+    user: xfs
+    volumes:
+      #- ./docker/configs/composer.json:/var/www/html/composer.json
+      #- ./docker/configs/composer.lock:/var/www/html/composer.lock
+      - wp_data:/var/www/html
+    working_dir: /var/www/html/
+
+  wordpress-cli:
+    container_name: local-wpcli
+    depends_on:
+      - database
+      - wordpress
+    environment:
+      WORDPRESS_DB_HOST: database:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: root
+      WORDPRESS_USER: root
+      WORDPRESS_DB_PASSWORD: root
+    image: wordpress:cli
+    user: xfs
+    networks:
+      - backend
+    volumes:
+      - wp_data:/var/www/html
+
+volumes:
+  db_data:
+  wp_data:
+
+networks:
+  backend:
