@@ -32,7 +32,6 @@ services:
       - ./src:/var/www/html/wp-content/${WP_MOD_TYPE}s/${WP_MOD_NAME}
       - wp_data:/var/www/html
 
-
   database:
     container_name: 'local-wordpress-db'
     image: mariadb
