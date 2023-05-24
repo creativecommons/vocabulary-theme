@@ -22,8 +22,8 @@ containers:
     ```shell
     cp .env.example .env
     ```
-2. Update `.env` to set desired (`WP_VERSION`, `WP_MOD_TYPE`, `WP_MOD_NAME`,
-   etc.)
+2. Update `.env` to set desired values for variables (`WP_VERSION`,
+   `WP_MOD_TYPE`, `WP_MOD_NAME`, etc.)
 3. Build/start Docker:
     ```shell
     docker compose up
