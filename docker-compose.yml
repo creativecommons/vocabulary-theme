@@ -1,7 +1,7 @@
 version: '3.2'
 services:
   wordpress:
-    container_name: 'local-wordpress'
+    container_name: vocabtheme-wordpress
     image: wordpress:${WP_VERSION}
     restart: always
     links:
@@ -33,7 +33,7 @@ services:
       - wp_data:/var/www/html
 
   database:
-    container_name: 'local-wordpress-db'
+    container_name: vocabtheme-wordpress-db
     image: mariadb
     restart: always
     environment:
@@ -46,7 +46,7 @@ services:
       - db_data:/var/lib/mysql
 
   phpmyadmin:
-    container_name: local-phpmyadmin
+    container_name: vocabtheme-phpmyadmin
     environment:
       PMA_HOST: database
       PMA_PORT: 3306
@@ -59,7 +59,7 @@ services:
 
   composer:
     command: 'true'
-    container_name: local-composer
+    container_name: vocabtheme-composer
     depends_on:
       - wordpress
     image: composer
@@ -72,7 +72,7 @@ services:
     working_dir: /var/www/html/
 
   wordpress-cli:
-    container_name: local-wpcli
+    container_name: vocabtheme-wpcli
     depends_on:
       - database
       - wordpress
