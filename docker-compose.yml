@@ -67,6 +67,7 @@ services:
     command: 'true'
     container_name: vocabtheme-composer
     depends_on:
+      - database
       - wordpress
     # https://hub.docker.com/_/composer
     image: composer
