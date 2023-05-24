@@ -9,12 +9,6 @@ services:
     ports:
       - '8080:80'
     environment:
-      WORDPRESS_DB_HOST: database:3306
-      WORDPRESS_DB_USER: root
-      WORDPRESS_DB_PASSWORD: root
-      WORDPRESS_USER: root
-      WORDPRESS_DB_name: wordpress
-
       WORDPRESS_CONFIG_EXTRA: |
         # Use dispatch port by default
         if ('${CODESPACE_NAME}') {
@@ -24,6 +18,11 @@ services:
           define('WP_HOME', 'http://localhost:8080');
           define('WP_SITEURL', 'http://localhost:8080');
         }
+      WORDPRESS_DB_HOST: database:3306
+      WORDPRESS_DB_PASSWORD: root
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_name: wordpress
+      WORDPRESS_USER: root
     depends_on:
       - database
     networks:
@@ -38,8 +37,8 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: wordpress
-      MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
     networks:
       - backend
     volumes:
@@ -48,9 +47,9 @@ services:
   phpmyadmin:
     container_name: vocabtheme-phpmyadmin
     environment:
+      MYSQL_ROOT_PASSWORD: root
       PMA_HOST: database
       PMA_PORT: 3306
-      MYSQL_ROOT_PASSWORD: root
     image: phpmyadmin/phpmyadmin
     networks:
       - backend
@@ -79,9 +78,9 @@ services:
     environment:
       WORDPRESS_DB_HOST: database:3306
       WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: root
       WORDPRESS_DB_USER: root
       WORDPRESS_USER: root
-      WORDPRESS_DB_PASSWORD: root
     image: wordpress:cli
     user: xfs
     networks:
