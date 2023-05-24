@@ -68,7 +68,6 @@ services:
       - wordpress
     # https://hub.docker.com/_/composer
     image: composer
-    restart: 'no'
     user: xfs
     volumes:
       #- ./docker/configs/composer.json:/var/www/html/composer.json
