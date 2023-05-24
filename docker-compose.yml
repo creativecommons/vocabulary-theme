@@ -7,7 +7,7 @@ services:
     links:
       - database:mysql
     ports:
-      - "8080:80"
+      - '8080:80'
     environment:
       WORDPRESS_DB_HOST: database:3306
       WORDPRESS_DB_USER: root
@@ -55,7 +55,7 @@ services:
     networks:
       - backend
     ports:
-      - "8003:80"
+      - '8003:80'
 
   composer:
     command: 'true'
@@ -63,7 +63,7 @@ services:
     depends_on:
       - wordpress
     image: composer
-    restart: "no"
+    restart: 'no'
     user: xfs
     volumes:
       #- ./docker/configs/composer.json:/var/www/html/composer.json
