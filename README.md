@@ -9,10 +9,10 @@ WordPress Theme implementation of the Vocabulary design system
 The [`docker-compose.yml`](docker-comose.yml) file defines the following
 containers:
 
-1. vocabtheme-wordpress-web
+1. vocabtheme-wordpress-web ([localhost:8080](http://localhost:8080/))
 2. vocabtheme-wordpress-db
 3. vocabtheme-composer
-4. vocabtheme-phpmyadmin
+4. vocabtheme-phpmyadmin ([localhost:8003](http://localhost:8003/))
 5. vocabtheme-wpcli
 
 
