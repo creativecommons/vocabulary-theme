@@ -120,7 +120,7 @@
 
 </header>
 
-<aside>
+<!-- <aside>
     <nav class="contextual-menu">
         <h2>Registration</h2>
         <ul>
@@ -138,7 +138,7 @@
 
         </ul>
     </nav>
-</aside>
+</aside> -->
 
 
 <div class="content">
