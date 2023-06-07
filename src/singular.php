@@ -93,12 +93,31 @@
 
 <h1><?php the_title(); ?></h1>
 
-<span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
+<span class="byline">by 
+    <?php
+    $authors = get_field('authorship');
+        if( $authors ): ?>
+            <?php foreach( $authors as $author ): 
+                $permalink = get_permalink( $author->ID );
+                $title = get_the_title( $author->ID );
+                $custom_field = get_field( 'field_name', $author->ID );
+            ?>
+
+    <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a>,
+
+            <?php endforeach; ?>
+        <?php endif; ?>
+</span>
 
 <!-- <p>lead in paragraph</p> -->
 
+<?php
+
+
+?>	
+
 <span class="categories">
-    <a href="#">Open Culture</a>
+    <?php the_category(', ') ?>
 </span>
 
 
@@ -106,16 +125,27 @@
 
 </header>
 
+<?php if (!class_exists('ACF')): ?> 
+
+<!-- display raw post_meta, if ACF not installed & activated -->
+<?php if (get_post_meta( get_the_ID(), 'lead_in_copy', true )): ?> 
 <div class="series">
-    <span>part of the</span>
-    <a href="#">Copyright and Artists</a> series, a unique take on how copyright isn't aligned with the interests of individual artists, but instead mega-corps.
-    
+    <?php echo get_post_meta( get_the_ID(), 'lead_in_copy', true ); ?>
 </div>
+<?php endif; ?>
+<?php else : ?>
 
-    <?php the_content(); ?>
+<!-- display ACF field, if ACF installed & activated -->
+<?php if (get_field('lead_in_copy')): ?> 
+<div class="series">
+    <?php the_field('lead_in_copy'); ?>
+</div>
+<?php endif; ?>
+<?php endif; ?>
 
-<span class="pub-date">22 July 2023</span>
+<?php the_content(); ?>
 
+<span class="pub-date"><?php the_date('d F Y'); ?></span>
 
 <?php endwhile; // end of the loop. ?>
 </main>
