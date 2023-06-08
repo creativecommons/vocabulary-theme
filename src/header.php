@@ -11,7 +11,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body class="home-narrative">
+<body class="<?php echo $args['body-classes']; ?>">
 <a class="skip-to-content" href="#main-content-marker">Skip to content</a>
 
 <header>
