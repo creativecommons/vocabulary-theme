@@ -13,5 +13,5 @@ echo "prep complete";
 git status
 echo 'please remove the scripts folder to continue'
 echo "rm -r ./scripts"
-echo "changes ready to be commited, please commit, and push with'
+echo "changes ready to be commited, please commit, and push with"
 echo "git push origin prep-${1}"
