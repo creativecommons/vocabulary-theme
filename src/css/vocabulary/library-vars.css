@@ -62,18 +62,9 @@
 
 :root {
     /* brand colors */
-    
     --vocabulary-brand-color-gold: #FBD43C;
-    --vocabulary-brand-color-green: #008000;
     --vocabulary-brand-color-tomato: #C74200;
     --vocabulary-brand-color-turquoise: #05b5da;
-
-    --vocabulary-brand-color-soft-gold: #FEF6D8;
-
-    --vocabulary-brand-color-soft-green: #E0F5E0;
-    --vocabulary-brand-color-dark-green: #005d00;
-
-    --vocabulary-brand-color-soft-turquoise: #DFF6FC;
 
     --vocabulary-brand-color-soft-tomato: #FEEDE9;
     --vocabulary-brand-color-dark-tomato: #903101; 
@@ -139,7 +130,6 @@
      /* font awesome sprite names */
      --fa-globe: url('../../svg/font-awesome/icons/fa-icons.svg#fa-globe');
      --fa-heart: url('../../svg/font-awesome/icons/fa-icons.svg#fa-heart');
-     --fa-right-angle: url('../../svg/font-awesome/icons/fa-icons.svg#fa-right-angle');
  
      --fa-instagram: url('../../svg/font-awesome/icons/fa-icons.svg#fa-instagram');
      --fa-twitter: url('../../svg/font-awesome/icons/fa-icons.svg#fa-twitter');
@@ -187,10 +177,6 @@ leaving room for semantic and accessible implementation choices  */
 }
 
 .icon.fa-heart, .icon-attach.fa-heart:before {
-    --icon-sprite: var(--fa-heart);
-}
-
-.icon.fa-right-angle, .icon-attach.fa-righ-angle:before {
     --icon-sprite: var(--fa-heart);
 }
 
@@ -259,4 +245,3 @@ leaving room for semantic and accessible implementation choices  */
   
     --icon-sprite: var(--cc-logo);
 }
-

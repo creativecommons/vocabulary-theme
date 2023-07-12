@@ -1,6 +1,6 @@
 <?php
 
-get_header('', array( 'body-classes' => 'home-narrative') );
+get_header();
 
 
 echo "Hello, World.";
