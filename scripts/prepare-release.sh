@@ -29,6 +29,7 @@ if [ -z ${1+x} ]
         rm -r .gitignore
         rm -r docker-compose.yml
 
+        # self destruct
         rm -r ./scripts
 
         echo "prep complete";
@@ -36,6 +37,4 @@ if [ -z ${1+x} ]
         
         echo -e "${BLUE}changes ready to be commited, please commit, and push with${NC}"
         echo -e "${PURPLE}git push origin prep-${1}${NC}"
-        #echo -e "${BLUE}please remove the scripts folder to continue${NC}"
-        #echo -e "${PURPLE}rm -r ./scripts${NC}"
 fi
