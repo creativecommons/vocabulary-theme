@@ -71,8 +71,8 @@ services:
     image: composer
     user: xfs
     volumes:
-      #- ./docker/configs/composer.json:/var/www/html/composer.json
-      #- ./docker/configs/composer.lock:/var/www/html/composer.lock
+      - ./docker/configs/composer.json:/var/www/html/composer.json
+      - ./docker/configs/composer.lock:/var/www/html/composer.lock
       - wp_data:/var/www/html
     working_dir: /var/www/html/
 
