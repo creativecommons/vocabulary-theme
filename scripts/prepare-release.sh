@@ -14,6 +14,8 @@ NC='\033[0m'
 
 if [ -z ${1+x} ]
     then
+         echo -e "${BLUE}missing VERSION argument, in format: v0.1.0${NC}"  
+    else 
         git checkout -b prep-${1}
         mv ./src/* ./
         rm -r ./src
@@ -36,6 +38,4 @@ if [ -z ${1+x} ]
         echo -e "${PURPLE}git push origin prep-${1}${NC}"
         #echo -e "${BLUE}please remove the scripts folder to continue${NC}"
         #echo -e "${PURPLE}rm -r ./scripts${NC}"
-    else 
-        echo -e "${BLUE}missing VERSION argument, in format: v0.1.0${NC}"
 fi
