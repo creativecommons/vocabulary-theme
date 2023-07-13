@@ -8,4 +8,4 @@
 6. Use `Generate release notes` button to auto-fill contents
 7. Fill in remaining relevant information
 8. Publish release, which will now have the correctly structured files in the .zip archives
-9. Delete branch prep-vX.X.X, in GH GUI, and optionally locally: `git branch -D vX.X.X`
+9. Delete branch prep-vX.X.X, in GH GUI, and optionally locally: `git branch -D prep-vX.X.X`
