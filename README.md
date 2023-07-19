@@ -1,22 +1,15 @@
 # vocabulary-theme
 
 WordPress Theme implementation of the Vocabulary design system
-([creativecommons/vocabulary](https://github.com/creativecommons/vocabulary))
+([creativecommons/vocabulary](https://github.com/creativecommons/vocabulary)).
 
 
-## Docker containers
+## Development
 
-The [`docker-compose.yml`](docker-comose.yml) file defines the following
-containers:
-
-1. vocabtheme-wordpress-web ([localhost:8080](http://localhost:8080/))
-2. vocabtheme-wordpress-db
-3. vocabtheme-composer
-4. vocabtheme-phpmyadmin ([localhost:8003](http://localhost:8003/))
-5. vocabtheme-wpcli
+The theme development work should be done within the `src/` directory.
 
 
-## Setup
+### Setup
 
 1. Create the `.env` file:
     ```shell
@@ -29,6 +22,28 @@ containers:
     docker compose up
     ```
 4. Wait for build and initialization to complete
-5. Install WordPress initially through the GUI. (TODO: Script help here)
+5. Install WordPress initially through the GUI
+   ([localhost:8080](http://localhost:8080/))
+   - TODO: automate this step
 
-Plugin/Theme dev work should be done within the `/src` directory.
+
+### Docker containers
+
+The [`docker-compose.yml`](docker-comose.yml) file defines the following
+containers:
+
+1. vocabtheme-wordpress-web ([localhost:8080](http://localhost:8080/))
+2. vocabtheme-wordpress-db
+3. vocabtheme-composer
+4. vocabtheme-phpmyadmin ([localhost:8003](http://localhost:8003/))
+5. vocabtheme-wpcli
+
+
+### Releases
+
+See [scripts/README.md](scripts/README.md).
+
+
+## License
+
+
