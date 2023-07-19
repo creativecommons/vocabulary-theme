@@ -11,8 +11,8 @@
     ```
 4. Go to Release page for repository in GitHub GUI
    1. Generate new Release, targeting `prep-vX.Y.Z` branch, creating new tag of
-      vX.Y.Z
-   2. Use `Generate release notes` button to auto-fill contents
+      `vX.Y.Z`
+   2. Use **Generate release notes** button to auto-fill contents
    3. Fill in remaining relevant information
    4. Publish release, which will now have the correctly structured files in
       the `.zip` archives
