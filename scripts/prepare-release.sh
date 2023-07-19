@@ -14,7 +14,8 @@ pushd "${0%/*}/.." >/dev/null
 
 if [[ -z "${1+x}" ]]
 then
-     echo -e "${BLUE}missing VERSION argument, in format: v0.1.0${NC}"
+     echo -e "${BLUE}missing VERSION argument, in format: v0.1.0${NC}" 1>&2
+     exit 1
 else
     git checkout -b "prep-${1}"
     mv ./src/* ./
