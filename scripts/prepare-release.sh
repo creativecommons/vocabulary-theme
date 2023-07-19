@@ -3,6 +3,7 @@ set -o errexit
 set -o errtrace
 set -o nounset
 
+VERSION=${1:-}
 # setup fun colors for added UX
 HEAD='\033[1m\033[7m'
 GREEN='\033[0;32m'
@@ -13,7 +14,7 @@ NC='\033[0m'
 # (parent directory of this script's location)
 pushd "${0%/*}/.." >/dev/null
 
-if [[ -z "${1:-}" ]]
+if [[ -z "${VERSION}" ]]
 then
     {
         echo
@@ -23,17 +24,17 @@ then
         echo
     } 1>&2
     exit 1
-elif [[ ! "${1}" =~ ^v[0-9]+[.][0-9]+([.][0-9]+)?$ ]]
+elif [[ ! "${VERSION}" =~ ^v[0-9]+[.][0-9]+([.][0-9]+)?$ ]]
 then
      {
         echo
-        echo -e "${RED}invalid VERSION argument: ${1}${NC}"
+        echo -e "${RED}invalid VERSION argument: ${VERSION}${NC}"
         echo
      } 1>&2
      exit 1
 else
     printf "${HEAD} %-80s${NC}\n" 'Checkout prep branch'
-    git checkout -b "prep-${1}"
+    git checkout -b "prep-${VERSION}"
     echo
 
     printf "${HEAD} %-80s${NC}\n" 'Stage directories/files for release'
@@ -61,6 +62,6 @@ else
     printf "${HEAD} %-80s${NC}\n" 'Next steps'
     echo 'Changes ready to be commited, please commit, and push with:'
     echo
-    echo -e "    ${GREEN}git push origin prep-${1}${NC}"
+    echo -e "    ${GREEN}git push origin prep-${VERSION}${NC}"
     echo
 fi
