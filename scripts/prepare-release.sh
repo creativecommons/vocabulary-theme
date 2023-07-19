@@ -5,7 +5,6 @@ set -o nounset
 
 # setup fun colors for added UX
 HEAD='\033[1m\033[7m'
-BLUE='\033[0;34m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
