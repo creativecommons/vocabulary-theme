@@ -1,12 +1,12 @@
 # vocabulary-theme
 
 WordPress Theme implementation of the Vocabulary design system
-([creativecommons/vocabulary](https://github.com/creativecommons/vocabulary))
+([creativecommons/vocabulary](https://github.com/creativecommons/vocabulary)).
 
 
 ## Development
 
-Plugin/Theme dev work should be done within the `src/` directory.
+The theme development work should be done within the `src/` directory.
 
 
 ### Setup
