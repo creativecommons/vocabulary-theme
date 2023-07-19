@@ -6,18 +6,20 @@ set -o nounset
 # setup fun colors for added UX
 BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
-RED='\033[0;32m'
+RED='\033[0;31m'
 NC='\033[0m'
 
 # Change directory to repository root
 # (parent directory of this script's location)
 pushd "${0%/*}/.." >/dev/null
 
-if [[ -z "${1+x}" ]]
+if [[ -z "${1:-}" ]]
 then
      {
         echo
-        echo -e "${RED}missing VERSION argument, in format: v0.1.0${NC}"
+        echo -en "${RED}missing VERSION argument ("
+        echo -n 'format: vMAJOR.MINOR.PATCH,'
+        echo -e " example: v0.1.0)${NC}"
         echo
      } 1>&2
      exit 1
