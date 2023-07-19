@@ -22,7 +22,8 @@ The theme development work should be done within the `src/` directory.
     docker compose up
     ```
 4. Wait for build and initialization to complete
-5. Install WordPress initially through the GUI.
+5. Install WordPress initially through the GUI
+   ([localhost:8080](http://localhost:8080/))
    - TODO: automate this step
 
 
