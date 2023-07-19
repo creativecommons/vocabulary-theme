@@ -6,7 +6,7 @@ WordPress Theme implementation of the Vocabulary design system
 
 ## Development
 
-Plugin/Theme dev work should be done within the `/src` directory.
+Plugin/Theme dev work should be done within the `src/` directory.
 
 
 ### Setup
