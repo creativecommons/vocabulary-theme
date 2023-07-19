@@ -16,14 +16,14 @@ pushd "${0%/*}/.." >/dev/null
 
 if [[ -z "${1:-}" ]]
 then
-     {
+    {
         echo
         echo -en "${RED}missing VERSION argument ("
         echo -n 'format: vMAJOR.MINOR.PATCH,'
         echo -e " example: v0.1.0)${NC}"
         echo
-     } 1>&2
-     exit 1
+    } 1>&2
+    exit 1
 elif [[ ! "${1}" =~ ^v[0-9]+[.][0-9]+([.][0-9]+)?$ ]]
 then
      {
@@ -38,6 +38,7 @@ else
     echo
 
     printf "${HEAD} %-80s${NC}\n" 'Stage directories/files for release'
+    # stage theme files
     mv ./src/* ./
     # remove unneeded files for release (and self destruct)
     rm -fr -- \
