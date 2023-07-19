@@ -8,7 +8,7 @@ set -o nounset
 pushd "${0%/*}/.." >/dev/null
 
 printf "\e[1m\e[7m %-80s\e[0m\n" 'Remove staged directories/files'
-rm -fr \
+rm -fr -- \
     *.css \
     *.php \
     ./css \

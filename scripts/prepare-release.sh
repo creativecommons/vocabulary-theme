@@ -21,7 +21,7 @@ else
     git checkout -b "prep-${1}"
     mv ./src/* ./
     # remove unneeded files for release (and self destruct)
-    rm -fr \
+    rm -fr -- \
         ./.devcontainer \
         ./.github \
         ./src \
