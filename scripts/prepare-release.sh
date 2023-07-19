@@ -23,6 +23,14 @@ then
         echo
      } 1>&2
      exit 1
+elif [[ ! "${1}" =~ ^v[0-9]+[.][0-9]+([.][0-9]+)?$ ]]
+then
+     {
+        echo
+        echo -e "${RED}invalid VERSION argument: ${1}${NC}"
+        echo
+     } 1>&2
+     exit 1
 else
     printf "\e[1m\e[7m %-80s\e[0m\n" 'Checkout prep branch'
     git checkout -b "prep-${1}"
