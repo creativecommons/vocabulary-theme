@@ -1,3 +1,6 @@
+# Scripts
+
+
 ## Creating Releases
 
 1. In the terminal, in root of project, run the release prep script:
@@ -25,3 +28,13 @@
         ```shell
         git branch -D prep-vX.Y.Z
         ```
+
+
+## Release process development
+
+The `unprepare-release.sh` is a convenience script for developing the release
+process. It is not normally used. When developing the release process, it can
+be invoked after `prepare-release.sh`:
+```shell
+git restore scripts && ./scripts/unprepare-release.sh
+```
