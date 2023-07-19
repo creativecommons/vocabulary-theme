@@ -4,8 +4,9 @@ set -o errtrace
 set -o nounset
 
 # setup fun colors for added UX
+HEAD='\033[1m\033[7m'
 BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
+GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
@@ -32,11 +33,11 @@ then
      } 1>&2
      exit 1
 else
-    printf "\e[1m\e[7m %-80s\e[0m\n" 'Checkout prep branch'
+    printf "${HEAD} %-80s${NC}\n" 'Checkout prep branch'
     git checkout -b "prep-${1}"
     echo
 
-    printf "\e[1m\e[7m %-80s\e[0m\n" 'Stage directories/files for release'
+    printf "${HEAD} %-80s${NC}\n" 'Stage directories/files for release'
     mv ./src/* ./
     # remove unneeded files for release (and self destruct)
     rm -fr -- \
@@ -53,13 +54,13 @@ else
     echo 'done.'
     echo
 
-    printf "\e[1m\e[7m %-80s\e[0m\n" 'Repository status'
+    printf "${HEAD} %-80s${NC}\n" 'Repository status'
     git status
     echo
 
-    printf "\e[1m\e[7m %-80s\e[0m\n" 'Next steps'
-    echo -en "${BLUE}changes ready to be commited, please commit, and push"
-    echo -e " with:${NC}"
-    echo -e "    ${PURPLE}git push origin prep-${1}${NC}"
+    printf "${HEAD} %-80s${NC}\n" 'Next steps'
+    echo 'Changes ready to be commited, please commit, and push with:'
+    echo
+    echo -e "    ${GREEN}git push origin prep-${1}${NC}"
     echo
 fi
