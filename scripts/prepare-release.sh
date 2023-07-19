@@ -17,6 +17,7 @@ then
      echo -e "${BLUE}missing VERSION argument, in format: v0.1.0${NC}" 1>&2
      exit 1
 else
+    printf "\e[1m\e[7m %-80s\e[0m\n" 'Checkout prep branch'
     git checkout -b "prep-${1}"
     mv ./src/* ./
     # remove unneeded files for release (and self destruct)
