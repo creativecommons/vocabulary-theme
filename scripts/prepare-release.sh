@@ -3,38 +3,37 @@ set -o errexit
 set -o errtrace
 set -o nounset
 
-# note: always run this in the project's root
-
 # setup fun colors for added UX
 BLUE='\033[0;34m'
-GREEN='\033[0;32m'
 PURPLE='\033[0;35m'
 NC='\033[0m'
 
+# Change directory to repository root
+# (parent directory of this script's location)
+pushd "${0%/*}/.." >/dev/null
 
-if [ -z ${1+x} ]
-    then
-         echo -e "${BLUE}missing VERSION argument, in format: v0.1.0${NC}"  
-    else 
-        git checkout -b prep-${1}
-        mv ./src/* ./
-        rm -r ./src
+if [[ -z "${1+x}" ]]
+then
+     echo -e "${BLUE}missing VERSION argument, in format: v0.1.0${NC}"
+else
+    git checkout -b "prep-${1}"
+    mv ./src/* ./
+    # remove unneeded files for release (and self destruct)
+    rm -fr \
+        ./.devcontainer \
+        ./.github \
+        ./src \
+        ./docker \
+        ./scripts \
+        .cc-metadata.yml \
+        .env.example \
+        .gitignore \
+        docker-compose.yml
 
-        # remove unneeded files for release
-        rm -r ./.devcontainer
-        rm -r ./.github
-        rm -r ./docker
-        rm -r .cc-metadata.yml
-        rm -r .env.example
-        rm -r .gitignore
-        rm -r docker-compose.yml
+    echo 'prep complete';
+    git status
 
-        # self destruct
-        rm -r ./scripts
-
-        echo "prep complete";
-        git status
-        
-        echo -e "${BLUE}changes ready to be commited, please commit, and push with${NC}"
-        echo -e "${PURPLE}git push origin prep-${1}${NC}"
+    echo -en "${BLUE}changes ready to be commited, please commit, and push"
+    echo -e " with${NC}"
+    echo -e "${PURPLE}git push origin prep-${1}${NC}"
 fi
