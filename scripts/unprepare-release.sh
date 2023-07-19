@@ -8,7 +8,7 @@ set -o nounset
 pushd "${0%/*}/.." >/dev/null
 
 printf "\e[1m\e[7m %-80s\e[0m\n" 'Remove staged directories/files'
-rm -frv \
+rm -fr \
     *.css \
     *.php \
     ./css \
@@ -16,6 +16,7 @@ rm -frv \
     ./js \
     ./svg \
     .env
+echo 'done.'
 echo
 
 printf "\e[1m\e[7m %-80s\e[0m\n" 'Restore repository'
