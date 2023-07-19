@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# Prepare a branch with the directory and files structured for compatibility
+# with WordPress
+#
 set -o errexit
 set -o errtrace
 set -o nounset
