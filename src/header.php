@@ -5,7 +5,7 @@
   
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" media="all" href="<?php echo get_bloginfo( 'template_directory' ); ?>/css/vocabulary/vocabulary.css">
+<link rel="stylesheet" media="all" href="<?php echo get_bloginfo( 'template_directory' ); ?>/style.css">
 <!-- <link rel="stylesheet" media="all" href="css/style.css"> -->
 
 <?php wp_head(); ?>

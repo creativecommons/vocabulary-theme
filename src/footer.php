@@ -52,16 +52,16 @@
         <p>Except where otherwise <a href="/policies/#license">noted</a>, content on this site is licensed under a <a href="/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>. Icons by <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>.</p>
 
         <svg>
-            <use href="/svg/cc/icons/cc-icons.svg#cc-logo"></use>
+            <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
         </svg>
         <svg>
-            <use href="/svg/cc/icons/cc-icons.svg#cc-by"></use>
+            <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
         </svg>
     </div>
 
     </footer>
 
-<script src="<?php echo get_bloginfo( 'template_directory' ); ?>/js/vocabulary.js"></script>
+<script src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/js/vocabulary.js"></script>
 
 <?php wp_footer(); ?>
 </body>

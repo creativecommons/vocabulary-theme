@@ -10,3 +10,5 @@ Requires PHP: 7.0
 License: MIT License
 License URI: https://github.com/creativecommons/vocabulary-theme/blob/main/LICENSE
 */
+
+@import 'vocabulary/css/vocabulary.css' layer(vocabulary);
