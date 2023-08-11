@@ -5,13 +5,13 @@
   
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" media="all" href="<?php echo get_bloginfo( 'template_directory' ); ?>/style.css">
+<link rel="stylesheet" media="all" href="<?php echo get_bloginfo( 'template_directory' ); ?>/css/vocabulary/vocabulary.css">
 <!-- <link rel="stylesheet" media="all" href="css/style.css"> -->
 
 <?php wp_head(); ?>
 </head>
 
-<body class="home-narrative">
+<body class="<?php echo $args['body-classes']; ?>">
 <a class="skip-to-content" href="#main-content-marker">Skip to content</a>
 
 <header>
