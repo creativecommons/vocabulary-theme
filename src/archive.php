@@ -13,7 +13,7 @@
 
 <h1>Blog Archives</h1>
 
-<!-- <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span> -->
+<!-- <span class="byline">by <a href="#">Marie Langley</a>, <a href="#">Marvau Laraugne</a></span> -->
 
 <p>lead in paragraph</p>
 
