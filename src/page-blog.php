@@ -6,8 +6,6 @@
 
 <h1>Blog</h1>
 
-<!-- <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span> -->
-
 <p>lead in paragraph</p>
 
 <!-- <span class="categories">
