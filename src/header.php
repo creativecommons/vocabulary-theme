@@ -23,7 +23,7 @@
                 <li><a href="/about/team">Who We Are</a></li>
                 <li><a href="/about">What We Do</a></li>
                 <li><a href="/about/cclicenses/">Licenses and Tools</a></li>
-                <li><a href="/log">Blog</a></li>
+                <li><a href="/blog">Blog</a></li>
                 <li><a href="/about/support-cc/">Support Us</a></li>
             </ul>
         </nav>
