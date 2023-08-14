@@ -5,8 +5,7 @@
   
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" media="all" href="<?php echo get_bloginfo( 'template_directory' ); ?>/css/vocabulary/vocabulary.css">
-<!-- <link rel="stylesheet" media="all" href="css/style.css"> -->
+<link rel="stylesheet" media="all" href="<?php echo get_bloginfo( 'template_directory' ); ?>/style.css">
 
 <?php wp_head(); ?>
 </head>
@@ -30,8 +29,11 @@
 
         <nav class="ancilliary-menu">
             <ul>
-                <li><button class="locale icon-attach fa-globe">English</button></li>
-                <li><a class="donate icon-attach fa-heart" href="#">Donate</a></li>
+                <!-- uncomment below line, if translation functionality is present on site -->
+                <!-- <li><button class="locale icon-attach fa-globe">English</button></li> -->
+                <!-- uncomment below line, if search functionality is present on site -->
+                <li><a class="search icon-attach fa-search" href="/?s">Search</a></li>
+                <li><a class="donate icon-attach fa-heart" href="https://www.classy.org/give/313412/#!/donation/checkout?c_src=website&c_src2=top-of-page-banner" target="_blank">Donate</a></li>
                 <li><button class="explore">Explore CC</button></li>
             </ul>
         </nav>
