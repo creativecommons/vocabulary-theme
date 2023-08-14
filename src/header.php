@@ -17,13 +17,14 @@
     <div class="masthead">
         <h1><a class="identity-logo" href="#">Creative Commons</a></h1>
         <button class="expand-menu">Menu</button>
+        <!-- below menu is not final items, for testing only -->
         <nav class="primary-menu">
             <ul>
-                <li><a href="#">Who We Are</a></li>
-                <li><a href="#">What We Do</a></li>
-                <li><a href="#">Licenses and Tools</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Support Us</a></li>
+                <li><a href="/about/team">Who We Are</a></li>
+                <li><a href="/about">What We Do</a></li>
+                <li><a href="/about/cclicenses/">Licenses and Tools</a></li>
+                <li><a href="/log">Blog</a></li>
+                <li><a href="/about/support-cc/">Support Us</a></li>
             </ul>
         </nav>
 
