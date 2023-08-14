@@ -61,7 +61,7 @@
 
     </footer>
 
-<script src="<?php echo get_bloginfo( 'template_directory' ); ?>/js/vocabulary.js"></script>
+<script src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/js/vocabulary.js"></script>
 
 <?php wp_footer(); ?>
 </body>
