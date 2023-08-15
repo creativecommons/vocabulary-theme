@@ -1,5 +1,5 @@
 <footer>
-    <a class="identity-logo" href="#">Creative Commons</a>
+    <a class="identity-logo" href="/">Creative Commons</a>
     
     <nav class="footer-menu">
         <ul>

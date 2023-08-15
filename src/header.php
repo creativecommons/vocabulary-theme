@@ -15,7 +15,7 @@
 
 <header>
     <div class="masthead">
-        <h1><a class="identity-logo" href="#">Creative Commons</a></h1>
+        <h1><a class="identity-logo" href="/">Creative Commons</a></h1>
         <button class="expand-menu">Menu</button>
         <!-- below menu is not final items, for testing only -->
         <nav class="primary-menu">
