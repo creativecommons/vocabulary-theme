@@ -55,7 +55,7 @@
 </aside> -->
 
 
-<div class="content">
+<div class="content authored-posts">
 
 <!-- <div class="series">
     <span>part of the</span>
