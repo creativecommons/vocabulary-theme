@@ -25,6 +25,7 @@
                 <li><a href="/about/cclicenses/">Licenses and Tools</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="/about/support-cc/">Support Us</a></li>
+                <li><a class="attention" href="https://summit.creativecommons.org/">Global Summit 2023</a></li>
             </ul>
         </nav>
 
