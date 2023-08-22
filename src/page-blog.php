@@ -58,7 +58,11 @@
         
     </article>
 
-    <?php $i++; ?>
+
+    <?php 
+    $highlight_posts[] = $post->ID;
+    $i++; 
+    ?>
 
     <?php endforeach; ?>
     
@@ -109,12 +113,24 @@
 <?php endif; ?>
 
 
+
 <article class="stories authored-posts">
-    <h2>Recent Posts</h2>
-    
-    <article class="story">
+<h2>Recent Posts</h2>
+
+<?php
+$query = new WP_Query(array(
+    'post__not_in' => $highlight_posts,
+    'post_type' => 'post',
+    'posts_per_page' => 5,
+    //'paged' => $paged,
+));
+?>
+
+<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+	<article class="story">
         <header>
-        <h3 class="title"><a href="#">Introducing Our Google Season of Docs 2020 Participants</a></h3>
+        <h3 class="title"><a href="#"><?php the_title(); ?></a></h3>
         <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
         <span class="categories"><a href=#">Open Knowledge</a></span>
     
@@ -122,68 +138,13 @@
         <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
     </article>
 
-    <article class="story">
-        <header>
-        <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
-        <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-        <span class="categories"><a href=#">Open Culture</a></span>
-        </header>
+	<?php endwhile; ?> 
 
-        <figure>
-            <img src="../imgs/image3.png" />
-            
-            <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
-        </figure>
+<?php endif; ?>
 
-        <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-    </article>
-    
-    <article class="story">
-        <header>
-        <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
-        <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-        <span class="categories"><a href=#">Open Culture</a></span>
-    
-        </header>
-        <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-    </article>
-
-    <article class="story">
-        <header>
-        <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
-        <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-        <span class="categories"><a href=#">Open Culture</a></span>
-    
-        </header>
-        <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-    </article>
-
-    <article class="story">
-        <header>
-        <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
-        <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-        <span class="categories"><a href=#">Open Culture</a></span>
-    
-        </header>
-        <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-    </article>
-
-    <article class="story">
-        <header>
-        <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
-        <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-        <span class="categories"><a href=#">Open Culture</a></span>
-    
-        </header>
-        <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-    </article>
-    
     <a class="more" href="#">more posts</a>
     
 </article>
-    
-    
-
     
 
 </main>
