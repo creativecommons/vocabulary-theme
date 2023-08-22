@@ -8,7 +8,12 @@
 
 <!-- <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span> -->
 
-<p>lead in paragraph</p>
+<?php
+    $introduction = get_field('introduction');
+    if( $introduction ): 
+?>
+<p><?php echo esc_html( $introduction ); ?></p>
+<?php endif; ?>
 
 <!-- <span class="categories">
     <a href="#">Open Culture</a>
@@ -19,12 +24,24 @@
 
 </header>
 
+<?php
+    $posts = get_field('featured_posts');
+    if( $posts ): 
+?>
+
 <article class="stories authored-posts highlight">
 
-    
+    <?php 
+        $i=1;
+        foreach( $posts as $post ): 
+            $permalink = get_permalink( $post->ID );
+            $title = get_the_title( $post->ID );
+            //$custom_field = get_field( 'field_name', $post->ID );
+    ?>
+
     <article class="story">
         <header>
-        <h2 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
+        <h2 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h2>
     
         <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
         <span class="categories"><a href=#">Open Culture</a></span>
@@ -34,73 +51,19 @@
             <img src="../imgs/image2.jpg" />
             <span class="attribution"><span>"</span><a href="https://www.flickr.com/photos/47691521@N07/8249753855" target="_blank" rel="noopener noreferrer">Creative Commons a vessel ideas</a><span>" by&nbsp;</span><a href="https://www.flickr.com/photos/47691521@N07" target="_blank" rel="noopener noreferrer">opensourceway</a><span>&nbsp;is licensed under&nbsp;</span><a href="https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a></span>
         </figure>
+
+        <?php if ($i == 1): ?>
         <p>The Creative Commons Open Education Team is pleased to provide a snapshot of progress made toward opening access and equity in education, through a look at our collective efforts in 2022.1 We laud the CC open education community for its important work throughout 2022. CC and community members' open education efforts in 2022 included, but </p>
+        <?php endif; ?>
         
     </article>
 
-    <article class="story">
-        <header>
-        <h2 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-        <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-        <span class="categories"><a href=#">Open Culture</a></span>
-    
-        </header>
-    
-        <figure>
-            <img src="../imgs/image3.png" />
-            
-            <!-- <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span> -->
-        </figure>
-       
-    </article>
-    
-    <article class="story">
-        <header>
-       <h2 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-        <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-        <span class="categories"><a href=#">Open Culture</a></span>
-    
-    </header>
-    
-        <figure>
-            <img src="../imgs/image4.png" />
-            
-            <!-- <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span> -->
-        </figure>
-       
-    </article>
+    <?php $i++; ?>
 
-    <article class="story">
-        <header>
-       <h2 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-        <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-        <span class="categories"><a href=#">Open Culture</a></span>
+    <?php endforeach; ?>
     
-    </header>
-    
-        <figure>
-            <img src="../imgs/image3.png" />
-            
-            <!-- <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span> -->
-        </figure>
-       
-    </article>
 
-    <article class="story">
-        <header>
-       <h2 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-        <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-        <span class="categories"><a href=#">Open Culture</a></span>
     
-    </header>
-    
-        <figure>
-            <img src="../imgs/image3.png" />
-            
-            <!-- <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span> -->
-        </figure>
-       
-    </article>
 
     <footer>
         <article class="attribution-list">
@@ -141,10 +104,10 @@
             </ul>
         </article>
     </footer>
-    
-    
 
 </article>
+<?php endif; ?>
+
 
 <article class="stories authored-posts">
     <h2>Recent Posts</h2>
