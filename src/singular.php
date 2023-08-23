@@ -11,15 +11,25 @@
 <span class="byline">by 
     <?php
     $authors = get_field('authorship');
-        if( $authors ): ?>
-            <?php foreach( $authors as $author ): 
-                $permalink = get_permalink( $author->ID );
-                $title = get_the_title( $author->ID );
-                $custom_field = get_field( 'field_name', $author->ID );
-            ?>
+        if( $authors ):
+        $i = 1;
+        $count = count($authors);  
 
-    <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a>,
+        foreach( $authors as $author ): 
+            $permalink = get_permalink( $author->ID );
+            $title = get_the_title( $author->ID );
+            $custom_field = get_field( 'field_name', $author->ID );           
+            if ($i < $count) { 
+                $separator = ','; 
+            } 
+            else { 
+                $separator = ''; 
+            }
+    ?>
 
+    <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+            <?php $i++; ?>
             <?php endforeach; ?>
         <?php endif; ?>
 </span>
