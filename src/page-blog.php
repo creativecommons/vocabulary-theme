@@ -43,15 +43,43 @@
         <header>
         <h2 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h2>
     
-        <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
+        <span class="byline">by 
+            <?php
+            $authors = get_field('authorship');
+                if( $authors ):
+                $ai = 1;
+                $count = count($authors);  
+
+                foreach( $authors as $author ): 
+                    $permalink = get_permalink( $author->ID );
+                    $title = get_the_title( $author->ID );
+                    $custom_field = get_field( 'field_name', $author->ID );           
+                    if ($ai < $count) { 
+                        $separator = ','; 
+                    } 
+                    else { 
+                        $separator = ''; 
+                    }
+            ?>
+
+            <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                    <?php $ai++; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+        </span>
         <span class="categories">
             <?php the_category(', ') ?>
         </span>
         </header>
 
         <figure>
-            <img src="../imgs/image2.jpg" />
+            <?php //echo get_the_post_thumbnail( $post_id, 'full' ); 
+            ?>
+            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
+            <?php if ($i == 1): ?>
             <span class="attribution"><span>"</span><a href="https://www.flickr.com/photos/47691521@N07/8249753855" target="_blank" rel="noopener noreferrer">Creative Commons a vessel ideas</a><span>" by&nbsp;</span><a href="https://www.flickr.com/photos/47691521@N07" target="_blank" rel="noopener noreferrer">opensourceway</a><span>&nbsp;is licensed under&nbsp;</span><a href="https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a></span>
+            <?php endif; ?>
         </figure>
 
         <?php if ($i == 1): ?>
@@ -133,7 +161,31 @@ $query = new WP_Query(array(
 	<article class="story">
         <header>
         <h3 class="title"><a href="#"><?php the_title(); ?></a></h3>
-        <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
+        <span class="byline">by 
+            <?php
+            $authors = get_field('authorship');
+                if( $authors ):
+                $i = 1;
+                $count = count($authors);  
+
+                foreach( $authors as $author ): 
+                    $permalink = get_permalink( $author->ID );
+                    $title = get_the_title( $author->ID );
+                    $custom_field = get_field( 'field_name', $author->ID );           
+                    if ($i < $count) { 
+                        $separator = ','; 
+                    } 
+                    else { 
+                        $separator = ''; 
+                    }
+            ?>
+
+            <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                    <?php $i++; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+        </span>
         <span class="categories">
             <?php the_category(', ') ?>
         </span>
