@@ -32,6 +32,7 @@
 <article class="stories authored-posts highlight">
 
     <?php 
+
         $i=1;
         foreach( $posts as $post ): 
             $permalink = get_permalink( $post->ID );
@@ -103,38 +104,17 @@
         <article class="attribution-list">
         <h2>Images Attribution</h2>
             <ul>
+                <?php foreach ($highlight_posts as $item) : ?>
                 <li>
                     <article>
                         <figure>
-                            <img src="../imgs/image3.png" />
-                            <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
+                            
+                            <img src="<?php echo get_the_post_thumbnail_url( $item, 'full' ); ?>" />
+                            <span class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></span>
                         </figure>
                     </article>
                 </li>
-                <li>
-                    <article>
-                        <figure>
-                            <img src="../imgs/image4.png" />
-                            <span class="attribution"><span>"</span><a href="https://www.flickr.com/photos/47691521@N07/8249753855" target="_blank" rel="noopener noreferrer">Creative Commons a vessel ideas</a><span>" by&nbsp;</span><a href="https://www.flickr.com/photos/47691521@N07" target="_blank" rel="noopener noreferrer">opensourceway</a><span>&nbsp;is licensed under&nbsp;</span><a href="https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a></span>
-                        </figure>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <figure>
-                            <img src="../imgs/image3.png" />
-                            <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
-                        </figure>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <figure>
-                            <img src="../imgs/image3.png" />
-                            <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
-                        </figure>
-                    </article>
-                </li>
+                <?php endforeach; ?>
             </ul>
         </article>
     </footer>
