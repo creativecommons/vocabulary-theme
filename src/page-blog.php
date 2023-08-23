@@ -44,7 +44,9 @@
         <h2 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h2>
     
         <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-        <span class="categories"><a href=#">Open Culture</a></span>
+        <span class="categories">
+            <?php the_category(', ') ?>
+        </span>
         </header>
 
         <figure>
@@ -132,7 +134,9 @@ $query = new WP_Query(array(
         <header>
         <h3 class="title"><a href="#"><?php the_title(); ?></a></h3>
         <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-        <span class="categories"><a href=#">Open Knowledge</a></span>
+        <span class="categories">
+            <?php the_category(', ') ?>
+        </span>
     
         </header>
         <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
