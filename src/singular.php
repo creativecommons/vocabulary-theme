@@ -90,16 +90,63 @@
 <?php endif; ?>
 
 
-<article class="related-posts">
-    <h2>Related posts</h2>
-    
-    <article class="authored-posts highlight">
+<?php
 
+$queried_object = get_queried_object();
+$categories = get_the_category( $post->ID );
+$catIDs = '';
+foreach( $categories as $category) {
+    $catIDs .= $category->cat_ID . ",";
+}
+
+$query = new WP_Query(array(
+    'cat' => $catIDs,
+    'post__not_in' => array($queried_object->ID),
+    'post_type' => 'post',
+    'posts_per_page' => 4,
+    //'paged' => $paged,
+));
+?>
+
+<?php if ( $query->have_posts() ) : ?> 
+
+<article class="related-posts">
+    <h2>Related posts</h2>  
+
+    <article class="authored-posts highlight"> 
+    
+<?php  while ( $query->have_posts() ) : $query->the_post(); ?>
         <article>
             <header>
-            <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-            <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-            <span class="categories"><a href=#">Open Culture</a></span>
+            <h2><a href="#"><?php the_title(); ?></a></h2>
+            <span class="byline">by 
+                <?php
+                $authors = get_field('authorship');
+                    if( $authors ):
+                    $i = 1;
+                    $count = count($authors);  
+
+                    foreach( $authors as $author ): 
+                        $permalink = get_permalink( $author->ID );
+                        $title = get_the_title( $author->ID );
+                        $custom_field = get_field( 'field_name', $author->ID );           
+                        if ($i < $count) { 
+                            $separator = ','; 
+                        } 
+                        else { 
+                            $separator = ''; 
+                        }
+                ?>
+
+                <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                        <?php $i++; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+            </span>
+            <span class="categories">
+                <?php the_category(', ') ?>
+            </span>
         
         </header>
         
@@ -113,46 +160,13 @@
                 <li><a href="#">category</a></li>
             </ul> -->
         </article>
-        
-        <article>
-            <header>
-            <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-        
-            <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-            <span class="categories"><a href=#">Open Culture</a></span>
-        
-            </header>
-            <figure>
-                <img src="../imgs/image2.jpg" />
-                <span class="attribution"><span>"</span><a href="https://www.flickr.com/photos/47691521@N07/8249753855" target="_blank" rel="noopener noreferrer">Creative Commons a vessel ideas</a><span>" by&nbsp;</span><a href="https://www.flickr.com/photos/47691521@N07" target="_blank" rel="noopener noreferrer">opensourceway</a><span>&nbsp;is licensed under&nbsp;</span><a href="https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a></span>
-            </figure>
-            <p>The Creative Commons Open Education Team is pleased to provide a snapshot of progress made toward opening access and equity in education, through a look at our collective efforts in 2022.1 We laud the CC open education community for its important work throughout 2022. CC and community members’ open education efforts in 2022 included, but </p>
-            
-        </article>
-        
-        <article>
-            <header>
-            <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-            <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-            <span class="categories"><a href=#">Open Culture</a></span>
-        
-            </header>
-            <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-        </article>
-        
-        <article>
-            <header>
-            <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-            <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-            <span class="categories"><a href=#">Open Culture</a></span>
-        
-            </header>
-            <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-        </article>
-        
-        
+
+<?php endwhile; ?> 
+
     </article>
 </article>
+
+<?php endif; ?>
 
 <?php endwhile; // end of the loop. ?>
 </main>
