@@ -8,3 +8,5 @@ function register_vocabulary_menus() {
    );
  }
  add_action( 'init', 'register_vocabulary_menus' );
+
+ add_theme_support( 'post-thumbnails' );
