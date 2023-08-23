@@ -72,14 +72,23 @@
 
 <span class="pub-date"><?php the_date('d F Y'); ?></span>
 
+<?php
+    $posttags = get_the_tags();
+    if ($posttags) :
+?>
 <article class="tags">
     <h2>Tags</h2>
 
     <ul>
-        <li><a href="#">open culture</a></li>
-        <li><a href="#">cc licenses</a></li>
+       <?php foreach($posttags as $tag) : ?>
+        <li><a href="#"><?php echo $tag->name; ?></a></li>
+                 
+        <?php endforeach; ?>
     </ul>
 </article>
+
+<?php endif; ?>
+
 
 <article class="related-posts">
     <h2>Related posts</h2>
