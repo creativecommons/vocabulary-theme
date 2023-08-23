@@ -5,7 +5,12 @@
 <header>
 <h1>Our Team</h1>
 
-<p>Creative Commons is a network of staff, board, emeritus, advisory council, audit committee, and affiliates around the world.</p>
+<?php
+    $introduction = get_field('introduction');
+    if( $introduction ): 
+?>
+<p><?php echo esc_html( $introduction ); ?></p>
+<?php endif; ?>
 
 </header>
 
