@@ -79,7 +79,7 @@
             ?>
             <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
             <?php if ($i == 1): ?>
-            <span class="attribution"><span>"</span><a href="https://www.flickr.com/photos/47691521@N07/8249753855" target="_blank" rel="noopener noreferrer">Creative Commons a vessel ideas</a><span>" by&nbsp;</span><a href="https://www.flickr.com/photos/47691521@N07" target="_blank" rel="noopener noreferrer">opensourceway</a><span>&nbsp;is licensed under&nbsp;</span><a href="https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a></span>
+            <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
             <?php endif; ?>
         </figure>
 
