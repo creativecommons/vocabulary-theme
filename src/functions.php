@@ -25,3 +25,9 @@ function register_vocabulary_menus() {
   return $figure;
 }
 add_filter( 'image_send_to_editor', 'insert_image_as_figure', 10, 9 );
+
+//remove gutenberg styles
+add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
+function wps_deregister_styles() {
+    wp_dequeue_style( 'wp-block-library' );
+}
