@@ -25,7 +25,22 @@
                 <li><a href="/about/cclicenses/">Licenses and Tools</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="/about/support-cc/">Support Us</a></li>
-                <li><a class="attention" href="https://summit.creativecommons.org/">Global Summit 2023</a></li>
+                <?php
+                    $query = new WP_Query(array(
+                        'post_type' => 'notice',
+                        'posts_per_page' => 1,
+                        'meta_key' => 'type',
+                        'meta_value' => 'primary-menu'
+                        //'paged' => $paged,
+                    ));
+                ?>
+
+                <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+                <li><a class="attention" href="<?php the_field('url'); ?>"><?php the_field('message'); ?></a></li>
+
+                <?php endwhile; ?>
+                <?php endif; ?>
             </ul>
         </nav>
 
@@ -85,6 +100,21 @@
 
 </header>
 
+<?php
+$query = new WP_Query(array(
+    'post_type' => 'notice',
+    'posts_per_page' => 1,
+    'meta_key' => 'type',
+    'meta_value' => 'top-of-site'
+    //'paged' => $paged,
+));
+?>
+
+<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
 <article class="attention">
-<p></p>
+<?php the_field('message_rich_text'); ?>
 </article>
+
+<?php endwhile; ?>
+<?php endif; ?>

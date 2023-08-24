@@ -11,11 +11,11 @@
     </ol>
 </nav> -->
 
-<h1>Blog Archives</h1>
+<h1><?php the_archive_title(); ?></h1>
 
 <!-- <span class="byline">by <a href="#">Marie Langley</a>, <a href="#">Marvau Laraugne</a></span> -->
 
-<p>lead in paragraph</p>
+<p><?php the_archive_description(); ?></p>
 
 <!-- <span class="categories">
     <a href="#">Open Culture</a>
