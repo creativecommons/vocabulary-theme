@@ -28,9 +28,28 @@
 
 <aside>
 
+<?php
+$current_category = get_queried_object();
+
+?>
+
+<?php $categories = get_terms( 'category', 'orderby=count&hide_empty=0' ); ?>
+
+
     <nav class="filter-menu">
         <h2>Categories</h2>
         <ul>
+        <?php foreach($categories as $category): ?>
+                <?php
+                    if($category->term_taxonomy_id == $current_category->term_id )  {
+                        $current = "current";
+                    }  else {$current = '';}
+                ?>
+
+               <li class="<?php echo $current; ?>"><?php echo $category->name; ?></li>
+
+            <?php endforeach; ?>
+
             <li><a href="#">All posts</a></li>
             <li class="current"><a href="#">Open Culture</a></li>
             <li><a href="#">Open Knowledge</a></li>

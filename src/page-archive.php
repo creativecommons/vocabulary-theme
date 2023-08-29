@@ -29,9 +29,21 @@
 
 <aside>
 
+<?php
+$category_slug = get_queried_object();
+
+?>
+
+<?php $categories = get_terms( 'category', 'orderby=count&hide_empty=0' ); ?>
+
     <nav class="filter-menu">
         <h2>Categories</h2>
         <ul>
+            <?php foreach($categories as $category): ?>
+               <?php echo $category->name; ?>
+               <?php echo $category_slug->term_id; ?>
+            
+            <?php endforeach; ?>
             <li class="current"><a href="#">All posts</a></li>
             <li><a href="#">Open Culture</a></li>
             <li><a href="#">Open Knowledge</a></li>
