@@ -59,9 +59,11 @@
 
 <div class="content">
 
+<?php while ( have_posts() ) : the_post(); ?>
+
 <article>
     <header>
-   <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
+   <h2><a href="#"><?php the_title(); ?></a></h2>
     <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
     <span class="categories"><a href=#">Open Culture</a></span>
 
@@ -78,70 +80,18 @@
     </ul> -->
 </article>
 
-<article>
-    <header>
-    <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
 
-    <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-    <span class="categories"><a href=#">Open Culture</a></span>
-
-    </header>
-    <figure>
-        <img src="../imgs/image2.jpg" />
-        <span class="attribution"><span>"</span><a href="https://www.flickr.com/photos/47691521@N07/8249753855" target="_blank" rel="noopener noreferrer">Creative Commons a vessel ideas</a><span>" by&nbsp;</span><a href="https://www.flickr.com/photos/47691521@N07" target="_blank" rel="noopener noreferrer">opensourceway</a><span>&nbsp;is licensed under&nbsp;</span><a href="https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a></span>
-    </figure>
-    <p>The Creative Commons Open Education Team is pleased to provide a snapshot of progress made toward opening access and equity in education, through a look at our collective efforts in 2022.1 We laud the CC open education community for its important work throughout 2022. CC and community members’ open education efforts in 2022 included, but </p>
-    
-</article>
-
-<article>
-    <header>
-    <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-    <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-    <span class="categories"><a href=#">Open Culture</a></span>
-
-    </header>
-    <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-</article>
-
-<article>
-    <header>
-    <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-    <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-    <span class="categories"><a href=#">Open Culture</a></span>
-
-    </header>
-    <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-</article>
-
-<article>
-    <header>
-    <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-    <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-    <span class="categories"><a href=#">Open Culture</a></span>
-
-    </header>
-    <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-</article>
-
-
+<?php endwhile; // end of the loop. ?>
 </div>
 
-<nav class="pagination">
-    <ol>
-        <li class="current"><a href="#">527</a></li>
-        <li><a href="#">526</a></li>
-        <li><a href="#">525</a></li>
-        <li><a href="#">524</a></li>
-        <li><a href="#">523</a></li>
-        <li>&hellip;</li>
-        <li><a href="#">1</a></li>
 
-        <!-- <li><a href="#"><</a></li> -->
-        <li><a href="#">></a></li>
-    </ol>
+<?php the_posts_pagination( array(
+    'mid_size'  => 2,
+    'prev_text' => __( '<', 'textdomain' ),
+    'next_text' => __( '>', 'textdomain' ),
+    'type' => 'list'
+) ); ?>
 
-</nav>
 
 </main>
 
