@@ -7,7 +7,7 @@
 <header>
 
 <h1><?php the_title(); ?></h1>
-<span class="title">Chief of Staff and Secretary to the Board of Directors</span>
+<span class="title"><?php the_field('position_title'); ?></span>
 <figure>
     <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
     <span class="attribution">by Priscilla C. Scott for Creative Commons, licensed under <a href="#">CC BY 4.0</a></span>
@@ -39,10 +39,13 @@
 </aside> -->
 
 <?php
+//Protect against arbitrary paged values
+$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
 $query = new WP_Query(array(
     'post_type' => 'post',
-    'posts_per_page' => 4,
+    'posts_per_page' => 5,
+    'paged' => $paged,
     'meta_query' => array(
         array(
             'key' => 'authorship',
@@ -112,19 +115,20 @@ $query = new WP_Query(array(
 <?php endif; ?>
 
 <nav class="pagination">
-    <ol>
-        <li class="current"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>&hellip;</li>
-        <li><a href="#">527</a></li>
+<?php
+$big = 999999999; // need an unlikely integer
 
-        <!-- <li><a href="#"><</a></li> -->
-        <li><a href="#">></a></li>
-    </ol>
-
+echo paginate_links( array(
+	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	'format' => '?paged=%#%',
+    'mid_size'  => 2,
+    'prev_text' => __( '<', 'textdomain' ),
+    'next_text' => __( '>', 'textdomain' ),
+	'current' => max( 1, get_query_var('paged') ),
+    'type' => 'list',
+	'total' => $query->max_num_pages
+) );
+?>
 </nav>
 
 <?php endwhile; // end of the loop. ?>
