@@ -24,6 +24,13 @@ License URI: https://github.com/creativecommons/vocabulary-theme/blob/main/LICEN
     visibility: hidden;
 }
 
+/* Classic Editor TinyMCE WYSIWYG editor image alignment  */
+/* TODO: port in alignleft and alignright rules here as well? */
+main figure:has(img.aligncenter) {
+    width: 100%;
+    margin-left: 0;
+}
+
 /* WP Outputs pagination as ul, rather than more semantic ul */
 nav.pagination ul {
     display: flex;
