@@ -79,6 +79,9 @@
     <span class="categories">
         <?php the_category(', ') ?>
     </span>
+    <span class="type">
+        <?php echo get_post_type(); ?>
+    </span>
 
 </header>
 
