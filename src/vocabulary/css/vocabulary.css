@@ -1220,6 +1220,22 @@ body > article.attention a {
     border-bottom-right-radius: 4px;
 }
 
+.search-index .authored-posts article {
+    position: relative;
+}
+
+.search-index .authored-posts article .type {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .5em .7em;
+
+    background: var(--vocabulary-brand-color-soft-turquoise);
+    border-radius: 4px;
+    font-family: 'Source Sans Pro';
+
+}
+
 
 
 .authored-posts > h2 {
@@ -1285,6 +1301,12 @@ body > article.attention a {
 
 .authored-posts article .categories {
     order: -1;
+
+    font-family: 'Source Sans Pro'; 
+}
+
+.authored-posts .byline {
+    font-family: 'Source Sans Pro'; 
 }
 
 .authored-posts article figure {
@@ -1317,6 +1339,8 @@ body > article.attention a {
     display: inline-block;
     margin-top: 1em;
     /* background: #F5F5F5; */
+
+    font-family: 'Source Sans Pro'; 
 }
 
 .authored-posts article p:before {
@@ -1418,7 +1442,7 @@ main nav.pagination ol li.current a {
 
     font-style: normal;
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: 1em;
     /* line-height: 150%; */
 }
 
@@ -1427,7 +1451,7 @@ main nav.pagination ol li.current a {
 
     font-style: normal;
     font-weight: 600;
-    font-size: .8125em;
+    font-size: .7em;
     line-height: 150%;
 }
 
@@ -1464,7 +1488,7 @@ main nav.pagination ol li.current a {
 }
 
 .team-index main .persons .person p {
-    font-size: 1em;
+    font-size: .75em;
 }
 
 .person-page main > header {
@@ -1903,6 +1927,12 @@ main figure:has(img.alignright):after {
     clear: both;
 }
 
+main figure:has(img.aligncenter) {
+    width: 100%;
+
+    margin-left: 0;
+}
+
 main figure:has(iframe) {
     width: 120%;
     margin-left: -10%;
@@ -1927,6 +1957,7 @@ main article.tags {
 
 main article.tags ul {
     display: flex;
+    flex-wrap: wrap;
     margin: 0;
     left: 0;
 
