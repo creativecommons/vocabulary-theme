@@ -10,7 +10,7 @@
 <span class="title"><?php the_field('position_title'); ?></span>
 <figure>
     <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
-    <span class="attribution">by Priscilla C. Scott for Creative Commons, licensed under <a href="#">CC BY 4.0</a></span>
+    <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
 </figure>
 <div class="bio">
     <?php the_content(); ?>  
