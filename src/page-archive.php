@@ -11,53 +11,41 @@
     </ol>
 </nav> -->
 
-
 <h1>Archives (page-archive.php)</h1>
 
-<!-- <span class="byline">by <a href="#">Marie Langley</a>, <a href="#">Marvau Laraugne</a></span> -->
-
 <p>lead in paragraph</p>
-
-<!-- <span class="categories">
-    <a href="#">Open Culture</a>
-</span> -->
-
-
-<!-- <img src="#" /> -->
 
 </header>
 
 <aside>
 
-<?php
-$category_slug = get_queried_object();
-
+<?php 
+    $categories = get_terms( 'category', 'orderby=asc&hide_empty=0' );
 ?>
-
-<?php $categories = get_terms( 'category', 'orderby=count&hide_empty=0' ); ?>
 
     <nav class="filter-menu">
         <h2>Categories</h2>
         <ul>
-            <?php foreach($categories as $category): ?>
-               <?php echo $category->name; ?>
-               <?php echo $category_slug->term_id; ?>
-            
+            <li class="current"><a href="/blog/archive/">All posts</a></li>
+        <?php foreach($categories as $category): ?>
+                <?php
+                    $category_link = get_term_link( $category );
+                ?>
+
+            <li><a href="<?php echo $category_link; ?>"><?php echo $category->name; ?></a></li>
+
             <?php endforeach; ?>
-            <li class="current"><a href="#">All posts</a></li>
-            <li><a href="#">Open Culture</a></li>
-            <li><a href="#">Open Knowledge</a></li>
         </ul>
     </nav>
 
-    <nav class="">
+    <!-- <nav class="">
         <h2>Related Links</h2>
         <ul>
             <li><a href="#">Another place</a></li>
             <li class="current"><a href="#">Law License Blog</a></li>
             <li><a href="#">Within The Stacks</a></li>
         </ul>
-    </nav>
+    </nav> -->
 
     <article class="attention">
         <h2>Write a post!</h2>
@@ -69,7 +57,7 @@ $category_slug = get_queried_object();
 </aside>
 
 
-<div class="content">
+<div class="content authored-posts">
 
 <?php
 
@@ -88,15 +76,42 @@ $query = new WP_Query(array(
 <article>
     <header>
    <h2><a href="#"><?php the_title(); ?></a></h2>
-    <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-    <span class="categories"><a href=#">Open Culture</a></span>
+   <span class="byline">by 
+        <?php
+        $authors = get_field('authorship');
+            if( $authors ):
+            $i = 1;
+            $count = count($authors);  
+
+            foreach( $authors as $author ): 
+                $permalink = get_permalink( $author->ID );
+                $title = get_the_title( $author->ID );
+                $custom_field = get_field( 'field_name', $author->ID );           
+                if ($i < $count) { 
+                    $separator = ','; 
+                } 
+                else { 
+                    $separator = ''; 
+                }
+        ?>
+
+        <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                <?php $i++; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+    </span>
+    <span class="categories">
+        <?php the_category(', ') ?>
+    </span>
 
 </header>
 
     <figure>
-        <img src="../imgs/image.jpg" />
-        
-        <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
+        <?php //echo get_the_post_thumbnail( $post_id, 'full' ); 
+        ?>
+        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
+        <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
     </figure>
     <p>As part of our #20CC anniversary, last year we joined forces with Fine Acts to spark a global dialogue on what better sharing looks like in action. Our #BetterSharing collection of illustrations was the result — we gathered insights from 12 prominent open advocates around the world and tasked 12 renowned artists who embrace openness</p>
     <!-- <ul>

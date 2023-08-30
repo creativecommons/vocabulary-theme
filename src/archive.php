@@ -13,57 +13,46 @@
 
 <h1><?php the_archive_title(); ?></h1>
 
-<!-- <span class="byline">by <a href="#">Marie Langley</a>, <a href="#">Marvau Laraugne</a></span> -->
-
 <p><?php the_archive_description(); ?></p>
 
-<!-- <span class="categories">
-    <a href="#">Open Culture</a>
-</span> -->
-
-
-<!-- <img src="#" /> -->
 
 </header>
 
 <aside>
 
-<?php
-$current_category = get_queried_object();
 
+<?php 
+    $categories = get_terms( 'category', 'orderby=asc&hide_empty=0' );
+    $current_category = get_queried_object();
 ?>
-
-<?php $categories = get_terms( 'category', 'orderby=count&hide_empty=0' ); ?>
-
 
     <nav class="filter-menu">
         <h2>Categories</h2>
         <ul>
+            <li><a href="/blog/archive/">All posts</a></li>
         <?php foreach($categories as $category): ?>
                 <?php
+                    $category_link = get_term_link( $category );
+
                     if($category->term_taxonomy_id == $current_category->term_id )  {
                         $current = "current";
                     }  else {$current = '';}
                 ?>
 
-               <li class="<?php echo $current; ?>"><?php echo $category->name; ?></li>
+            <li class="<?php echo $current; ?>"><a href="<?php echo $category_link; ?>"><?php echo $category->name; ?></a></li>
 
             <?php endforeach; ?>
-
-            <li><a href="#">All posts</a></li>
-            <li class="current"><a href="#">Open Culture</a></li>
-            <li><a href="#">Open Knowledge</a></li>
         </ul>
     </nav>
 
-    <nav class="">
+    <!-- <nav class="">
         <h2>Related Links</h2>
         <ul>
             <li><a href="#">Another place</a></li>
             <li class="current"><a href="#">Law License Blog</a></li>
             <li><a href="#">Within The Stacks</a></li>
         </ul>
-    </nav>
+    </nav> -->
 
     <article class="attention">
         <h2>Write a post!</h2>
@@ -75,20 +64,50 @@ $current_category = get_queried_object();
 </aside>
 
 
-<div class="content">
+<div class="content authored-posts">
+
+<?php while ( have_posts() ) : the_post(); ?>
+
 
 <article>
     <header>
-   <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-    <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-    <span class="categories"><a href=#">Open Culture</a></span>
+    <h2><a href="#"><?php the_title(); ?></a></h2>
+    <span class="byline">by 
+    <?php
+        $authors = get_field('authorship');
+            if( $authors ):
+            $i = 1;
+            $count = count($authors);  
+
+            foreach( $authors as $author ): 
+                $permalink = get_permalink( $author->ID );
+                $title = get_the_title( $author->ID );
+                $custom_field = get_field( 'field_name', $author->ID );           
+                if ($i < $count) { 
+                    $separator = ','; 
+                } 
+                else { 
+                    $separator = ''; 
+                }
+        ?>
+
+        <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                <?php $i++; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+    </span>
+    <span class="categories">
+        <?php the_category(', ') ?>
+    </span>
 
 </header>
 
     <figure>
-        <img src="../imgs/image.jpg" />
-        
-        <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
+        <?php //echo get_the_post_thumbnail( $post_id, 'full' ); 
+        ?>
+        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
+        <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
     </figure>
     <p>As part of our #20CC anniversary, last year we joined forces with Fine Acts to spark a global dialogue on what better sharing looks like in action. Our #BetterSharing collection of illustrations was the result — we gathered insights from 12 prominent open advocates around the world and tasked 12 renowned artists who embrace openness</p>
     <!-- <ul>
@@ -96,69 +115,25 @@ $current_category = get_queried_object();
     </ul> -->
 </article>
 
-<article>
-    <header>
-    <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-
-    <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-    <span class="categories"><a href=#">Open Culture</a></span>
-
-    </header>
-    <figure>
-        <img src="../imgs/image2.jpg" />
-        <span class="attribution"><span>"</span><a href="https://www.flickr.com/photos/47691521@N07/8249753855" target="_blank" rel="noopener noreferrer">Creative Commons a vessel ideas</a><span>" by&nbsp;</span><a href="https://www.flickr.com/photos/47691521@N07" target="_blank" rel="noopener noreferrer">opensourceway</a><span>&nbsp;is licensed under&nbsp;</span><a href="https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a></span>
-    </figure>
-    <p>The Creative Commons Open Education Team is pleased to provide a snapshot of progress made toward opening access and equity in education, through a look at our collective efforts in 2022.1 We laud the CC open education community for its important work throughout 2022. CC and community members’ open education efforts in 2022 included, but </p>
-    
-</article>
-
-<article>
-    <header>
-    <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-    <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-    <span class="categories"><a href=#">Open Culture</a></span>
-
-    </header>
-    <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-</article>
-
-<article>
-    <header>
-    <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-    <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-    <span class="categories"><a href=#">Open Culture</a></span>
-
-    </header>
-    <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-</article>
-
-<article>
-    <header>
-    <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-    <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span>
-    <span class="categories"><a href=#">Open Culture</a></span>
-
-    </header>
-    <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-</article>
-
+<?php endwhile; // end of the loop. ?>
 
 </div>
 
 <nav class="pagination">
-    <ol>
-        <li class="current"><a href="#">527</a></li>
-        <li><a href="#">526</a></li>
-        <li><a href="#">525</a></li>
-        <li><a href="#">524</a></li>
-        <li><a href="#">523</a></li>
-        <li>&hellip;</li>
-        <li><a href="#">1</a></li>
+<?php
+$big = 999999999; // need an unlikely integer
 
-        <!-- <li><a href="#"><</a></li> -->
-        <li><a href="#">></a></li>
-    </ol>
-
+echo paginate_links( array(
+	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	'format' => '?paged=%#%',
+    'mid_size'  => 2,
+    'prev_text' => __( '<', 'textdomain' ),
+    'next_text' => __( '>', 'textdomain' ),
+	'current' => max( 1, get_query_var('paged') ),
+    'type' => 'list',
+	'total' => $wp_query->max_num_pages
+) );
+?>
 </nav>
 
 </main>
