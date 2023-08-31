@@ -10,7 +10,6 @@
 
 <!-- <span class="byline">by <a href="#">Marie Langley</a>, <a href="#">Marvau Laraugne</a></span> -->
 
-
 <?php if (!class_exists('ACF')): ?> 
     
 <!-- display raw post_meta, if ACF not installed & activated -->
@@ -22,15 +21,6 @@
 <p><?php the_field('lead_in_copy'); ?></p>
 
 <?php endif; ?>
-
-
-
-<!-- <span class="categories">
-    <a href="#">Open Culture</a>
-</span> -->
-
-
-<!-- <img src="#" /> -->
 
 </header>
 
@@ -56,12 +46,6 @@
 
 
 <div class="content">
-
-<!-- <div class="series">
-    <span>part of the</span>
-    <a href="#">Copyright and Artists</a> series, a unique take on how copyright isn't aligned with the interests of individual artists, but instead mega-corps.
-    
-    </div> -->
 
     <?php the_content(); ?>
 

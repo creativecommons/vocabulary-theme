@@ -64,48 +64,47 @@ $query = new WP_Query(array(
     <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
 
     <article>
-    <header>
-       <h2><a href="#"><?php echo the_title(); ?></a></h2>
-       <span class="byline">by 
-            <?php
-            $authors = get_field('authorship');
-                if( $authors ):
-                $i = 1;
-                $count = count($authors);  
+        <header>
+        <h2><a href="#"><?php echo the_title(); ?></a></h2>
+        <span class="byline">by 
+                <?php
+                $authors = get_field('authorship');
+                    if( $authors ):
+                    $i = 1;
+                    $count = count($authors);  
 
-                foreach( $authors as $author ): 
-                    $permalink = get_permalink( $author->ID );
-                    $title = get_the_title( $author->ID );
-                    $custom_field = get_field( 'field_name', $author->ID );           
-                    if ($i < $count) { 
-                        $separator = ','; 
-                    } 
-                    else { 
-                        $separator = ''; 
-                    }
-            ?>
+                    foreach( $authors as $author ): 
+                        $permalink = get_permalink( $author->ID );
+                        $title = get_the_title( $author->ID );
+                        $custom_field = get_field( 'field_name', $author->ID );           
+                        if ($i < $count) { 
+                            $separator = ','; 
+                        } 
+                        else { 
+                            $separator = ''; 
+                        }
+                ?>
 
-            <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+                <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
 
-                    <?php $i++; ?>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-        </span>
-        <span class="categories">
-            <?php the_category(', ') ?>
-        </span>
-    
-    </header>
+                        <?php $i++; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+            </span>
+            <span class="categories">
+                <?php the_category(', ') ?>
+            </span>
+        
+        </header>
     
         <figure>
             <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
             
             <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
         </figure>
-        <p>As part of our #20CC anniversary, last year we joined forces with Fine Acts to spark a global dialogue on what better sharing looks like in action. Our #BetterSharing collection of illustrations was the result — we gathered insights from 12 prominent open advocates around the world and tasked 12 renowned artists who embrace openness</p>
-        <!-- <ul>
-            <li><a href="#">category</a></li>
-        </ul> -->
+
+        <?php the_excerpt(); ?>
+    
     </article>
 
     <?php endwhile; ?>

@@ -169,16 +169,22 @@ $query = new WP_Query(array(
         <span class="categories">
             <?php the_category(', ') ?>
         </span>
-    
         </header>
-        <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
+
+        <figure>
+            <?php //echo get_the_post_thumbnail( $post_id, 'full' ); 
+            ?>
+            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
+            <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
+        </figure>
+        <?php the_excerpt(); ?>
     </article>
 
 	<?php endwhile; ?> 
 
 <?php endif; ?>
 
-    <a class="more" href="#">more posts</a>
+    <a class="more" href="/blog/archive">more posts</a>
     
 </article>
     

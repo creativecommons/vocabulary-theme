@@ -47,43 +47,43 @@
 
 <article>
     <header>
-    <h2><a href="#"><?php the_title(); ?></a></h2>
+        <h2><a href="#"><?php the_title(); ?></a></h2>
 
-    <?php if ( get_field('authorship' ) ) : ?>
-    <span class="byline">by 
-    <?php
-        $authors = get_field('authorship');
-            if( $authors ):
-            $i = 1;
-            $count = count($authors);  
+        <?php if ( get_field('authorship' ) ) : ?>
+        <span class="byline">by 
+        <?php
+            $authors = get_field('authorship');
+                if( $authors ):
+                $i = 1;
+                $count = count($authors);  
 
-            foreach( $authors as $author ): 
-                $permalink = get_permalink( $author->ID );
-                $title = get_the_title( $author->ID );
-                $custom_field = get_field( 'field_name', $author->ID );           
-                if ($i < $count) { 
-                    $separator = ','; 
-                } 
-                else { 
-                    $separator = ''; 
-                }
-        ?>
+                foreach( $authors as $author ): 
+                    $permalink = get_permalink( $author->ID );
+                    $title = get_the_title( $author->ID );
+                    $custom_field = get_field( 'field_name', $author->ID );           
+                    if ($i < $count) { 
+                        $separator = ','; 
+                    } 
+                    else { 
+                        $separator = ''; 
+                    }
+            ?>
 
-        <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+            <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
 
-                <?php $i++; ?>
-                <?php endforeach; ?>
-            <?php endif; ?>
-    </span>
-    <?php endif; ?>
-    <span class="categories">
-        <?php the_category(', ') ?>
-    </span>
-    <span class="type">
-        <?php echo get_post_type(); ?>
-    </span>
+                    <?php $i++; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+        </span>
+        <?php endif; ?>
+        <span class="categories">
+            <?php the_category(', ') ?>
+        </span>
+        <span class="type">
+            <?php echo get_post_type(); ?>
+        </span>
 
-</header>
+    </header>
 
     <?php if ( has_post_thumbnail() ) : ?>
     <figure>

@@ -27,15 +27,18 @@
             $permalink = get_permalink( $staff_person->ID );
             $title = get_the_title( $staff_person->ID );
             $position_title = get_field( 'position_title', $staff_person->ID );
+            $excerpt = get_the_excerpt( $staff_person->ID );
          ?>
         <li>
             <article class="person">
                 <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                 <span class="title"><?php echo $position_title; ?></span>
+
                 <figure>
                     <img src="<?php echo get_the_post_thumbnail_url( $staff_person->ID, 'full' ); ?>" />
                 </figure>
-                <p>Mari came to CC in 2015 after three years at the Mozilla Foundation. Prior to that, she held similar administrative roles&hellip;</p>
+
+                <?php echo wp_trim_words($excerpt, 15); ?>
             </article>
         </li>
         <? endforeach; ?>
@@ -53,6 +56,7 @@
             $permalink = get_permalink( $board_person->ID );
             $title = get_the_title( $board_person->ID );
             $position_title = get_field( 'position_title', $board_person->ID );
+            $excerpt = get_the_excerpt( $board_person->ID );
          ?>
         <li>
             <article class="person">
@@ -61,7 +65,8 @@
                 <figure>
                     <img src="<?php echo get_the_post_thumbnail_url( $board_person->ID, 'full' ); ?>" />
                 </figure>
-                <p>Mari came to CC in 2015 after three years at the Mozilla Foundation. Prior to that, she held similar administrative roles&hellip;</p>
+
+                <?php echo wp_trim_words($excerpt, 15); ?>
             </article>
         </li>
         <? endforeach; ?>
@@ -79,6 +84,7 @@
             $permalink = get_permalink( $emeritus_person->ID );
             $title = get_the_title( $emeritus_person->ID );
             $position_title = get_field( 'position_title', $emeritus_person->ID );
+            $excerpt = get_the_excerpt( $emeritus_person->ID );
          ?>
         <li>
             <article class="person">
@@ -87,7 +93,8 @@
                 <figure>
                     <img src="<?php echo get_the_post_thumbnail_url( $emeritus_person->ID, 'full' ); ?>" />
                 </figure>
-                <p>Mari came to CC in 2015 after three years at the Mozilla Foundation. Prior to that, she held similar administrative roles&hellip;</p>
+                
+                <?php echo wp_trim_words($excerpt, 15); ?>
             </article>
         </li>
         <? endforeach; ?>
