@@ -36,9 +36,23 @@
 // Open Source Community
 
 ?>
+<?php
+// body class will need to be dynamic .program-index, .program-page
+$args = array(
+    'post_parent' => get_the_ID(), 
+);
+
+$children = get_children( $args );
+
+if ( ! empty($children) ) {
+    $class = 'program-index';
+} else {
+    $class = 'program-page';
+}
+?>
 
 <!-- this class will need to be dynamic program-index, program-page -->
-<?php get_header('', array( 'body-classes' => 'default-page') ); ?>
+<?php get_header('', array( 'body-classes' => $class) ); ?>
 
 <main>
 
@@ -88,6 +102,36 @@
 <div class="content">
 
     <?php the_content(); ?>
+
+<?php
+    $args = array(
+  'post_type'   => 'program',
+  'post_parent' => 0,
+);
+
+$article_posts = new WP_Query($args);
+
+echo "</ul>";
+if($article_posts->have_posts()) : 
+  while($article_posts->have_posts()) : 
+    $article_posts->the_post(); 
+    $post_id = get_the_ID();
+    $post_link = get_permalink($post_id);
+    $post_title = get_the_title();
+    $featured_img_url = get_the_post_thumbnail_url(get_the_ID());
+  ?>
+  <p><?php echo $post_title; ?></p>
+  <?php 
+  endwhile; 
+  ?>
+<?php 
+else:  
+?>
+Oops, there are no posts.
+<?php  
+endif;
+?>    
+<?php echo "</ul>"; ?>
 
 </div>
 
