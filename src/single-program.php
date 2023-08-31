@@ -1,4 +1,56 @@
-<?php get_header('', array( 'body-classes' => 'blog-post') ); ?>
+<?php
+
+// if parent
+// display the program-index context
+// likely to be only 4:
+// 
+// Open Policy, 
+// Open Culture, 
+// Open Knowledge,
+// Community
+
+
+// if child
+// display the program-page context
+// likely to be many, and may include:
+// 
+// [Open Policy]
+// Copyright
+// Better Internet
+//
+// [Open Culture]
+// Open Heritage
+// Open Creativity
+//
+// [Open Knowledge]
+// Open Education
+// Open Climate
+// Open Science
+// Open Research (OA)
+// Open Journalism
+// 
+// [Community]
+// Global Network
+// Learning & Training
+// Licenses & Tools Stewardship
+// Open Source Community
+
+?>
+<?php
+// body class will need to be dynamic .program-index, .program-page
+
+
+if ( get_field('nested_programs') ) {
+    $status = 'parent';
+    $class = 'program-index';
+} else {
+    $status = 'child';
+    $class = 'program-page';
+}
+?>
+
+<!-- this class will need to be dynamic program-index, program-page -->
+<?php get_header('', array( 'body-classes' => $class) ); ?>
 
 <main>
 
@@ -8,87 +60,45 @@
 
 <h1><?php the_title(); ?></h1>
 
-<span class="byline">by 
-    <?php
-    $authors = get_field('authorship');
-        if( $authors ):
-        $i = 1;
-        $count = count($authors);  
+<?php if ($status == 'parent') : ?>
 
-        foreach( $authors as $author ): 
-            $permalink = get_permalink( $author->ID );
-            $title = get_the_title( $author->ID );
-            $custom_field = get_field( 'field_name', $author->ID );           
-            if ($i < $count) { 
-                $separator = ','; 
-            } 
-            else { 
-                $separator = ''; 
-            }
-    ?>
+<?php if(get_field('sub_heading')) : ?>
+<h2><?php the_field('sub_heading'); ?></h2>
+<?php endif; ?>
 
-    <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+<?php endif;  ?>
 
-            <?php $i++; ?>
-            <?php endforeach; ?>
-        <?php endif; ?>
-</span>
-
-<!-- <p>lead in paragraph</p> -->
-
-<?php
-
-
-?>	
-
-<span class="categories">
-    <?php the_category(', ') ?>
-</span>
-
-
-<!-- <img src="#" /> -->
+<p><?php the_field('introduction'); ?></p>
 
 </header>
 
-<?php if (!class_exists('ACF')): ?> 
-
-<!-- display raw post_meta, if ACF not installed & activated -->
-<?php if (get_post_meta( get_the_ID(), 'lead_in_copy', true )): ?> 
-<div class="series">
-    <?php echo get_post_meta( get_the_ID(), 'lead_in_copy', true ); ?>
-</div>
-<?php endif; ?>
-<?php else : ?>
-
-<!-- display ACF field, if ACF installed & activated -->
-<?php if (get_field('lead_in_copy')): ?> 
-<div class="series">
-    <?php the_field('lead_in_copy'); ?>
-</div>
-<?php endif; ?>
-<?php endif; ?>
-
 <?php the_content(); ?>
 
-<span class="pub-date"><?php the_date('d F Y'); ?></span>
-
-<?php
-    $posttags = get_the_tags();
-    if ($posttags) :
+<?php 
+    if ($status == 'parent') :
+    $children = get_field('nested_programs');  
 ?>
-<article class="tags">
-    <h2>Tags</h2>
-
+<article class="projects">
+    <h2>On-going Initiatives</h2>
+    <p><?php the_field('nested_programs_lead_in_copy'); ?></p>
     <ul>
-       <?php foreach($posttags as $tag) : ?>
-        <li><a href="#"><?php echo $tag->name; ?></a></li>
-                 
+        <?php 
+            foreach ($children as $child) : 
+
+            $permalink = get_permalink( $child->ID );
+            $title = get_the_title( $child->ID );
+            $excerpt = get_the_excerpt( $child->ID );
+        ?>
+        <li>    
+            <article class="project">
+                <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+                <p><?php echo wp_trim_words($excerpt, 8); ?></p>
+            </article>
+        </li>
         <?php endforeach; ?>
     </ul>
 </article>
-
 <?php endif; ?>
-
 
 <?php
 
@@ -166,6 +176,10 @@ $query = new WP_Query(array(
 <?php endif; ?>
 
 <?php endwhile; // end of the loop. ?>
+
+
+
 </main>
 
 <?php get_footer(); ?>
+

@@ -1,36 +1,19 @@
-<?php get_header('', array( 'body-classes' => 'default-page') ); ?>
+<?php get_header('', array( 'body-classes' => 'default-page search-index') ); ?>
 
 <main>
 
-<?php while ( have_posts() ) : the_post(); ?>
-
 <header>
 
-<h1><?php the_title(); ?></h1>
+<h1>Search</h1>
 
-<!-- <span class="byline">by <a href="#">Marie Langley</a>, <a href="#">Marvau Laraugne</a></span> -->
+<article class="search-form">
+    <form role="search" method="get" class="search-form" action="https://creativecommons.org/"> 
 
-
-<?php if (!class_exists('ACF')): ?> 
+        <input type="search" class="search-field" placeholder="Search for..." value="" name="s" title="Search"> 
     
-<!-- display raw post_meta, if ACF not installed & activated -->
-<p><?php echo get_post_meta( get_the_ID(), 'lead_in_copy', true ); ?></p>
-
-<?php else : ?>
-
-<!-- display ACF field, if ACF installed & activated -->
-<p><?php the_field('lead_in_copy'); ?></p>
-
-<?php endif; ?>
-
-
-
-<!-- <span class="categories">
-    <a href="#">Open Culture</a>
-</span> -->
-
-
-<!-- <img src="#" /> -->
+        <button type="submit" value="Search">Search</button>
+    </form>
+</article>
 
 </header>
 
@@ -57,17 +40,88 @@
 
 <div class="content authored-posts">
 
-<!-- <div class="series">
-    <span>part of the</span>
-    <a href="#">Copyright and Artists</a> series, a unique take on how copyright isn't aligned with the interests of individual artists, but instead mega-corps.
-    
-    </div> -->
+<?php if ( have_posts() ) : ?>
 
-    <?php the_content(); ?>
+<?php while ( have_posts() ) : the_post(); ?>
 
+
+<article>
+    <header>
+        <h2><a href="#"><?php the_title(); ?></a></h2>
+
+        <?php if ( get_field('authorship' ) ) : ?>
+        <span class="byline">by 
+        <?php
+            $authors = get_field('authorship');
+                if( $authors ):
+                $i = 1;
+                $count = count($authors);  
+
+                foreach( $authors as $author ): 
+                    $permalink = get_permalink( $author->ID );
+                    $title = get_the_title( $author->ID );
+                    $custom_field = get_field( 'field_name', $author->ID );           
+                    if ($i < $count) { 
+                        $separator = ','; 
+                    } 
+                    else { 
+                        $separator = ''; 
+                    }
+            ?>
+
+            <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                    <?php $i++; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+        </span>
+        <?php endif; ?>
+
+        <?php if(get_post_type() != 'program') : ?>
+        <span class="categories">
+            <?php the_category(', ') ?>
+        </span>
+        <?php endif; ?>
+
+        <span class="type">
+            <?php echo get_post_type(); ?>
+        </span>
+
+    </header>
+
+    <?php if ( has_post_thumbnail() ) : ?>
+    <figure>
+        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
+        <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
+    </figure>
+    <?php endif; ?>
+
+    <?php the_excerpt(); ?>
+</article>
+
+    <?php endwhile; // end of the loop. ?>
+
+<nav class="pagination">
+<?php
+$big = 999999999; // need an unlikely integer
+
+echo paginate_links( array(
+	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	'format' => '?paged=%#%',
+    'mid_size'  => 2,
+    'prev_text' => __( '<', 'textdomain' ),
+    'next_text' => __( '>', 'textdomain' ),
+	'current' => max( 1, get_query_var('paged') ),
+    'type' => 'list',
+	'total' => $wp_query->max_num_pages
+) );
+?>
+</nav>
+
+    <?php endif; ?>
 </div>
 
-<?php endwhile; // end of the loop. ?>
+
 
 </main>
 

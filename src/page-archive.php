@@ -11,35 +11,28 @@
     </ol>
 </nav> -->
 
-<h1><?php the_archive_title(); ?></h1>
+<h1>Archives (page-archive.php)</h1>
 
-<p><?php the_archive_description(); ?></p>
-
+<p>lead in paragraph</p>
 
 </header>
 
 <aside>
 
-
 <?php 
     $categories = get_terms( 'category', 'orderby=asc&hide_empty=0' );
-    $current_category = get_queried_object();
 ?>
 
     <nav class="filter-menu">
         <h2>Categories</h2>
         <ul>
-            <li><a href="/blog/archive/">All posts</a></li>
+            <li class="current"><a href="/blog/archive/">All posts</a></li>
         <?php foreach($categories as $category): ?>
                 <?php
                     $category_link = get_term_link( $category );
-
-                    if($category->term_taxonomy_id == $current_category->term_id )  {
-                        $current = "current";
-                    }  else {$current = '';}
                 ?>
 
-            <li class="<?php echo $current; ?>"><a href="<?php echo $category_link; ?>"><?php echo $category->name; ?></a></li>
+            <li><a href="<?php echo $category_link; ?>"><?php echo $category->name; ?></a></li>
 
             <?php endforeach; ?>
         </ul>
@@ -66,14 +59,25 @@
 
 <div class="content authored-posts">
 
-<?php while ( have_posts() ) : the_post(); ?>
+<?php
 
+//Protect against arbitrary paged values
+$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+
+$query = new WP_Query(array(
+    'post_type' => 'post',
+    'posts_per_page' => 2,
+    'paged' => $paged,
+));
+?>
+
+<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
 <article>
     <header>
-        <h2><a href="#"><?php the_title(); ?></a></h2>
-        <span class="byline">by 
-        <?php
+    <h2><a href="#"><?php the_title(); ?></a></h2>
+    <span class="byline">by 
+            <?php
             $authors = get_field('authorship');
                 if( $authors ):
                 $i = 1;
@@ -104,19 +108,17 @@
     </header>
 
     <figure>
-        <?php //echo get_the_post_thumbnail( $post_id, 'full' ); 
-        ?>
         <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
         <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
     </figure>
 
     <?php the_excerpt(); ?>
-   
 </article>
 
-<?php endwhile; // end of the loop. ?>
 
+<?php endwhile; // end of the loop. ?>
 </div>
+
 
 <nav class="pagination">
 <?php
@@ -130,11 +132,14 @@ echo paginate_links( array(
     'next_text' => __( '>', 'textdomain' ),
 	'current' => max( 1, get_query_var('paged') ),
     'type' => 'list',
-	'total' => $wp_query->max_num_pages
+	'total' => $query->max_num_pages
 ) );
 ?>
 </nav>
 
+<?php endif; ?>
+
 </main>
 
 <?php get_footer(); ?>
+
