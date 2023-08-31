@@ -61,12 +61,18 @@ if ( get_field('nested_programs') ) {
 <h1><?php the_title(); ?></h1>
 
 <?php if ($status == 'parent') : ?>
-<h2>Supporting the Open Movement</h2>
+
+<?php if(get_field('sub_heading')) : ?>
+<h2><?php the_field('sub_heading'); ?></h2>
+<?php endif; ?>
+
 <?php endif;  ?>
 
 <p><?php the_field('introduction'); ?></p>
 
 </header>
+
+<?php the_content(); ?>
 
 <?php 
     if ($status == 'parent') :
@@ -86,18 +92,13 @@ if ( get_field('nested_programs') ) {
         <li>    
             <article class="project">
                 <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
-                <p><?php echo $excerpt ?></p>
+                <p><?php echo wp_trim_words($excerpt, 8); ?></p>
             </article>
         </li>
         <?php endforeach; ?>
     </ul>
 </article>
 <?php endif; ?>
-
-<?php the_content(); ?>
-
-
-
 
 <?php
 
