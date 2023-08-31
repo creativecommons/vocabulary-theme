@@ -6,9 +6,9 @@ The relevant ACF configuration data is included via the `acf.php` file, and load
 
 To modify these fields later, do not edit the acf.php file directly. The best method is through the ACF GUI editor in the WP installation.
 
-1. comment this line in `functions.php`
+1. disable the following line in `functions.php` (comment it out):
 ```
-// code here
+    // code here
 ```
 2. verify the WP docker environment for this repository is running, see main `README.md` for details
 3. navigate to the [ACF]->[Tools] menu
@@ -17,9 +17,9 @@ To modify these fields later, do not edit the acf.php file directly. The best me
 6. once configuration is set, go back to the [ACF]->[Tools] menu
 7. peform a PHP export, and copy the code into the `acf.php` file
 8. peform an XMl .json export, and copy the file into the `/src/inc/` directory
-9. uncomment the line, previously commented in `functions.php`
+9. enable the following line, previously commented out in `functions.php`
 ```
-// code here
+    // code here
 ```
 10. Commit changes
 
