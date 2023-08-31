@@ -45,8 +45,10 @@ $args = array(
 $children = get_children( $args );
 
 if ( ! empty($children) ) {
+    $status = 'parent';
     $class = 'program-index';
 } else {
+    $status = 'child';
     $class = 'program-page';
 }
 ?>
@@ -62,19 +64,12 @@ if ( ! empty($children) ) {
 
 <h1><?php the_title(); ?></h1>
 
-<!-- <span class="byline">by <a href="#">Marie Langley</a>, <a href="#">Marvau Laraugne</a></span> -->
+<?php if ($status == 'parent') : ?>
+<h2>Supporting the Open Movement</h2>
+<?php endif;  ?>
 
-<?php if (!class_exists('ACF')): ?> 
-    
-<!-- display raw post_meta, if ACF not installed & activated -->
-<p><?php echo get_post_meta( get_the_ID(), 'lead_in_copy', true ); ?></p>
 
-<?php else : ?>
-
-<!-- display ACF field, if ACF installed & activated -->
-<p><?php the_field('lead_in_copy'); ?></p>
-
-<?php endif; ?>
+<p>Developing and stewarding the CC licenses and open tools are not enough. To have a meaningful impact, we need a community of people who use and actively support our licenses and tools to create, steward, and support that community.</p>
 
 </header>
 
@@ -135,7 +130,30 @@ endif;
 
 </div>
 
+<?php if ($status == 'parent') : ?>
+<article class="projects">
+    <h2>On-going Initiatives</h2>
+    <p>placeholder content here...</p>
+    <ul>
+        <li>
+            <article class="project">
+                <h3><a href="#">Copyright</a></h3>
+                <p>Some kinda of lead-in description here.</p>
+            </article>
+        </li>
+        <li>
+            <article class="project"e>
+                <h3><a href="#">Better Internet</a></h3>
+                <p>Find out more about this thing, read more today.</p>
+            </article>
+        </li>
+    </ul>
+</article>
+<?php endif; ?>
+
 <?php endwhile; // end of the loop. ?>
+
+
 
 </main>
 
