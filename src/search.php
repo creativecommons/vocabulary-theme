@@ -76,9 +76,13 @@
                 <?php endif; ?>
         </span>
         <?php endif; ?>
+
+        <?php if(get_post_type() != 'program') : ?>
         <span class="categories">
             <?php the_category(', ') ?>
         </span>
+        <?php endif; ?>
+
         <span class="type">
             <?php echo get_post_type(); ?>
         </span>
