@@ -419,6 +419,144 @@ add_action( 'acf/include_fields', function() {
 ) );
 
 	acf_add_local_field_group( array(
+	'key' => 'group_64f0d7c077e12',
+	'title' => 'Program Header',
+	'fields' => array(
+		array(
+			'key' => 'field_64f0dfa085801',
+			'label' => 'Sub Heading',
+			'name' => 'sub_heading',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
+			'key' => 'field_64f0d7c051722',
+			'label' => 'Introduction',
+			'name' => 'introduction',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'program',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'acf_after_title',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+	'show_in_rest' => 0,
+) );
+
+	acf_add_local_field_group( array(
+	'key' => 'group_64f0d1ddda5fa',
+	'title' => 'Program Meta',
+	'fields' => array(
+		array(
+			'key' => 'field_64f0d9e179827',
+			'label' => 'Nested Programs Lead In Copy',
+			'name' => 'nested_programs_lead_in_copy',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
+			'key' => 'field_64f0d1dd50269',
+			'label' => 'Nested Programs',
+			'name' => 'nested_programs',
+			'aria-label' => '',
+			'type' => 'relationship',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'post_type' => array(
+				0 => 'program',
+			),
+			'post_status' => '',
+			'taxonomy' => '',
+			'filters' => array(
+				0 => 'search',
+				1 => 'taxonomy',
+			),
+			'return_format' => 'object',
+			'min' => '',
+			'max' => '',
+			'elements' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'program',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+	'show_in_rest' => 0,
+) );
+
+	acf_add_local_field_group( array(
 	'key' => 'group_64e6144d95eb4',
 	'title' => 'Team Index Settings',
 	'fields' => array(
@@ -679,13 +817,11 @@ add_action( 'init', function() {
 		'item_link_description' => 'A link to a program.',
 	),
 	'public' => true,
-	'hierarchical' => true,
 	'show_in_rest' => true,
 	'supports' => array(
 		0 => 'title',
 		1 => 'editor',
-		2 => 'page-attributes',
-		3 => 'thumbnail',
+		2 => 'thumbnail',
 	),
 	'taxonomies' => array(
 		0 => 'category',
