@@ -2,27 +2,27 @@
 
 // SECURITY
 // remove output of wordpress version in source
-remove_action('wp_head', 'wp_generator');
+//remove_action('wp_head', 'wp_generator');
 
 // remove Customize menu
-add_action('admin_menu', function () {
-  global $submenu;
+// add_action('admin_menu', function () {
+//   global $submenu;
 
-  foreach ($submenu as $name => $items) {
-      if ($name === 'themes.php') {
-          foreach ($items as $i => $data) {
-              if (in_array('customize', $data, true)) {
-                  unset($submenu[$name][$i]);
+//   foreach ($submenu as $name => $items) {
+//       if ($name === 'themes.php') {
+//           foreach ($items as $i => $data) {
+//               if (in_array('customize', $data, true)) {
+//                   unset($submenu[$name][$i]);
 
-                  return;
-              }
-          }
-      }
-  }
-});
+//                   return;
+//               }
+//           }
+//       }
+//   }
+// });
 
 // remove GUI file editor
-define('DISALLOW_FILE_EDIT', TRUE);
+//define('DISALLOW_FILE_EDIT', TRUE);
 
 // GENERAL WP
 // add menu locations
@@ -64,3 +64,16 @@ function vocab_excerpt_more( $more ) {
 	return '&hellip;';
 }
 add_filter( 'excerpt_more', 'vocab_excerpt_more' );
+
+
+
+// exclude current post/page from relationship field results
+
+add_filter('acf/fields/relationship/query/name=nested_programs', 'exclude_id', 10, 3);
+
+function exclude_id ( $args, $field, $post ) {
+
+    $args['post__not_in'] = array( $post );
+    
+    return $args;
+}

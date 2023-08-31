@@ -38,13 +38,9 @@
 ?>
 <?php
 // body class will need to be dynamic .program-index, .program-page
-$args = array(
-    'post_parent' => get_the_ID(), 
-);
 
-$children = get_children( $args );
 
-if ( ! empty($children) ) {
+if ( get_field('nested_programs') ) {
     $status = 'parent';
     $class = 'program-index';
 } else {
@@ -68,87 +64,114 @@ if ( ! empty($children) ) {
 <h2>Supporting the Open Movement</h2>
 <?php endif;  ?>
 
-
-<p>Developing and stewarding the CC licenses and open tools are not enough. To have a meaningful impact, we need a community of people who use and actively support our licenses and tools to create, steward, and support that community.</p>
+<p><?php the_field('introduction'); ?></p>
 
 </header>
 
-<!-- <aside>
-    <nav class="contextual-menu">
-        <h2>Registration</h2>
-        <ul>
-            <li><a href="#">How many hours of work does the Certificate course require?</a></li>
-            <li><a href="#">What do I get with the Certificate?</a></li>
-        </ul>
-    </nav>
-
-    <nav>
-        <h2>Course</h2>
-        <ul>
-            <li><a href="#">Does everyone participating in the course get a certificate?</a></li>
-            <li><a href="#">Can I represent Creative Commons once I am CC Certified?</a></li>
-            <li><a href="#">How Scholarships work?</a></li>
-
-        </ul>
-    </nav>
-</aside> -->
-
-
-<div class="content">
-
-    <?php the_content(); ?>
-
-<?php
-    $args = array(
-  'post_type'   => 'program',
-  'post_parent' => 0,
-);
-
-$article_posts = new WP_Query($args);
-
-echo "</ul>";
-if($article_posts->have_posts()) : 
-  while($article_posts->have_posts()) : 
-    $article_posts->the_post(); 
-    $post_id = get_the_ID();
-    $post_link = get_permalink($post_id);
-    $post_title = get_the_title();
-    $featured_img_url = get_the_post_thumbnail_url(get_the_ID());
-  ?>
-  <p><?php echo $post_title; ?></p>
-  <?php 
-  endwhile; 
-  ?>
 <?php 
-else:  
+    if ($status == 'parent') :
+    $children = get_field('nested_programs');  
 ?>
-Oops, there are no posts.
-<?php  
-endif;
-?>    
-<?php echo "</ul>"; ?>
-
-</div>
-
-<?php if ($status == 'parent') : ?>
 <article class="projects">
     <h2>On-going Initiatives</h2>
-    <p>placeholder content here...</p>
+    <p><?php the_field('nested_programs_lead_in_copy'); ?></p>
     <ul>
-        <li>
+        <?php 
+            foreach ($children as $child) : 
+
+            $permalink = get_permalink( $child->ID );
+            $title = get_the_title( $child->ID );
+            $excerpt = get_the_excerpt( $child->ID );
+        ?>
+        <li>    
             <article class="project">
-                <h3><a href="#">Copyright</a></h3>
-                <p>Some kinda of lead-in description here.</p>
+                <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+                <p><?php echo $excerpt ?></p>
             </article>
         </li>
-        <li>
-            <article class="project"e>
-                <h3><a href="#">Better Internet</a></h3>
-                <p>Find out more about this thing, read more today.</p>
-            </article>
-        </li>
+        <?php endforeach; ?>
     </ul>
 </article>
+<?php endif; ?>
+
+<?php the_content(); ?>
+
+
+
+
+<?php
+
+$queried_object = get_queried_object();
+$categories = get_the_category( $post->ID );
+$catIDs = '';
+foreach( $categories as $category) {
+    $catIDs .= $category->cat_ID . ",";
+}
+
+$query = new WP_Query(array(
+    'cat' => $catIDs,
+    'post__not_in' => array($queried_object->ID),
+    'post_type' => 'post',
+    'posts_per_page' => 4,
+    //'paged' => $paged,
+));
+?>
+
+<?php if ( $query->have_posts() ) : ?> 
+
+<article class="related-posts">
+    <h2>Related posts</h2>  
+
+    <article class="authored-posts highlight"> 
+    
+<?php  while ( $query->have_posts() ) : $query->the_post(); ?>
+        <article>
+            <header>
+            <h2><a href="#"><?php the_title(); ?></a></h2>
+            <span class="byline">by 
+                <?php
+                $authors = get_field('authorship');
+                    if( $authors ):
+                    $i = 1;
+                    $count = count($authors);  
+
+                    foreach( $authors as $author ): 
+                        $permalink = get_permalink( $author->ID );
+                        $title = get_the_title( $author->ID );
+                        $custom_field = get_field( 'field_name', $author->ID );           
+                        if ($i < $count) { 
+                            $separator = ','; 
+                        } 
+                        else { 
+                            $separator = ''; 
+                        }
+                ?>
+
+                <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                        <?php $i++; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+            </span>
+            <span class="categories">
+                <?php the_category(', ') ?>
+            </span>
+        
+        </header>
+        
+            <figure>
+                <img src="../imgs/image.jpg" />
+                
+                <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
+            </figure>
+
+        </article>
+
+<?php endwhile; ?> 
+
+    </article>
+</article>
+
 <?php endif; ?>
 
 <?php endwhile; // end of the loop. ?>

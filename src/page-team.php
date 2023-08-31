@@ -38,7 +38,7 @@
                     <img src="<?php echo get_the_post_thumbnail_url( $staff_person->ID, 'full' ); ?>" />
                 </figure>
 
-                <?php echo wp_trim_words($excerpt, 15); ?>
+                <p><?php echo wp_trim_words($excerpt, 15); ?></p>
             </article>
         </li>
         <? endforeach; ?>
@@ -66,7 +66,7 @@
                     <img src="<?php echo get_the_post_thumbnail_url( $board_person->ID, 'full' ); ?>" />
                 </figure>
 
-                <?php echo wp_trim_words($excerpt, 15); ?>
+                <p><?php echo wp_trim_words($excerpt, 15); ?></p>
             </article>
         </li>
         <? endforeach; ?>
@@ -94,7 +94,7 @@
                     <img src="<?php echo get_the_post_thumbnail_url( $emeritus_person->ID, 'full' ); ?>" />
                 </figure>
                 
-                <?php echo wp_trim_words($excerpt, 15); ?>
+                <p><?php echo wp_trim_words($excerpt, 15); ?></p>
             </article>
         </li>
         <? endforeach; ?>
