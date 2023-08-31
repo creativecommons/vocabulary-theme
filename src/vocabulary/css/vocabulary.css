@@ -1180,8 +1180,8 @@ body > article.attention a {
     --underline-background-color: var(--vocabulary-brand-color-soft-turquoise);
 }
 
-.program-page header h1 {
-    margin-bottom: 0;
+.program-page header p {
+    margin-top: 0;
 }
 
 
