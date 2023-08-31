@@ -31,3 +31,9 @@ add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
 function wps_deregister_styles() {
     wp_dequeue_style( 'wp-block-library' );
 }
+
+// customize readmore ellipsis on excerpt
+function vocab_excerpt_more( $more ) {
+	return '&hellip;';
+}
+add_filter( 'excerpt_more', 'vocab_excerpt_more' );
