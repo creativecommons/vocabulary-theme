@@ -16,6 +16,7 @@
 
 <?php
     $staff_listing = get_field('staff_listing');
+    if( $staff_listing ):
 ?>
 
 
@@ -44,9 +45,11 @@
         <? endforeach; ?>
     </ul>
 </article>
+<?php endif; ?>
 
 <?php
     $board_listing = get_field('board_listing');
+    if( $board_listing ):
 ?>
 <article class="persons">
     <h2>Board</h2>
@@ -72,9 +75,11 @@
         <? endforeach; ?>
     </ul>
 </article>
+<?php endif; ?>
 
 <?php
     $emeritus_listing = get_field('emeritus_listing');
+    if( $emeritus_listing ):
 ?>
 <article class="persons">
     <h2>Emeritus</h2>
@@ -100,6 +105,7 @@
         <? endforeach; ?>
     </ul>
 </article>
+<?php endif; ?>
 
 
 </main>
