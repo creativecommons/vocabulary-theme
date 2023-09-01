@@ -2,21 +2,17 @@
 
 <main>
 
-<?php while ( have_posts() ) : the_post(); ?>
-
 <header>
 
-<h1><?php the_title(); ?></h1>
+<h1>404 Page Not Found</h1>
 
 </header>
 
 <div class="content">
 
-    <?php the_content(); ?>
+    <p>We're sorry, your request could not be found.</p>
 
 </div>
-
-<?php endwhile; // end of the loop. ?>
 
 </main>
 
