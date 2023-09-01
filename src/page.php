@@ -24,7 +24,9 @@
 
 </header>
 
-<!-- <aside>
+
+<?php if (get_field('display_sidebar')) : ?>
+<aside>
     <nav class="contextual-menu">
         <h2>Registration</h2>
         <ul>
@@ -42,7 +44,8 @@
 
         </ul>
     </nav>
-</aside> -->
+</aside>
+<?php endif; ?>
 
 
 <div class="content">
