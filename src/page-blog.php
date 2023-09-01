@@ -91,7 +91,9 @@
 
 
     <?php 
-    $highlight_posts[] = $post->ID;
+    if ($i != 1) {
+        $highlight_posts[] = $post->ID;
+    }
     $i++; 
     ?>
 
