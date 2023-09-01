@@ -65,7 +65,7 @@ $query = new WP_Query(array(
 
     <article>
         <header>
-        <h2><a href="#"><?php echo the_title(); ?></a></h2>
+        <h2><a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a></h2>
         <span class="byline">by 
                 <?php
                 $authors = get_field('authorship');

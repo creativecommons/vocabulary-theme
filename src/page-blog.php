@@ -140,7 +140,7 @@ $query = new WP_Query(array(
 
 	<article class="story">
         <header>
-        <h3 class="title"><a href="#"><?php the_title(); ?></a></h3>
+        <h3 class="title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <span class="byline">by 
             <?php
             $authors = get_field('authorship');
