@@ -374,6 +374,147 @@ add_action( 'acf/include_fields', function() {
 ) );
 
 	acf_add_local_field_group( array(
+	'key' => 'group_64f1fb809e42b',
+	'title' => 'Page Sidebar Meta',
+	'fields' => array(
+		array(
+			'key' => 'field_64f1fbe25650c',
+			'label' => 'Display Sidebar?',
+			'name' => 'display_sidebar',
+			'aria-label' => '',
+			'type' => 'true_false',
+			'instructions' => 'some Pages are special and will not display a Sidebar even if this box is checked.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Enable',
+			'default_value' => 0,
+			'ui' => 0,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+		),
+		array(
+			'key' => 'field_64f8a85cd3d78',
+			'label' => 'Menu',
+			'name' => 'set_menu',
+			'aria-label' => '',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_64f1fbe25650c',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'default' => 'default',
+				'from parent' => 'from parent',
+				'custom' => 'custom',
+			),
+			'default_value' => 'default',
+			'return_format' => 'value',
+			'multiple' => 0,
+			'allow_null' => 0,
+			'ui' => 0,
+			'ajax' => 0,
+			'placeholder' => '',
+		),
+		array(
+			'key' => 'field_64f8a04b383d2',
+			'label' => 'Menu Title',
+			'name' => 'menu_title',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_64f1fbe25650c',
+						'operator' => '==',
+						'value' => '1',
+					),
+					array(
+						'field' => 'field_64f8a85cd3d78',
+						'operator' => '==',
+						'value' => 'custom',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
+			'key' => 'field_64f1fb80c6edf',
+			'label' => 'Display Menu',
+			'name' => 'display_menu',
+			'aria-label' => '',
+			'type' => 'menu-chooser',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_64f1fbe25650c',
+						'operator' => '==',
+						'value' => '1',
+					),
+					array(
+						'field' => 'field_64f8a85cd3d78',
+						'operator' => '==',
+						'value' => 'custom',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'page',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'side',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+	'show_in_rest' => 0,
+) );
+
+	acf_add_local_field_group( array(
 	'key' => 'group_64ef8e67ee8e7',
 	'title' => 'Person Post Meta',
 	'fields' => array(
@@ -700,6 +841,91 @@ add_action( 'acf/include_fields', function() {
 } );
 
 add_action( 'init', function() {
+	register_post_type( 'campaign', array(
+	'labels' => array(
+		'name' => 'Campaigns',
+		'singular_name' => 'Campaign',
+		'menu_name' => 'Campaigns',
+		'all_items' => 'All Campaigns',
+		'edit_item' => 'Edit Campaign',
+		'view_item' => 'View Campaign',
+		'view_items' => 'View Campaigns',
+		'add_new_item' => 'Add New Campaign',
+		'new_item' => 'New Campaign',
+		'parent_item_colon' => 'Parent Campaign:',
+		'search_items' => 'Search Campaigns',
+		'not_found' => 'No Campaigns found',
+		'not_found_in_trash' => 'No Campaigns found in Trash',
+		'archives' => 'Campaign Archives',
+		'attributes' => 'Campaign Attributes',
+		'insert_into_item' => 'Insert into campaign',
+		'uploaded_to_this_item' => 'Uploaded to this campaign',
+		'filter_items_list' => 'Filter campaigns list',
+		'filter_by_date' => 'Filter campaigns by date',
+		'items_list_navigation' => 'Campaigns list navigation',
+		'items_list' => 'Campaigns list',
+		'item_published' => 'campaign published.',
+		'item_published_privately' => 'campaign published privately.',
+		'item_reverted_to_draft' => 'campaign reverted to draft.',
+		'item_scheduled' => 'campaign scheduled.',
+		'item_updated' => 'campaign updated.',
+		'item_link' => 'campaign Link',
+		'item_link_description' => 'A link to a campaign.',
+	),
+	'public' => true,
+	'show_in_rest' => true,
+	'supports' => array(
+		0 => 'title',
+		1 => 'editor',
+		2 => 'thumbnail',
+	),
+	'delete_with_user' => false,
+) );
+
+	register_post_type( 'event', array(
+	'labels' => array(
+		'name' => 'Events',
+		'singular_name' => 'Event',
+		'menu_name' => 'Events',
+		'all_items' => 'All Events',
+		'edit_item' => 'Edit Event',
+		'view_item' => 'View Event',
+		'view_items' => 'View Events',
+		'add_new_item' => 'Add New Event',
+		'new_item' => 'New Event',
+		'parent_item_colon' => 'Parent Event:',
+		'search_items' => 'Search Events',
+		'not_found' => 'No events found',
+		'not_found_in_trash' => 'No events found in Trash',
+		'archives' => 'Event Archives',
+		'attributes' => 'Event Attributes',
+		'insert_into_item' => 'Insert into event',
+		'uploaded_to_this_item' => 'Uploaded to this event',
+		'filter_items_list' => 'Filter events list',
+		'filter_by_date' => 'Filter events by date',
+		'items_list_navigation' => 'Events list navigation',
+		'items_list' => 'Events list',
+		'item_published' => 'Event published.',
+		'item_published_privately' => 'Event published privately.',
+		'item_reverted_to_draft' => 'Event reverted to draft.',
+		'item_scheduled' => 'Event scheduled.',
+		'item_updated' => 'Event updated.',
+		'item_link' => 'Event Link',
+		'item_link_description' => 'A link to a event.',
+	),
+	'public' => true,
+	'show_in_rest' => true,
+	'supports' => array(
+		0 => 'title',
+		1 => 'editor',
+		2 => 'thumbnail',
+	),
+	'taxonomies' => array(
+		0 => 'category',
+	),
+	'delete_with_user' => false,
+) );
+
 	register_post_type( 'notice', array(
 	'labels' => array(
 		'name' => 'Notices',
