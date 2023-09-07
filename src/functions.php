@@ -96,9 +96,9 @@ if ( $post->post_parent ) {
 echo '<ul class="default">';
     wp_list_pages(
         array(
-            'child_of'  => $parent,
+            'child_of'  => $post->ID,
             'show_date' => '',
-            'depth'     => 3,
+            'depth'     => -1,
             'title_li'  => '',
         )
     );
@@ -119,7 +119,7 @@ function find_sidebar_menu($post_id) {
   // if menu set to default, fallback
   if ($menu_type == 'default') {
 
-      $menu['title'] = '';
+      $menu['title'] = 'Related';
       $menu['output'] = 'trigger_fallback';
 
       //return 'trigger_fallback';
