@@ -44,6 +44,7 @@
         <header>
         <h2 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h2>
     
+        <?php if ( get_field('authorship') ) : ?>
         <span class="byline">by 
             <?php
             $authors = get_field('authorship');
@@ -69,6 +70,7 @@
                     <?php endforeach; ?>
                 <?php endif; ?>
         </span>
+        <?php endif; ?>
         <span class="categories">
             <?php the_category(', ') ?>
         </span>
@@ -143,6 +145,7 @@ $query = new WP_Query(array(
 	<article class="story">
         <header>
         <h3 class="title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
+        <?php if ( get_field('authorship') ) : ?>
         <span class="byline">by 
             <?php
             $authors = get_field('authorship');
@@ -168,6 +171,7 @@ $query = new WP_Query(array(
                     <?php endforeach; ?>
                 <?php endif; ?>
         </span>
+        <?php endif; ?>
         <span class="categories">
             <?php the_category(', ') ?>
         </span>
