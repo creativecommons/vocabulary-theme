@@ -403,7 +403,9 @@ add_action( 'acf/include_fields', function() {
 			'name' => 'set_menu',
 			'aria-label' => '',
 			'type' => 'select',
-			'instructions' => '',
+			'instructions' => '<strong>default:</strong> show child pages </br>
+<strong>from parent:</strong> inherit parent\'s setting </br>
+<strong>custom:</strong> set to menu </br>',
 			'required' => 0,
 			'conditional_logic' => array(
 				array(
@@ -500,6 +502,11 @@ add_action( 'acf/include_fields', function() {
 				'param' => 'post_type',
 				'operator' => '==',
 				'value' => 'page',
+			),
+			array(
+				'param' => 'post_template',
+				'operator' => '!=',
+				'value' => 'page_static.php',
 			),
 		),
 	),
@@ -692,6 +699,79 @@ add_action( 'acf/include_fields', function() {
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+	'show_in_rest' => 0,
+) );
+
+	acf_add_local_field_group( array(
+	'key' => 'group_64fa22e794968',
+	'title' => 'Static Page Settings',
+	'fields' => array(
+		array(
+			'key' => 'field_64fa22e7b51c4',
+			'label' => 'Static Content',
+			'name' => '',
+			'aria-label' => '',
+			'type' => 'message',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'This page is rendered directly from a custom page template file and can\'t be edited by the WordPress editor directly. Changes to this page must be made via code.',
+			'new_lines' => 'wpautop',
+			'esc_html' => 0,
+		),
+		array(
+			'key' => 'field_64fa233659642',
+			'label' => 'Static Template Name',
+			'name' => 'static_template',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => 'hyphenated name to look for. EX: 2023-campaign',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'page',
+			),
+			array(
+				'param' => 'post_template',
+				'operator' => '==',
+				'value' => 'page_static.php',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'acf_after_title',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => array(
+		0 => 'the_content',
+		1 => 'excerpt',
+		2 => 'discussion',
+		3 => 'comments',
+	),
 	'active' => true,
 	'description' => '',
 	'show_in_rest' => 0,
