@@ -1,8 +1,8 @@
-# Advanced Custom Fields 
+# Advanced Custom Fields
 
-This theme utilizes [Advanced Custom Field](https://www.advancedcustomfields.com/) to create new custom meta fields for various POST types, as well as setup new custom post types. 
+This theme utilizes [Advanced Custom Field](https://www.advancedcustomfields.com/) to create new custom meta fields for various POST types, as well as setup new custom post types.
 
-The relevant ACF configuration data is included via the `acf.php` file, and loaded automatically via the theme's `functions.php` file. 
+The relevant ACF configuration data is included via the `acf.php` file, and loaded automatically via the theme's `functions.php` file.
 
 To modify these fields later, do not edit the acf.php file directly. The best method is through the ACF GUI editor in the WP installation.
 
