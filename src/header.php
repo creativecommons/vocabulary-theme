@@ -101,7 +101,7 @@
 </header>
 
 <?php
-$query = new WP_Query(array(
+$noticeQuery = new WP_Query(array(
     'post_type' => 'notice',
     'posts_per_page' => 1,
     'meta_key' => 'type',
@@ -110,7 +110,7 @@ $query = new WP_Query(array(
 ));
 ?>
 
-<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+<?php if ( $noticeQuery->have_posts() ) : while ( $noticeQuery->have_posts() ) : $noticeQuery->the_post(); ?>
 
 <article class="attention">
 <?php the_field('message_rich_text'); ?>
@@ -118,3 +118,4 @@ $query = new WP_Query(array(
 
 <?php endwhile; ?>
 <?php endif; ?>
+<?php wp_reset_postdata(); ?>
