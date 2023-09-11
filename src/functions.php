@@ -73,7 +73,83 @@ add_filter('acf/fields/relationship/query/name=nested_programs', 'exclude_id', 1
 
 function exclude_id ( $args, $field, $post ) {
 
-    $args['post__not_in'] = array( $post );
-    
-    return $args;
+  $args['post__not_in'] = array( $post );
+
+  return $args;
 }
+
+
+
+// unfinished, and doesn't go high enough
+function custom_sidebar_menu_fallback() {
+
+global $post;
+
+if ( $post->post_parent ) {
+  $ancestors = get_post_ancestors( $post->ID );
+  $root      = count( $ancestors ) - 1;
+  $parent = $ancestors[ $root ];
+} else {
+  $parent = $post->ID;
+}
+
+echo '<ul class="default">';
+    wp_list_pages(
+        array(
+            'child_of'  => $post->ID,
+            'show_date' => '',
+            'depth'     => -1,
+            'title_li'  => '',
+        )
+    );
+echo '</ul>';
+}
+
+
+
+
+
+function find_sidebar_menu($post_id) {
+
+
+  if( get_field('set_menu', $post_id) ) {
+    $menu_type = get_field('set_menu', $post_id);
+  }
+
+  // if menu set to default, fallback
+  if ($menu_type == 'default') {
+
+      $menu['title'] = 'Related';
+      $menu['output'] = 'trigger_fallback';
+
+      //return 'trigger_fallback';
+
+      return $menu;
+
+  } else if ($menu_type == 'from parent') {
+
+    if ( has_post_parent($post_id) ) {
+      $parent = get_post_parent($post_id);
+
+      return find_sidebar_menu($parent->ID);
+
+    }
+
+  } else if ($menu_type == 'custom') {
+
+    if( get_field('display_menu', $post_id) ) {
+
+      $menu['title'] = get_field('menu_title', $post_id);
+      $menu['output'] = get_field('display_menu', $post_id);
+
+      //return get_field('display_menu', $post_id);
+
+      return $menu;
+
+    }
+    
+  }
+
+
+}
+

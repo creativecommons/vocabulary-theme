@@ -44,6 +44,7 @@
         <header>
         <h2 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h2>
     
+        <?php if ( get_field('authorship') ) : ?>
         <span class="byline">by 
             <?php
             $authors = get_field('authorship');
@@ -69,6 +70,7 @@
                     <?php endforeach; ?>
                 <?php endif; ?>
         </span>
+        <?php endif; ?>
         <span class="categories">
             <?php the_category(', ') ?>
         </span>
@@ -91,40 +93,20 @@
 
 
     <?php 
-    $highlight_posts[] = $post->ID;
+    if ($i != 1) {
+        $highlight_posts[] = $post->ID;
+    }
     $i++; 
     ?>
 
     <?php endforeach; ?>
-    
-
-    
-
-    <footer>
-        <article class="attribution-list">
-        <h2>Images Attribution</h2>
-            <ul>
-                <?php foreach ($highlight_posts as $item) : ?>
-                <li>
-                    <article>
-                        <figure>
-                            
-                            <img src="<?php echo get_the_post_thumbnail_url( $item, 'full' ); ?>" />
-                            <span class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></span>
-                        </figure>
-                    </article>
-                </li>
-                <?php endforeach; ?>
-            </ul>
-        </article>
-    </footer>
 
 </article>
 <?php endif; ?>
 
 
 
-<article class="stories authored-posts">
+<article class="stories authored-posts highlight">
 <h2>Recent Posts</h2>
 
 <?php
@@ -140,7 +122,8 @@ $query = new WP_Query(array(
 
 	<article class="story">
         <header>
-        <h3 class="title"><a href="#"><?php the_title(); ?></a></h3>
+        <h3 class="title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
+        <?php if ( get_field('authorship') ) : ?>
         <span class="byline">by 
             <?php
             $authors = get_field('authorship');
@@ -166,6 +149,7 @@ $query = new WP_Query(array(
                     <?php endforeach; ?>
                 <?php endif; ?>
         </span>
+        <?php endif; ?>
         <span class="categories">
             <?php the_category(', ') ?>
         </span>
@@ -175,18 +159,43 @@ $query = new WP_Query(array(
             <?php //echo get_the_post_thumbnail( $post_id, 'full' ); 
             ?>
             <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
-            <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
         </figure>
-        <?php the_excerpt(); ?>
     </article>
+
+    <?php $highlight_posts[] = $post->ID; ?>
 
 	<?php endwhile; ?> 
 
 <?php endif; ?>
-
-    <a class="more" href="/blog/archive">more posts</a>
     
 </article>
+
+
+<footer>
+
+    <a class="more" href="/blog/archive/">more posts</a>
+
+    <article class="attribution-list">
+    
+        <h2>Images Attribution</h2>
+        <button class="expand-attribution">view</button>
+
+        <ul class="attribution-panel">
+            <?php foreach ($highlight_posts as $item) : ?>
+            <li>
+                <article>
+                    <figure>
+                        
+                        <img src="<?php echo get_the_post_thumbnail_url( $item, 'full' ); ?>" />
+                        <span class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></span>
+                    </figure>
+                </article>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </article>
+
+</footer>
     
 
 </main>

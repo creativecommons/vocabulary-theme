@@ -6,8 +6,8 @@
 <h1>Our Team</h1>
 
 <?php
+    if( get_field('introduction') ) :
     $introduction = get_field('introduction');
-    if( $introduction ): 
 ?>
 <p><?php echo esc_html( $introduction ); ?></p>
 <?php endif; ?>
@@ -15,9 +15,9 @@
 </header>
 
 <?php
+    if( get_field('staff_listing') ) :
     $staff_listing = get_field('staff_listing');
 ?>
-
 
 <article class="persons">
     <h2>Staff</h2>
@@ -44,10 +44,13 @@
         <? endforeach; ?>
     </ul>
 </article>
+<?php endif; ?>
 
 <?php
+    if( get_field('board_listing') ) :
     $board_listing = get_field('board_listing');
 ?>
+
 <article class="persons">
     <h2>Board</h2>
     <ul>
@@ -72,10 +75,13 @@
         <? endforeach; ?>
     </ul>
 </article>
+<?php endif; ?>
 
 <?php
+    if( get_field('emeritus_listing') ) :
     $emeritus_listing = get_field('emeritus_listing');
 ?>
+
 <article class="persons">
     <h2>Emeritus</h2>
     <ul>
@@ -100,6 +106,7 @@
         <? endforeach; ?>
     </ul>
 </article>
+<?php endif; ?>
 
 
 </main>

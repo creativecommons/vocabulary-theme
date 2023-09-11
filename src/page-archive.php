@@ -20,7 +20,7 @@
 <aside>
 
 <?php 
-    $categories = get_terms( 'category', 'orderby=asc&hide_empty=0' );
+    $categories = get_terms( 'category', 'orderby=asc&hide_empty=0&parent=0&exclude=1' );
 ?>
 
     <nav class="filter-menu">
@@ -75,7 +75,8 @@ $query = new WP_Query(array(
 
 <article>
     <header>
-    <h2><a href="#"><?php the_title(); ?></a></h2>
+    <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
+    <?php if ( get_field('authorship') ) : ?>
     <span class="byline">by 
             <?php
             $authors = get_field('authorship');
@@ -101,6 +102,7 @@ $query = new WP_Query(array(
                     <?php endforeach; ?>
                 <?php endif; ?>
         </span>
+        <?php endif; ?>
         <span class="categories">
             <?php the_category(', ') ?>
         </span>

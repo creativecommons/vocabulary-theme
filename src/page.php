@@ -24,25 +24,12 @@
 
 </header>
 
-<!-- <aside>
-    <nav class="contextual-menu">
-        <h2>Registration</h2>
-        <ul>
-            <li><a href="#">How many hours of work does the Certificate course require?</a></li>
-            <li><a href="#">What do I get with the Certificate?</a></li>
-        </ul>
-    </nav>
 
-    <nav>
-        <h2>Course</h2>
-        <ul>
-            <li><a href="#">Does everyone participating in the course get a certificate?</a></li>
-            <li><a href="#">Can I represent Creative Commons once I am CC Certified?</a></li>
-            <li><a href="#">How Scholarships work?</a></li>
+<?php if (get_field('display_sidebar')) : ?>
 
-        </ul>
-    </nav>
-</aside> -->
+<?php get_sidebar(); ?>
+
+<?php endif; ?>
 
 
 <div class="content">
