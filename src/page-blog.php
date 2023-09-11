@@ -100,35 +100,13 @@
     ?>
 
     <?php endforeach; ?>
-    
-
-    
-
-    <footer>
-        <article class="attribution-list">
-        <h2>Images Attribution</h2>
-            <ul>
-                <?php foreach ($highlight_posts as $item) : ?>
-                <li>
-                    <article>
-                        <figure>
-                            
-                            <img src="<?php echo get_the_post_thumbnail_url( $item, 'full' ); ?>" />
-                            <span class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></span>
-                        </figure>
-                    </article>
-                </li>
-                <?php endforeach; ?>
-            </ul>
-        </article>
-    </footer>
 
 </article>
 <?php endif; ?>
 
 
 
-<article class="stories authored-posts">
+<article class="stories authored-posts highlight">
 <h2>Recent Posts</h2>
 
 <?php
@@ -181,18 +159,43 @@ $query = new WP_Query(array(
             <?php //echo get_the_post_thumbnail( $post_id, 'full' ); 
             ?>
             <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
-            <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
         </figure>
-        <?php the_excerpt(); ?>
     </article>
+
+    <?php $highlight_posts[] = $post->ID; ?>
 
 	<?php endwhile; ?> 
 
 <?php endif; ?>
-
-    <a class="more" href="/blog/archive">more posts</a>
     
 </article>
+
+
+<footer>
+
+    <a class="more" href="/blog/archive/">more posts</a>
+
+    <article class="attribution-list">
+    
+        <h2>Images Attribution</h2>
+        <button class="expand-attribution">view</button>
+
+        <ul class="attribution-panel">
+            <?php foreach ($highlight_posts as $item) : ?>
+            <li>
+                <article>
+                    <figure>
+                        
+                        <img src="<?php echo get_the_post_thumbnail_url( $item, 'full' ); ?>" />
+                        <span class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></span>
+                    </figure>
+                </article>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </article>
+
+</footer>
     
 
 </main>
