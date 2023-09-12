@@ -182,6 +182,7 @@ $query = new WP_Query(array(
 
         <ul class="attribution-panel">
             <?php foreach ($highlight_posts as $item) : ?>
+            <?php if( get_the_post_thumbnail_caption( $item ) ) : ?>
             <li>
                 <article>
                     <figure>
@@ -191,6 +192,7 @@ $query = new WP_Query(array(
                     </figure>
                 </article>
             </li>
+            <? endif; ?>
             <?php endforeach; ?>
         </ul>
     </article>
