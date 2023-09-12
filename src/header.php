@@ -119,3 +119,5 @@ $noticeQuery = new WP_Query(array(
 <?php endwhile; ?>
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
+
+<span id="main-content-marker"></span>
