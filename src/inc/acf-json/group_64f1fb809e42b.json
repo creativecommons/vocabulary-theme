@@ -1,0 +1,146 @@
+{
+    "key": "group_64f1fb809e42b",
+    "title": "Page Sidebar Meta",
+    "fields": [
+        {
+            "key": "field_64f1fbe25650c",
+            "label": "Display Sidebar?",
+            "name": "display_sidebar",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "some Pages are special and will not display a Sidebar even if this box is checked.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_64f8a85cd3d78",
+            "label": "Menu",
+            "name": "set_menu",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "<strong>default:<\/strong> show child pages <\/br>\r\n<strong>from parent:<\/strong> inherit parent's setting <\/br>\r\n<strong>custom:<\/strong> set to menu <\/br>",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64f1fbe25650c",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "default",
+                "from parent": "from parent",
+                "custom": "custom"
+            },
+            "default_value": "default",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_64f8a04b383d2",
+            "label": "Menu Title",
+            "name": "menu_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64f1fbe25650c",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_64f8a85cd3d78",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64f1fb80c6edf",
+            "label": "Display Menu",
+            "name": "display_menu",
+            "aria-label": "",
+            "type": "menu-chooser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64f1fbe25650c",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_64f8a85cd3d78",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "page_static.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1694632329
+}

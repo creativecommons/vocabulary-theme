@@ -147,9 +147,28 @@ function find_sidebar_menu($post_id) {
       return $menu;
 
     }
-    
+
   }
 
 
 }
 
+
+
+// Customize where ACF stores JSON files
+function vocab_acf_json_save_point( $path ) {
+  return get_stylesheet_directory() . '/inc/acf-json';
+}
+add_filter( 'acf/settings/save_json', 'vocab_acf_json_save_point' );
+
+// Customize where ACF loads JSON files
+function vocab_acf_json_load_point( $paths ) {
+    // Remove the original path (optional).
+    unset($paths[0]);
+
+    // Append the new path and return it.
+    $paths[] = get_stylesheet_directory() . '/inc/acf-json';
+
+    return $paths;
+}
+add_filter( 'acf/settings/load_json', 'vocab_acf_json_load_point' );
