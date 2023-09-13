@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-<title>Hello World!</title>
+<title><?php wp_title(''); echo ' | ';  bloginfo( 'name' ); ?></title>
   
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -119,3 +119,5 @@ $noticeQuery = new WP_Query(array(
 <?php endwhile; ?>
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
+
+<span id="main-content-marker"></span>

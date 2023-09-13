@@ -6,8 +6,8 @@
 <h1>Our Team</h1>
 
 <?php
-    if( get_field('introduction') ) :
-    $introduction = get_field('introduction');
+     $introduction = get_field('introduction');
+     if( !empty($introduction) ) :
 ?>
 <p><?php echo esc_html( $introduction ); ?></p>
 <?php endif; ?>
@@ -15,8 +15,8 @@
 </header>
 
 <?php
-    if( get_field('staff_listing') ) :
     $staff_listing = get_field('staff_listing');
+    if( !empty($staff_listing) ) :
 ?>
 
 <article class="persons">
@@ -47,8 +47,9 @@
 <?php endif; ?>
 
 <?php
-    if( get_field('board_listing') ) :
     $board_listing = get_field('board_listing');
+    if( !empty($board_listing) ) :
+
 ?>
 
 <article class="persons">
@@ -78,8 +79,8 @@
 <?php endif; ?>
 
 <?php
-    if( get_field('emeritus_listing') ) :
     $emeritus_listing = get_field('emeritus_listing');
+    if( !empty($emeritus_listing) ) :
 ?>
 
 <article class="persons">
@@ -99,7 +100,7 @@
                 <figure>
                     <img src="<?php echo get_the_post_thumbnail_url( $emeritus_person->ID, 'full' ); ?>" />
                 </figure>
-                
+
                 <p><?php echo wp_trim_words($excerpt, 15); ?></p>
             </article>
         </li>
