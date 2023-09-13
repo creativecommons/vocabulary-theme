@@ -7,7 +7,7 @@
 
 <?php
      $introduction = get_field('introduction');
-     if( $introduction ) : 
+     if( !empty($introduction) ) :
 ?>
 <p><?php echo esc_html( $introduction ); ?></p>
 <?php endif; ?>
@@ -16,7 +16,7 @@
 
 <?php
     $staff_listing = get_field('staff_listing');
-    if( $staff_listing ) :
+    if( !empty($staff_listing) ) :
 ?>
 
 <article class="persons">
@@ -48,8 +48,8 @@
 
 <?php
     $board_listing = get_field('board_listing');
-    if( $board_listing ) :
-   
+    if( !empty($board_listing) ) :
+
 ?>
 
 <article class="persons">
@@ -80,7 +80,7 @@
 
 <?php
     $emeritus_listing = get_field('emeritus_listing');
-    if( $emeritus_listing ) :
+    if( !empty($emeritus_listing) ) :
 ?>
 
 <article class="persons">
@@ -100,7 +100,7 @@
                 <figure>
                     <img src="<?php echo get_the_post_thumbnail_url( $emeritus_person->ID, 'full' ); ?>" />
                 </figure>
-                
+
                 <p><?php echo wp_trim_words($excerpt, 15); ?></p>
             </article>
         </li>
