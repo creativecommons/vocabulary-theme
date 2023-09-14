@@ -41,7 +41,7 @@
                 <p><?php echo wp_trim_words($excerpt, 15); ?></p>
             </article>
         </li>
-        <? endforeach; ?>
+        <?php endforeach; ?>
     </ul>
 </article>
 <?php endif; ?>
@@ -73,7 +73,7 @@
                 <p><?php echo wp_trim_words($excerpt, 15); ?></p>
             </article>
         </li>
-        <? endforeach; ?>
+        <?php endforeach; ?>
     </ul>
 </article>
 <?php endif; ?>
@@ -104,7 +104,7 @@
                 <p><?php echo wp_trim_words($excerpt, 15); ?></p>
             </article>
         </li>
-        <? endforeach; ?>
+        <?php endforeach; ?>
     </ul>
 </article>
 <?php endif; ?>

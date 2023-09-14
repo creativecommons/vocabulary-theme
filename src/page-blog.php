@@ -10,7 +10,7 @@
 
 <?php
     $introduction = get_field('introduction');
-    if( $introduction ): 
+    if( $introduction ):
 ?>
 <p><?php echo esc_html( $introduction ); ?></p>
 <?php endif; ?>
@@ -26,15 +26,15 @@
 
 <?php
     $posts = get_field('featured_posts');
-    if( $posts ): 
+    if( $posts ):
 ?>
 
 <article class="stories authored-posts highlight">
 
-    <?php 
+    <?php
 
         $i=1;
-        foreach( $posts as $post ): 
+        foreach( $posts as $post ):
             $permalink = get_permalink( $post->ID );
             $title = get_the_title( $post->ID );
             //$custom_field = get_field( 'field_name', $post->ID );
@@ -43,24 +43,24 @@
     <article class="story">
         <header>
         <h2 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h2>
-    
+
         <?php if ( get_field('authorship') ) : ?>
-        <span class="byline">by 
+        <span class="byline">by
             <?php
             $authors = get_field('authorship');
                 if( $authors ):
                 $ai = 1;
-                $count = count($authors);  
+                $count = count($authors);
 
-                foreach( $authors as $author ): 
+                foreach( $authors as $author ):
                     $permalink = get_permalink( $author->ID );
                     $title = get_the_title( $author->ID );
-                    $custom_field = get_field( 'field_name', $author->ID );           
-                    if ($ai < $count) { 
-                        $separator = ','; 
-                    } 
-                    else { 
-                        $separator = ''; 
+                    $custom_field = get_field( 'field_name', $author->ID );
+                    if ($ai < $count) {
+                        $separator = ',';
+                    }
+                    else {
+                        $separator = '';
                     }
             ?>
 
@@ -77,7 +77,7 @@
         </header>
 
         <figure>
-            <?php //echo get_the_post_thumbnail( $post_id, 'full' ); 
+            <?php //echo get_the_post_thumbnail( $post_id, 'full' );
             ?>
             <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
             <?php if ($i == 1): ?>
@@ -88,15 +88,15 @@
         <?php if ($i == 1): ?>
         <p>The Creative Commons Open Education Team is pleased to provide a snapshot of progress made toward opening access and equity in education, through a look at our collective efforts in 2022.1 We laud the CC open education community for its important work throughout 2022. CC and community members' open education efforts in 2022 included, but </p>
         <?php endif; ?>
-        
+
     </article>
 
 
-    <?php 
+    <?php
     if ($i != 1) {
         $highlight_posts[] = $post->ID;
     }
-    $i++; 
+    $i++;
     ?>
 
     <?php endforeach; ?>
@@ -124,22 +124,22 @@ $query = new WP_Query(array(
         <header>
         <h3 class="title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <?php if ( get_field('authorship') ) : ?>
-        <span class="byline">by 
+        <span class="byline">by
             <?php
             $authors = get_field('authorship');
                 if( $authors ):
                 $i = 1;
-                $count = count($authors);  
+                $count = count($authors);
 
-                foreach( $authors as $author ): 
+                foreach( $authors as $author ):
                     $permalink = get_permalink( $author->ID );
                     $title = get_the_title( $author->ID );
-                    $custom_field = get_field( 'field_name', $author->ID );           
-                    if ($i < $count) { 
-                        $separator = ','; 
-                    } 
-                    else { 
-                        $separator = ''; 
+                    $custom_field = get_field( 'field_name', $author->ID );
+                    if ($i < $count) {
+                        $separator = ',';
+                    }
+                    else {
+                        $separator = '';
                     }
             ?>
 
@@ -156,7 +156,7 @@ $query = new WP_Query(array(
         </header>
 
         <figure>
-            <?php //echo get_the_post_thumbnail( $post_id, 'full' ); 
+            <?php //echo get_the_post_thumbnail( $post_id, 'full' );
             ?>
             <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
         </figure>
@@ -164,10 +164,10 @@ $query = new WP_Query(array(
 
     <?php $highlight_posts[] = $post->ID; ?>
 
-	<?php endwhile; ?> 
+	<?php endwhile; ?>
 
 <?php endif; ?>
-    
+
 </article>
 
 
@@ -176,7 +176,7 @@ $query = new WP_Query(array(
     <a class="more" href="/blog/archive/">more posts</a>
 
     <article class="attribution-list">
-    
+
         <h2>Images Attribution</h2>
         <button class="expand-attribution">view</button>
 
@@ -186,19 +186,19 @@ $query = new WP_Query(array(
             <li>
                 <article>
                     <figure>
-                        
+
                         <img src="<?php echo get_the_post_thumbnail_url( $item, 'full' ); ?>" />
                         <span class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></span>
                     </figure>
                 </article>
             </li>
-            <? endif; ?>
+            <?php endif; ?>
             <?php endforeach; ?>
         </ul>
     </article>
 
 </footer>
-    
+
 
 </main>
 
