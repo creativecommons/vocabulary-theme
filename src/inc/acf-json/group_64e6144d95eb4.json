@@ -121,9 +121,9 @@
                 "value": "page"
             },
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "157"
+                "value": "page_team.php"
             }
         ]
     ],
@@ -141,5 +141,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694632350
+    "modified": 1694714707
 }

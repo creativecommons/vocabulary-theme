@@ -1,3 +1,5 @@
+<?php /* Template Name: Index - Blog */ ?>
+
 <?php get_header('', array( 'body-classes' => 'blog-index') ); ?>
 
 <main>
@@ -24,11 +26,85 @@
 
 </header>
 
+<?php
+    $posts = get_field('featured_posts');
+    if( $posts ):
+?>
 
 <article class="stories authored-posts highlight">
 
-</article>
+    <?php
 
+        $i=1;
+        foreach( $posts as $post ):
+            $permalink = get_permalink( $post->ID );
+            $title = get_the_title( $post->ID );
+            //$custom_field = get_field( 'field_name', $post->ID );
+    ?>
+
+    <article class="story">
+        <header>
+        <h2 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h2>
+
+        <?php if ( get_field('authorship') ) : ?>
+        <span class="byline">by
+            <?php
+            $authors = get_field('authorship');
+                if( $authors ):
+                $ai = 1;
+                $count = count($authors);
+
+                foreach( $authors as $author ):
+                    $permalink = get_permalink( $author->ID );
+                    $title = get_the_title( $author->ID );
+                    $custom_field = get_field( 'field_name', $author->ID );
+                    if ($ai < $count) {
+                        $separator = ',';
+                    }
+                    else {
+                        $separator = '';
+                    }
+            ?>
+
+            <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                    <?php $ai++; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+        </span>
+        <?php endif; ?>
+        <span class="categories">
+            <?php the_category(', ') ?>
+        </span>
+        </header>
+
+        <figure>
+            <?php //echo get_the_post_thumbnail( $post_id, 'full' );
+            ?>
+            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
+            <?php if ($i == 1): ?>
+            <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
+            <?php endif; ?>
+        </figure>
+
+        <?php if ($i == 1): ?>
+        <p>The Creative Commons Open Education Team is pleased to provide a snapshot of progress made toward opening access and equity in education, through a look at our collective efforts in 2022.1 We laud the CC open education community for its important work throughout 2022. CC and community members' open education efforts in 2022 included, but </p>
+        <?php endif; ?>
+
+    </article>
+
+
+    <?php
+    if ($i != 1) {
+        $highlight_posts[] = $post->ID;
+    }
+    $i++;
+    ?>
+
+    <?php endforeach; ?>
+
+</article>
+<?php endif; ?>
 
 
 
@@ -37,6 +113,7 @@
 
 <?php
 $query = new WP_Query(array(
+    'post__not_in' => $highlight_posts,
     'post_type' => 'post',
     'posts_per_page' => 5,
     //'paged' => $paged,
@@ -128,3 +205,4 @@ $query = new WP_Query(array(
 </main>
 
 <?php get_footer(); ?>
+
