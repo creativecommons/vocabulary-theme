@@ -62,9 +62,9 @@
                 "value": "page"
             },
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "18"
+                "value": "page_blog.php"
             }
         ]
     ],
@@ -82,5 +82,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694632308
+    "modified": 1694714690
 }

@@ -9,22 +9,22 @@
 <h1><?php the_title(); ?></h1>
 
 <?php if ( get_field('authorship') ) : ?>
-<span class="byline">by 
+<span class="byline">by
     <?php
     $authors = get_field('authorship');
         if( $authors ):
         $i = 1;
-        $count = count($authors);  
+        $count = count($authors);
 
-        foreach( $authors as $author ): 
+        foreach( $authors as $author ):
             $permalink = get_permalink( $author->ID );
             $title = get_the_title( $author->ID );
-            $custom_field = get_field( 'field_name', $author->ID );           
-            if ($i < $count) { 
-                $separator = ','; 
-            } 
-            else { 
-                $separator = ''; 
+            $custom_field = get_field( 'field_name', $author->ID );
+            if ($i < $count) {
+                $separator = ',';
+            }
+            else {
+                $separator = '';
             }
     ?>
 
@@ -41,7 +41,7 @@
 <?php
 
 
-?>	
+?>
 
 <span class="categories">
     <?php the_category(', ') ?>
@@ -52,10 +52,10 @@
 
 </header>
 
-<?php if (!class_exists('ACF')): ?> 
+<?php if (!class_exists('ACF')): ?>
 
 <!-- display raw post_meta, if ACF not installed & activated -->
-<?php if (get_post_meta( get_the_ID(), 'lead_in_copy', true )): ?> 
+<?php if (get_post_meta( get_the_ID(), 'lead_in_copy', true )): ?>
 <div class="series">
     <?php echo get_post_meta( get_the_ID(), 'lead_in_copy', true ); ?>
 </div>
@@ -63,7 +63,7 @@
 <?php else : ?>
 
 <!-- display ACF field, if ACF installed & activated -->
-<?php if (get_field('lead_in_copy')): ?> 
+<?php if (get_field('lead_in_copy')): ?>
 <div class="series">
     <?php the_field('lead_in_copy'); ?>
 </div>
@@ -84,7 +84,7 @@
     <ul>
        <?php foreach($posttags as $tag) : ?>
         <li><a href="<?php echo get_tag_link($tag->term_id); ?>"><?php echo $tag->name; ?></a></li>
-                 
+
         <?php endforeach; ?>
     </ul>
 </article>
@@ -110,34 +110,34 @@ $query = new WP_Query(array(
 ));
 ?>
 
-<?php if ( $query->have_posts() ) : ?> 
+<?php if ( $query->have_posts() ) : ?>
 
 <article class="related-posts">
-    <h2>Related posts</h2>  
+    <h2>Related posts</h2>
 
-    <article class="authored-posts highlight"> 
-    
+    <article class="authored-posts highlight">
+
 <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
         <article>
             <header>
             <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
             <?php if ( get_field('authorship') ) : ?>
-            <span class="byline">by 
+            <span class="byline">by
                 <?php
                 $authors = get_field('authorship');
                     if( $authors ):
                     $i = 1;
-                    $count = count($authors);  
+                    $count = count($authors);
 
-                    foreach( $authors as $author ): 
+                    foreach( $authors as $author ):
                         $permalink = get_permalink( $author->ID );
                         $title = get_the_title( $author->ID );
-                        $custom_field = get_field( 'field_name', $author->ID );           
-                        if ($i < $count) { 
-                            $separator = ','; 
-                        } 
-                        else { 
-                            $separator = ''; 
+                        $custom_field = get_field( 'field_name', $author->ID );
+                        if ($i < $count) {
+                            $separator = ',';
+                        }
+                        else {
+                            $separator = '';
                         }
                 ?>
 
@@ -151,18 +151,18 @@ $query = new WP_Query(array(
             <span class="categories">
                 <?php the_category(', ') ?>
             </span>
-        
+
         </header>
-        
+
             <figure>
                 <img src="../imgs/image.jpg" />
-                
+
                 <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
             </figure>
 
         </article>
 
-<?php endwhile; ?> 
+<?php endwhile; ?>
 
     </article>
 </article>
