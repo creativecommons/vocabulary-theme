@@ -69,9 +69,18 @@ add_filter( 'excerpt_more', 'vocab_excerpt_more' );
 
 // exclude current post/page from relationship field results
 
-add_filter('acf/fields/relationship/query/name=nested_programs', 'exclude_id', 10, 3);
+add_filter('acf/fields/relationship/query/name=nested_programs', 'exclude_nested_id', 10, 3);
 
-function exclude_id ( $args, $field, $post ) {
+function exclude_nested_id ( $args, $field, $post ) {
+
+  $args['post__not_in'] = array( $post );
+
+  return $args;
+}
+
+add_filter('acf/fields/relationship/query/name=highlights', 'exclude_highlights_id', 10, 3);
+
+function exclude_highlights_id ( $args, $field, $post ) {
 
   $args['post__not_in'] = array( $post );
 
@@ -80,7 +89,6 @@ function exclude_id ( $args, $field, $post ) {
 
 
 
-// unfinished, and doesn't go high enough
 function custom_sidebar_menu_fallback() {
 
 global $post;
