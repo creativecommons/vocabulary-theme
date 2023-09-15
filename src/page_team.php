@@ -112,6 +112,82 @@
 <?php endif; ?>
 
 
+<?php
+    $advisory_listing = get_field('advisory_council_listing');
+    if( !empty($advisory_listing) ) :
+?>
+
+<article class="persons">
+    <h2>Advisory Council</h2>
+    <ul>
+        <?php foreach($advisory_listing as $advisory_person) : ?>
+        <?php
+            $permalink = get_permalink( $advisory_person->ID );
+            $title = get_the_title( $advisory_person->ID );
+            $position_title = get_field( 'position_title', $advisory_person->ID );
+            $excerpt = get_the_excerpt( $advisory_person->ID );
+         ?>
+        <li>
+            <article class="person">
+                <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+                <span class="title"><?php echo $position_title; ?></span>
+                <figure>
+                    <img src="<?php echo get_the_post_thumbnail_url( $advisory_person->ID, 'full' ); ?>" />
+                </figure>
+
+                <p><?php echo wp_trim_words($excerpt, 15); ?></p>
+            </article>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+</article>
+<?php endif; ?>
+
+
+<?php
+    $audit_listing = get_field('audit_committee_listing');
+    if( !empty($audit_listing) ) :
+?>
+
+<article class="persons">
+    <h2>Audit Committee</h2>
+    <ul>
+        <?php foreach($audit_listing as $audit_person) : ?>
+        <?php
+            $permalink = get_permalink( $audit_person->ID );
+            $title = get_the_title( $audit_person->ID );
+            $position_title = get_field( 'position_title', $audit_person->ID );
+            $excerpt = get_the_excerpt( $audit_person->ID );
+         ?>
+        <li>
+            <article class="person">
+                <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+                <span class="title"><?php echo $position_title; ?></span>
+                <figure>
+                    <img src="<?php echo get_the_post_thumbnail_url( $audit_person->ID, 'full' ); ?>" />
+                </figure>
+
+                <p><?php echo wp_trim_words($excerpt, 15); ?></p>
+            </article>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+</article>
+<?php endif; ?>
+
+<?php
+    $emeritus_listing = get_field('emeritus_listing');
+    if( !empty($emeritus_listing) ) :
+?>
+
+<div class="closing">
+<p><?php the_field('closing'); ?></p>
+</div>
+
+
+<?php endif; ?>
+
+
 </main>
 
 <?php get_footer(); ?>
