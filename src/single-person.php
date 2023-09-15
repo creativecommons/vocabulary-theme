@@ -8,7 +8,10 @@
 
 <h1><?php the_title(); ?></h1>
 <span class="title"><?php the_field('position_title'); ?></span>
+<?php if(get_field('pronouns') ) : ?>
 <span class="pronouns">(<?php the_field('pronouns'); ?>)</span>
+<?php endif; ?>
+
 <figure>
     <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
     <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>

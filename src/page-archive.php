@@ -11,7 +11,7 @@
     </ol>
 </nav> -->
 
-<h1>Archives (page-archive.php)</h1>
+<h1>Archives</h1>
 
 <p>lead in paragraph</p>
 
@@ -19,7 +19,7 @@
 
 <aside>
 
-<?php 
+<?php
     $categories = get_terms( 'category', 'orderby=asc&hide_empty=0&parent=0&exclude=1' );
 ?>
 
@@ -66,7 +66,7 @@ $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
 $query = new WP_Query(array(
     'post_type' => 'post',
-    'posts_per_page' => 2,
+    'posts_per_page' => 10,
     'paged' => $paged,
 ));
 ?>
@@ -77,22 +77,22 @@ $query = new WP_Query(array(
     <header>
     <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
     <?php if ( get_field('authorship') ) : ?>
-    <span class="byline">by 
+    <span class="byline">by
             <?php
             $authors = get_field('authorship');
                 if( $authors ):
                 $i = 1;
-                $count = count($authors);  
+                $count = count($authors);
 
-                foreach( $authors as $author ): 
+                foreach( $authors as $author ):
                     $permalink = get_permalink( $author->ID );
                     $title = get_the_title( $author->ID );
-                    $custom_field = get_field( 'field_name', $author->ID );           
-                    if ($i < $count) { 
-                        $separator = ','; 
-                    } 
-                    else { 
-                        $separator = ''; 
+                    $custom_field = get_field( 'field_name', $author->ID );
+                    if ($i < $count) {
+                        $separator = ',';
+                    }
+                    else {
+                        $separator = '';
                     }
             ?>
 
