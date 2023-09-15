@@ -33,12 +33,33 @@
 
 <?php endif; ?>
 
-
 <div class="content">
 
     <?php the_field('highlights_lead_in'); ?>
 
-    <?php the_field('highlights'); ?>
+    <?php
+        if ( get_field('highlights') ) :
+        $highlights = get_field('highlights');
+    ?>
+    <article class="links highlight">
+        <ul>
+            <?php
+                foreach ($highlights as $highlight) :
+
+                $permalink = get_permalink( $highlight->ID );
+                $title = get_the_title( $highlight->ID );
+                $excerpt = get_the_excerpt( $highlight->ID );
+            ?>
+            <li>
+                <article class="link">
+                    <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+                    <p><?php echo wp_trim_words($excerpt, 8); ?></p>
+                </article>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </article>
+    <?php endif; ?>
 
     <?php the_content(); ?>
 
