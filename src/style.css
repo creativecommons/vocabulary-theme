@@ -149,3 +149,23 @@ main article.related-posts .authored-posts.highlight article header {
     flex-direction: column;
     align-items: baseline;
 }
+
+main h2 {
+    width: 100%;
+}
+
+
+
+
+main .authored-posts.highlight article {
+    gap: 0 2em;
+    /* align-items: flex-start; */
+}
+main .authored-posts.highlight article figure {
+}
+
+main .authored-posts.highlight article header {
+    flex-direction: column;
+    align-items: baseline;
+    margin-top: 2em;
+}
