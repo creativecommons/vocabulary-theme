@@ -79,7 +79,7 @@ if ( get_field('nested_programs') ) {
     $children = get_field('nested_programs');
 ?>
 <article class="projects">
-    <h2>On-going Initiatives</h2>
+    <h2>On-going initiatives</h2>
     <p><?php the_field('nested_programs_lead_in_copy'); ?></p>
     <ul>
         <?php
