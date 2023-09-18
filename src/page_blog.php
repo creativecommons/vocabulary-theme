@@ -81,7 +81,7 @@
         <figure>
             <?php //echo get_the_post_thumbnail( $post_id, 'full' );
             ?>
-            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
+            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
             <?php if ($i == 1): ?>
             <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
             <?php endif; ?>
@@ -160,7 +160,7 @@ $query = new WP_Query(array(
         <figure>
             <?php //echo get_the_post_thumbnail( $post_id, 'full' );
             ?>
-            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
+            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
         </figure>
     </article>
 
@@ -189,7 +189,7 @@ $query = new WP_Query(array(
                 <article>
                     <figure>
 
-                        <img src="<?php echo get_the_post_thumbnail_url( $item, 'full' ); ?>" />
+                        <img src="<?php echo get_the_post_thumbnail_url( $item, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($item), '_wp_attachment_image_alt', true ); ?>" />
                         <span class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></span>
                     </figure>
                 </article>

@@ -13,7 +13,7 @@
 <?php endif; ?>
 
 <figure>
-    <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
+    <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
     <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
 </figure>
 <div class="bio">
@@ -103,11 +103,6 @@ $query = new WP_Query(array(
 
         </header>
 
-        <figure>
-            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
-
-            <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
-        </figure>
 
         <?php the_excerpt(); ?>
 
