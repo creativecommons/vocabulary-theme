@@ -154,14 +154,9 @@ main h2 {
     width: 100%;
 }
 
-
-
-
 main .authored-posts.highlight article {
     gap: 0 2em;
     align-content: flex-start;
-}
-main .authored-posts.highlight article figure {
 }
 
 main .authored-posts.highlight article header {
