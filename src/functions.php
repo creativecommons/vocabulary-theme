@@ -53,6 +53,12 @@ function register_vocabulary_menus() {
 }
 add_filter( 'image_send_to_editor', 'insert_image_as_figure', 10, 9 );
 
+//add custom styles to editor
+function wpdocs_theme_add_editor_styles() {
+  add_editor_style( 'editor-style.css' );
+}
+add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
+
 //remove gutenberg styles
 add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
 function wps_deregister_styles() {
@@ -68,7 +74,6 @@ add_filter( 'excerpt_more', 'vocab_excerpt_more' );
 
 
 // exclude current post/page from relationship field results
-
 add_filter('acf/fields/relationship/query/name=nested_programs', 'exclude_nested_id', 10, 3);
 
 function exclude_nested_id ( $args, $field, $post ) {
