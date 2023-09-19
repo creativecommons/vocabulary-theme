@@ -12,10 +12,13 @@
 <span class="pronouns">(<?php the_field('pronouns'); ?>)</span>
 <?php endif; ?>
 
+<?php if(get_post_thumbnail_id($post_id)) : ?>
 <figure>
     <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
     <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
 </figure>
+<?php endif; ?>
+
 <div class="bio">
     <?php the_content(); ?>
 </div>
