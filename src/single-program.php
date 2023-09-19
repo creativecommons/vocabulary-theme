@@ -60,13 +60,9 @@ if ( get_field('nested_programs') ) {
 
 <h1><?php the_title(); ?></h1>
 
-<?php if ($status == 'parent') : ?>
-
 <?php if(get_field('sub_heading')) : ?>
 <h2><?php the_field('sub_heading'); ?></h2>
 <?php endif; ?>
-
-<?php endif;  ?>
 
 <p><?php the_field('introduction'); ?></p>
 
