@@ -3,9 +3,9 @@
 // if parent
 // display the program-index context
 // likely to be only 4:
-// 
-// Open Policy, 
-// Open Culture, 
+//
+// Open Policy,
+// Open Culture,
 // Open Knowledge,
 // Community
 
@@ -13,7 +13,7 @@
 // if child
 // display the program-page context
 // likely to be many, and may include:
-// 
+//
 // [Open Policy]
 // Copyright
 // Better Internet
@@ -28,7 +28,7 @@
 // Open Science
 // Open Research (OA)
 // Open Journalism
-// 
+//
 // [Community]
 // Global Network
 // Learning & Training
@@ -60,13 +60,9 @@ if ( get_field('nested_programs') ) {
 
 <h1><?php the_title(); ?></h1>
 
-<?php if ($status == 'parent') : ?>
-
 <?php if(get_field('sub_heading')) : ?>
 <h2><?php the_field('sub_heading'); ?></h2>
 <?php endif; ?>
-
-<?php endif;  ?>
 
 <p><?php the_field('introduction'); ?></p>
 
@@ -74,22 +70,22 @@ if ( get_field('nested_programs') ) {
 
 <?php the_content(); ?>
 
-<?php 
+<?php
     if ($status == 'parent') :
-    $children = get_field('nested_programs');  
+    $children = get_field('nested_programs');
 ?>
 <article class="projects">
-    <h2>On-going Initiatives</h2>
+    <h2>On-going initiatives</h2>
     <p><?php the_field('nested_programs_lead_in_copy'); ?></p>
     <ul>
-        <?php 
-            foreach ($children as $child) : 
+        <?php
+            foreach ($children as $child) :
 
             $permalink = get_permalink( $child->ID );
             $title = get_the_title( $child->ID );
             $excerpt = get_the_excerpt( $child->ID );
         ?>
-        <li>    
+        <li>
             <article class="project">
                 <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                 <p><?php echo wp_trim_words($excerpt, 8); ?></p>
@@ -118,34 +114,34 @@ $query = new WP_Query(array(
 ));
 ?>
 
-<?php if ( $query->have_posts() ) : ?> 
+<?php if ( $query->have_posts() ) : ?>
 
 <article class="related-posts">
-    <h2>Related posts</h2>  
+    <h2>Related posts</h2>
 
-    <article class="authored-posts highlight"> 
-    
+    <article class="authored-posts highlight">
+
 <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
         <article>
             <header>
             <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
             <?php if ( get_field('authorship') ) : ?>
-            <span class="byline">by 
+            <span class="byline">by
                 <?php
                 $authors = get_field('authorship');
                     if( $authors ):
                     $i = 1;
-                    $count = count($authors);  
+                    $count = count($authors);
 
-                    foreach( $authors as $author ): 
+                    foreach( $authors as $author ):
                         $permalink = get_permalink( $author->ID );
                         $title = get_the_title( $author->ID );
-                        $custom_field = get_field( 'field_name', $author->ID );           
-                        if ($i < $count) { 
-                            $separator = ','; 
-                        } 
-                        else { 
-                            $separator = ''; 
+                        $custom_field = get_field( 'field_name', $author->ID );
+                        if ($i < $count) {
+                            $separator = ',';
+                        }
+                        else {
+                            $separator = '';
                         }
                 ?>
 
@@ -159,18 +155,13 @@ $query = new WP_Query(array(
             <span class="categories">
                 <?php the_category(', ') ?>
             </span>
-        
+
         </header>
-        
-            <figure>
-                <img src="../imgs/image.jpg" />
-                
-                <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
-            </figure>
+
 
         </article>
 
-<?php endwhile; ?> 
+<?php endwhile; ?>
 
     </article>
 </article>

@@ -21,7 +21,7 @@
 <aside>
 
 
-<?php 
+<?php
     $categories = get_terms( 'category', 'orderby=asc&hide_empty=0&parent=0&exclude=1' );
     $current_category = get_queried_object();
 ?>
@@ -73,22 +73,22 @@
     <header>
         <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
         <?php if ( get_field('authorship') ) : ?>
-        <span class="byline">by 
+        <span class="byline">by
         <?php
             $authors = get_field('authorship');
                 if( $authors ):
                 $i = 1;
-                $count = count($authors);  
+                $count = count($authors);
 
-                foreach( $authors as $author ): 
+                foreach( $authors as $author ):
                     $permalink = get_permalink( $author->ID );
                     $title = get_the_title( $author->ID );
-                    $custom_field = get_field( 'field_name', $author->ID );           
-                    if ($i < $count) { 
-                        $separator = ','; 
-                    } 
-                    else { 
-                        $separator = ''; 
+                    $custom_field = get_field( 'field_name', $author->ID );
+                    if ($i < $count) {
+                        $separator = ',';
+                    }
+                    else {
+                        $separator = '';
                     }
             ?>
 
@@ -106,14 +106,14 @@
     </header>
 
     <figure>
-        <?php //echo get_the_post_thumbnail( $post_id, 'full' ); 
+        <?php //echo get_the_post_thumbnail( $post_id, 'full' );
         ?>
-        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" />
+        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id(), '_wp_attachment_image_alt', true ); ?>" />
         <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
     </figure>
 
     <?php the_excerpt(); ?>
-   
+
 </article>
 
 <?php endwhile; // end of the loop. ?>
