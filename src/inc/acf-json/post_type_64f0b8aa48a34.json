@@ -64,6 +64,7 @@
     "supports": [
         "title",
         "editor",
+        "excerpt",
         "thumbnail"
     ],
     "taxonomies": [
@@ -83,5 +84,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1694632376
+    "modified": 1695141129
 }
