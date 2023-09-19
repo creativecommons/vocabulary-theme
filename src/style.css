@@ -159,7 +159,7 @@ main h2 {
 
 main .authored-posts.highlight article {
     gap: 0 2em;
-    /* align-items: flex-start; */
+    align-content: flex-start;
 }
 main .authored-posts.highlight article figure {
 }
