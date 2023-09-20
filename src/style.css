@@ -393,7 +393,7 @@ main nav.pagination ul li span.current {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     margin-top: 8em;
-    padding: 4em 4em;
+    padding: 6em 4em;
     gap: 2em;
     box-sizing: border-box;
 
