@@ -207,7 +207,7 @@ main nav.pagination ul li span.current {
     grid-area: graphic;
     margin: 0;
     padding: 0;
-    margin-top: 1em;
+    margin-top: .6em;
   }
 
   .home-narrative .topic-summary figure iframe {
