@@ -24,35 +24,31 @@ get_header('', array( 'body-classes' => 'home-narrative') );
 </article>
 
 
+
+
 <article class="case-studies">
     <h2>The nonprofit behind the licenses and tools the world uses to share</h2>
     <p>For over 20 years, Creative Commons has supported a global movement built on a belief in the power of open access to knowledge and creativity. From Wikipedia to the Smithsonian, organizations and individuals rely on our work to share billions of historic images, scientific articles, cultural artifacts, educational resources, music, and more!</p>
+
+    <?php
+        $case_studies = get_field('case_studies');
+        if ( $case_studies ) :
+    ?>
     <ul>
+        <?php
+            foreach ($case_studies as $case_study) :
+            $case_study_img_url = wp_get_attachment_image_url( $case_study->ID, 'full' );
+            $case_study_caption = wp_get_attachment_caption($case_study->ID);
+        ?>
         <li>
             <figure>
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/imgs/home1.jpg" />
-                <span class="attribution">"<a href="https://www.loc.gov/pictures/item/2017786790/">Farmer and his brother making music</a>” by <a href="https://www.loc.gov/pictures/related/?fi=name&q=Lee%2C%20Russell%2C%201903-1986">Russell Lee</a>, here cropped, is marked with <a href="https://creativecommons.org/publicdomain/mark/1.0/">CC PDM 1.0</a></span>
+                <img src="<?php echo $case_study_img_url; ?>" />
+                <span class="attribution"><?php echo $case_study_caption; ?></span>
             </figure>
         </li>
-        <li>
-            <figure>
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/imgs/home2.jpg" />
-                <span class="attribution">“<a href="https://www.flickr.com/photos/ter-burg/32896267507/">Flickr photowalk at the Creative Commons Global Summit 2019, Lisbon</a>” by <a href="https://www.flickr.com/photos/ter-burg/">Sebastiaan ter Burg</a>, here cropped, is licensed via <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
-            </figure>
-        </li>
-        <li>
-            <figure>
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/imgs/home3.jpg" />
-                <span class="attribution">“<a href="https://www.flickr.com/photos/niaid/49557785797">Novel Coronavirus SARS-CoV-2” by <a href=https://www.flickr.com/photos/niaid/>NIAID</a>, here cropped, is licensed via <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
-            </figure>
-        </li>
-        <li>
-            <figure>
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/imgs/home4.jpg" />
-                <span class="attribution">“<a href="https://www.flickr.com/photos/lensonjapan/8724992177">Children kabuki theater in Nagahama (warrior Kumagai, 12 y.o.)</a>” by <a href="https://www.flickr.com/photos/lensonjapan/">lensonjapan</a>, here cropped, is licensed via <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
-            </figure>
-        </li>
+        <?php endforeach; ?>
     </ul>
+    <?php endif; ?>
 
     <footer>
         <article class="data-points supporting">

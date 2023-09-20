@@ -3,6 +3,35 @@
     "title": "Home Index Settings",
     "fields": [
         {
+            "key": "field_650b64c0c9554",
+            "label": "Case Studies Images",
+            "name": "case_studies",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "attachment"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "object",
+            "min": "",
+            "max": 4,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_650b626df3c5d",
             "label": "First Data Point",
             "name": "",
@@ -274,5 +303,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695245061
+    "modified": 1695246355
 }
