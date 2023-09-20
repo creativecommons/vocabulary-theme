@@ -183,7 +183,7 @@ main nav.pagination ul li span.current {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0 5%;
-    margin-bottom: 8em;
+    margin-bottom: 6.4em;
     gap: 0 4em;
 
   }
@@ -239,7 +239,7 @@ main nav.pagination ul li span.current {
 
   .home-narrative .case-studies {
     padding: 0 5%;
-    padding-top: 4em;
+    padding-top: 6em;
     position: relative;
 
     color: white;
