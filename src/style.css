@@ -381,6 +381,10 @@ main nav.pagination ul li span.current {
     margin-bottom: 4em;
   }
 
+  .home-narrative main .authored-posts.highlight article header {
+    margin-top: 0;
+  }
+
   .home-narrative main .authored-posts > h2 {
     grid-column: span 12;
     margin-bottom: 0;
