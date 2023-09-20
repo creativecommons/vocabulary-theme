@@ -17,7 +17,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
     </figure>
     <div class="description">
         <p>Creative Commons is an international nonprofit organization that empowers people to grow and sustain the thriving commons of shared knowledge and culture we need to address the world's most pressing challenges and create a brighter future for all.</p>
-        <a href="#">Learn more</a>
+        <a href="/about">Learn more</a>
     </div>
 </article>
 
