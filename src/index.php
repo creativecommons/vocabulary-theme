@@ -11,8 +11,8 @@
 <!-- <span class="byline">by <a href="#">Marie Langley</a>, <a href="#">Marvau Laraugne</a></span> -->
 
 
-<?php if (!class_exists('ACF')): ?> 
-    
+<?php if (!class_exists('ACF')): ?>
+
 <!-- display raw post_meta, if ACF not installed & activated -->
 <p><?php echo get_post_meta( get_the_ID(), 'lead_in_copy', true ); ?></p>
 
@@ -60,7 +60,7 @@
 <!-- <div class="series">
     <span>part of the</span>
     <a href="#">Copyright and Artists</a> series, a unique take on how copyright isn't aligned with the interests of individual artists, but instead mega-corps.
-    
+
     </div> -->
 
     <?php the_content(); ?>

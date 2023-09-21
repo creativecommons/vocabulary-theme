@@ -9,7 +9,7 @@
 
         <h2><?php echo $menu['title']; ?></h2>
         <?php
-            wp_nav_menu( array( 
+            wp_nav_menu( array(
                 'menu'	=> $menu['output'],
                 'container' => false, // Removes the container, leaving just the ul element
                 'theme_location' => '__no_such_location',
