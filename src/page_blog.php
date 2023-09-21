@@ -95,9 +95,9 @@
 
 
     <?php
-    if ($i != 1) {
+    // if ($i != 1) {
         $highlight_posts[] = $post->ID;
-    }
+    // }
     $i++;
     ?>
 
@@ -178,6 +178,7 @@ $query = new WP_Query(array(
     <a class="more" href="/blog/archive/">more posts</a>
 
     <article class="attribution-list">
+        <?php array_shift($highlight_posts); ?>
 
         <h2>Images Attribution</h2>
         <button class="expand-attribution">view</button>
