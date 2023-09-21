@@ -657,11 +657,3 @@ main nav.pagination ul li span.current {
 
 /* patches */
 
-.person-page main > header .pronouns {
-    grid-column-start: 2;
-    margin-bottom: 1em;
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.5em;
-}
