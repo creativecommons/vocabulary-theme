@@ -12,8 +12,8 @@
 
 <!-- <span class="byline">by <a href="#">Marie Langley</a>, <a href="#">Marvau Laraugne</a></span> -->
 
-<?php if (!class_exists('ACF')): ?> 
-    
+<?php if (!class_exists('ACF')): ?>
+
 <!-- display raw post_meta, if ACF not installed & activated -->
 <p><?php echo get_post_meta( get_the_ID(), 'lead_in_copy', true ); ?></p>
 
