@@ -38,6 +38,13 @@ function register_vocabulary_menus() {
 //  add support for featured image on posts
  add_theme_support( 'post-thumbnails' );
 
+ // add custom image sizes
+// add_image_size( 'square', 300, 300, true ); // Hard crop
+
+update_option( 'thumbnail_size_w', 300 );
+update_option( 'thumbnail_size_h', 300 );
+
+
 //  Thanks to Chris Coyier & Caspar Hübinger
 //  https://css-tricks.com/snippets/wordpress/insert-images-within-figure-element-from-media-uploader/
 //  modify html wrapping img to be figure when inserted into WYSIWYG editor
@@ -185,3 +192,5 @@ function vocab_acf_json_load_point( $paths ) {
     return $paths;
 }
 add_filter( 'acf/settings/load_json', 'vocab_acf_json_load_point' );
+
+
