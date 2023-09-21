@@ -13,8 +13,6 @@
 
 <h1>Archives</h1>
 
-<p>lead in paragraph</p>
-
 </header>
 
 <aside>
