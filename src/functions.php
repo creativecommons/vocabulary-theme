@@ -99,6 +99,43 @@ function exclude_highlights_id ( $args, $field, $post ) {
   return $args;
 }
 
+function custom_sidebar_menu_fallback_full() {
+  $homepage = get_page_by_path( 'homepage' );
+  $homepageID = $homepage->ID;
+
+  $output = wp_list_pages( array(
+    'echo'     => 0,
+    'exclude'  => $homepageID,
+    'depth'    => 1,
+     'title_li' => ''
+  ) );
+
+  if ( is_page() ) {
+    $page = $post->ID;
+    if ( $post->post_parent ) {
+      $page = $post->post_parent;
+    }
+
+    $children = wp_list_pages( array(
+      'echo'     => 0,
+      'exclude'  => $homepageID,
+      'child_of' => $page,
+      'title_li' => ''
+    ) );
+
+    if ( $children ) {
+      $output = wp_list_pages( array(
+        'echo' => 0,
+        'exclude'  => $homepageID,
+        'child_of' => $page,
+        'title_li' => ''
+      ) );
+    }
+  }
+  echo '<ul class="default">';
+  echo $output;
+  echo '</ul>';
+}
 
 
 function custom_sidebar_menu_fallback() {
