@@ -108,7 +108,7 @@
     <figure>
         <?php //echo get_the_post_thumbnail( $post_id, 'full' );
         ?>
-        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id(), '_wp_attachment_image_alt', true ); ?>" />
+        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id(), '_wp_attachment_image_alt', true ); ?>" />
         <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
     </figure>
 

@@ -38,11 +38,13 @@ get_header('', array( 'body-classes' => 'home-narrative') );
         <?php
             foreach ($case_studies as $case_study) :
             $case_study_img_url = wp_get_attachment_image_url( $case_study->ID, 'full' );
+            $case_study_img_id = attachment_url_to_postid( $case_study_img_url );
             $case_study_caption = wp_get_attachment_caption($case_study->ID);
+            $case_study_alt = $image_alt = get_post_meta($case_study_img_id, '_wp_attachment_image_alt', TRUE);
         ?>
         <li>
             <figure>
-                <img src="<?php echo $case_study_img_url; ?>" />
+                <img src="<?php echo $case_study_img_url; ?>" alt="<?php echo $case_study_alt; ?>"  />
                 <span class="attribution"><?php echo $case_study_caption; ?></span>
             </figure>
         </li>

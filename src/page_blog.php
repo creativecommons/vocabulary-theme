@@ -81,7 +81,7 @@
         <figure>
             <?php //echo get_the_post_thumbnail( $post_id, 'full' );
             ?>
-            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
             <?php if ($i == 1): ?>
             <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
             <?php endif; ?>
@@ -95,9 +95,9 @@
 
 
     <?php
-    if ($i != 1) {
+    // if ($i != 1) {
         $highlight_posts[] = $post->ID;
-    }
+    // }
     $i++;
     ?>
 
@@ -160,7 +160,7 @@ $query = new WP_Query(array(
         <figure>
             <?php //echo get_the_post_thumbnail( $post_id, 'full' );
             ?>
-            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
         </figure>
     </article>
 
@@ -178,6 +178,7 @@ $query = new WP_Query(array(
     <a class="more" href="/blog/archive/">more posts</a>
 
     <article class="attribution-list">
+        <?php array_shift($highlight_posts); ?>
 
         <h2>Images Attribution</h2>
         <button class="expand-attribution">view</button>
@@ -189,7 +190,7 @@ $query = new WP_Query(array(
                 <article>
                     <figure>
 
-                        <img src="<?php echo get_the_post_thumbnail_url( $item, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($item), '_wp_attachment_image_alt', true ); ?>" />
+                        <img src="<?php echo get_the_post_thumbnail_url( $item, 'medium' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($item), '_wp_attachment_image_alt', true ); ?>" />
                         <span class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></span>
                     </figure>
                 </article>

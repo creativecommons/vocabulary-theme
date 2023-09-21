@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
 <title><?php wp_title(''); echo ' | ';  bloginfo( 'name' ); ?></title>
-  
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" media="all" href="<?php echo get_bloginfo( 'template_directory' ); ?>/style.css">
@@ -20,9 +20,9 @@
         <!-- below menu is not final items, for testing only -->
         <nav class="primary-menu">
             <ul>
-                <li><a href="/about/team">Who We Are</a></li>
-                <li><a href="/about">What We Do</a></li>
-                <li><a href="/about/cclicenses/">Licenses and Tools</a></li>
+                <li><a href="/about">Who We Are</a></li>
+                <li><a href="/programs">What We Do</a></li>
+                <li><a href="/share-your-work">Licenses and Tools</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="/about/support-cc/">Support Us</a></li>
                 <?php
@@ -56,12 +56,12 @@
         </nav>
     </div>
 
-   
+
 
     <div class="explore-panel">
-    
+
     <!-- (optional main CC logo, p, link on non-home site back to main site) -->
-    <!-- <aside> 
+    <!-- <aside>
         <a class="identity-logo" href="#">Creative Commons</a>
         <h2>Our Work Relies On You!</h2>
         <p>Help us keep the internet free and open.</p>

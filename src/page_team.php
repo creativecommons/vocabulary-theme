@@ -37,7 +37,7 @@
                 <span class="title"><?php echo $position_title; ?></span>
 
                 <figure>
-                    <img src="<?php echo get_the_post_thumbnail_url( $staff_person->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($staff_person->ID), '_wp_attachment_image_alt', true ); ?>" />
+                    <img src="<?php echo get_the_post_thumbnail_url( $staff_person->ID, 'thumbnail' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($staff_person->ID), '_wp_attachment_image_alt', true ); ?>" />
                 </figure>
 
                 <p><?php echo wp_trim_words($excerpt, 15); ?></p>
@@ -69,7 +69,7 @@
                 <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                 <span class="title"><?php echo $position_title; ?></span>
                 <figure>
-                    <img src="<?php echo get_the_post_thumbnail_url( $board_person->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($board_person->ID), '_wp_attachment_image_alt', true ); ?>" />
+                    <img src="<?php echo get_the_post_thumbnail_url( $board_person->ID, 'thumbnail' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($board_person->ID), '_wp_attachment_image_alt', true ); ?>" />
                 </figure>
 
                 <p><?php echo wp_trim_words($excerpt, 15); ?></p>
@@ -100,7 +100,7 @@
                 <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                 <span class="title"><?php echo $position_title; ?></span>
                 <figure>
-                    <img src="<?php echo get_the_post_thumbnail_url( $emeritus_person->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($emeritus_person->ID), '_wp_attachment_image_alt', true ); ?>" />
+                    <img src="<?php echo get_the_post_thumbnail_url( $emeritus_person->ID, 'thumbnail' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($emeritus_person->ID), '_wp_attachment_image_alt', true ); ?>" />
                 </figure>
 
                 <p><?php echo wp_trim_words($excerpt, 15); ?></p>
@@ -132,7 +132,7 @@
                 <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                 <span class="title"><?php echo $position_title; ?></span>
                 <figure>
-                    <img src="<?php echo get_the_post_thumbnail_url( $advisory_person->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($advisory_person->ID), '_wp_attachment_image_alt', true ); ?>" />
+                    <img src="<?php echo get_the_post_thumbnail_url( $advisory_person->ID, 'thumbnail' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($advisory_person->ID), '_wp_attachment_image_alt', true ); ?>" />
                 </figure>
 
                 <p><?php echo wp_trim_words($excerpt, 15); ?></p>
@@ -164,7 +164,7 @@
                 <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                 <span class="title"><?php echo $position_title; ?></span>
                 <figure>
-                    <img src="<?php echo get_the_post_thumbnail_url( $audit_person->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($audit_person->ID), '_wp_attachment_image_alt', true ); ?>" />
+                    <img src="<?php echo get_the_post_thumbnail_url( $audit_person->ID, 'thumbnail' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($audit_person->ID), '_wp_attachment_image_alt', true ); ?>" />
                 </figure>
 
                 <p><?php echo wp_trim_words($excerpt, 15); ?></p>

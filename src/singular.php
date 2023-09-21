@@ -72,6 +72,13 @@
 
 <?php the_content(); ?>
 
+<!-- display ACF field, if ACF installed & activated -->
+<?php if (get_field('closing_copy')): ?>
+<div class="closing">
+    <?php the_field('closing_copy'); ?>
+</div>
+<?php endif; ?>
+
 <span class="pub-date"><?php the_date('d F Y'); ?></span>
 
 <?php
