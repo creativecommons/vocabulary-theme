@@ -657,3 +657,10 @@ main nav.pagination ul li span.current {
 
 /* patches */
 
+.default-page main > aside nav ul {
+  font-size: 1rem;
+}
+
+.default-page main > aside nav ul ul {
+  margin-top: .8em;
+}
