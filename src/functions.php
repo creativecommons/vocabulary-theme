@@ -2,27 +2,27 @@
 
 // SECURITY
 // remove output of wordpress version in source
-//remove_action('wp_head', 'wp_generator');
+remove_action('wp_head', 'wp_generator');
 
 // remove Customize menu
-// add_action('admin_menu', function () {
-//   global $submenu;
+add_action('admin_menu', function () {
+  global $submenu;
 
-//   foreach ($submenu as $name => $items) {
-//       if ($name === 'themes.php') {
-//           foreach ($items as $i => $data) {
-//               if (in_array('customize', $data, true)) {
-//                   unset($submenu[$name][$i]);
+  foreach ($submenu as $name => $items) {
+      if ($name === 'themes.php') {
+          foreach ($items as $i => $data) {
+              if (in_array('customize', $data, true)) {
+                  unset($submenu[$name][$i]);
 
-//                   return;
-//               }
-//           }
-//       }
-//   }
-// });
+                  return;
+              }
+          }
+      }
+  }
+});
 
 // remove GUI file editor
-//define('DISALLOW_FILE_EDIT', TRUE);
+define('DISALLOW_FILE_EDIT', TRUE);
 
 // GENERAL WP
 // add menu locations
