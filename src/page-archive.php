@@ -13,8 +13,6 @@
 
 <h1>Archives</h1>
 
-<p>lead in paragraph</p>
-
 </header>
 
 <aside>
@@ -46,12 +44,6 @@
             <li><a href="#">Within The Stacks</a></li>
         </ul>
     </nav> -->
-
-    <article class="attention">
-        <h2>Write a post!</h2>
-        <p>We accept <a href="#">proposals and submissions for posts</a> related to our mission and the commons.</p>
-
-    </article>
 
 
 </aside>

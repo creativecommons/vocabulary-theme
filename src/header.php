@@ -20,8 +20,8 @@
         <!-- below menu is not final items, for testing only -->
         <nav class="primary-menu">
             <ul>
-                <li><a href="/about">Who We Are</a></li>
-                <li><a href="/programs">What We Do</a></li>
+                <li><a href="/about/mission">Who We Are</a></li>
+                <li><a href="/about">What We Do</a></li>
                 <li><a href="/share-your-work">Licenses and Tools</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="/about/support-cc/">Support Us</a></li>

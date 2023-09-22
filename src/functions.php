@@ -2,27 +2,27 @@
 
 // SECURITY
 // remove output of wordpress version in source
-//remove_action('wp_head', 'wp_generator');
+remove_action('wp_head', 'wp_generator');
 
 // remove Customize menu
-// add_action('admin_menu', function () {
-//   global $submenu;
+add_action('admin_menu', function () {
+  global $submenu;
 
-//   foreach ($submenu as $name => $items) {
-//       if ($name === 'themes.php') {
-//           foreach ($items as $i => $data) {
-//               if (in_array('customize', $data, true)) {
-//                   unset($submenu[$name][$i]);
+  foreach ($submenu as $name => $items) {
+      if ($name === 'themes.php') {
+          foreach ($items as $i => $data) {
+              if (in_array('customize', $data, true)) {
+                  unset($submenu[$name][$i]);
 
-//                   return;
-//               }
-//           }
-//       }
-//   }
-// });
+                  return;
+              }
+          }
+      }
+  }
+});
 
 // remove GUI file editor
-//define('DISALLOW_FILE_EDIT', TRUE);
+define('DISALLOW_FILE_EDIT', TRUE);
 
 // GENERAL WP
 // add menu locations
@@ -99,6 +99,43 @@ function exclude_highlights_id ( $args, $field, $post ) {
   return $args;
 }
 
+function custom_sidebar_menu_fallback_full() {
+  $homepage = get_page_by_path( 'homepage' );
+  $homepageID = $homepage->ID;
+
+  $output = wp_list_pages( array(
+    'echo'     => 0,
+    'exclude'  => $homepageID,
+    'depth'    => 1,
+     'title_li' => ''
+  ) );
+
+  if ( is_page() ) {
+    $page = $post->ID;
+    if ( $post->post_parent ) {
+      $page = $post->post_parent;
+    }
+
+    $children = wp_list_pages( array(
+      'echo'     => 0,
+      'exclude'  => $homepageID,
+      'child_of' => $page,
+      'title_li' => ''
+    ) );
+
+    if ( $children ) {
+      $output = wp_list_pages( array(
+        'echo' => 0,
+        'exclude'  => $homepageID,
+        'child_of' => $page,
+        'title_li' => ''
+      ) );
+    }
+  }
+  echo '<ul class="default">';
+  echo $output;
+  echo '</ul>';
+}
 
 
 function custom_sidebar_menu_fallback() {
