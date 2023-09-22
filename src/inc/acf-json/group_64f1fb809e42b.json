@@ -130,6 +130,26 @@
                 "param": "post_template",
                 "operator": "!=",
                 "value": "page_static.php"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "page_blog.php"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "page_home.php"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "page_team.php"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "page_walkthrough.php"
             }
         ]
     ],
@@ -142,5 +162,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694632329
+    "modified": 1695403547
 }
