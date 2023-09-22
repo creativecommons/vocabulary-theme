@@ -673,6 +673,27 @@ main nav.pagination ul li span.current {
   margin-top: .8em;
 }
 
+.default-page div[id^="attachment_"].alignleft {
+  margin-left: 0
+  width: 40%;
+}
+
+.default-page div[id^="attachment_"].alignright {
+  margin-right: 0;
+  width: 40%;
+}
+
+.default-page main figure:has(img.alignleft) {
+  margin-left: 0;
+  width: 40%;
+}
+
+.default-page main figure:has(img.alignright) {
+  margin-right: 0;
+  width: 40%;
+
+}
+
 .team-index main .persons .person h3 {
   width: 100%;
 }
