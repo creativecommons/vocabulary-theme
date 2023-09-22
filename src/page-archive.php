@@ -45,12 +45,6 @@
         </ul>
     </nav> -->
 
-    <article class="attention">
-        <h2>Write a post!</h2>
-        <p>We accept <a href="#">proposals and submissions for posts</a> related to our mission and the commons.</p>
-
-    </article>
-
 
 </aside>
 
