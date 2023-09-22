@@ -57,8 +57,8 @@ get_header('', array( 'body-classes' => 'home-narrative') );
             <?php
 
                $firstDataPointImage = get_field('first_data_point_image');
-               $secondDataPointImage = get_field('first_data_point_image');
-               $thirdDataPointImage = get_field('first_data_point_image');
+               $secondDataPointImage = get_field('second_data_point_image');
+               $thirdDataPointImage = get_field('third_data_point_image');
 
             ?>
 
