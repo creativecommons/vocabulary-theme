@@ -3,8 +3,10 @@
 <head>
 <title><?php wp_title('|',true,'right'); ?><?php bloginfo('name'); ?></title>
 
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/favicon/favicon.ico" sizes="any">
+<link rel="icon" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/logos/lettermark.svg" type="image/svg+xml">
+<link rel="manifest" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/favicon/manifest.webmanifest">
 
 <link rel="stylesheet" media="all" href="<?php echo get_bloginfo( 'template_directory' ); ?>/style.css">
 
