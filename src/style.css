@@ -679,7 +679,7 @@ main p:has(img) {
 }
 
 .default-page div[id^="attachment_"].alignleft {
-  margin-left: 0
+  margin-left: 0;
   width: 40%;
 }
 
