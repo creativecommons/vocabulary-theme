@@ -7,6 +7,7 @@
 <link rel="icon" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/favicon/favicon.ico" sizes="any">
 <link rel="icon" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/logos/lettermark.svg" type="image/svg+xml">
 <link rel="manifest" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/favicon/manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
 
 <link rel="stylesheet" media="all" href="<?php echo get_bloginfo( 'template_directory' ); ?>/style.css">
 
