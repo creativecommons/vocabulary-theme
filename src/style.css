@@ -658,6 +658,10 @@ main nav.pagination ul li span.current {
 
 /* patches */
 
+main p:has(img) {
+  overflow: hidden;
+}
+
 .home-narrative main > article:nth-of-type(1) > h2 {
   margin-top: 0;
 }
@@ -697,6 +701,10 @@ main nav.pagination ul li span.current {
 
 .team-index main .persons .person h3 {
   width: 100%;
+}
+
+.person-page main > header {
+  min-height: 410px;
 }
 
 body > footer {
