@@ -670,6 +670,14 @@ main p:has(img) {
   margin-top: 0;
 }
 
+.home-narrative main .authored-posts.highlight article.attribution-list h2 {
+  margin: 0;
+}
+
+.home-narrative main .authored-posts.highlight article.attribution-list ul {
+  margin-top: 2em;
+}
+
 .default-page main > aside nav ul {
   font-size: 1rem;
 }
@@ -696,7 +704,14 @@ main p:has(img) {
 .default-page main figure:has(img.alignright) {
   margin-right: 0;
   width: 40%;
+}
 
+.blog-index .attribution-list h2 {
+  margin: 0;
+}
+
+.blog-index .attribution-list ul.expand {
+  margin-top: 2em;
 }
 
 .team-index main .persons .person h3 {
