@@ -678,6 +678,18 @@ main p:has(img) {
   margin-top: 2em;
 }
 
+.default-page main > header {
+  padding: 3.7em 0;
+}
+
+  .default-page main > header h1 {
+  margin: 0;
+}
+
+.default-page main > header p {
+  margin-bottom: .3em;
+}
+
 .default-page main > aside nav ul {
   font-size: 1rem;
 }
