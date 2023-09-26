@@ -658,6 +658,10 @@ main nav.pagination ul li span.current {
 
 /* patches */
 
+.masthead .identity-logo:focus, body > footer .identity-logo:focus, .icon-replace:focus {
+  background-color: purple;
+}
+
 main p:has(img) {
   overflow: hidden;
 }
