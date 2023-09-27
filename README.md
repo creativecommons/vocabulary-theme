@@ -81,7 +81,7 @@ Dedication][cc-zero].
 
 ### Normalize.css
 
-normalise.css is licensed under the Expat/[MIT][mit] License.
+normalize.css is licensed under the Expat/[MIT][mit] License.
 
 [mit]: https://opensource.org/license/mit/
 
