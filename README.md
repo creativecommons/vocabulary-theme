@@ -62,10 +62,12 @@ See [scripts/README.md](scripts/README.md).
 
 ### Code
 
-Vocabulary Theme code is licensed under the [GNU General Public License v2.0][gpl] or later.
+Vocabulary Theme code is licensed under the [GNU General Public License
+v2.0][gpl] or later.
 
 
 [gpl]: https://gnu.org/licenses/gpl-2.0.html "The GPL License"
+
 
 ### Vocabulary
 
@@ -78,6 +80,7 @@ Dedication][cc-zero].
 
 [cc-zero-png]: https://licensebuttons.net/l/zero/1.0/88x31.png "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication button"
 [cc-zero]: https://creativecommons.org/publicdomain/zero/1.0/ "Creative Commons — CC0 1.0 Universal"
+
 
 ### Normalize.css
 
