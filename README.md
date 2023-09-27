@@ -44,6 +44,22 @@ containers:
 See [scripts/README.md](scripts/README.md).
 
 
+## Cache warning
+
+:warning: **WARNING: This theme does not currently contain any _dynamic_
+content (any user-specific content). The addition of _dynamic_ content must be
+coordinated with the content delivery network (CDN) page rules that govern what
+is cached.**
+
+Currently, the theme's output of pages is completely deterministic. Any given
+page rendered now, will be identical to the same page rendered 30 minutes later
+(assuming the theme is the same version). This allows for very simple CDN page
+rules (ex. [Caching Static HTML with WordPressWooCommerce · Cloudflare Support
+docs][cloudflare-caching-wp]).
+
+[cloudflare-caching-wp]: https://developers.cloudflare.com/support/third-party-software/content-management-system-cms/caching-static-html-with-wordpresswoocommerce/
+
+
 ## Copyright and trademarks
 
 
@@ -62,10 +78,12 @@ See [scripts/README.md](scripts/README.md).
 
 ### Code
 
-Vocabulary Theme code is licensed under the [GNU General Public License v2.0][gpl] or later.
+Vocabulary Theme code is licensed under the [GNU General Public License
+v2.0][gpl] or later.
 
 
 [gpl]: https://gnu.org/licenses/gpl-2.0.html "The GPL License"
+
 
 ### Vocabulary
 
@@ -78,6 +96,7 @@ Dedication][cc-zero].
 
 [cc-zero-png]: https://licensebuttons.net/l/zero/1.0/88x31.png "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication button"
 [cc-zero]: https://creativecommons.org/publicdomain/zero/1.0/ "Creative Commons — CC0 1.0 Universal"
+
 
 ### Normalize.css
 
