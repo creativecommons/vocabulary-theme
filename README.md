@@ -46,4 +46,12 @@ See [scripts/README.md](scripts/README.md).
 
 ## License
 
+WordPress theme code that directly interacts with or is derived from WordPress is licensed under the [GNU General Public License v2.0][gpl] or later. In this repository that code is found within the `/src` directory, but within a Release it is located at the root.
 
+Code outside the `/src` directory is licensed under the Expat/[MIT][mit] License. See [`LICENSE`](LICENSE).
+
+Vocabulary contains mixed licensing information. See [src/vocabulary/README.md](scripts/README.md):
+
+
+[gpl]: https://gnu.org/licenses/gpl-2.0.html "The GPL License"
+[mit]: http://www.opensource.org/licenses/MIT "The MIT License | Open Source Initiative"
