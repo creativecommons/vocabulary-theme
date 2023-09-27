@@ -730,6 +730,10 @@ main p:has(img) {
   margin-top: 2em;
 }
 
+.team-index main .persons .person img {
+  zoom: 2;
+}
+
 .team-index main .persons .person h3 {
   width: 100%;
 }
