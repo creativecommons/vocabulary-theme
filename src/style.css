@@ -746,6 +746,17 @@ body > footer {
   padding-top: 40px;
 }
 
+@media (min-width: 1500px) {
+  body {
+    width: 1500px;
+    margin: 0 auto;
+  }
+
+  .home-narrative .data-points .data-point.khan-academy h2 {
+    text-indent: -6000px;
+  }
+}
+
 @media (max-width: 900px) {
 
   .home-narrative .authored-posts.highlight h2 {
