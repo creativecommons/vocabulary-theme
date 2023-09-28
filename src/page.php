@@ -8,8 +8,6 @@
 
 <h1><?php the_title(); ?></h1>
 
-<!-- <span class="byline">by <a href="#">Marie Langley</a>, <a href="#">Marvau Laraugne</a></span> -->
-
 <?php if (!class_exists('ACF')): ?>
 
 <!-- display raw post_meta, if ACF not installed & activated -->
