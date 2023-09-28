@@ -791,4 +791,27 @@ body > footer {
     padding: 1.2em;
   }
 
+  .home-narrative .attribution-list {
+    padding: 2em;
+  }
+
+  .home-narrative .attribution-list h2 {
+    width: 50%;
+    font-size: .5em;
+    hyphens: auto;
+    word-break: break-word;
+
+  }
+
+  .blog-index .attribution-list {
+    padding: 2em;
+  }
+
+  .blog-index .attribution-list h2 {
+    width: 50%;
+    hyphens: auto;
+    word-break: break-word;
+
+  }
+
 }

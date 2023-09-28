@@ -180,7 +180,7 @@ $query = new WP_Query(array(
     <article class="attribution-list">
         <?php array_shift($highlight_posts); ?>
 
-        <h2>Images Attribution</h2>
+        <h2>Images Attri&shy;bution</h2>
         <button class="expand-attribution">view</button>
 
         <ul class="attribution-panel">

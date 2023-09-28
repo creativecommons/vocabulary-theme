@@ -179,7 +179,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
 
         <article class="attribution-list">
 
-            <h2>Images Attribution</h2>
+            <h2>Images Attri&shy;bution</h2>
             <button class="expand-attribution">view</button>
 
             <ul class="attribution-panel">
