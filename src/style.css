@@ -731,7 +731,7 @@ main p:has(img) {
 }
 
 .team-index main .persons .person img {
-  zoom: 2;
+  zoom: 10;
 }
 
 .team-index main .persons .person h3 {
