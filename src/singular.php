@@ -79,7 +79,7 @@
 </div>
 <?php endif; ?>
 
-<span class="pub-date"><?php the_date('d F Y'); ?></span>
+<span class="pub-date">Posted <?php the_date('d F Y'); ?></span>
 
 <?php
     $posttags = get_the_tags();

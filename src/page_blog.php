@@ -88,7 +88,7 @@
         </figure>
 
         <?php if ($i == 1): ?>
-        <p>The Creative Commons Open Education Team is pleased to provide a snapshot of progress made toward opening access and equity in education, through a look at our collective efforts in 2022.1 We laud the CC open education community for its important work throughout 2022. CC and community members' open education efforts in 2022 included, but </p>
+            <?php the_excerpt(); ?>
         <?php endif; ?>
 
     </article>
@@ -180,7 +180,7 @@ $query = new WP_Query(array(
     <article class="attribution-list">
         <?php array_shift($highlight_posts); ?>
 
-        <h2>Images Attribution</h2>
+        <h2>Images Attri&shy;bution</h2>
         <button class="expand-attribution">view</button>
 
         <ul class="attribution-panel">

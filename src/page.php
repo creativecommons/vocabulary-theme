@@ -8,8 +8,6 @@
 
 <h1><?php the_title(); ?></h1>
 
-<!-- <span class="byline">by <a href="#">Marie Langley</a>, <a href="#">Marvau Laraugne</a></span> -->
-
 <?php if (!class_exists('ACF')): ?>
 
 <!-- display raw post_meta, if ACF not installed & activated -->
@@ -44,7 +42,12 @@
     <?php
         // introduce hack to output legacy custom_field_data here until moved into main content
         // TODO: remove once content is migrated
+        $cc_program_left =  htmlspecialchars_decode(get_post_meta($post->ID, 'cc_program_left', TRUE));
+        $cc_program_right =  htmlspecialchars_decode(get_post_meta($post->ID, 'cc_program_right', TRUE));
         $cc_program_get_involved =  htmlspecialchars_decode(get_post_meta($post->ID, 'cc_program_get_involved', TRUE));
+
+        echo $cc_program_left;
+        echo $cc_program_right;
         echo $cc_program_get_involved;
     ?>
 

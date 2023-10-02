@@ -19,7 +19,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
     </figure>
     <div class="description">
         <p>Creative Commons is an international nonprofit organization that empowers people to grow and sustain the thriving commons of shared knowledge and culture we need to address the world's most pressing challenges and create a brighter future for all.</p>
-        <a href="/about">Learn more</a>
+        <a href="/mission">Learn more</a>
     </div>
 </article>
 
@@ -159,7 +159,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
         </figure>
 
         <?php if ($i == 1): ?>
-        <p>The Creative Commons Open Education Team is pleased to provide a snapshot of progress made toward opening access and equity in education, through a look at our collective efforts in 2022.1 We laud the CC open education community for its important work throughout 2022. CC and community members' open education efforts in 2022 included, but </p>
+            <?php the_excerpt(); ?>
         <?php endif; ?>
 
     </article>
@@ -179,7 +179,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
 
         <article class="attribution-list">
 
-            <h2>Images Attribution</h2>
+            <h2>Images Attri&shy;bution</h2>
             <button class="expand-attribution">view</button>
 
             <ul class="attribution-panel">
