@@ -18,7 +18,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
         ?>
         <span class="attention">
             <span class="icon-attach fa-info"></span>
-            <?php echo  $featured_media_notice; ?>
+            <?php echo $featured_media_notice; ?>
         </span>
         <?php endif; ?>
         <iframe style="width: 100%;" title="Twenty Years of Creative Commons (in Sixty Seconds)" src="https://player.vimeo.com/video/777912896?h=016f97b875&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allowfullscreen="allowfullscreen" data-ready="true"></iframe>

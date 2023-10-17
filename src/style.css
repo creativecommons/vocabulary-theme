@@ -244,7 +244,7 @@ main nav.pagination ul li span.current {
 }
 
 .home-narrative .topic-summary figure:has(.attention) iframe {
-  height:55%;
+  height: 55%;
 }
 
 .home-narrative .topic-summary .description {
