@@ -186,6 +186,7 @@ main nav.pagination ul li span.current {
   margin: 0 5%;
   margin-bottom: 6.4em;
   gap: 0 4em;
+  position: relative;
 
 }
 
@@ -202,6 +203,31 @@ main nav.pagination ul li span.current {
   background: black;
 }
 
+.home-narrative .topic-summary .attention {
+  display: inline-block;
+  padding: 2em;
+  margin-bottom: 1em;
+
+  background: var(--vocabulary-brand-color-soft-turquoise);
+  font-size: .67em;
+}
+
+.home-narrative .topic-summary .attention .icon-attach:before {
+  margin-right: .3em;
+}
+
+.home-narrative .topic-summary .attention p {
+  display: inline;
+  margin: 0;
+  padding: 0;
+
+  font-size: 1.5em;
+}
+
+.home-narrative .topic-summary .attention a {
+  --underline-background-color: var(--vocabulary-brand-color-soft-turquoise);
+}
+
 .home-narrative .topic-summary figure {
   width: 100%;
   /* height: 60%; */
@@ -215,6 +241,10 @@ main nav.pagination ul li span.current {
   height: 70%;
 
   background: black;
+}
+
+.home-narrative .topic-summary figure:has(.attention) iframe {
+  height:55%;
 }
 
 .home-narrative .topic-summary .description {
