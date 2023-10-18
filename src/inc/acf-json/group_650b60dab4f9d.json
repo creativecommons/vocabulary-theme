@@ -3,6 +3,26 @@
     "title": "Home Index Settings",
     "fields": [
         {
+            "key": "field_652ef12b3b08b",
+            "label": "Featured Media Notice",
+            "name": "featured_media_notice",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_650b64c0c9554",
             "label": "Case Studies Images",
             "name": "case_studies",
@@ -338,5 +358,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695247232
+    "modified": 1697575337
 }
