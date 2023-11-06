@@ -30,6 +30,42 @@
             "placeholder": ""
         },
         {
+            "key": "field_65494ffa78ac0",
+            "label": "Importance Level",
+            "name": "importance_level",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64e61a2301304",
+                        "operator": "==",
+                        "value": "top-of-site"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default",
+                "low-importance": "Low",
+                "medium-importance": "Medium",
+                "high-importance": "High"
+            },
+            "default_value": "default",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_64e61c57d938e",
             "label": "Message",
             "name": "message",
@@ -133,5 +169,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694632325
+    "modified": 1699303892
 }
