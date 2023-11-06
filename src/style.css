@@ -693,11 +693,18 @@ body > .attention {
 }
 
 body > .attention a {
-    display: inline-block;
-    padding: 0.5em;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5em .8em;;
+
     margin-left: .5em;
 
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
     text-decoration: none;
+    vertical-align: middle;
     background: var(--vocabulary-brand-color-turquoise);
     color: white;
     border-radius: 4px;
@@ -705,6 +712,32 @@ body > .attention a {
     border-right: 2px solid white;
     border-bottom: 3px solid white;
     border-left: 2px solid white; */
+}
+
+body > .attention a:before {
+  --icon-sprite-color: white;
+  --icon-sprite-size: 1em;
+
+  display: inline-block;
+  content: '';
+  /* min-width: 30px; */
+  /* min-height: 30px; */
+  height: 1em;
+  width: 1em;
+  margin-right: .2em;
+
+  font-size: var(--icon-sprite-size);
+  background-color: var(--icon-sprite-color);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: var(--icon-sprite);
+  mask-image: var(--icon-sprite);
+
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  --icon-sprite: url('vocabulary/svg/cc/icons/cc-icons.svg#cc-heart-filled');
+
 }
 
 body > .attention.low-importance {
