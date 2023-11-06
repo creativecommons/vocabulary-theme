@@ -708,20 +708,15 @@ body > .attention a {
     background: var(--vocabulary-brand-color-turquoise);
     color: white;
     border-radius: 4px;
-    /* border-top: 1px solid white;
-    border-right: 2px solid white;
-    border-bottom: 3px solid white;
-    border-left: 2px solid white; */
 }
 
 body > .attention a:before {
+  --icon-sprite: url('vocabulary/svg/cc/icons/cc-icons.svg#cc-heart-filled');
   --icon-sprite-color: white;
   --icon-sprite-size: 1em;
 
   display: inline-block;
   content: '';
-  /* min-width: 30px; */
-  /* min-height: 30px; */
   height: 1em;
   width: 1em;
   margin-right: .2em;
@@ -732,12 +727,8 @@ body > .attention a:before {
   mask-repeat: no-repeat;
   -webkit-mask-image: var(--icon-sprite);
   mask-image: var(--icon-sprite);
-
   -webkit-mask-size: contain;
   mask-size: contain;
-
-  --icon-sprite: url('vocabulary/svg/cc/icons/cc-icons.svg#cc-heart-filled');
-
 }
 
 body > .attention.low-importance {
