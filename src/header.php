@@ -117,8 +117,12 @@ $noticeQuery = new WP_Query(array(
 ?>
 
 <?php if ( $noticeQuery->have_posts() ) : while ( $noticeQuery->have_posts() ) : $noticeQuery->the_post(); ?>
+<?php if (get_field('importance_level') && get_field('importance_level') != 'default') :
+    $importance_level = get_field('importance_level');
+?>
+<?php endif; ?>
 
-<article class="attention">
+<article class="attention <?php echo $importance_level; ?>">
 <?php the_field('message_rich_text'); ?>
 </article>
 
