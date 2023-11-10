@@ -231,3 +231,41 @@ function vocab_acf_json_load_point( $paths ) {
 add_filter( 'acf/settings/load_json', 'vocab_acf_json_load_point' );
 
 
+
+// add RSS feeds that support Person(s) authorship
+
+// feed-atom.php
+function custom_feed_atom() {
+
+  get_template_part( 'feed-templates/feed', 'atom' );
+
+}
+remove_all_actions( 'do_feed_atom' );
+add_action( 'do_feed_atom', 'custom_feed_atom', 10, 1 );
+
+// feed-rdf.php
+function custom_feed_rdf() {
+
+  get_template_part( 'feed-templates/feed', 'rdf' );
+
+}
+remove_all_actions( 'do_feed_rdf' );
+add_action( 'do_feed_rdf', 'custom_feed_rdf', 10, 1 );
+
+// feed-rss.php
+function custom_feed_rss() {
+
+  get_template_part( 'feed-templates/feed', 'rss' );
+
+}
+remove_all_actions( 'do_feed_rss' );
+add_action( 'do_feed_rss', 'custom_feed_rss', 10, 1 );
+
+// feed-rss2.php
+function custom_feed_rss2() {
+
+  get_template_part( 'feed-templates/feed', 'rss2' );
+
+}
+remove_all_actions( 'do_feed_rss2' );
+add_action( 'do_feed_rss2', 'custom_feed_rss2', 10, 1 );
