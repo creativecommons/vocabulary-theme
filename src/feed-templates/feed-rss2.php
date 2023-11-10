@@ -92,7 +92,16 @@ do_action( 'rss_tag_pre', 'rss2' );
 			<comments><?php comments_link_feed(); ?></comments>
 		<?php endif; ?>
 
-		<dc:creator><![CDATA[<?php the_author(); ?>]]></dc:creator>
+		<?php if ( get_field('authorship') ) : ?>
+            <?php
+            $authors = get_field('authorship');
+                if( $authors ):
+                $i = 1;
+                $count = count($authors); ?>
+		<dc:creator><![CDATA[<?php foreach( $authors as $author ):$title = get_the_title( $author->ID );if ($i < $count) {$separator = ',';} else { $separator = '';} ?><?php echo esc_html( $title ); ?><?php echo $separator; ?><?php $i++; endforeach; ?>]]></dc:creator>
+                <?php endif; ?>
+        <?php endif; ?>
+
 		<pubDate><?php echo mysql2date( 'D, d M Y H:i:s +0000', get_post_time( 'Y-m-d H:i:s', true ), false ); ?></pubDate>
 		<?php the_category_rss( 'rss2' ); ?>
 		<guid isPermaLink="false"><?php the_guid(); ?></guid>

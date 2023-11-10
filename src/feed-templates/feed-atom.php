@@ -46,25 +46,25 @@ do_action( 'rss_tag_pre', 'atom' );
 	while ( have_posts() ) :
 		the_post();
 		?>
-	<entry>
-		<author>
-			<name><?php the_author(); ?></name>
-			<?php
-			$author_url = get_the_author_meta( 'url' );
-			if ( ! empty( $author_url ) ) :
-				?>
-				<uri><?php the_author_meta( 'url' ); ?></uri>
-				<?php
-			endif;
 
+<?php if ( get_field('authorship') ) : ?>
+            <?php
+            $authors = get_field('authorship');
+                if( $authors ):
+                $i = 1;
+                $count = count($authors); ?>
+		<author>
+			<name><?php foreach( $authors as $author ):$permalink = get_permalink( $author->ID );$title = get_the_title( $author->ID );$custom_field = get_field( 'field_name', $author->ID );if ($i < $count) {$separator = ', ';}else {$separator = '';}?><?php echo esc_html( $title ); ?><?php echo $separator;?><?php $i++;?><?php endforeach; ?></name>
+			<?php
 			/**
 			 * Fires at the end of each Atom feed author entry.
 			 *
 			 * @since 3.2.0
 			 */
 			do_action( 'atom_author' );
-			?>
-		</author>
+			?></author>
+                <?php endif; ?>
+        <?php endif; ?>
 
 		<title type="<?php html_type_rss(); ?>"><![CDATA[<?php the_title_rss(); ?>]]></title>
 		<link rel="alternate" type="<?php bloginfo_rss( 'html_type' ); ?>" href="<?php the_permalink_rss(); ?>" />
