@@ -269,3 +269,10 @@ function custom_feed_rss2() {
 }
 remove_all_actions( 'do_feed_rss2' );
 add_action( 'do_feed_rss2', 'custom_feed_rss2', 10, 1 );
+
+//correct pagination on Custom Post Type (Person)
+add_filter('redirect_canonical','person_disable_redirect_canonical');
+function person_disable_redirect_canonical($redirect_url) {
+    if (is_paged() && is_singular()) $redirect_url = false;
+    return $redirect_url;
+}
