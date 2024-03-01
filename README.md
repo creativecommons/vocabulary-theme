@@ -114,7 +114,7 @@ normalize.css is licensed under the Expat/[MIT][mit] License.
 Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 License][ccbysa40].
 
-[cc-accidenz-commons]: https://creativecommons.org/2019/10/28/cc-accidenz-commons-open-licensed-font/
+[accidenz-commons]: https://creativecommons.org/2019/10/28/cc-accidenz-commons-open-licensed-font/
 [ccbysa40]: https://creativecommons.org/licenses/by-sa/4.0/
 
 
