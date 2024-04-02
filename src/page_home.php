@@ -74,21 +74,21 @@ get_header('', array( 'body-classes' => 'home-narrative') );
             <ul>
                 <li>
                     <article class="data-point wikipedia">
-                        <h2 style="background-image: url('<?php echo $firstDataPointImage; ?>');">Wikipedia</h2>
+                        <h2 style="background-image: url('<?php echo $firstDataPointImage; ?>');"></h2>
                         <h3 class="stat">55+ million articles</h3>
                         <p>Every one of Wikipedia's 55 million plus articles are shared openly and freely using  a CC license.</p>
                     </article>
                 </li>
                 <li>
                     <article class="data-point the-met">
-                        <h2 style="background-image: url('<?php echo $secondDataPointImage; ?>');");">The Met</h2>
+                        <h2 style="background-image: url('<?php echo $secondDataPointImage; ?>');");"></h2>
                         <h3 class="stat">492,000+ images</h3>
                         <p>All images of public-domain works in the Met's collection are openly available under Creative Commons Zero (CC0).</p>
                     </article>
                 </li>
                 <li>
                     <article class="data-point khan-academy">
-                        <h2 style="background-image: url('<?php echo $thirdDataPointImage; ?>');");">Khan Academy</h2>
+                        <h2 style="background-image: url('<?php echo $thirdDataPointImage; ?>');");"></h2>
                         <h3 class="stat">100,000+ lessons</h3>
                         <p>Many of the lessons found on Khan Academy are openly licensed under CC-BY-NC-SA.</p>
                     </article>
