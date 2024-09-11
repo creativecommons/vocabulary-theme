@@ -69,7 +69,7 @@ services:
       - wordpress
     # https://hub.docker.com/_/composer
     image: composer
-    user: xfs
+    #user: xfs
     volumes:
       - ./docker/configs/composer.json:/var/www/html/composer.json
       - ./docker/configs/composer.lock:/var/www/html/composer.lock
@@ -91,7 +91,7 @@ services:
     image: wordpress:cli
     networks:
       - backend
-    user: xfs
+    #user: xfs
     volumes:
       - wp_data:/var/www/html
 
