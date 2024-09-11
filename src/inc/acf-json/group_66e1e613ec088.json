@@ -1,6 +1,6 @@
 {
     "key": "group_66e1e613ec088",
-    "title": "FAQs Settings",
+    "title": "FAQs Item Settings",
     "fields": [
         {
             "key": "field_66e1e6142b359",
@@ -18,8 +18,7 @@
             },
             "choices": {
                 "question": "question",
-                "group": "group",
-                "language": "language"
+                "group": "group"
             },
             "default_value": false,
             "return_format": "value",
@@ -32,8 +31,8 @@
         },
         {
             "key": "field_66e1e6fce9341",
-            "label": "Content",
-            "name": "content",
+            "label": "Content (english)",
+            "name": "content_english",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
@@ -58,6 +57,74 @@
             "toolbar": "basic",
             "media_upload": 1,
             "delay": 0
+        },
+        {
+            "key": "field_66e2016faad01",
+            "label": "Translation (French)",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_66e20145aacff",
+            "label": "Title (French)",
+            "name": "title_french",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66e20157aad00",
+            "label": "Content (French)",
+            "name": "content_french",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66e1e6142b359",
+                        "operator": "==",
+                        "value": "question"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -80,5 +147,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726081471
+    "modified": 1726087821
 }

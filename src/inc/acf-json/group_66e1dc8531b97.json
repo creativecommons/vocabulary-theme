@@ -7,7 +7,7 @@
             "label": "Introduction",
             "name": "introduction",
             "aria-label": "",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,49 +17,18 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_66e1dc85363b1",
-            "label": "FAQs Groups Listing",
-            "name": "faqs_groups_listing",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "faqs-group"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "return_format": "object",
-            "min": "",
-            "max": "",
             "allow_in_bindings": 1,
-            "elements": "",
-            "bidirectional": 0,
-            "bidirectional_target": []
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_66e1dc85364e7",
             "label": "Closing",
             "name": "closing",
             "aria-label": "",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -69,10 +38,11 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
+            "allow_in_bindings": 1,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -85,7 +55,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page_walkthrough.php"
+                "value": "page_faqs.php"
             }
         ]
     ],
@@ -100,8 +70,8 @@
         "discussion",
         "comments"
     ],
-    "active": false,
+    "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726080522
+    "modified": 1726088674
 }
