@@ -9,7 +9,7 @@
     "import_date": "",
     "labels": {
         "name": "FAQs Items",
-        "singular_name": "Item",
+        "singular_name": "FAQs Item",
         "menu_name": "FAQs",
         "all_items": "All FAQs",
         "edit_item": "Edit Item",
@@ -59,7 +59,7 @@
     "menu_position": "",
     "menu_icon": {
         "type": "dashicons",
-        "value": "dashicons-admin-post"
+        "value": "dashicons-list-view"
     },
     "rename_capabilities": false,
     "singular_capability_name": "post",
@@ -85,5 +85,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1726081091
+    "modified": 1726166602
 }
