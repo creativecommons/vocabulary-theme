@@ -54,7 +54,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
         <li>
             <figure>
                 <img src="<?php echo $case_study_img_url; ?>" alt="<?php echo $case_study_alt; ?>"  />
-                <span class="attribution"><?php echo $case_study_caption; ?></span>
+                <figcaption class="attribution"><?php echo $case_study_caption; ?></figcaption>
             </figure>
         </li>
         <?php endforeach; ?>
@@ -163,7 +163,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
             ?>
             <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
             <?php if ($i == 1): ?>
-            <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
+            <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
             <?php endif; ?>
         </figure>
 
@@ -199,7 +199,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
                         <figure>
 
                             <img src="<?php echo get_the_post_thumbnail_url( $item, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($item), '_wp_attachment_image_alt', true ); ?>" />
-                            <span class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></span>
+                            <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></figcaption>
                         </figure>
                     </article>
                 </li>
