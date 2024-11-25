@@ -2,7 +2,7 @@
 
 ?>
 
-<aside>
+<aside class="sidebar>
 
     <nav>
         <?php $menu = find_sidebar_menu($post->ID); ?>
