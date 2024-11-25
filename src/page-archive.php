@@ -49,7 +49,7 @@
 </aside>
 
 
-<div class="content authored-posts">
+<article class="posts">
 
 <?php
 
@@ -65,7 +65,7 @@ $query = new WP_Query(array(
 
 <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-<article>
+<article class="post">
     <header>
     <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
     <?php if ( get_field('authorship') ) : ?>
@@ -111,7 +111,7 @@ $query = new WP_Query(array(
 
 
 <?php endwhile; // end of the loop. ?>
-</div>
+</article>
 
 
 <nav class="pagination">
