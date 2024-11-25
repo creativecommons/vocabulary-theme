@@ -103,7 +103,7 @@ $query = new WP_Query(array(
 
     <figure>
         <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
-        <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
+        <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
     </figure>
 
     <?php the_excerpt(); ?>

@@ -113,7 +113,7 @@ $query = new WP_Query(array(
                     <figure>
 
                         <img src="<?php echo get_the_post_thumbnail_url( $item, 'medium' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($item), '_wp_attachment_image_alt', true ); ?>" />
-                        <span class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></span>
+                        <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></figcaption>
                     </figure>
                 </article>
             </li>

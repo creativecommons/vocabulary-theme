@@ -83,7 +83,7 @@
             ?>
             <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
             <?php if ($i == 1): ?>
-            <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
+            <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
             <?php endif; ?>
         </figure>
 
@@ -191,7 +191,7 @@ $query = new WP_Query(array(
                     <figure>
 
                         <img src="<?php echo get_the_post_thumbnail_url( $item, 'medium' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($item), '_wp_attachment_image_alt', true ); ?>" />
-                        <span class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></span>
+                        <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></figcaption>
                     </figure>
                 </article>
             </li>
