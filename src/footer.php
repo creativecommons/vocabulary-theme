@@ -1,7 +1,7 @@
 <footer>
     <a class="identity-logo" href="/">Creative Commons</a>
 
-    <nav class="footer-menu">
+    <nav class="footer-menu" aria-label="Footer menu">
         <ul>
             <li><a href="/about/contact">Contact</a></li>
             <li><a href="https://mail.creativecommons.org/subscribe" target="_blank">Newsletter</a></li>
@@ -17,7 +17,7 @@
     <p>Creative Commons <br /> PO Box 1866, Mountain View, CA 94042</p>
     <p><a href="mailto:info@creativecommons.org">info@creativecommons.org</a></p>
 
-    <nav class="social-menu">
+    <nav class="social-menu" aria-label="Social menu">
         <ul>
             <!-- <li><a class="icon-replace fa-instagram" href="#">Instagram</a></li> -->
             <li><a class="icon-replace fa-bluesky" href="https://bsky.app/profile/creativecommons.bsky.social" target="_blank">Bluesky</a></li>

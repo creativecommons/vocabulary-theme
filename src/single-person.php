@@ -117,7 +117,7 @@ $query = new WP_Query(array(
 
 <?php endif; ?>
 
-<nav class="pagination">
+<nav class="pagination" aria-label="Pagination">
 <?php
 $big = 999999999; // need an unlikely integer
 

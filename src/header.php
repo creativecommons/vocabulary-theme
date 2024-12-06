@@ -24,7 +24,7 @@
         <h1><a class="identity-logo" href="/">Creative Commons</a></h1>
         <button class="expand-menu">Menu</button>
         <!-- below menu is not final items, for testing only -->
-        <nav class="primary-menu">
+        <nav class="primary-menu" aria-label="Primary navigation">
             <ul>
                 <li><a href="/about/mission">Who We Are</a></li>
                 <li><a href="/about">What We Do</a></li>
@@ -50,7 +50,7 @@
             </ul>
         </nav>
 
-        <nav class="ancillary-menu">
+        <nav class="ancillary-menu" aria-label="Ancillary navigation">
             <ul>
                 <!-- uncomment below line, if translation functionality is present on site -->
                 <!-- <li><button class="locale icon-attach fa-globe">English</button></li> -->
@@ -73,7 +73,7 @@
         <p>Help us keep the internet free and open.</p>
     </aside> -->
 
-    <nav class="explore-menu">
+    <nav class="explore-menu" aria-label="Explore menu">
         <ul>
             <li>
                 <a href="https://network.creativecommons.org/" target="_blank">Global Network</a>
