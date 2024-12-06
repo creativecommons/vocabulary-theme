@@ -4,7 +4,7 @@
 
 <title><?php wp_title('-',true,'right'); //this requires YOAST SEO plugin to be active to output ?></title>
 
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/favicon/favicon.ico" sizes="any" />
 <link rel="icon" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/favicon/favicon.svg" type="image/svg+xml" />
@@ -50,7 +50,7 @@
             </ul>
         </nav>
 
-        <nav class="ancilliary-menu">
+        <nav class="ancillary-menu">
             <ul>
                 <!-- uncomment below line, if translation functionality is present on site -->
                 <!-- <li><button class="locale icon-attach fa-globe">English</button></li> -->
