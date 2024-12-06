@@ -1,4 +1,4 @@
-<?php get_header('', array( 'body-classes' => 'default-page archive-page') ); ?>
+<?php get_header('', array( 'body-classes' => 'archive-page') ); ?>
 
 <main>
 
@@ -58,12 +58,12 @@
 </aside>
 
 
-<div class="content authored-posts">
+<article class="posts">
 
 <?php while ( have_posts() ) : the_post(); ?>
 
 
-<article>
+<article class="post">
     <header>
         <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
         <?php if ( get_field('authorship') ) : ?>
@@ -112,7 +112,7 @@
 
 <?php endwhile; // end of the loop. ?>
 
-</div>
+</article>
 
 <nav class="pagination">
 <?php

@@ -32,7 +32,7 @@
 
 
 
-<article class="stories authored-posts highlight">
+<article class="posts featured">
 <h2>Recent Posts</h2>
 
 <?php

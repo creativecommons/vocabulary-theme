@@ -1,4 +1,4 @@
-<?php get_header('', array( 'body-classes' => 'default-page person-page') ); ?>
+<?php get_header('', array( 'body-classes' => 'person-page') ); ?>
 
 <main>
 
@@ -65,12 +65,12 @@ $query = new WP_Query(array(
 
 <?php if ( $query->have_posts() ) : ?>
 
-<section class="authored-posts">
+<article class="posts">
     <h2>Posts by <?php the_title(); ?></h2>
 
     <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
 
-    <article>
+    <article class="post">
         <header>
         <h2><a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a></h2>
         <?php if ( get_field('authorship') ) : ?>
@@ -113,7 +113,7 @@ $query = new WP_Query(array(
 
     <?php endwhile; ?>
 
-</section>
+</article>
 
 <?php endif; ?>
 

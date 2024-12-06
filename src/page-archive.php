@@ -1,4 +1,4 @@
-<?php get_header('', array( 'body-classes' => 'default-page archive-page') ); ?>
+<?php get_header('', array( 'body-classes' => 'archive-page') ); ?>
 
 <main>
 
