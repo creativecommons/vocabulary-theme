@@ -1,4 +1,4 @@
-<?php get_header('', array( 'body-classes' => 'default-page search-index') ); ?>
+<?php get_header('', array( 'body-classes' => 'search-index') ); ?>
 
 <main>
 
@@ -38,14 +38,14 @@
 </aside> -->
 
 
-<div class="content authored-posts">
+<article class="posts">
 
 <?php if ( have_posts() ) : ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
 
-<article>
+<article class="post">
     <header>
         <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
@@ -92,7 +92,7 @@
     <?php if ( has_post_thumbnail() ) : ?>
     <figure>
         <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
-        <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
+        <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaptionn>
     </figure>
     <?php endif; ?>
 
@@ -101,7 +101,7 @@
 
     <?php endwhile; // end of the loop. ?>
 
-<nav class="pagination">
+<nav class="pagination" aria-label="Pagination">
 <?php
 $big = 999999999; // need an unlikely integer
 
@@ -119,7 +119,7 @@ echo paginate_links( array(
 </nav>
 
     <?php endif; ?>
-</div>
+</article>
 
 
 

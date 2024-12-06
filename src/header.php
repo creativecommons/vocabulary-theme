@@ -4,14 +4,14 @@
 
 <title><?php wp_title('-',true,'right'); //this requires YOAST SEO plugin to be active to output ?></title>
 
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/favicon/favicon.ico" sizes="any">
-<link rel="icon" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/favicon/favicon.svg" type="image/svg+xml">
-<link rel="manifest" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/favicon/manifest.webmanifest">
+<link rel="icon" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/favicon/favicon.ico" sizes="any" />
+<link rel="icon" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/favicon/favicon.svg" type="image/svg+xml" />
+<link rel="manifest" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/favicon/manifest.webmanifest" />
 <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/favicon/apple-touch-icon.png" />
 
-<link rel="stylesheet" media="all" href="<?php echo get_bloginfo( 'template_directory' ); ?>/style.css">
+<link rel="stylesheet" media="all" href="<?php echo get_bloginfo( 'template_directory' ); ?>/style.css" />
 
 <?php wp_head(); ?>
 </head>
@@ -24,7 +24,7 @@
         <h1><a class="identity-logo" href="/">Creative Commons</a></h1>
         <button class="expand-menu">Menu</button>
         <!-- below menu is not final items, for testing only -->
-        <nav class="primary-menu">
+        <nav class="primary-menu" aria-label="Primary navigation">
             <ul>
                 <li><a href="/about/mission">Who We Are</a></li>
                 <li><a href="/about">What We Do</a></li>
@@ -50,7 +50,7 @@
             </ul>
         </nav>
 
-        <nav class="ancilliary-menu">
+        <nav class="ancillary-menu" aria-label="Ancillary navigation">
             <ul>
                 <!-- uncomment below line, if translation functionality is present on site -->
                 <!-- <li><button class="locale icon-attach fa-globe">English</button></li> -->
@@ -73,7 +73,7 @@
         <p>Help us keep the internet free and open.</p>
     </aside> -->
 
-    <nav class="explore-menu">
+    <nav class="explore-menu" aria-label="Explore menu">
         <ul>
             <li>
                 <a href="https://network.creativecommons.org/" target="_blank">Global Network</a>

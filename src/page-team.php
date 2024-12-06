@@ -1,4 +1,4 @@
-<?php get_header('', array( 'body-classes' => 'default-page team-index') ); ?>
+<?php get_header('', array( 'body-classes' => 'team-index') ); ?>
 
 <main>
 

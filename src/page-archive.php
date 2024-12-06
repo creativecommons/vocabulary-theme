@@ -1,4 +1,4 @@
-<?php get_header('', array( 'body-classes' => 'default-page archive-page') ); ?>
+<?php get_header('', array( 'body-classes' => 'archive-page') ); ?>
 
 <main>
 
@@ -49,7 +49,7 @@
 </aside>
 
 
-<div class="content authored-posts">
+<article class="posts">
 
 <?php
 
@@ -65,7 +65,7 @@ $query = new WP_Query(array(
 
 <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-<article>
+<article class="post">
     <header>
     <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
     <?php if ( get_field('authorship') ) : ?>
@@ -103,7 +103,7 @@ $query = new WP_Query(array(
 
     <figure>
         <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
-        <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
+        <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
     </figure>
 
     <?php the_excerpt(); ?>
@@ -111,10 +111,10 @@ $query = new WP_Query(array(
 
 
 <?php endwhile; // end of the loop. ?>
-</div>
+</article>
 
 
-<nav class="pagination">
+<nav class="pagination" aria-label="Pagination">
 <?php
 $big = 999999999; // need an unlikely integer
 

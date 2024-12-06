@@ -1,4 +1,4 @@
-<?php get_header('', array( 'body-classes' => 'default-page') ); ?>
+<?php get_header('', array( 'body-classes' => '') ); ?>
 
 <main>
 

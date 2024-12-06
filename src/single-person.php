@@ -1,4 +1,4 @@
-<?php get_header('', array( 'body-classes' => 'default-page person-page') ); ?>
+<?php get_header('', array( 'body-classes' => 'person-page') ); ?>
 
 <main>
 
@@ -15,7 +15,7 @@
 <?php if(get_post_thumbnail_id($post_id)) : ?>
 <figure>
     <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
-    <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
+    <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
 </figure>
 <?php endif; ?>
 
@@ -65,12 +65,12 @@ $query = new WP_Query(array(
 
 <?php if ( $query->have_posts() ) : ?>
 
-<section class="authored-posts">
+<article class="posts">
     <h2>Posts by <?php the_title(); ?></h2>
 
     <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
 
-    <article>
+    <article class="post">
         <header>
         <h2><a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a></h2>
         <?php if ( get_field('authorship') ) : ?>
@@ -113,11 +113,11 @@ $query = new WP_Query(array(
 
     <?php endwhile; ?>
 
-</section>
+</article>
 
 <?php endif; ?>
 
-<nav class="pagination">
+<nav class="pagination" aria-label="Pagination">
 <?php
 $big = 999999999; // need an unlikely integer
 

@@ -116,13 +116,14 @@ $query = new WP_Query(array(
 
 <?php if ( $query->have_posts() ) : ?>
 
-<article class="related-posts">
+<article class="posts related">
     <h2>Related posts</h2>
 
-    <article class="authored-posts highlight">
+    <ul>
 
 <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
-        <article>
+        <li>
+        <article class="post">
             <header>
             <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
             <?php if ( get_field('authorship') ) : ?>
@@ -160,10 +161,11 @@ $query = new WP_Query(array(
 
 
         </article>
+        </li>
 
 <?php endwhile; ?>
 
-    </article>
+    </ul>
 </article>
 
 <?php endif; ?>

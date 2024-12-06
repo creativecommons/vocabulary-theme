@@ -11,9 +11,9 @@ get_header('', array( 'body-classes' => 'home-narrative') );
     <h2>Better Sharing, Brighter Future</h2>
     <figure>
         <iframe style="width: 100%;" title="Twenty Years of Creative Commons (in Sixty Seconds)" src="https://player.vimeo.com/video/777912896?h=016f97b875&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allowfullscreen="allowfullscreen" data-ready="true"></iframe>
-        <span class="attribution">
+        <figcaption class="attribution">
             “<a href="https://www.flickr.com/photos/creativecommons/52543574218/">Twenty Years of Creative Commons (in Sixty Seconds)</a>” by&nbsp;<a href="http://www.junell.net/">Ryan Junell</a>&nbsp;and&nbsp;<a href="https://www.linkedin.com/in/gotisbrown/">Glenn Otis Brown</a>&nbsp;for&nbsp;<a href="https://creativecommons.org/">Creative Commons</a>&nbsp;is licensed via&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>&nbsp;and includes adaptations of the multiple open and public domain works. View full licensing and attribution information about all works included in the video&nbsp;<a href="https://www.flickr.com/photos/creativecommons/52543574218/">on Flickr</a>.
-        </span>
+        </figcaption>
     </figure>
     <div class="description">
         <p>Creative Commons is an international nonprofit organization that empowers people to grow and sustain the thriving commons of shared knowledge and culture we need to address the world's most pressing challenges and create a brighter future for all.</p>
@@ -29,25 +29,25 @@ get_header('', array( 'body-classes' => 'home-narrative') );
         <li>
             <figure>
                 <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/imgs/home1.jpg" />
-                <span class="attribution">"<a href="https://www.loc.gov/pictures/item/2017786790/">Farmer and his brother making music</a>” by <a href="https://www.loc.gov/pictures/related/?fi=name&q=Lee%2C%20Russell%2C%201903-1986">Russell Lee</a>, here cropped, is marked with <a href="https://creativecommons.org/publicdomain/mark/1.0/">CC PDM 1.0</a></span>
+                <figcaption class="attribution">"<a href="https://www.loc.gov/pictures/item/2017786790/">Farmer and his brother making music</a>” by <a href="https://www.loc.gov/pictures/related/?fi=name&q=Lee%2C%20Russell%2C%201903-1986">Russell Lee</a>, here cropped, is marked with <a href="https://creativecommons.org/publicdomain/mark/1.0/">CC PDM 1.0</a></figcaption>
             </figure>
         </li>
         <li>
             <figure>
                 <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/imgs/home2.jpg" />
-                <span class="attribution">“<a href="https://www.flickr.com/photos/ter-burg/32896267507/">Flickr photowalk at the Creative Commons Global Summit 2019, Lisbon</a>” by <a href="https://www.flickr.com/photos/ter-burg/">Sebastiaan ter Burg</a>, here cropped, is licensed via <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
+                <figcaption class="attribution">“<a href="https://www.flickr.com/photos/ter-burg/32896267507/">Flickr photowalk at the Creative Commons Global Summit 2019, Lisbon</a>” by <a href="https://www.flickr.com/photos/ter-burg/">Sebastiaan ter Burg</a>, here cropped, is licensed via <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></figcaption>
             </figure>
         </li>
         <li>
             <figure>
                 <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/imgs/home3.jpg" />
-                <span class="attribution">“<a href="https://www.flickr.com/photos/niaid/49557785797">Novel Coronavirus SARS-CoV-2” by <a href=https://www.flickr.com/photos/niaid/>NIAID</a>, here cropped, is licensed via <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
+                <figcaption class="attribution">“<a href="https://www.flickr.com/photos/niaid/49557785797">Novel Coronavirus SARS-CoV-2” by <a href=https://www.flickr.com/photos/niaid/>NIAID</a>, here cropped, is licensed via <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></figcaption>
             </figure>
         </li>
         <li>
             <figure>
                 <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/imgs/home4.jpg" />
-                <span class="attribution">“<a href="https://www.flickr.com/photos/lensonjapan/8724992177">Children kabuki theater in Nagahama (warrior Kumagai, 12 y.o.)</a>” by <a href="https://www.flickr.com/photos/lensonjapan/">lensonjapan</a>, here cropped, is licensed via <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
+                <figcaption class="attribution">“<a href="https://www.flickr.com/photos/lensonjapan/8724992177">Children kabuki theater in Nagahama (warrior Kumagai, 12 y.o.)</a>” by <a href="https://www.flickr.com/photos/lensonjapan/">lensonjapan</a>, here cropped, is licensed via <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></figcaption>
             </figure>
         </li>
     </ul>
@@ -146,7 +146,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
             ?>
             <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
             <?php if ($i == 1): ?>
-            <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
+            <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
             <?php endif; ?>
         </figure>
 
@@ -182,7 +182,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
                         <figure>
 
                             <img src="<?php echo get_the_post_thumbnail_url( $item, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($item), '_wp_attachment_image_alt', true ); ?>" />
-                            <span class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></span>
+                            <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></figcaption>
                         </figure>
                     </article>
                 </li>

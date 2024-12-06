@@ -31,7 +31,10 @@
     if( $posts ):
 ?>
 
-<article class="stories authored-posts highlight">
+<article class="posts featured">
+    <h2>Featured posts</h2>
+
+    <ul>
 
     <?php
 
@@ -41,8 +44,8 @@
             $title = get_the_title( $post->ID );
             //$custom_field = get_field( 'field_name', $post->ID );
     ?>
-
-    <article class="story">
+    <li>
+    <article class="post">
         <header>
         <h2 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h2>
 
@@ -83,7 +86,7 @@
             ?>
             <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
             <?php if ($i == 1): ?>
-            <span class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></span>
+            <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
             <?php endif; ?>
         </figure>
 
@@ -92,6 +95,7 @@
         <?php endif; ?>
 
     </article>
+    </li>
 
 
     <?php
@@ -102,14 +106,17 @@
     ?>
 
     <?php endforeach; ?>
+    </ul>
 
 </article>
 <?php endif; ?>
 
 
 
-<article class="stories authored-posts highlight">
+<article class="posts">
 <h2>Recent Posts</h2>
+
+<ul>
 
 <?php
 $query = new WP_Query(array(
@@ -122,7 +129,8 @@ $query = new WP_Query(array(
 
 <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-	<article class="story">
+    <li>
+	<article class="post">
         <header>
         <h3 class="title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <?php if ( get_field('authorship') ) : ?>
@@ -163,12 +171,15 @@ $query = new WP_Query(array(
             <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
         </figure>
     </article>
+    </li>
 
     <?php $highlight_posts[] = $post->ID; ?>
 
 	<?php endwhile; ?>
-
+    </ul>
+    
 <?php endif; ?>
+
 
 </article>
 
@@ -191,7 +202,7 @@ $query = new WP_Query(array(
                     <figure>
 
                         <img src="<?php echo get_the_post_thumbnail_url( $item, 'medium' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($item), '_wp_attachment_image_alt', true ); ?>" />
-                        <span class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></span>
+                        <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></figcaption>
                     </figure>
                 </article>
             </li>
