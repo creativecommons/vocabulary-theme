@@ -1,37 +1,7 @@
 {
     "key": "group_66e1e613ec088",
     "title": "FAQs Item Settings",
-    "fields": [
-        {
-            "key": "field_66e1e6fce9341",
-            "label": "Content",
-            "name": "content",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_66e1e6142b359",
-                        "operator": "==",
-                        "value": "question"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 1,
-            "delay": 0
-        }
-    ],
+    "fields": [],
     "location": [
         [
             {
@@ -43,14 +13,12 @@
     ],
     "menu_order": 0,
     "position": "acf_after_title",
-    "style": "default",
+    "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739912814
+    "modified": 1739997301
 }
