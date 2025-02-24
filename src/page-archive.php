@@ -21,8 +21,8 @@
     $categories = get_terms( 'category', 'orderby=asc&hide_empty=0&parent=0&exclude=1' );
 ?>
 
-    <nav class="filter-menu">
-        <h2>Categories</h2>
+    <nav class="filter-menu" aria-labelledby="categories">
+        <h2 id="categories">Categories</h2>
         <ul>
             <li class="current"><a href="/blog/archive/">All posts</a></li>
         <?php foreach($categories as $category): ?>

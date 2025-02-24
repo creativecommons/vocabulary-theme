@@ -1,9 +1,9 @@
 <aside class="sidebar">
 
-    <nav class="filter-menu" aria-labelledby="categories">
+    <nav>
         <?php $menu = find_sidebar_menu($post->ID); ?>
 
-        <h2 id="categories"><?php echo $menu['title']; ?></h2>
+        <h2><?php echo $menu['title']; ?></h2>
         <?php
             wp_nav_menu( array(
                 'menu'	=> $menu['output'],
