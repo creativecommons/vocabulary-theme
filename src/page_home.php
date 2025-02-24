@@ -109,8 +109,9 @@ get_header('', array( 'body-classes' => 'home-narrative') );
     if( $posts ):
 ?>
 
-<article class="stories posts highlight">
+<article class="posts featured">
     <h2>Latest News</h2>
+    <ul>
 
     <?php
 
@@ -121,7 +122,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
             //$custom_field = get_field( 'field_name', $post->ID );
     ?>
 
-
+    <li>        
     <article class="post">
         <header>
         <h3 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h3>
@@ -172,6 +173,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
         <?php endif; ?>
 
     </article>
+    </li>
 
 
     <?php
@@ -182,9 +184,12 @@ get_header('', array( 'body-classes' => 'home-narrative') );
     ?>
 
     <?php endforeach; ?>
+    </ul>
+    <a class="more" href="/blog/archive/">more posts</a>
+
+    </article>
 
     <footer>
-        <a class="more" href="/blog/archive/">more posts</a>
 
         <article class="attribution-list">
 
@@ -209,8 +214,6 @@ get_header('', array( 'body-classes' => 'home-narrative') );
         </article>
     </footer>
 
-
-</article>
 <?php endif; ?>
 
 
