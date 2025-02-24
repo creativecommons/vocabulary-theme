@@ -109,7 +109,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
     if( $posts ):
 ?>
 
-<article class="stories authored-posts highlight">
+<article class="stories posts highlight">
     <h2>Latest News</h2>
 
     <?php
@@ -122,7 +122,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
     ?>
 
 
-    <article class="story">
+    <article class="post">
         <header>
         <h3 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h3>
 
