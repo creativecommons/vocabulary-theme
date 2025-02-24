@@ -607,3 +607,6 @@ main nav.pagination ul li span.current {
 main > article figure img, main > figure img {
   width: 100%;
 }
+main .content ul, main .content ol {
+    line-height: 150%;
+}
