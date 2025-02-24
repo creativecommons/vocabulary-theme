@@ -402,12 +402,10 @@ main nav.pagination ul li span.current {
 
 .home-narrative main .posts {
   grid-column: 2 / span 9;
-  padding-top: 4em;
 }
 
 .home-narrative main .posts h2 {
   text-align: center;
-  margin-bottom: .7em;
 }
 
 .home-narrative main .posts ul {
@@ -440,16 +438,16 @@ main nav.pagination ul li span.current {
 /* targets the featured posts section */
 .home-narrative main .posts.featured {
   grid-column: 1 / span 11;
-  /* margin-bottom: 3em; */
+  margin-bottom: 3em;
 
   background: var(--vocabulary-neutral-color-lighter-gray);
 }
 
 .home-narrative main .posts.featured h2 {
-  /* visibility: hidden;
+  visibility: hidden;
   height: 0;
   margin: 0;
-  padding: 0; */
+  padding: 0;
 }
 
 .home-narrative main .posts.featured .post h3 {
@@ -473,7 +471,7 @@ main nav.pagination ul li span.current {
 }
 
 .home-narrative main .posts.featured ul {    
-  padding: 0 5%;
+  padding: 0 var(--vocabulary-page-edges-space);
 }
 
 .home-narrative main .posts.featured ul li {
@@ -482,7 +480,6 @@ main nav.pagination ul li span.current {
 
 .home-narrative main .posts.featured ul li:nth-of-type(1) {
   grid-column: span 12;
-  margin-bottom: 1em;
 
   background: white;
 }
@@ -510,7 +507,6 @@ main nav.pagination ul li span.current {
 }
 
 
-
 @media (min-width: 1500px) {
   .home-narrative .data-points .data-point.khan-academy h2 {
     text-indent: -6000px;
@@ -521,6 +517,10 @@ main nav.pagination ul li span.current {
   /* .home-narrative main footer .attribution-list ul.expand {
     grid-template-columns: 1fr 1fr;
   } */
+
+  .home-narrative main footer .attribution-list ul.expand {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 900px) {
@@ -545,9 +545,14 @@ main nav.pagination ul li span.current {
     /* padding: 0 1em; */
   }
 
+  .home-narrative main .posts ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   .home-narrative main footer {
     width: 100%;
+    box-sizing: border-box;
   }
 
 }
@@ -569,8 +574,35 @@ main nav.pagination ul li span.current {
   .home-narrative .data-points ul {
     display: block;
     padding-top: 2em;
-   }
+  }
+
+   .home-narrative main article.posts.featured > ul li:nth-child(1) {
+    padding: 2em;
+  }
+
+  .home-narrative main .posts {
+      padding: 0 var(--vocabulary-page-edges-space);
+  }
+
+  .home-narrative main footer .attribution-list ul.expand {
+      display: block;
+  }
 }
+
+}
+
+@media (max-width: 425px) {
+
+  .home-narrative .attribution-list {
+    padding: 2em;
+  }
+
+  .home-narrative .attribution-list h2 {
+    width: 50%;
+
+    hyphens: auto;
+    word-break: break-word;
+  }
 
 }
 
