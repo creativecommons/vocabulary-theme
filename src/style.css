@@ -163,16 +163,7 @@ main nav.pagination ul li span.current {
   background:var(--vocabulary-brand-color-gold);
 } */
 
-
 .home-narrative main {
-  width: 100%;
-  margin-top: 5.4em;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  padding: 0;
-  /* padding: 0 5%; */
-
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 400;
@@ -203,12 +194,15 @@ main nav.pagination ul li span.current {
 }
 
 .home-narrative .topic-summary {
+  grid-column: 2 / 11;
   display: grid;
+  grid-template:
+      "title graphic graphic"
+      "description graphic graphic"
+      "button graphic graphic";
   grid-template-columns: 1fr 1fr;
-  margin: 0 5%;
   margin-bottom: 6.4em;
   gap: 0 4em;
-
 }
 
 .home-narrative .topic-summary h2 {
@@ -261,6 +255,7 @@ main nav.pagination ul li span.current {
 }
 
 .home-narrative .case-studies {
+  grid-column: 1 / 12;
   padding: 0 5%;
   padding-top: 3.5em;
   position: relative;
@@ -386,13 +381,14 @@ main nav.pagination ul li span.current {
 
 
 
-.home-narrative main .authored-posts {
+.home-narrative main .posts {
   /* display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: 8em;
   padding: 0 4em;
   gap: 3em;
   box-sizing: border-box; */
+  grid-column: 1 / 12;
   width: 60%;
   margin: 0 auto;
   margin-top: 8em;
@@ -400,15 +396,15 @@ main nav.pagination ul li span.current {
   background: var(--vocabulary-neutral-color-lighter-gray);
 }
 
-.home-narrative main .authored-posts article {
+.home-narrative main .posts article {
   margin-bottom: 4em;
 }
 
-.home-narrative main .authored-posts.highlight article header {
+.home-narrative main .posts.highlight article header {
   margin-top: 0;
 }
 
-.home-narrative main .authored-posts > h2 {
+.home-narrative main .posts > h2 {
   grid-column: span 12;
   margin-top: 0;
   margin-bottom: 0;
@@ -417,7 +413,7 @@ main nav.pagination ul li span.current {
   text-align: center;
 }
 
-.home-narrative main .authored-posts.highlight {
+.home-narrative main .posts.highlight {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   margin-top: 8em;
@@ -433,29 +429,29 @@ main nav.pagination ul li span.current {
   /* background: var(--vocabulary-neutral-color-lighter-gray); */
 }
 
-.home-narrative main .authored-posts.highlight:nth-of-type(1) article {
+.home-narrative main .posts.highlight:nth-of-type(1) article {
   /* margin-bottom: 6em; */
   margin-bottom: 4em;
 }
 
-.home-narrative main .authored-posts.highlight article.story {
+.home-narrative main .posts.highlight article.story {
   grid-column: span 3;
 }
 
-.home-narrative main .authored-posts.highlight article figure {
+.home-narrative main .posts.highlight article figure {
   order: -1;
 
 }
 
-.home-narrative main .authored-posts.highlight article a {
+.home-narrative main .posts.highlight article a {
   --underline-background-color: var(--vocabulary-neutral-color-lighter-gray);
 }
 
-.home-narrative main .authored-posts.highlight article h2, .home-narrative main .authored-posts.highlight article h3 {
+.home-narrative main .posts.highlight article h2, .home-narrative main .posts.highlight article h3 {
   font-size: 1.4em;
 }
 
-.home-narrative main .authored-posts.highlight > article:nth-of-type(1) {
+.home-narrative main .posts.highlight > article:nth-of-type(1) {
   grid-column: span 12;
   margin-bottom: 1em;
   padding: 4em;
@@ -468,21 +464,21 @@ main nav.pagination ul li span.current {
 
 }
 
-.home-narrative main .authored-posts.highlight > article:nth-of-type(1) a {
+.home-narrative main .posts.highlight > article:nth-of-type(1) a {
   --underline-background-color: var(--vocabulary-brand-color-soft-tomato);
   /* --underline-background-color: var(--vocabulary-brand-color-soft-turquoise); */
   --underline-background-color: white;
 }
 
-.home-narrative main .authored-posts.highlight article:nth-of-type(1) h3 {
+.home-narrative main .posts.highlight article:nth-of-type(1) h3 {
   font-size: 2.1em;
 }
 
-.home-narrative main .authored-posts.highlight article:nth-of-type(1) figure {
+.home-narrative main .posts.highlight article:nth-of-type(1) figure {
   order: initial;
 }
 
-.home-narrative main .authored-posts.highlight article:nth-of-type(1) p {
+.home-narrative main .posts.highlight article:nth-of-type(1) p {
   margin-bottom: 0;
 }
 
