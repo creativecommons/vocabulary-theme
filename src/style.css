@@ -3,7 +3,7 @@ Theme Name: CC Vocabulary Theme
 Author: the Creative Commons team; possumbilities, Timid Robot
 Author URI: https://opensource.creativecommons.org/
 Description: Theme based on the Vocabulary Design System
-Version: 1.9.2
+Version: 1.9.3
 Requires at least: 5.0
 Tested up to: 6.2.2
 Requires PHP: 7.0
@@ -165,17 +165,17 @@ main nav.pagination ul li span.current {
 
 
 .home-narrative main {
-  /* width: 100%; */
   margin-top: 3.4em;
   margin-right: 0;
   margin-bottom: 0;
-  /* margin-left: 0;
-  padding: 0;
-  padding: 0 5%; */
 
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 400;
+}
+
+.home-narrative main > header {
+  margin-bottom: 0;
 }
 
 .home-narrative main > article > h2 {
@@ -204,7 +204,6 @@ main nav.pagination ul li span.current {
 
 .home-narrative .topic-summary {
   grid-column: 2 / span 9;
-
   display: grid;
   grid-template:
       "title graphic graphic"
@@ -212,10 +211,8 @@ main nav.pagination ul li span.current {
       "button graphic graphic";
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* margin: 0 5%; */
   margin-bottom: 6.4em;
   gap: 0 4em;
-
 }
 
 .home-narrative .topic-summary h2 {
@@ -233,7 +230,6 @@ main nav.pagination ul li span.current {
 
 .home-narrative .topic-summary figure {
   width: 100%;
-  /* height: 60%; */
   grid-area: graphic;
   margin: 0;
   padding: 0;
@@ -255,10 +251,8 @@ main nav.pagination ul li span.current {
 }
 
 .home-narrative .topic-summary .description a {
-  /* grid-area: button; */
   display: inline;
   box-sizing: border-box;
-  /* grid-area: none; */
   grid-column-start: 1;
   grid-row-start: 3;
 
@@ -269,7 +263,6 @@ main nav.pagination ul li span.current {
 
 .home-narrative .case-studies {
   grid-column: 1 / span 11;
-
   padding: 0 5%;
   padding-top: 3.5em;
   position: relative;
@@ -316,9 +309,7 @@ main nav.pagination ul li span.current {
 
 .home-narrative .case-studies footer {
   margin: 0 0;
-  /* margin-top: 6em; */
   margin-top: 4em;
-  /* margin-bottom: 6em; */
   margin-bottom: 3em;
   padding: 2em;
 
@@ -384,37 +375,24 @@ main nav.pagination ul li span.current {
   text-transform: uppercase;
 }
 
-
-
 .home-narrative .data-points .data-point p {
   margin-bottom: 0;
 
-  /* font-size: 1.2em; */
   font-size: 1em;
-}
-
-
-/* blog-index context */
-
-.home-narrative main > header {
-  margin-bottom: 0;
 }
 
 .home-narrative main .posts {
   grid-column: 2 / span 9;
-  padding-top: 4em;
 }
 
 .home-narrative main .posts h2 {
   text-align: center;
-  margin-bottom: .7em;
 }
 
 .home-narrative main .posts ul {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   margin-top: 8em;
-  /* padding: 0 4em; */
   gap: 2em;
   box-sizing: border-box;
   width:100%;
@@ -440,16 +418,16 @@ main nav.pagination ul li span.current {
 /* targets the featured posts section */
 .home-narrative main .posts.featured {
   grid-column: 1 / span 11;
-  /* margin-bottom: 3em; */
+  margin-bottom: 3em;
 
   background: var(--vocabulary-neutral-color-lighter-gray);
 }
 
 .home-narrative main .posts.featured h2 {
-  /* visibility: hidden;
+  visibility: hidden;
   height: 0;
   margin: 0;
-  padding: 0; */
+  padding: 0;
 }
 
 .home-narrative main .posts.featured .post h3 {
@@ -473,7 +451,7 @@ main nav.pagination ul li span.current {
 }
 
 .home-narrative main .posts.featured ul {    
-  padding: 0 5%;
+  padding: 0 var(--vocabulary-page-edges-space);
 }
 
 .home-narrative main .posts.featured ul li {
@@ -482,7 +460,6 @@ main nav.pagination ul li span.current {
 
 .home-narrative main .posts.featured ul li:nth-of-type(1) {
   grid-column: span 12;
-  margin-bottom: 1em;
 
   background: white;
 }
@@ -510,17 +487,20 @@ main nav.pagination ul li span.current {
 }
 
 
-
 @media (min-width: 1500px) {
+
   .home-narrative .data-points .data-point.khan-academy h2 {
     text-indent: -6000px;
   }
+
 }
 
 @media (max-width: 1140px) {
-  /* .home-narrative main footer .attribution-list ul.expand {
+
+  .home-narrative main footer .attribution-list ul.expand {
     grid-template-columns: 1fr 1fr;
-  } */
+  }
+
 }
 
 @media (max-width: 900px) {
@@ -545,9 +525,14 @@ main nav.pagination ul li span.current {
     /* padding: 0 1em; */
   }
 
+  .home-narrative main .posts ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   .home-narrative main footer {
     width: 100%;
+    box-sizing: border-box;
   }
 
 }
@@ -569,8 +554,33 @@ main nav.pagination ul li span.current {
   .home-narrative .data-points ul {
     display: block;
     padding-top: 2em;
-   }
+  }
+
+   .home-narrative main article.posts.featured > ul li:nth-child(1) {
+    padding: 2em;
+  }
+
+  .home-narrative main .posts {
+      padding: 0 var(--vocabulary-page-edges-space);
+  }
+
+  .home-narrative main footer .attribution-list ul.expand {
+      display: block;
+  }
 }
+
+@media (max-width: 425px) {
+
+  .home-narrative .attribution-list {
+    padding: 2em;
+  }
+
+  .home-narrative .attribution-list h2 {
+    width: 50%;
+
+    hyphens: auto;
+    word-break: break-word;
+  }
 
 }
 

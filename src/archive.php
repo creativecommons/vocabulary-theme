@@ -18,7 +18,7 @@
 
 </header>
 
-<aside>
+<aside class="sidebar">
 
 
 <?php

@@ -47,7 +47,7 @@
     <li>
     <article class="post">
         <header>
-        <h2 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h2>
+        <h3 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h3>
 
         <?php if ( get_field('authorship') ) : ?>
         <span class="byline">by
@@ -177,6 +177,9 @@ $query = new WP_Query(array(
 
 	<?php endwhile; ?>
     </ul>
+
+    <a class="more" href="/blog/archive/">more posts</a>
+
     
 <?php endif; ?>
 
@@ -186,7 +189,6 @@ $query = new WP_Query(array(
 
 <footer>
 
-    <a class="more" href="/blog/archive/">more posts</a>
 
     <article class="attribution-list">
         <?php array_shift($highlight_posts); ?>
