@@ -15,7 +15,7 @@
 
 </header>
 
-<aside>
+<aside class="sidebar">
 
 <?php
     $categories = get_terms( 'category', 'orderby=asc&hide_empty=0&parent=0&exclude=1' );
