@@ -383,6 +383,7 @@ main nav.pagination ul li span.current {
 
 .home-narrative main .posts {
   grid-column: 2 / span 9;
+  padding-top: 4em;
 }
 
 .home-narrative main .posts h2 {
@@ -421,13 +422,6 @@ main nav.pagination ul li span.current {
   margin-bottom: 3em;
 
   background: var(--vocabulary-neutral-color-lighter-gray);
-}
-
-.home-narrative main .posts.featured h2 {
-  visibility: hidden;
-  height: 0;
-  margin: 0;
-  padding: 0;
 }
 
 .home-narrative main .posts.featured .post h3 {
