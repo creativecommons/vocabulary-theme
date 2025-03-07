@@ -52,6 +52,8 @@
 
 </header>
 
+<div class="content"
+
 <?php if (!class_exists('ACF')): ?>
 
 <!-- display raw post_meta, if ACF not installed & activated -->
@@ -116,6 +118,8 @@ $query = new WP_Query(array(
     //'paged' => $paged,
 ));
 ?>
+
+</div>
 
 <?php if ( $query->have_posts() ) : ?>
 
