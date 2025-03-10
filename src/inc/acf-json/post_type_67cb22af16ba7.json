@@ -2,7 +2,7 @@
     "key": "post_type_67cb22af16ba7",
     "title": "Course Groups",
     "menu_order": 0,
-    "active": true,
+    "active": false,
     "post_type": "course_group",
     "advanced_configuration": true,
     "import_source": "",
@@ -83,5 +83,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1741366108
+    "modified": 1741639520
 }

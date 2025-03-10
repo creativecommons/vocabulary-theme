@@ -12,11 +12,11 @@
         "singular_name": "Course",
         "menu_name": "Courses",
         "all_items": "All Courses",
-        "edit_item": "Edit Course",
-        "view_item": "View Course",
+        "edit_item": "Edit Course Item",
+        "view_item": "View Course Item",
         "view_items": "View Courses",
-        "add_new_item": "Add New Course",
-        "add_new": "Add New Course",
+        "add_new_item": "Add New Course Item",
+        "add_new": "Add New Item",
         "new_item": "New Course",
         "parent_item_colon": "Parent Course:",
         "search_items": "Search Courses",
@@ -44,7 +44,7 @@
     },
     "description": "",
     "public": true,
-    "hierarchical": false,
+    "hierarchical": true,
     "exclude_from_search": false,
     "publicly_queryable": true,
     "show_ui": true,
@@ -67,6 +67,7 @@
     "supports": [
         "title",
         "editor",
+        "page-attributes",
         "thumbnail",
         "custom-fields"
     ],
@@ -85,5 +86,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1741365018
+    "modified": 1741639547
 }
