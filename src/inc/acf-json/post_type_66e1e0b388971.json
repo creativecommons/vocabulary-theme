@@ -9,7 +9,7 @@
     "import_date": "",
     "labels": {
         "name": "FAQs Groups",
-        "singular_name": "Grouping",
+        "singular_name": "FAQs Group",
         "menu_name": "FAQs Grouping",
         "all_items": "Groups",
         "edit_item": "Edit FAQs Group",
@@ -80,5 +80,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1741360936
+    "modified": 1741640086
 }
