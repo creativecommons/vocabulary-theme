@@ -276,3 +276,11 @@ function person_disable_redirect_canonical($redirect_url) {
     if (is_paged() && is_singular()) $redirect_url = false;
     return $redirect_url;
 }
+
+// register custom embedded URL parameter for course-page template
+
+add_action('init','add_embedded');
+function add_embedded() { 
+    global $wp; 
+    $wp->add_query_var('embedded'); 
+}
