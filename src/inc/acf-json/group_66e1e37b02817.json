@@ -37,10 +37,11 @@
                 "id": ""
             },
             "post_type": [
-                "faq"
+                "faq_item"
             ],
             "post_status": [
-                "publish"
+                "publish",
+                "draft"
             ],
             "taxonomy": "",
             "filters": [
@@ -98,5 +99,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741361183
+    "modified": 1741726089
 }
