@@ -50,14 +50,20 @@ if ($isParent && !has_post_parent() ) {
 
 <nav class="breadcrumbs">
     <ul>
-        <?php if ($contextType == 'course-index') : ?>
+        <?php if ($contextType == 'course-index' && $embedded == true ) : ?>
         <li>Creative Commons</li>
         <?php endif; ?>
-        <?php if($contextType == 'course-page') : ?>
-        <li><a href="#">Creative Commons</a></li>
+        <?php if($contextType == 'course-index' && $embedded == '') : ?>
+        <li><a href="https://creativecommons.org">Creative Commons</a></li>
+        <?php endif; ?>
+        <?php if($contextType == 'course-page' && $embedded == '') : ?>
+        <li><a href="https://creativecommons.org">Creative Commons</a></li>
+        <?php endif; ?>
+    
+        <?php if ($contextType != 'course-index' ) : ?>
+        <li><a href="#">top title of course</a></li>
         <?php endif; ?>
         
-        <li><a href="#">top title of course</a></li>
     </ul>
 </nav>
 
