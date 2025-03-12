@@ -46,6 +46,12 @@ if ($isParent && !has_post_parent() ) {
 
 <?php while ( have_posts() ) : the_post(); ?>
 
+<?php 
+$parent = get_post($post->post_parent);
+$grandparent = get_post($parent->post_parent);
+$aunts = get_children($grandparent->ID);
+?>
+
 <header>
 
 <nav class="breadcrumbs">
@@ -61,7 +67,9 @@ if ($isParent && !has_post_parent() ) {
         <?php endif; ?>
     
         <?php if ($contextType != 'course-index' ) : ?>
-        <li><a href="#">top title of course</a></li>
+        <li><a href="<?php the_permalink($grandparent->ID); ?>"><?php echo $grandparent->post_title; ?></a></li>
+
+        
         <?php endif; ?>
         
     </ul>
@@ -76,13 +84,83 @@ if ($isParent && !has_post_parent() ) {
 
 </header>
 
+
 <div class="content">
 
 
 <?php the_content(); ?>
 
+<?php 
+
+// find previous & next siblings, if present
+if (has_post_parent()) {
+    $siblings = get_children($post->post_parent);
+
+    foreach ($siblings as $sibling ){
+        if ($sibling->menu_order == $post->menu_order - 1) {
+            $previousLink = get_permalink($sibling->ID);
+        }
+
+        if ($sibling->menu_order == $post->menu_order + 1) {
+            $nextLink = get_permalink($sibling->ID);
+        }
+    }
+}
+
+if ($previousLink == '') {
+
+    foreach ($aunts as $aunt) {
+
+        if ($aunt->menu_order == $parent->menu_order - 1) {
+
+            $cousins = get_children($aunt->ID);
+
+            foreach ($cousins as $cousin) {
+                if ($cousin->menu_order == count($cousins)) {
+                    $previousLink = get_permalink($cousin->ID);
+                }
+
+            }
+        }  
+    }
+}
+
+if ($nextLink == '' && $contextType == 'course-page') {
+
+    foreach ($aunts as $aunt) {
+
+        if ($aunt->menu_order == $parent->menu_order + 1) {
+
+            $cousins = get_children($aunt->ID);
+
+            foreach ($cousins as $cousin) {
+                if ($cousin->menu_order == 1) {
+                    $nextLink = get_permalink($cousin->ID);
+                }
+
+            }
+        }  
+    }
+}
+
+?>
 
 </div>
+
+<?php if ($previousLink != '' || $nextLink != '') : ?>
+<nav class="pagination" aria-label="Pagination">
+    <ul>
+        <?php if ($previousLink != '') : ?>
+        <li><a href="<?php echo $previousLink; ?>">Previous</a></li>
+        <?php endif; ?>
+
+        <?php if ($nextLink != '') : ?>
+        <li><a href="<?php echo $nextLink; ?>">Next</a></li>
+        <?php endif; ?>
+    </ul>
+</nav>
+<?php endif; ?>
+
 
 
 <?php endwhile; // end of the loop. ?>
