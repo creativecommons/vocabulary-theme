@@ -19,10 +19,10 @@
 <body class="<?php echo $args['body-classes']; ?>">
 <a class="skip-to-content" href="#main-content-marker">Skip to content</a>
 
-<header>
+<!-- <header>
 
 <h1>CC Thing</h1>
 
-</header>
+</header> -->
 
 <span id="main-content-marker"></span>

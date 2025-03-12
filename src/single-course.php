@@ -17,13 +17,49 @@ if ($embedded == true) {
 
 ?>
 
-<?php get_header($embedded_template, array( 'body-classes' => 'course-page') ); ?>
+<?php 
+
+$args = array(
+    'post_parent' => get_the_ID(), // Current post's ID
+);
+$children = get_children( $args );
+
+if ( ! empty($children) ) {
+
+    $isParent = true;
+
+} else {
+    $isParent = false;
+}
+    
+if ($isParent && !has_post_parent() ) {
+    $contextType = 'course-index';
+} elseif (has_post_parent()) {
+    $contextType = 'course-page';
+}
+
+?>
+
+<?php get_header($embedded_template, array( 'body-classes' => $contextType) ); ?>
 
 <main>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
 <header>
+
+<nav class="breadcrumbs">
+    <ul>
+        <?php if ($contextType == 'course-index') : ?>
+        <li>Creative Commons</li>
+        <?php endif; ?>
+        <?php if($contextType == 'course-page') : ?>
+        <li><a href="#">Creative Commons</a></li>
+        <?php endif; ?>
+        
+        <li><a href="#">top title of course</a></li>
+    </ul>
+</nav>
 
 <h1><?php the_title(); ?></h1>
 
