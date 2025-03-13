@@ -523,6 +523,42 @@ main nav.pagination ul li span.current {
   display: none;
 }
 
+.course-page details {
+  margin-bottom: 2em;
+  
+  font-family: 'Source Sans Pro';
+  border: 2px solid var(--vocabulary-neutral-color-lighter-gray);
+  border-radius: 5px;
+}
+
+.course-page details:open summary {
+  margin-bottom: 1em;
+}
+
+.course-page summary {
+  padding: .2em .5em;
+
+  background: var(--vocabulary-neutral-color-lighter-gray);
+  
+  font-size: 1.2em;
+}
+
+.course-page summary:hover {
+  cursor: pointer;
+}
+
+.course-page summary::marker {
+  font-size: .8em;
+}
+
+.course-page details ul {
+  margin-left: 2em;
+}
+
+.course-page details ul li {
+  line-height: 1.8;
+}
+
 @media (min-width: 1500px) {
 
   .home-narrative .data-points .data-point.khan-academy h2 {
