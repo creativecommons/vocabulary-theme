@@ -77,19 +77,17 @@
             <?php 
             $args = array(
                 'post_parent' => $group->ID,
+                'post_type' => 'faqs-group',
                 'orderby'     => 'menu_order',
                 'order'       => 'ASC'
             );
+
             $children = get_children($args);
-            // no idea why this doesn't work yet, its just an empty array :(
-
-
-             ?>
+            ?>
             <li>
                 <h3><a href="#<?php echo (str_replace(' ', '-', strtolower($group->post_title))); ?>"><?php echo $group->post_title ?></a></h3>
                 <p><?php echo $group->summary ?></p>
                     <ul>
-                        <?php print_r($children); ?>
                     <?php foreach ($children as $child) : ?>
                     <li><h4><a href="#<?php echo (str_replace(' ', '-', strtolower($child->post_title))); ?>"><?php echo $child->post_title; ?></a></h4></li>
                     <?php endforeach; ?>
@@ -113,6 +111,8 @@
             <?php foreach ($questions as $question) : ?>
                 <li>
                     <a href="#"><?php echo $question->post_title ?></a>
+
+                    <!-- this will need to also grab sub-groups too if Qs are empty, crawl downward -->
                 </li>
             <?php endforeach; ?>
             
@@ -126,6 +126,24 @@
             <?php echo apply_filters( 'the_content', $question->post_content ); ?>
 
         <?php endforeach; ?>
+
+        <?php
+            $args = array(
+                    'post_parent' => $group->ID,
+                    'post_type' => 'faqs-group',
+                    'orderby'     => 'menu_order',
+                    'order'       => 'ASC'
+                );
+            $children = get_children($args);
+        ?>
+        <?php foreach ($children as $child) : ?>
+        <h3 id="<?php echo (str_replace(' ', '-', strtolower($child->post_title))); ?>"><?php echo $child->post_title ?></h3>
+
+        <!-- loop through and get all the questions from this subsection -->
+        <h4 id="<?php echo (str_replace(' ', '-', strtolower($grandchild->post_title))); ?>"><?php echo $grandchild->post_title ?></h4>
+
+        <?php endforeach; ?>
+
 
         <?php endforeach; ?>
         
