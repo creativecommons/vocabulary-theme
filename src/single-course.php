@@ -56,7 +56,7 @@ $aunts = get_children($grandparent->ID);
 
 <nav class="breadcrumbs">
     <ul>
-        <?php if ($contextType == 'course-index' && $embedded == true ) : ?>
+        <?php if ($embedded == true ) : ?>
         <li>Creative Commons</li>
         <?php endif; ?>
         <?php if($contextType == 'course-index' && $embedded == '') : ?>
@@ -69,7 +69,6 @@ $aunts = get_children($grandparent->ID);
         <?php if ($contextType != 'course-index' ) : ?>
         <li><a href="<?php the_permalink($grandparent->ID); ?>"><?php echo $grandparent->post_title; ?></a></li>
 
-        
         <?php endif; ?>
         
     </ul>
@@ -84,11 +83,56 @@ $aunts = get_children($grandparent->ID);
 
 </header>
 
-
 <div class="content">
 
-
 <?php the_content(); ?>
+
+<?php if ($contextType == 'course-index') : ?>
+
+    <?php
+        // echo 'toc output here';
+        $args = array(
+            'post_parent' => $post->ID,
+            'orderby'     => 'menu_order',
+            'order'       => 'ASC',
+        );
+        $children = get_children($args);
+    ?>
+
+    <?php foreach ($children as $child) : ?>
+
+        <?php
+            // echo 'toc output here';
+            $args = array(
+                'post_parent' => $child->ID,
+                'orderby'     => 'menu_order',
+                'order'       => 'ASC',
+            );
+            $grandchildren = get_children($args);
+        ?>
+
+        <h2><?php echo $child->post_title; ?></h2>
+
+        <ul>
+        <?php foreach ($grandchildren as $grandchild) : ?>
+
+            <li><a href="<?php the_permalink($grandchild->ID); ?>"><?php echo $grandchild->post_title; ?></a></li>
+
+        <?php endforeach; ?>
+        </ul>
+
+    <?php endforeach; ?>
+<?php endif; ?>
+
+<?php if ($contextType == 'course-page') : ?>
+<details>
+    <summary>Licenses & Attribution</summary>
+
+    <ul>
+        <li><strong>Provided by</strong>: Creative Commons. <strong>License</strong>: <em><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY: Attribution</a></em></li>
+    </ul>
+</details>
+<?php endif; ?>
 
 <?php 
 
