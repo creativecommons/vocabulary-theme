@@ -110,7 +110,7 @@
             <ul>
             <?php foreach ($questions as $question) : ?>
                 <li>
-                    <a href="#"><?php echo $question->post_title ?></a>
+                    <a href="#<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></a>
 
                     <!-- this will need to also grab sub-groups too if Qs are empty, crawl downward -->
                 </li>
