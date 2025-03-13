@@ -1,6 +1,6 @@
 <?php /* Template Name: Index - FAQs */ ?>
 
-<?php get_header('', array( 'body-classes' => '') ); ?>
+<?php get_header('', array( 'body-classes' => 'faq-index') ); ?>
 
 <main>
 
@@ -38,6 +38,8 @@
 
 <div class="content">
 
+    <aside class="toc">
+
     <?php 
         $topGroup = get_field('top_group');
         $topQuestions = get_field('faqs_listing', $topGroup->ID);
@@ -52,7 +54,9 @@
     <ul>
     <?php foreach ($topQuestions as $question) : ?>
 
-        <li><?php echo $question->post_title ?></li>
+        <li>
+            <a href="#<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></a>
+        </li>
 
     <?php endforeach; ?>
     </ul>
@@ -64,26 +68,60 @@
         $groups = get_sub_field('groups');
 
     ?>
+    
 
+    <article class="featured">
         <h2>Focus Areas</h2>
+        <ul>
         <?php foreach ($groups as $group) : ?>
+            <?php 
+            $args = array(
+                'post_parent' => $group->ID,
+                'orderby'     => 'menu_order',
+                'order'       => 'ASC'
+            );
+            $children = get_children($args);
+            // no idea why this doesn't work yet, its just an empty array :(
 
-            <h3><?php echo $group->post_title ?></h3>
 
+             ?>
+            <li>
+                <h3><a href="#<?php echo (str_replace(' ', '-', strtolower($group->post_title))); ?>"><?php echo $group->post_title ?></a></h3>
+                <p><?php echo $group->summary ?></p>
+                    <ul>
+                        <?php print_r($children); ?>
+                    <?php foreach ($children as $child) : ?>
+                    <li><h4><a href="#<?php echo (str_replace(' ', '-', strtolower($child->post_title))); ?>"><?php echo $child->post_title; ?></a></h4></li>
+                    <?php endforeach; ?>
+                    </ul>
+
+            </li>
         <?php endforeach; ?>
-
-
-
+        </ul>
+    </article>
+    </aside>
 
         <?php foreach ($groups as $group) : ?>
 
-        <h2><?php echo $group->post_title ?></h2>
+        <h2 id="<?php echo (str_replace(' ', '-', strtolower($group->post_title))); ?>"><?php echo $group->post_title ?></h2>
 
         <?php $questions = get_field('faqs_listing', $group->ID); ?>
 
+        <details open>
+            <summary>Table of Contents</summary>
+            <ul>
+            <?php foreach ($questions as $question) : ?>
+                <li>
+                    <a href="#"><?php echo $question->post_title ?></a>
+                </li>
+            <?php endforeach; ?>
+            
+            </ul>
+        </details>
+
         <?php foreach ($questions as $question) : ?>
 
-            <h3><?php echo $question->post_title ?></h3>
+            <h3 id="<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></h3>
             <a href="<?php echo get_edit_post_link($question->ID); ?>">[edit]</a>
             <?php echo apply_filters( 'the_content', $question->post_content ); ?>
 
@@ -93,6 +131,7 @@
         
     <?php endwhile; ?>
 <?php endif; ?>
+
 
 </div>
 
