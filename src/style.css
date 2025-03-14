@@ -589,6 +589,15 @@ main nav.pagination ul li span.current {
   font-size: 1em;
 }
 
+
+.faq-index .edit {
+  display: inline-block;
+  width: initial;
+  /* position: absolute; */
+  /* top: 0; */
+  /* right: 0; */
+}
+
 .faq-index details {
   margin-bottom: 2em;
   
@@ -623,6 +632,12 @@ main nav.pagination ul li span.current {
 
 .faq-index details ul li {
   line-height: 1.8;
+}
+
+.faq-index main .content > h4 {
+  font-family: 'Roboto Condensed';
+  font-size: 1.4em;
+
 }
 
 .faq-index main p {
