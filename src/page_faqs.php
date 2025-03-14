@@ -101,6 +101,16 @@
 
         <?php foreach ($groups as $group) : ?>
 
+        <?php
+            $args = array(
+                    'post_parent' => $group->ID,
+                    'post_type' => 'faqs-group',
+                    'orderby'     => 'menu_order',
+                    'order'       => 'ASC'
+                );
+            $children = get_children($args);
+        ?>
+
         <h2 id="<?php echo (str_replace(' ', '-', strtolower($group->post_title))); ?>"><?php echo $group->post_title ?></h2>
 
         <?php $questions = get_field('faqs_listing', $group->ID); ?>
@@ -115,14 +125,37 @@
                     <!-- this will need to also grab sub-groups too if Qs are empty, crawl downward -->
                 </li>
             <?php endforeach; ?>
+
+            <?php foreach ($children as $child) : ?>
+                <li>
+                <a href="#<?php echo (str_replace(' ', '-', strtolower($child->post_title))); ?>"><?php echo $child->post_title ?></a>
+
+                <?php $questions = get_field('faqs_listing', $child->ID); ?>
+                <?php if ($questions) :?>
+                    <ul>
+                    <?php foreach ($questions as $question) : ?>
+                        <li>
+                            <a href="#<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></a>
+
+                            <!-- this will need to also grab sub-groups too if Qs are empty, crawl downward -->
+                        </li>
+                    <?php endforeach; ?>
+                    </ul>
+
+                <?php endif; ?>
+
+                </li>
+            <?php endforeach; ?>
+
             
             </ul>
+
         </details>
 
         <?php foreach ($questions as $question) : ?>
 
             <h3 id="<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></h3>
-            <a href="<?php echo get_edit_post_link($question->ID); ?>">[edit]</a>
+            <a href="<?php echo get_edit_post_link($question->ID); ?>" class="edit" >[edit]</a>
             <?php echo apply_filters( 'the_content', $question->post_content ); ?>
 
         <?php endforeach; ?>
@@ -140,7 +173,16 @@
         <h3 id="<?php echo (str_replace(' ', '-', strtolower($child->post_title))); ?>"><?php echo $child->post_title ?></h3>
 
         <!-- loop through and get all the questions from this subsection -->
-        <h4 id="<?php echo (str_replace(' ', '-', strtolower($grandchild->post_title))); ?>"><?php echo $grandchild->post_title ?></h4>
+        <?php $questions = get_field('faqs_listing', $child->ID); ?>
+        <?php foreach ($questions as $question) : ?>
+        
+            <h4 id="<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></h4>
+            <a href="<?php echo get_edit_post_link($question->ID); ?>" class="edit" >[edit]</a>
+            <?php echo apply_filters( 'the_content', $question->post_content ); ?>
+
+
+        <?php endforeach; ?>
+
 
         <?php endforeach; ?>
 
