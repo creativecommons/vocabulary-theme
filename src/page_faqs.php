@@ -135,7 +135,6 @@
                 <li>
                     <a href="#<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></a>
 
-                    <!-- this will need to also grab sub-groups too if Qs are empty, crawl downward -->
                 </li>
             <?php endforeach; ?>
 
@@ -165,8 +164,7 @@
 
         </details>
 
-        <?php echo apply_filters( 'the_content', $group->post_content ); ?>
-
+        <?php if (!$children) : ?>                 
         <?php foreach ($questions as $question) : ?>
 
             <h3 id="<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></h3>
@@ -174,6 +172,7 @@
             <?php echo apply_filters( 'the_content', $question->post_content ); ?>
 
         <?php endforeach; ?>
+        <?php endif; ?>
 
         <?php
             $args = array(
