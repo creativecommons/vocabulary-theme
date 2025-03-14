@@ -598,18 +598,18 @@ main nav.pagination ul li span.current {
   /* right: 0; */
 }
 
-.faq-index details {
+.faq-index details, .faq-page details {
   margin-bottom: 2em;
   
   border: 2px solid var(--vocabulary-neutral-color-lighter-gray);
   border-radius: 5px;
 }
 
-.faq-index details:open summary {
+.faq-index details:open summary, .faq-page details:open summary {
   margin-bottom: 1em;
 }
 
-.faq-index summary {
+.faq-index summary, .faq-page summary {
   padding: .2em .5em;
 
   background: var(--vocabulary-neutral-color-lighter-gray);
@@ -617,31 +617,34 @@ main nav.pagination ul li span.current {
   font-size: 1.2em;
 }
 
-.faq-index summary:hover {
+.faq-index summary:hover, .faq-page summary:hover {
   cursor: pointer;
 }
 
-.faq-index summary::marker {
+.faq-index summary::marker, .faq-page summary::marker {
   font-size: .8em;
 }
 
 
-.faq-index details ul {
+.faq-index details ul, .faq-page details ul {
   margin-left: 2em;
 }
 
-.faq-index details ul li {
+.faq-index details ul li, .faq-page details ul li {
   line-height: 1.8;
 }
 
-.faq-index main .content > h4 {
+.faq-index main .content > h4, .faq-page main .content > h4 {
   font-family: 'Roboto Condensed';
   font-size: 1.4em;
-
 }
 
-.faq-index main p {
+.faq-index main p, .faq-page main p {
   margin-top: 0;
+}
+
+.faq-page .breadcrumbs {
+  font-family: 'Source Sans Pro';
 }
 
 

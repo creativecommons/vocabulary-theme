@@ -55,6 +55,8 @@
     <?php foreach ($topQuestions as $question) : ?>
 
         <li>
+            <!-- links here will need to go to specific group pages, if not set to anchors -->
+            <!-- possible bi-direction ACF relationship group is useful here to better query? -->
             <a href="#<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></a>
         </li>
 
@@ -66,6 +68,7 @@
     <?php while( have_rows('featured_areas') ): the_row(); 
 
         $groups = get_sub_field('groups');
+        $linkType = get_sub_field('link_type');
 
     ?>
     
@@ -85,11 +88,21 @@
             $children = get_children($args);
             ?>
             <li>
+                <?php if ($linkType == 'to-anchor') : ?>
                 <h3><a href="#<?php echo (str_replace(' ', '-', strtolower($group->post_title))); ?>"><?php echo $group->post_title ?></a></h3>
+                <?php elseif ($linkType == 'to-page') : ?>
+                <h3><a href="<?php echo get_permalink($group->ID); ?>"><?php echo $group->post_title ?></a></h3>
+                <?php endif; ?>
                 <p><?php echo $group->summary ?></p>
                     <ul>
                     <?php foreach ($children as $child) : ?>
-                    <li><h4><a href="#<?php echo (str_replace(' ', '-', strtolower($child->post_title))); ?>"><?php echo $child->post_title; ?></a></h4></li>
+                    <li>
+                        <?php if ($linkType == 'to-anchor') : ?>
+                        <h4><a href="#<?php echo (str_replace(' ', '-', strtolower($child->post_title))); ?>"><?php echo $child->post_title; ?></a></h4>
+                        <?php elseif ($linkType == 'to-page') : ?>
+                        <h4><a href="<?php echo get_permalink($group->ID); ?>#<?php echo (str_replace(' ', '-', strtolower($child->post_title))); ?>"><?php echo $child->post_title; ?></a></h4>
+                        <?php endif; ?>
+                    </li>
                     <?php endforeach; ?>
                     </ul>
 
@@ -98,7 +111,7 @@
         </ul>
     </article>
     </aside>
-
+        <?php if ($linkType == 'to-anchor') : ?>
         <?php foreach ($groups as $group) : ?>
 
         <?php
@@ -152,6 +165,8 @@
 
         </details>
 
+        <?php echo apply_filters( 'the_content', $group->post_content ); ?>
+
         <?php foreach ($questions as $question) : ?>
 
             <h3 id="<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></h3>
@@ -188,6 +203,22 @@
 
 
         <?php endforeach; ?>
+        <?php endif; ?>
+
+        <?php if ($linkType == 'to-page') : ?>
+
+        <h2><?php echo $topGroup->post_title; ?></h2>
+
+        <?php foreach ($topQuestions as $question) : ?>
+
+
+        <h3 id="<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></h3>
+        <?php echo apply_filters( 'the_content', $question->post_content ); ?>
+
+
+        <?php endforeach; ?>
+
+        <?php endif; ?>
         
     <?php endwhile; ?>
 <?php endif; ?>
