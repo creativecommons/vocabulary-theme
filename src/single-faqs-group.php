@@ -119,7 +119,7 @@
 
 </div>
 
-
+<a href="#main-content-marker" class="return-to-top"><span class="icon-attach fa-angle-up">Return to top</span></a>
 
 <?php endwhile; // end of the loop. ?>
 </main>
