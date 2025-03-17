@@ -47,7 +47,11 @@
 
 <article class="post">
     <header>
+        <?php if (get_post_type() != 'faq_item') : ?>
         <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <?php else : ?>
+        <h2><a href="/faqs/#<?php echo (str_replace(' ', '-', strtolower($post->post_title))); ?>"><?php the_title(); ?></a></h2>
+        <?php endif; ?>
 
         <?php if ( get_field('authorship' ) ) : ?>
         <span class="byline">by
@@ -84,8 +88,16 @@
         <?php endif; ?>
 
         <span class="type">
-            <?php echo get_post_type(); ?>
+            <?php 
+            if (get_post_type() != 'faq_item') {
+                echo get_post_type(); 
+            } else {
+                echo 'FAQ';
+            }
+            ?>
         </span>
+
+        
 
     </header>
 

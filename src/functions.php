@@ -284,3 +284,13 @@ function add_embedded() {
     global $wp; 
     $wp->add_query_var('embedded'); 
 }
+
+// remove edit_post_link from non-editors
+function remove_get_edit_post_link( $link ) {
+  if ( current_user_can( 'edit_posts' ) ) {
+      return $link;
+  }
+  return null;
+}
+
+add_filter( 'get_edit_post_link', 'remove_get_edit_post_link' );
