@@ -691,7 +691,85 @@ main nav.pagination ul li span.current {
   background: white;
 }
 
+/* course-index, course-page contexts */
+.course-index > header {
+  display: none;
+}
 
+.course-index > footer {
+  /* display: none; */
+}
+
+.course-page > header {
+  display: none;
+}
+
+.course-page > footer {
+  /* display: none; */
+}
+
+.course-embedded > header {
+  display: none;
+}
+
+.course-embedded > footer {
+  display: none;
+}
+
+.course-embedded nav.breadcrumbs ul, .course-page nav.breadcrumbs ul, .course-index nav.breadcrumbs ul {
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+
+  list-style: none;
+  text-align: left;
+  font-size: .9em;
+}
+
+.course-embedded nav.breadcrumbs ul li:after, .course-page nav.breadcrumbs ul li:after, .course-index nav.breadcrumbs ul li:after { 
+  content: '>';
+  padding: 0 .5em;
+}
+
+.course-embedded nav.breadcrumbs ul li:last-child:after, .course-page nav.breadcrumbs ul li:last-child:after, .course-index nav.breadcrumbs ul li:last-child:after { 
+  display: none;
+}
+
+.course-page details {
+  margin-bottom: 2em;
+  
+  font-family: 'Source Sans Pro';
+  border: 2px solid var(--vocabulary-neutral-color-lighter-gray);
+  border-radius: 5px;
+}
+
+.course-page details:open summary {
+  margin-bottom: 1em;
+}
+
+.course-page summary {
+  padding: .2em .5em;
+
+  background: var(--vocabulary-neutral-color-lighter-gray);
+  
+  font-size: 1.2em;
+}
+
+.course-page summary:hover {
+  cursor: pointer;
+}
+
+.course-page summary::marker {
+  font-size: .8em;
+}
+
+.course-page details ul {
+  margin-left: 2em;
+}
+
+.course-page details ul li {
+  line-height: 1.8;
+}
 
 @media (min-width: 1500px) {
 
