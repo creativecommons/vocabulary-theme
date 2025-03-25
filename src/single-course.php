@@ -191,6 +191,7 @@ if ($nextLink == '' && $contextType == 'course-page') {
 
 </div>
 
+<?php if ($embedded != true ) : ?>
 <?php if ($previousLink != '' || $nextLink != '') : ?>
 <nav class="pagination" aria-label="Pagination">
     <ul>
@@ -203,6 +204,7 @@ if ($nextLink == '' && $contextType == 'course-page') {
         <?php endif; ?>
     </ul>
 </nav>
+<?php endif; ?>
 <?php endif; ?>
 
 
