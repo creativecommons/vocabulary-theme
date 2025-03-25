@@ -12,6 +12,7 @@ License URI: https://github.com/creativecommons/vocabulary-theme/blob/main/LICEN
 */
 
 @import 'vocabulary/css/vocabulary.css' layer(vocabulary);
+@import 'chooser/css/chooser.css' layer(chooser);
 
 
 /* WordPress specific rules */

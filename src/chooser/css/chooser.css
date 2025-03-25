@@ -1,0 +1,205 @@
+:root {
+
+    /* localized cc sprite names */
+    --cc-by: url('../../vocabulary/svg/cc/icons/cc-icons.svg#cc-by');
+    --cc-nc: url('../../vocabulary/svg/cc/icons/cc-icons.svg#cc-nc');
+    --cc-nd: url('../../vocabulary/svg/cc/icons/cc-icons.svg#cc-nd');
+    --cc-pd: url('../../vocabulary/svg/cc/icons/cc-icons.svg#cc-pd');
+    --cc-pdm: url('../../vocabulary/svg/cc/icons/cc-icons.svg#cc-pdm');
+    --cc-sa: url('../../vocabulary/svg/cc/icons/cc-icons.svg#cc-sa');
+    --cc-zero: url('../../vocabulary/svg/cc/icons/cc-icons.svg#cc-zero');
+}
+
+.icon-attach.cc-by:before {
+    --icon-sprite: var(--cc-by);
+    /* --icon-sprite-size: 2em; */
+    margin-right: .2em;
+    margin-bottom: -.125em;
+}
+
+.icon-attach.cc-nc:before {
+    --icon-sprite: var(--cc-nc);
+    /* --icon-sprite-size: 2em; */
+    margin-right: .2em;
+    margin-bottom: -.125em;
+}
+
+.icon-attach.cc-nd:before {
+    --icon-sprite: var(--cc-nd);
+    /* --icon-sprite-size: 2em; */
+    margin-right: .2em;
+    margin-bottom: -.125em;
+}
+
+.icon-attach.cc-pd:before {
+    --icon-sprite: var(--cc-pd);
+    /* --icon-sprite-size: 2em; */
+    margin-right: .2em;
+    margin-bottom: -.125em;
+}
+
+.icon-attach.cc-pdm:before {
+    --icon-sprite: var(--cc-pdm);
+    /* --icon-sprite-size: 2em; */
+    margin-right: .2em;
+    margin-bottom: -.125em;
+}
+
+.icon-attach.cc-sa:before {
+    --icon-sprite: var(--cc-sa);
+    /* --icon-sprite-size: 2em; */
+    margin-right: .2em;
+    margin-bottom: -.125em;
+}
+
+.icon-attach.cc-zero:before {
+    --icon-sprite: var(--cc-zero);
+    /* --icon-sprite-size: 2em; */
+    margin-right: .2em;
+    margin-bottom: -.125em;
+}
+
+dt, dd {
+    display: inline-block;
+}
+
+dt:after {
+    content: ':';
+}
+
+dd {
+    margin-left: .2em;
+}
+
+ol li:has(.disable) {
+    display: none;
+}
+
+.disable {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+.tool header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tool header > h4 {
+    width: 100%;
+}
+
+.tool header > .tool-icons {
+    order: -1;
+    margin: 1.8em 1em 0 0;
+}
+
+.tool .tool-icons svg {
+    display: inline;
+    width: 1.9em;
+    height: 1.9em;
+    margin-right: .3em;
+}
+
+.content {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: 1fr 2fr;
+}
+
+.mark svg {
+    display: inline;
+    /* font-size: 1em; */
+    width: 1.3em;
+    height: 1.3em;
+}
+
+.mark svg:first-of-type {
+    margin-left: .5em;
+}
+
+.tool-rec-details input {
+    color: lightgray;
+}
+
+#tool-recommendation p {
+    font-size: 1.4em;
+}
+
+#mark-your-work p {
+    font-size: 1.4em;
+}
+
+details { 
+    font-family: 'Source Sans Pro';
+
+    border: 2px solid var(--vocabulary-neutral-color-lighter-gray);
+    border-radius: 5px;
+}
+
+details details {
+    margin: 1em;
+}
+
+details.medium {
+    margin-bottom: 1em;
+}
+  
+details.medium:open > summary {
+    /* margin-bottom: 1em; */
+}
+  
+details summary {
+    padding: .2em .5em;
+
+    background: var(--vocabulary-neutral-color-lighter-gray);
+    font-size: 1.6em;
+}
+
+details.format summary {
+    font-size: 1.3em;
+}
+
+  
+summary:hover {
+    cursor: pointer;
+}
+  
+summary::marker {
+    font-size: .8em;
+}
+
+details p {
+    padding: 0 1em;
+
+    font-size: 1em;
+}
+
+body.chooser-page .content {
+    grid-column: 3 / 10;
+
+}
+
+@media (max-width: 705px) {
+    .content {
+        display: block;
+    }
+}
+
+
+/* debug styles */
+.help {
+    display: none;
+}
+
+
+.panel {
+    display: none;
+}
+
+.panel.expand {
+    display: initial;
+}
