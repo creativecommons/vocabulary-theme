@@ -404,8 +404,10 @@
     </div>
 
     <dl class="conditions-definitions">
-        <dt class="icon-attach cc-zero">CC0</dt>
-        <dd>This work has been marked as dedicated to the public domain.</dd>
+        <div>
+            <dt class="icon-attach cc-zero">CC0</dt>
+            <dd>This work has been marked as dedicated to the public domain.</dd>
+        </div>
     </dl>
 
     <a href="https://creativecommons.org/publicdomain/zero/1.0/?ref=chooser-v2">See the License Deed</a>
@@ -430,8 +432,10 @@
     </div>
 
     <dl class="conditions-definitions">
-        <dt class="icon-attach cc-by">BY</dt>
-        <dd>Credit must be given to you, the creator.</dd>
+        <div>
+            <dt class="icon-attach cc-by">BY</dt>
+            <dd>Credit must be given to you, the creator.</dd>
+        </div>
     </dl>
 
     <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v2">See the License Deed</a>
@@ -459,11 +463,15 @@
     </div>
 
     <dl class="conditions-definitions">
-        <dt class="icon-attach cc-by">BY</dt>
-        <dd>Credit must be given to you, the creator.</dd>
+        <div>
+            <dt class="icon-attach cc-by">BY</dt>
+            <dd>Credit must be given to you, the creator.</dd>
+        </div>
 
-        <dt class="icon-attach cc-sa">SA</dt>
-        <dd>Adaptations must be shared under the same terms.</dd>
+        <div>
+            <dt class="icon-attach cc-sa">SA</dt>
+            <dd>Adaptations must be shared under the same terms.</dd>
+        </div>
     </dl>
 
     <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v2">See the License Deed</a>
@@ -491,11 +499,16 @@
     </div>
 
     <dl class="conditions-definitions">
-        <dt class="icon-attach cc-by">BY</dt>
-        <dd>Credit must be given to you, the creator.</dd>
 
-        <dt class="icon-attach cc-nd">ND</dt>
-        <dd>No derivatives or adaptations of your work are permitted.</dd>
+        <div>
+            <dt class="icon-attach cc-by">BY</dt>
+            <dd>Credit must be given to you, the creator.</dd>
+        </div>
+
+        <div>
+            <dt class="icon-attach cc-nd">ND</dt>
+            <dd>No derivatives or adaptations of your work are permitted.</dd>
+        </div>
     </dl>
 
     <a href="https://creativecommons.org/licenses/by-nd/4.0/?ref=chooser-v2">See the License Deed</a>
@@ -523,14 +536,18 @@
     </div>
 
     <dl class="conditions-definitions">
-        <dt class="icon-attach cc-by">BY</dt>
-        <dd>Credit must be given to you, the creator.</dd>
+        <div>
+            <dt class="icon-attach cc-by">BY</dt>
+            <dd>Credit must be given to you, the creator.</dd>
+        </div>
 
-        <dt class="icon-attach cc-nc">NC</dt>
-        <dd>
-            Only noncommercial use of your work is permitted.
-            <span>Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</span>
-        </dd>
+        <div>
+            <dt class="icon-attach cc-nc">NC</dt>
+            <dd>
+                Only noncommercial use of your work is permitted.
+                <span>Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</span>
+            </dd>
+        </div>
 
 
     </dl>
@@ -563,17 +580,23 @@
     </div>
 
     <dl class="conditions-definitions">
-        <dt class="icon-attach cc-by">BY</dt>
-        <dd>Credit must be given to you, the creator.</dd>
+        <div>
+            <dt class="icon-attach cc-by">BY</dt>
+            <dd>Credit must be given to you, the creator.</dd>
+        </div>
 
+        <div>
         <dt class="icon-attach cc-nc">NC</dt>
         <dd>
             Only noncommercial use of your work is permitted.
             <span>Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</span>
         </dd>
+        </div>
 
-        <dt class="icon-attach cc-sa">SA</dt>
-        <dd>Adaptations must be shared under the same terms.</dd>
+        <div>
+            <dt class="icon-attach cc-sa">SA</dt>
+            <dd>Adaptations must be shared under the same terms.</dd>
+        </div>
     </dl>
 
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v2">See the License Deed</a>
@@ -604,17 +627,23 @@
     </div>
 
     <dl class="conditions-definitions">
-        <dt class="icon-attach cc-by">BY</dt>
-        <dd>Credit must be given to you, the creator.</dd>
+        <div>
+            <dt class="icon-attach cc-by">BY</dt>
+            <dd>Credit must be given to you, the creator.</dd>
+        </div>
 
+        <div>
         <dt class="icon-attach cc-nc">NC</dt>
-        <dd>
+            <dd>
             Only noncommercial use of your work is permitted.
             <span>Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</span>
-        </dd>
+            </dd>
+        </div>
 
-        <dt class="icon-attach cc-nd">ND</dt>
-        <dd>No derivatives or adaptations of your work are permitted.</dd>
+        <div>
+            <dt class="icon-attach cc-nd">ND</dt>
+            <dd>No derivatives or adaptations of your work are permitted.</dd>
+        </div>
     </dl>
 
     <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v2">See the License Deed</a>

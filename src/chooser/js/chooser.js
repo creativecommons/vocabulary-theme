@@ -296,12 +296,12 @@ function renderMarkingFormats(state) {
     //document.querySelector('#mark-your-work .plain-text.mark').appendChild(templateContent);
 
     // set contents of rich text mark
-    let ccSVG = '<svg><use href="../../vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use></svg>';
-    let bySVG = '<svg><use href="../../vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use></svg>';
-    let saSVG = '<svg><use href="../../vocabulary/svg/cc/icons/cc-icons.svg#cc-sa"></use></svg>';
-    let ncSVG = '<svg><use href="../../vocabulary/svg/cc/icons/cc-icons.svg#cc-nc"></use></svg>';
-    let ndSVG = '<svg><use href="../../vocabulary/svg/cc/icons/cc-icons.svg#cc-nd"></use></svg>';
-    let zeroSVG = '<svg><use href="../../vocabulary/svg/cc/icons/cc-icons.svg#cc-zero"></use></svg>';
+    let ccSVG = '<svg><use href="/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use></svg>';
+    let bySVG = '<svg><use href="/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use></svg>';
+    let saSVG = '<svg><use href="/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-sa"></use></svg>';
+    let ncSVG = '<svg><use href="/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-nc"></use></svg>';
+    let ndSVG = '<svg><use href="/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-nd"></use></svg>';
+    let zeroSVG = '<svg><use href="/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-zero"></use></svg>';
 
     const currentTool = state.props.tool;
     switch (currentTool) {
