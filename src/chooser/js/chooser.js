@@ -24,6 +24,12 @@ let state = {};
 // all found fieldsets
 const fieldsets = document.querySelectorAll('fieldset'); 
 
+// all found toggles
+const toggles = document.querySelectorAll('#mark-your-work footer input');
+
+// all found copiers
+const copiers = document.querySelectorAll('#mark-your-work footer button');
+
 // empty defaults obj
 let applyDefaults = {};
 
@@ -77,7 +83,6 @@ function setStateParts(state) {
 
     // temp defaults
     state.parts[0] = 'do-you-know-which-license-you-need/yes/';
-    //state.parts[1] = 'which-license-do-you-need/cc-by/';
     state.parts[8] = 'attribution-details/';
 }
 // function to update state.parts
@@ -107,9 +112,6 @@ function updateStateParts(element, index, event, state) {
         state.parts[index] = element.id + '/';
 
     }
-
-    console.log("state.parts (after change)");
-    console.log(state.parts);
 }
 
 // function to combine current tracked 
@@ -136,20 +138,26 @@ function setStateProps(index, state) {
     Object.keys(state.possibilities).forEach((possibility) => {
         if(state.possibilities[possibility].includes(state.current)) {
             state.props.tool = possibility;
-            console.log('matched');
         }
     });
 
     // set toolFull, toolShort, toolURL
-    if (state.props.tool != 'unknown' | state.props.tool != 'cc-0' ) {
+    if (state.props.tool != 'unknown' && state.props.tool != 'cc-0' ) { // was OR, changes to AND
 
         formattedTool = state.props.tool.replace(/-/, ' ').toUpperCase();
         state.props.toolShort = formattedTool + ' 4.0';
 
-        // set toolShort
-
+        // set shortName
         shortName = state.props.tool.replace(/cc-/, '');
         state.props.toolURL = 'https://creativecommons.org/licenses/'+ shortName +'/4.0/'; 
+    }
+
+    if (state.props.tool != 'unknown' ) {
+        //set longName
+        let tool = state.props.tool;
+        let template = document.getElementById(tool);
+        let templateContent = template.content.cloneNode(true);
+        state.props.toolLong = templateContent.querySelector('header h4').textContent;
     }
 
     if (state.props.tool == 'cc-0') {
@@ -157,34 +165,52 @@ function setStateProps(index, state) {
         state.props.toolShort = 'CC0 1.0';
 
         // set toolFull
-
         state.props.toolURL = 'https://creativecommons.org/publicdomain/zero/1.0/';
     }
 
-
-
-
     state.props.cursor = index;
-    console.log('cursor at:');
-    console.log(index);
 
     state.props.attribution = [];
     setStatePropsAttribution(state);
 }
 
-
-// isolated function to just set the attribution 
+// function to just set the attribution 
 // subset of state.props (for use other places)
 function setStatePropsAttribution(state) {
-    state.props.attribution.title = document.querySelector('#attribution-details #title').value.replace(/(<([^>]+)>)/gi, "");
-    state.props.attribution.creator = document.querySelector('#attribution-details #creator').value.replace(/(<([^>]+)>)/gi, "");
-    state.props.attribution.workLink = document.querySelector('#attribution-details #work-link').value.replace(/(<([^>]+)>)/gi, "");
-    state.props.attribution.creatorLink = document.querySelector('#attribution-details #creator-link').value.replace(/(<([^>]+)>)/gi, "");
-    state.props.attribution.workCreationYear = document.querySelector('#attribution-details #work-creation-year').value.replace(/(<([^>]+)>)/gi, "");
+
+    if (document.querySelector('#attribution-details #title').value == '') {
+        state.props.attribution.title = document.querySelector('#attribution-details #title').placeholder.replace(/(<([^>]+)>)/gi, "");
+    } else {
+        state.props.attribution.title = document.querySelector('#attribution-details #title').value.replace(/(<([^>]+)>)/gi, "");
+    }
+
+    if (document.querySelector('#attribution-details #creator').value == '') {
+        state.props.attribution.creator = document.querySelector('#attribution-details #creator').placeholder.replace(/(<([^>]+)>)/gi, "");
+    } else {
+        state.props.attribution.creator = document.querySelector('#attribution-details #creator').value.replace(/(<([^>]+)>)/gi, "");
+    }
+
+    if (document.querySelector('#attribution-details #work-link').value == '') {
+        state.props.attribution.workLink = document.querySelector('#attribution-details #work-link').placeholder.replace(/(<([^>]+)>)/gi, "");
+    } else {
+        state.props.attribution.workLink = document.querySelector('#attribution-details #work-link').value.replace(/(<([^>]+)>)/gi, "");
+    }
+
+    if (document.querySelector('#attribution-details #creator-link').value == '') {
+        state.props.attribution.creatorLink = document.querySelector('#attribution-details #creator-link').placeholder.replace(/(<([^>]+)>)/gi, "");
+    } else {
+        state.props.attribution.creatorLink = document.querySelector('#attribution-details #creator-link').value.replace(/(<([^>]+)>)/gi, "");
+    }
+
+    if (document.querySelector('#attribution-details #work-creation-year').value == '') {
+        state.props.attribution.workCreationYear = document.querySelector('#attribution-details #work-creation-year').placeholder.replace(/(<([^>]+)>)/gi, "");
+    } else {
+        state.props.attribution.workCreationYear = document.querySelector('#attribution-details #work-creation-year').value.replace(/(<([^>]+)>)/gi, "");
+    }
 }
 
 // function to reset values beyond current fieldset
-// [T] this could potentially do with a refactor
+// [T]: this could potentially do with a refactor
 // check for input type, and them perform 
 // contextual resets to universal defaults
 // unchecked for radio/checkbox, noselect for 
@@ -197,18 +223,11 @@ function clearStepsAfterCursor(fieldsets, state) {
                 element.querySelector("#tool").value = "noselect";
             }
 
-            // if (index = 8) {
-
-            // }
-
             if (index != 1 | index != 8) {
-                console.log('clear at:');
-                console.log(index);
 
                 let inputs = element.querySelectorAll('input');
                 inputs.forEach((input, i) => {
                     input.checked = false;
-                    console.log('uncheck!');
                 });
             }
         }
@@ -218,7 +237,6 @@ function clearStepsAfterCursor(fieldsets, state) {
 // function to render "tool recommendation",
 // if valid tool from state.parts and/or state.current
 function renderToolRec(state) {
-    // document.querySelector('#tool-recommendation header h3').textContent = state.props.tool;
 
     if (state.props.tool != 'unknown' ) {
         document.querySelector('#tool-recommendation').classList.remove('disable');
@@ -228,12 +246,12 @@ function renderToolRec(state) {
         let templateContent = template.content.cloneNode(true);
         document.querySelector('#tool-recommendation .tool').textContent = '';
         document.querySelector('#tool-recommendation .tool').appendChild(templateContent);
-        console.log('tool set to: ' + tool);
     }
     else if (state.props.tool == 'unknown') {
         document.querySelector('#tool-recommendation').classList.add('disable');
         document.querySelector('#tool-recommendation .tool').textContent = '';
     }
+
 }
 
 // render specifically the mark formats subsections
@@ -243,26 +261,19 @@ function renderMarkingFormats(state) {
 
     setStatePropsAttribution(state);
 
-    //let title = state.props.attribution.title;
-    //let workCreationYear = state.props.attribution.workCreationYear;
-
-    //let phrase = '(c) ' + workCreationYear + ' ' + title + ' is licensed under ';
-
     let attribution = state.props.attribution;
 
     let type = "license";
     let typeAsVerb = "licensed under";
+    let copyright = ' © ' + attribution.workCreationYear;
     if (state.props.tool == 'cc-0') {
         type = "mark";
         typeAsVerb = "marked";
+        copyright = '';
     }
 
-    //let mark = attribution.title + ' © ' + attribution.workCreationYear + ' by ' + attribution.creator + ' is ' + type  + ' ' + state.props.toolShort + '. To view a copy of this license, visit ' + state.props.toolURL;
-    //document.querySelector('#mark-your-work .plain-text.mark').textContent = mark;
-
-
     // set contents of plain text mark
-    // TODO: reverse use of <template> since it has limits on tokenization capacity, even if
+    // [T]: reverse use of <template> since it has limits on tokenization capacity, even if
     // it allows more dev readability.
     let template = document.getElementById('plain-text');
     let templateContent = template.content.cloneNode(true);
@@ -279,29 +290,34 @@ function renderMarkingFormats(state) {
     markProps.type = type;
     markProps.typeAsVerb = typeAsVerb;
     markProps.toolShort = state.props.toolShort;
+    markProps.toolLong = state.props.toolLong;
     markProps.toolURL = state.props.toolURL;
+    markProps.copyright = copyright;
 
-    // could carve out separate sections for different mark formats here
+    // set contents of plain text mark
+    plainTextFullName = document.querySelector('#plain-text-full-name').checked;
+
+    if (plainTextFullName == true) {
+        markProps.toolName = state.props.toolLong;
+
+    } else {
+        markProps.toolName = state.props.toolShort;
+    }
+
+    // [T]: could carve out separate sections for different mark formats here
     // only handles plain text at the moment
     for (const [key, value] of Object.entries(markProps)) {
         templateContent.textContent = parseTokens(key, value, templateContent.textContent);
-        console.log(`${key}: ${value}`);
-        console.log(templateContent);
     }
-
     document.querySelector('#mark-your-work .plain-text.mark').appendChild(templateContent);
 
-
-    //templateContent.textContent = parseTokens("year", attribution.workCreationYear, templateContent.textContent);
-    //document.querySelector('#mark-your-work .plain-text.mark').appendChild(templateContent);
-
     // set contents of rich text mark
-    let ccSVG = '<svg><use href="/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use></svg>';
-    let bySVG = '<svg><use href="/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use></svg>';
-    let saSVG = '<svg><use href="/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-sa"></use></svg>';
-    let ncSVG = '<svg><use href="/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-nc"></use></svg>';
-    let ndSVG = '<svg><use href="/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-nd"></use></svg>';
-    let zeroSVG = '<svg><use href="/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-zero"></use></svg>';
+    let ccSVG = '<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;">';
+    let bySVG = '<img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;">';
+    let saSVG = '<img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;">';
+    let ncSVG = '<img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;">';
+    let ndSVG = '<img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;">';
+    let zeroSVG = '<img src="https://mirrors.creativecommons.org/presskit/icons/zero.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;">';
 
     const currentTool = state.props.tool;
     switch (currentTool) {
@@ -330,13 +346,30 @@ function renderMarkingFormats(state) {
             currentTool = '';
     }
 
-    let richTextMark = attribution.title + ' © ' + attribution.workCreationYear + ' by ' + attribution.creator + ' is ' + typeAsVerb  + ' ' + '<a href="' + state.props.toolURL + '">' + state.props.toolShort + '</a>' + ccIconSet;
+    richTextFullName = document.querySelector('#rich-text-full-name').checked;
+
+    if (richTextFullName == true) {
+        markProps.toolName = state.props.toolLong;
+
+    } else {
+        markProps.toolName = state.props.toolShort;
+    }
+
+    let richTextMark = '<a href="' + attribution.workLink + '">' + attribution.title + '</a>' + copyright + ' by ' + '<a href="' + attribution.creatorLink + '">' + attribution.creator + '</a>' + ' is ' + typeAsVerb  + ' ' + '<a href="' + state.props.toolURL + '">' + markProps.toolName + '</a>' + ccIconSet;
     document.querySelector('#mark-your-work .rich-text.mark').innerHTML = richTextMark;
 
 
     // set contents of HTML mark
-    defaultHTML = '<p xmlns:cc="http://creativecommons.org/ns#">This work is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer">CC BY-SA 4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt=""></a></p>';
-    let htmlMark = '<textarea readonly="true">' + defaultHTML + '</textarea>';
+    htmlFullName = document.querySelector('#html-full-name').checked;
+
+    if (htmlFullName == true) {
+        markProps.toolName = state.props.toolLong;
+
+    } else {
+        markProps.toolName = state.props.toolShort;
+    }
+    //defaultHTML = '<p xmlns:cc="http://creativecommons.org/ns#">This work is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer">CC BY-SA 4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt=""></a></p>';
+    let htmlMark = '<a href="' + attribution.workLink + '">' + attribution.title + '</a>' + copyright + ' by ' + '<a href="' + attribution.creatorLink + '">' + attribution.creator + '</a>' + ' is ' + typeAsVerb  + ' ' + '<a href="' + state.props.toolURL + '">' + markProps.toolName + '</a>' + ccIconSet;
     document.querySelector('#mark-your-work .html.mark').innerHTML = htmlMark;
 }
 
@@ -364,6 +397,21 @@ function renderMarkingFormats(state) {
 //   console.log(parsedMark);
 
 
+
+// function to render "empty area"
+// if no valid tool from state.parts and/or state/current
+function renderEmptyPlaceholder(state) { 
+
+    if (state.props.tool == 'unknown' ) {
+        document.querySelector('#empty').classList.remove('disable');
+    }
+    
+    else if (state.props.tool != 'unknown') {
+        document.querySelector('#empty').classList.add('disable');
+    }
+    
+}
+
 // function to render "mark your work",
 // if valid tool from state.parts and/or state.current
 // if attribution details input(s) filled out
@@ -372,14 +420,7 @@ function renderMarkYourWork(state) {
         // load attribution details template, 
         // populate from attribution text values
         document.querySelector('#mark-your-work').classList.remove('disable');
-
-        //state.props.attribution.title
-        // let title = state.props.attribution.title;
-        // let workCreationYear = state.props.attribution.workCreationYear;
-
-        // let phrase = '(c) ' + workCreationYear + ' ' + title + ' is licensed under ';
         
-        // document.querySelector('#mark-your-work .mark-holder').textContent = phrase + state.props.tool;
         renderMarkingFormats(state);
 
     }
@@ -423,9 +464,7 @@ function renderSteps(applyDefaults, state) {
         });
         document.querySelector('#which-license-do-you-need').classList.toggle('disable');
         document.querySelector('#waive-your-copyright').classList.add('disable');
-        
-        console.log("pass one");
-    
+            
     }
 
     // if visitor doesn't need help
@@ -446,9 +485,6 @@ function renderSteps(applyDefaults, state) {
             document.querySelector(element).classList.add('disable');
         });
 
-        //if (state.parts[0] == 'do-you-know-which-license-you-need/no/') {
-            //document.querySelector('#require-attribution').classList.remove('disable');
-        //}
         document.querySelector('#waive-your-copyright').classList.remove('disable');
     
     } else {
@@ -456,7 +492,6 @@ function renderSteps(applyDefaults, state) {
     }
     if (state.parts[2] == 'require-attribution/no/') {
         document.querySelector('#require-attribution').classList.remove('disable');
-        //document.querySelector('#confirmation').classList.remove('disable');
     }
 
     // walk away from cc-0, reset attribution choice point
@@ -466,8 +501,6 @@ function renderSteps(applyDefaults, state) {
         });
         document.querySelector('#require-attribution').classList.remove('disable');
         document.querySelector('#waive-your-copyright').classList.add('disable');
-
-        //document.querySelector('#confirmation').classList.remove('disable');
     }
 
     // tie SA to ND choice
@@ -477,10 +510,7 @@ function renderSteps(applyDefaults, state) {
     
 }
 
-// function to render "mark your work", from attribution fields
-// if valid tool from state.parts and/or state.current
-
-// function to handle error state
+// [T]: function to handle error state
 
 // function to watch for fieldset changes 
 function watchFieldsets(fieldsets, state) {
@@ -490,29 +520,22 @@ function watchFieldsets(fieldsets, state) {
 
         element.addEventListener("change", (event) => {
 
-            console.log("something changed!");
             updateStateParts(element, index, event, state);
 
             setStateCurrent(element, index, state);
-            console.log("state.current (after change)");
-            console.log(state.current);
 
             setStateProps(index, state);
-            console.log("state.props (after change)");
-            console.log(state.props);
 
             // [T]: also reset values beyond current changed fieldset to nothing each time
-            //element.checked = false;
-            //console.log('reset values beyond current fieldset to nothing');
             clearStepsAfterCursor(fieldsets, state);
 
             renderSteps(applyDefaults, state);
 
+            renderEmptyPlaceholder(state);
+
             renderToolRec(state);
 
             renderMarkYourWork(state);
-
-            console.log(state.props.toolShort);
 
         });
 
@@ -526,43 +549,72 @@ function watchAttributionDetails(fieldsets, state) {
     textFields.forEach((element, index) => {
 
         element.addEventListener("keyup", (event) => {
-            console.log('typing is happening');
-
             renderMarkingFormats(state);
         });
 
     });
 }
 
-// full flow logic 
-setStateParts(state);
-console.log("state.parts (at default)");
-console.log(state.parts);
+function watchMarkToggles(toggles, state) {
 
-setStatePossibilities(state);
-console.log("state.possibilities");
-console.log(state.possibilities);
+    toggles.forEach((element, index) => {
 
-setDefaults(applyDefaults);
-console.log("initial defaults applied");
+        element.addEventListener("click", (event) => {
+            renderMarkingFormats(state);
+        });
 
-setStateProps(0, state);
-console.log("initial defaults applied");
+    });
+}
 
-watchFieldsets(fieldsets, state);
-watchAttributionDetails(fieldsets, state);
+function watchMarkCopiers(copiers, state) {
+    
+    function copyToClipboard (text) {
+        let temp = document.createElement("textarea");
+        document.body.appendChild(temp);
+        temp.value = text;
+        temp.select();
+        document.execCommand("copy");
+        document.body.removeChild(temp);
+    }
 
+    copiers.forEach((element, index) => {
 
+        element.addEventListener("click", (event) => {
+
+            if (element.parentNode.parentNode.querySelector('.mark').value != null) {
+                copyToClipboard(element.parentNode.parentNode.querySelector('.mark').value);
+            } else {
+                copyToClipboard(element.parentNode.parentNode.querySelector('.mark').innerHTML);
+            }
+        });
+
+    });
+}
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    // full flow logic 
+    setStateParts(state);
+
+    setStatePossibilities(state);
+
+    setDefaults(applyDefaults);
+
+    setStateProps(0, state);
+
+    watchFieldsets(fieldsets, state);
+    watchAttributionDetails(fieldsets, state);
+    watchMarkToggles(toggles, state);
+    watchMarkCopiers(copiers, state);
+});
 
 // rough panel expansion test
-let expandButtons = document.querySelectorAll('button.expandPanel');
+// let expandButtons = document.querySelectorAll('button.expandPanel');
 
-expandButtons.forEach((element, index) => { 
-    element.addEventListener("click", (event) => {
+// expandButtons.forEach((element, index) => { 
+//     element.addEventListener("click", (event) => {
 
-        parent = event.target.parentNode.parentNode;
-        parent.querySelector('.panel').classList.toggle('expand');
-        console.log('expanded!');
+//         parent = event.target.parentNode.parentNode;
+//         parent.querySelector('.panel').classList.toggle('expand');
     
-    });
-});
+//     });
+// });
