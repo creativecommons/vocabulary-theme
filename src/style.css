@@ -917,6 +917,10 @@ main .content ul, main .content ol {
     line-height: 150%;
 }
 
+.chooser-page main .content ul, .chooser-page main .content ol {
+  line-height: 100%;
+}
+
 /* Classic Editor TinyMCE WYSIWYG editor image alignment  */
 /* TODO: port in alignleft and alignright rules here as well? */
 main figure:has(img.aligncenter) {
