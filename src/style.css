@@ -445,7 +445,7 @@ main nav.pagination ul li span.current {
   order: initial;
 }
 
-.home-narrative main .posts.featured ul {    
+.home-narrative main .posts.featured ul {
   padding: 0 var(--vocabulary-page-edges-space);
 }
 
@@ -538,7 +538,7 @@ main nav.pagination ul li span.current {
 
 .faq-index main > .content > .toc {
   grid-column: 3 / span 7;
-  
+
   display: grid;
   grid-template-columns: subgrid;
 }
@@ -549,7 +549,7 @@ main nav.pagination ul li span.current {
 
 .faq-index .toc > ul {
   grid-column: 3 / span 3;
-  
+
 }
 
 .faq-index .toc > ul li {
@@ -602,7 +602,7 @@ main nav.pagination ul li span.current {
 
 .faq-index details, .faq-page details {
   margin-bottom: 2em;
-  
+
   border: 2px solid var(--vocabulary-neutral-color-lighter-gray);
   border-radius: 5px;
 }
@@ -615,7 +615,7 @@ main nav.pagination ul li span.current {
   padding: .2em .5em;
 
   background: var(--vocabulary-neutral-color-lighter-gray);
-  
+
   font-size: 1.2em;
 }
 
@@ -727,18 +727,18 @@ main nav.pagination ul li span.current {
   font-size: .9em;
 }
 
-.course-embedded nav.breadcrumbs ul li:after, .course-page nav.breadcrumbs ul li:after, .course-index nav.breadcrumbs ul li:after { 
+.course-embedded nav.breadcrumbs ul li:after, .course-page nav.breadcrumbs ul li:after, .course-index nav.breadcrumbs ul li:after {
   content: '>';
   padding: 0 .5em;
 }
 
-.course-embedded nav.breadcrumbs ul li:last-child:after, .course-page nav.breadcrumbs ul li:last-child:after, .course-index nav.breadcrumbs ul li:last-child:after { 
+.course-embedded nav.breadcrumbs ul li:last-child:after, .course-page nav.breadcrumbs ul li:last-child:after, .course-index nav.breadcrumbs ul li:last-child:after {
   display: none;
 }
 
 .course-page details {
   margin-bottom: 2em;
-  
+
   font-family: 'Source Sans Pro';
   border: 2px solid var(--vocabulary-neutral-color-lighter-gray);
   border-radius: 5px;
@@ -752,7 +752,7 @@ main nav.pagination ul li span.current {
   padding: .2em .5em;
 
   background: var(--vocabulary-neutral-color-lighter-gray);
-  
+
   font-size: 1.2em;
 }
 
@@ -904,7 +904,7 @@ main nav.pagination ul li span.current {
     word-break: break-word;
 
   }
-  
+
 }
 
 /* patches */
@@ -912,7 +912,7 @@ main nav.pagination ul li span.current {
 /* main > article figure img, main > figure img {
   width: 100%;
 } */
- 
+
 main .content ul, main .content ol {
     line-height: 150%;
 }
@@ -1030,7 +1030,7 @@ main .content figure:has(img.alignright), .blog-post main figure:has(img.alignri
     float: none;
     margin: 0;
   }
-  
+
   main .content div[id^="attachment_"].alignright {
     width: 100%;
     float: none;

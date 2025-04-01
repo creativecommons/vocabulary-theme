@@ -280,9 +280,9 @@ function person_disable_redirect_canonical($redirect_url) {
 // register custom embedded URL parameter for course-page template
 
 add_action('init','add_embedded');
-function add_embedded() { 
-    global $wp; 
-    $wp->add_query_var('embedded'); 
+function add_embedded() {
+    global $wp;
+    $wp->add_query_var('embedded');
 }
 
 // remove edit_post_link from non-editors

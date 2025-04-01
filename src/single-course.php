@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 global $wp;
 if (array_key_exists('embedded', $wp->query_vars) && isset($wp->query_vars['embedded'])){
@@ -17,7 +17,7 @@ if ($embedded == true) {
 
 ?>
 
-<?php 
+<?php
 
 $args = array(
     'post_parent' => get_the_ID(), // Current post's ID
@@ -31,7 +31,7 @@ if ( ! empty($children) ) {
 } else {
     $isParent = false;
 }
-    
+
 if ($isParent && !has_post_parent() ) {
     $contextType = 'course-index';
 } elseif (has_post_parent()) {
@@ -46,7 +46,7 @@ if ($isParent && !has_post_parent() ) {
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-<?php 
+<?php
 $parent = get_post($post->post_parent);
 $grandparent = get_post($parent->post_parent);
 $aunts = get_children($grandparent->ID);
@@ -65,12 +65,12 @@ $aunts = get_children($grandparent->ID);
         <?php if($contextType == 'course-page' && $embedded == '') : ?>
         <li><a href="https://creativecommons.org">Creative Commons</a></li>
         <?php endif; ?>
-    
+
         <?php if ($contextType != 'course-index' ) : ?>
         <li><a href="<?php the_permalink($grandparent->ID); ?>"><?php echo $grandparent->post_title; ?></a></li>
 
         <?php endif; ?>
-        
+    
     </ul>
 </nav>
 
@@ -134,7 +134,7 @@ $aunts = get_children($grandparent->ID);
 </details>
 <?php endif; ?>
 
-<?php 
+<?php
 
 // find previous & next siblings, if present
 if (has_post_parent()) {
@@ -165,7 +165,7 @@ if ($previousLink == '') {
                 }
 
             }
-        }  
+        }
     }
 }
 
@@ -183,7 +183,7 @@ if ($nextLink == '' && $contextType == 'course-page') {
                 }
 
             }
-        }  
+        }
     }
 }
 
