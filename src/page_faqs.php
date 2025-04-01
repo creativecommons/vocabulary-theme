@@ -40,13 +40,13 @@
 
     <aside class="toc">
 
-    <?php 
+    <?php
         $topGroup = get_field('top_group');
         $topQuestions = get_field('faqs_listing', $topGroup->ID);
         $topClosing = get_field('closing', $topGroup->ID);
 
 
-        echo $topClosing; 
+        echo $topClosing;
     ?>
 
     <h2><?php echo $topGroup->post_title; ?></h2>
@@ -65,19 +65,19 @@
 
 
     <?php if( have_rows('featured_areas') ): ?>
-    <?php while( have_rows('featured_areas') ): the_row(); 
+    <?php while( have_rows('featured_areas') ): the_row();
 
         $groups = get_sub_field('groups');
         $linkType = get_sub_field('link_type');
 
     ?>
-    
+  
 
     <article class="featured">
         <h2>Focus Areas</h2>
         <ul>
         <?php foreach ($groups as $group) : ?>
-            <?php 
+            <?php
             $args = array(
                 'post_parent' => $group->ID,
                 'post_type' => 'faqs-group',
@@ -159,12 +159,12 @@
                 </li>
             <?php endforeach; ?>
 
-            
+          
             </ul>
 
         </details>
 
-        <?php if (!$children) : ?>                 
+        <?php if (!$children) : ?>               
         <?php foreach ($questions as $question) : ?>
 
             <h3 id="<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></h3>
@@ -189,7 +189,7 @@
         <!-- loop through and get all the questions from this subsection -->
         <?php $questions = get_field('faqs_listing', $child->ID); ?>
         <?php foreach ($questions as $question) : ?>
-        
+      
             <h4 id="<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></h4>
             <a href="<?php echo get_edit_post_link($question->ID); ?>" class="edit" >[edit]</a>
             <?php echo apply_filters( 'the_content', $question->post_content ); ?>
@@ -218,7 +218,7 @@
         <?php endforeach; ?>
 
         <?php endif; ?>
-        
+      
     <?php endwhile; ?>
 <?php endif; ?>
 

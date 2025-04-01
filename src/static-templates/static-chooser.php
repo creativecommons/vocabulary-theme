@@ -17,7 +17,7 @@
     <form id="chooser">
 
     <ol>
-    
+  
     <li>
     <fieldset id="do-you-know-which-license-you-need">
         <legend>Do you know which license you need?</legend>
@@ -33,7 +33,7 @@
             <input type="radio" id="no-choose" name="choose" value="no" />
             <label for="no-choose">No</label>
         </div>
-    <!-- 
+    <!--
         <div>
             <input type="radio" id="choose" name="choose" value="choose" />
             <label for="choose">Choose</label>
@@ -300,7 +300,7 @@
             </article>
 
         </details>
-        
+      
         <details class="medium">
         <summary>Print Work or Media</summary>
 
@@ -330,7 +330,7 @@
 
         <details name="help">
             <summary>What are Creative Commons licenses?</summary>
-            <p>Creative Commons licenses are legal tools that help you grant copyright permissions to the general public. Our CC legal tools include <a href="https://creativecommons.org/licenses/" target="_blank" rel="noopener noreferrer">six different licenses</a> and <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank" rel="noopener noreferrer">one public domain dedication tool</a>. It is important to specify which one of the 7 legal tools you are applying to your material. The license chooser can help you decide which license is right for you.</p> 
+            <p>Creative Commons licenses are legal tools that help you grant copyright permissions to the general public. Our CC legal tools include <a href="https://creativecommons.org/licenses/" target="_blank" rel="noopener noreferrer">six different licenses</a> and <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank" rel="noopener noreferrer">one public domain dedication tool</a>. It is important to specify which one of the 7 legal tools you are applying to your material. The license chooser can help you decide which license is right for you.</p>
             <p>CC licenses may be applied to any type of copyrightable work. The only types of works for which CC does not recommend its licenses are computer software and hardware, where we recommend a standard free software license instead. For works that are already in the public domain we recommend that you mark them with the <a href="https://creativecommons.org/about/pdm" target="_blank" rel="noopener noreferrer">Public Domain Mark</a>. If you hold the rights to a work but would like to place it into the public domain, you can use the Chooser to select CC0.</p>
         </details>
 
@@ -357,7 +357,7 @@
                     <dt class="icon-attach cc-by">Attribution Required (BY)</dt>
                     <dd>Credit must be given to you, the creator.</dd>
                 </div>
-        
+      
                 <div>
                     <dt class="icon-attach cc-nc">Commercial Use Not Allowed (NC/NonCommercial)</dt>
                     <dd>
@@ -365,7 +365,7 @@
                         <em>Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</em>
                     </dd>
                 </div>
-        
+      
                 <div>
                     <dt class="icon-attach cc-sa">Distributed on Same Terms (SA/ShareAlike)</dt>
                     <dd>Adaptations must be shared under the same terms.</dd>

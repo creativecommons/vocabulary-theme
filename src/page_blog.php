@@ -180,7 +180,7 @@ $query = new WP_Query(array(
 
     <a class="more" href="/blog/archive/">more posts</a>
 
-    
+  
 <?php endif; ?>
 
 

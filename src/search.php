@@ -88,16 +88,16 @@
         <?php endif; ?>
 
         <span class="type">
-            <?php 
+            <?php
             if (get_post_type() != 'faq_item') {
-                echo get_post_type(); 
+                echo get_post_type();
             } else {
                 echo 'FAQ';
             }
             ?>
         </span>
 
-        
+      
 
     </header>
 

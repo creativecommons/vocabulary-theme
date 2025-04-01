@@ -67,7 +67,7 @@
         </li>
     <?php endforeach; ?>
 
-    
+  
     </ul>
 
 </details>
