@@ -31,7 +31,7 @@ if ( ! empty($children) ) {
 } else {
     $isParent = false;
 }
-  
+ 
 if ($isParent && !has_post_parent() ) {
     $contextType = 'course-index';
 } elseif (has_post_parent()) {
@@ -65,12 +65,12 @@ $aunts = get_children($grandparent->ID);
         <?php if($contextType == 'course-page' && $embedded == '') : ?>
         <li><a href="https://creativecommons.org">Creative Commons</a></li>
         <?php endif; ?>
-  
+ 
         <?php if ($contextType != 'course-index' ) : ?>
         <li><a href="<?php the_permalink($grandparent->ID); ?>"><?php echo $grandparent->post_title; ?></a></li>
 
         <?php endif; ?>
-      
+     
     </ul>
 </nav>
 
