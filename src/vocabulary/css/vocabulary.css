@@ -334,7 +334,7 @@ main > aside.sidebar nav.filter-menu ul li.current a {
 main > aside.sidebar nav ul {
     margin: 0;
     padding: 0;
- 
+
     text-indent: none;
     list-style: none;
     font-size: 1rem;
@@ -396,7 +396,7 @@ main h2 {
 
 main h3 {
     box-sizing: border-box;
- 
+
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 700;
@@ -666,7 +666,7 @@ main nav.pagination ol {
     width: 100%;
     margin: 0;
     padding: 0;
- 
+
     text-indent: none;
     font-size: 1em;
     list-style: none;
@@ -1525,7 +1525,7 @@ body > footer .license svg {
     order: initial;
 }
 
-.blog-index main .posts.featured ul { 
+.blog-index main .posts.featured ul {
     padding: 0 var(--vocabulary-page-edges-space);
 }
 
@@ -1991,7 +1991,7 @@ body > footer .license svg {
     .search-index main > header:before {
         left: 0;
     }
- 
+
     .team-index main > header {
         padding: 0 var(--vocabulary-page-edges-space);
     }

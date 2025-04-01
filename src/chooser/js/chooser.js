@@ -8,7 +8,7 @@ let rawStatePathRoutes = [
     'do-you-know-which-license-you-need/yes/which-license-do-you-need/cc-by-nc/(attribution-details)&tool=cc-by-nc',
     'do-you-know-which-license-you-need/yes/which-license-do-you-need/cc-by-nc-sa/(attribution-details)&tool=cc-by-nc-sa',
     'do-you-know-which-license-you-need/yes/which-license-do-you-need/cc-by-nc-nd/(attribution-details)&tool=cc-by-nc-nd',
- 
+
     'do-you-know-which-license-you-need/no/require-attribution/yes/allow-commercial-use/yes/allow-derivatives/yes/share-alike/no/confirmation+ownership+read+revocation/(attribution-details)&tool=cc-by',
     'do-you-know-which-license-you-need/no/require-attribution/yes/allow-commercial-use/yes/allow-derivatives/yes/share-alike/yes/confirmation+ownership+read+revocation/(attribution-details)&tool=cc-by-sa',
     'do-you-know-which-license-you-need/no/require-attribution/yes/allow-commercial-use/yes/allow-derivatives/no/confirmation+ownership+read+revocation/(attribution-details)&tool=cc-by-nd',
@@ -67,13 +67,13 @@ function setStatePossibilities(state) {
         });
 
         fullPath = statePath[0].replace(/[{()}]/g, '') + '/';
- 
+
         if (state.possibilities[tool] == undefined) {
             state.possibilities[tool] = [];
         }
         state.possibilities[tool].push(fullPath);
         state.possibilities[tool].push(noOptionalsPath);
-     
+    
     });
 }
 
@@ -91,7 +91,7 @@ function updateStateParts(element, index, event, state) {
     state.parts[index] = element.id + '/' + event.target.value + '/';
 
     // check if checkbox, with siblings
-    if (event.target.getAttribute('type') == 'checkbox') {     
+    if (event.target.getAttribute('type') == 'checkbox') {    
         let checkboxElements = element.querySelectorAll('input[type="checkbox"]');
         let checkboxes = [];
         checkboxElements.forEach((checkbox, index) => {
@@ -122,7 +122,7 @@ function setStateCurrent(element, index,  state) {
             state.parts.splice(i);
         }
     });
- 
+
     state.current = state.parts.join('') //.slice(0, -1);
 }
 
@@ -405,11 +405,11 @@ function renderEmptyPlaceholder(state) {
     if (state.props.tool == 'unknown' ) {
         document.querySelector('#empty').classList.remove('disable');
     }
- 
+
     else if (state.props.tool != 'unknown') {
         document.querySelector('#empty').classList.add('disable');
     }
- 
+
 }
 
 // function to render "mark your work",
@@ -420,11 +420,11 @@ function renderMarkYourWork(state) {
         // load attribution details template,
         // populate from attribution text values
         document.querySelector('#mark-your-work').classList.remove('disable');
-     
+    
         renderMarkingFormats(state);
 
     }
- 
+
     else if (state.props.tool == 'unknown') {
         document.querySelector('#mark-your-work').classList.add('disable');
     }
@@ -464,7 +464,7 @@ function renderSteps(applyDefaults, state) {
         });
         document.querySelector('#which-license-do-you-need').classList.toggle('disable');
         document.querySelector('#waive-your-copyright').classList.add('disable');
-         
+        
     }
 
     // if visitor doesn't need help
@@ -486,7 +486,7 @@ function renderSteps(applyDefaults, state) {
         });
 
         document.querySelector('#waive-your-copyright').classList.remove('disable');
- 
+
     } else {
         document.querySelector('#waive-your-copyright').classList.add('disable');
     }
@@ -507,7 +507,7 @@ function renderSteps(applyDefaults, state) {
     if (state.parts[4] == 'allow-derivatives/no/') {
         document.querySelector('#share-alike').classList.add('disable');
     }
- 
+
 }
 
 // [T]: function to handle error state
@@ -567,7 +567,7 @@ function watchMarkToggles(toggles, state) {
 }
 
 function watchMarkCopiers(copiers, state) {
- 
+
     function copyToClipboard (text) {
         let temp = document.createElement("textarea");
         document.body.appendChild(temp);
@@ -615,6 +615,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 //         parent = event.target.parentNode.parentNode;
 //         parent.querySelector('.panel').classList.toggle('expand');
- 
+
 //     });
 // });

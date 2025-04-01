@@ -122,7 +122,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
             //$custom_field = get_field( 'field_name', $post->ID );
     ?>
 
-    <li>     
+    <li>    
     <article class="post">
         <header>
         <h3 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h3>
