@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f0c10d6e8307a1c963d751a26819e24",
+    "content-hash": "dd1a23e5370089d5b2553524cd65008f",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35"
+                "reference": "12fb2dfe5e16183de69e784a7b84046c43d97e8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/c29dc4b93137acb82734f672c37e029dfbd95b35",
-                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35",
+                "url": "https://api.github.com/repos/composer/installers/zipball/12fb2dfe5e16183de69e784a7b84046c43d97e8e",
+                "reference": "12fb2dfe5e16183de69e784a7b84046c43d97e8e",
                 "shasum": ""
             },
             "require": {
@@ -25,12 +25,12 @@
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
-                "composer/composer": "1.6.* || ^2.0",
-                "composer/semver": "^1 || ^3",
-                "phpstan/phpstan": "^0.12.55",
-                "phpstan/phpstan-phpunit": "^0.12.16",
-                "symfony/phpunit-bridge": "^5.3",
-                "symfony/process": "^5"
+                "composer/composer": "^1.10.27 || ^2.7",
+                "composer/semver": "^1.7.2 || ^3.4.0",
+                "phpstan/phpstan": "^1.11",
+                "phpstan/phpstan-phpunit": "^1",
+                "symfony/phpunit-bridge": "^7.1.1",
+                "symfony/process": "^5 || ^6 || ^7"
             },
             "type": "composer-plugin",
             "extra": {
@@ -87,6 +87,7 @@
                 "cockpit",
                 "codeigniter",
                 "concrete5",
+                "concreteCMS",
                 "croogo",
                 "dokuwiki",
                 "drupal",
@@ -133,7 +134,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v2.2.0"
+                "source": "https://github.com/composer/installers/tree/v2.3.0"
             },
             "funding": [
                 {
@@ -149,19 +150,45 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-20T06:45:11+00:00"
+            "time": "2024-06-24T20:46:46+00:00"
         },
         {
-            "name": "wpackagist-plugin/advanced-custom-fields",
-            "version": "6.1.7",
+            "name": "creativecommons/vocabulary-theme",
+            "version": "v1.11.1",
             "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/advanced-custom-fields/",
-                "reference": "tags/6.1.7"
+                "type": "git",
+                "url": "https://github.com/creativecommons/vocabulary-theme",
+                "reference": "e2f107665272b218364122dcb28d30d463590d44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.6.1.7.zip"
+                "url": "https://api.github.com/repos/creativecommons/vocabulary-theme/zipball/e2f107665272b218364122dcb28d30d463590d44",
+                "reference": "e2f107665272b218364122dcb28d30d463590d44",
+                "shasum": ""
+            },
+            "type": "wordpress-theme",
+            "time": "2025-03-31T14:29:12+00:00"
+        },
+        {
+            "name": "reyhoun/acf-menu-chooser",
+            "version": "1.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/reyhoun/acf-menu-chooser/archive/refs/tags/v1.1.0.zip"
+            },
+            "type": "wordpress-plugin"
+        },
+        {
+            "name": "wpackagist-plugin/advanced-custom-fields",
+            "version": "6.4.0.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/advanced-custom-fields/",
+                "reference": "tags/6.4.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.6.4.0.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -171,30 +198,66 @@
         },
         {
             "name": "wpackagist-plugin/classic-editor",
-            "version": "1.6.3",
+            "version": "1.6.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/classic-editor/",
-                "reference": "tags/1.6.3"
+                "reference": "tags/1.6.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/classic-editor.1.6.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/classic-editor.1.6.7.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/classic-editor/"
+        },
+        {
+            "name": "wpackagist-plugin/redirection",
+            "version": "5.3.10",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/redirection/",
+                "reference": "tags/5.3.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.5.3.10.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/redirection/"
+        },
+        {
+            "name": "wpackagist-plugin/tablepress",
+            "version": "2.1.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/tablepress/",
+                "reference": "tags/2.1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/tablepress.2.1.7.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/tablepress/"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
