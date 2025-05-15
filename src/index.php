@@ -57,11 +57,11 @@
 
 <div class="content">
 
-<!-- <div class="series">
+<!-- <aside class="opening">
     <span>part of the</span>
     <a href="#">Copyright and Artists</a> series, a unique take on how copyright isn't aligned with the interests of individual artists, but instead mega-corps.
 
-    </div> -->
+</aside> -->
 
     <?php the_content(); ?>
 
