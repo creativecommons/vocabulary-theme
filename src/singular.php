@@ -58,17 +58,17 @@
 
 <!-- display raw post_meta, if ACF not installed & activated -->
 <?php if (get_post_meta( get_the_ID(), 'lead_in_copy', true )): ?>
-<div class="series">
+<aside class="opening">
     <?php echo get_post_meta( get_the_ID(), 'lead_in_copy', true ); ?>
-</div>
+</aside>
 <?php endif; ?>
 <?php else : ?>
 
 <!-- display ACF field, if ACF installed & activated -->
 <?php if (get_field('lead_in_copy')): ?>
-<div class="series">
+<aside class="opening">
     <?php the_field('lead_in_copy'); ?>
-</div>
+</aside>
 <?php endif; ?>
 <?php endif; ?>
 
