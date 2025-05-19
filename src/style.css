@@ -1011,6 +1011,14 @@ main .content figure:has(img.alignright), .blog-post main figure:has(img.alignri
   float: right;
 }
 
+.course-index, course-page {
+  background: white;
+}
+
+.course-page main .content {
+  grid-column: 2 / span 9;
+}
+
 @media (max-width:400px) {
 
   div[id^="attachment_"].alignleft {

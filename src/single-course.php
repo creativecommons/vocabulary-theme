@@ -56,9 +56,6 @@ $aunts = get_children($grandparent->ID);
 
 <nav class="breadcrumbs">
     <ul>
-        <?php if ($embedded == true ) : ?>
-        <li>Creative Commons</li>
-        <?php endif; ?>
         <?php if($contextType == 'course-index' && $embedded == '') : ?>
         <li><a href="https://creativecommons.org">Creative Commons</a></li>
         <?php endif; ?>
@@ -66,7 +63,7 @@ $aunts = get_children($grandparent->ID);
         <li><a href="https://creativecommons.org">Creative Commons</a></li>
         <?php endif; ?>
 
-        <?php if ($contextType != 'course-index' ) : ?>
+        <?php if ($contextType != 'course-index' && $embedded == '') : ?>
         <li><a href="<?php the_permalink($grandparent->ID); ?>"><?php echo $grandparent->post_title; ?></a></li>
 
         <?php endif; ?>
