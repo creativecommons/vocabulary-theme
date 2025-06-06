@@ -300,7 +300,7 @@
             </article>
 
         </details>
-    
+
         <details class="medium">
         <summary>Print Work or Media</summary>
 
@@ -357,7 +357,7 @@
                     <dt class="icon-attach cc-by">Attribution Required (BY)</dt>
                     <dd>Credit must be given to you, the creator.</dd>
                 </div>
-    
+
                 <div>
                     <dt class="icon-attach cc-nc">Commercial Use Not Allowed (NC/NonCommercial)</dt>
                     <dd>
@@ -365,7 +365,7 @@
                         <em>Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</em>
                     </dd>
                 </div>
-    
+
                 <div>
                     <dt class="icon-attach cc-sa">Distributed on Same Terms (SA/ShareAlike)</dt>
                     <dd>Adaptations must be shared under the same terms.</dd>

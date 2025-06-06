@@ -67,7 +67,7 @@ $aunts = get_children($grandparent->ID);
         <li><a href="<?php the_permalink($grandparent->ID); ?>"><?php echo $grandparent->post_title; ?></a></li>
 
         <?php endif; ?>
-    
+
     </ul>
 </nav>
 
