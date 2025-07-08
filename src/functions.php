@@ -294,3 +294,20 @@ function remove_get_edit_post_link( $link ) {
 }
 
 add_filter( 'get_edit_post_link', 'remove_get_edit_post_link' );
+
+// add custom shortcode to do dynamic loop lists, with templated display
+function shortcode_loop($atts = '') {
+
+   // dynamic looping would go here 
+   // run some logic to grab a default template
+   // construct the Obj dynamicalyl from $atts
+
+}
+
+function list_shortcode($atts) {
+  ob_start(); 
+  shortcode_loop($atts);
+  return ob_get_clean(); 
+}         
+
+add_shortcode('list', 'list_shortcode'); 
