@@ -298,9 +298,41 @@ add_filter( 'get_edit_post_link', 'remove_get_edit_post_link' );
 // add custom shortcode to do dynamic loop lists, with templated display
 function shortcode_loop($atts = '') {
 
-   // dynamic looping would go here 
-   // run some logic to grab a default template
-   // construct the Obj dynamicalyl from $atts
+  // dynamic looping would go here 
+  // run some logic to grab a default template
+  // construct the Obj dynamicalyl from $atts
+  echo 'the loop works!';
+  echo '<br>';
+  echo 'category: ' . $atts['category'];
+  echo '<br>';
+  echo 'tags: ' . $atts['tags'];
+  echo '<br>';
+  echo 'limit: ' . $atts['limit'];
+  echo '<br>';
+  echo 'sort: ' . $atts['sort'];
+  echo '<br>';
+  echo 'sortby: ' . $atts['sortby'];
+  echo '<br>';
+  echo 'type: ' . $atts['type'];
+  echo '<br>';
+  echo 'template: ' . $atts['template'];
+  echo '<br>';
+
+
+  $query = new WP_Query(array(
+      'category_name' => 'item,item',
+      'tag' => 'item,item',
+      'post_type' => 'page',
+      'posts_per_page' => 4,
+      'order' => 'ASC',
+      'orderby' => 'date'
+  ));
+
+
+  echo 'pull in a template file, load up with query obj';
+  echo '<br>';
+  echo var_dump($query);
+
 
 }
 
@@ -310,4 +342,4 @@ function list_shortcode($atts) {
   return ob_get_clean(); 
 }         
 
-add_shortcode('list', 'list_shortcode'); 
+add_shortcode('list', 'list_shortcode');
