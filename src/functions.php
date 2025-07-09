@@ -328,22 +328,15 @@ function shortcode_loop($atts = '') {
       'orderby' => 'date'
   ));
 
-
   echo 'pull in a template file, load up with query obj';
   echo '<br>';
-  echo var_dump($query);
+  // echo var_dump($query);
 
   $template = $atts['template'];
 
-  // this isn't returning, but instead rendering.
-  if (false === get_template_part('shortcode-templates/list', $template)) {
-    // get_template_part( 'shortcode-templates/list', $template);
-    echo 'load default';
-  } else {
-    //get_template_part( 'shortcode-templates/list', 'default');
-    echo 'load template';
+  if (false === get_template_part('shortcode-templates/list', $template, array('query' => $query))) {
+    get_template_part('shortcode-templates/list', 'default', array('query' => $query));
   }
-
 
 }
 
