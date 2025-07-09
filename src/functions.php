@@ -298,39 +298,37 @@ add_filter( 'get_edit_post_link', 'remove_get_edit_post_link' );
 // add custom shortcode to do dynamic loop lists, with templated display
 function shortcode_loop($atts = '') {
 
-  // dynamic looping would go here 
-  // run some logic to grab a default template
-  // construct the Obj dynamicalyl from $atts
-  echo 'the loop works!';
-  echo '<br>';
-  echo 'category: ' . $atts['category'];
-  echo '<br>';
-  echo 'tags: ' . $atts['tags'];
-  echo '<br>';
-  echo 'limit: ' . $atts['limit'];
-  echo '<br>';
-  echo 'sort: ' . $atts['sort'];
-  echo '<br>';
-  echo 'sortby: ' . $atts['sortby'];
-  echo '<br>';
-  echo 'type: ' . $atts['type'];
-  echo '<br>';
-  echo 'template: ' . $atts['template'];
-  echo '<br>';
+  $cat = $atts['category'];
+  $tag = $atts['tags'];
 
+  $limit = $atts['limit'];
+  if ($atts['limit'] == '') {
+    $limit = 5;
+  }
+
+  $sort = $atts['sort'];
+  if ($atts['sort'] == '') {
+    $sort = 'ASC';
+  }
+
+  $sortby = $atts['sortby'];
+  if ($atts['sortby'] == '') {
+    $sortby = 'date';
+  }
+
+  $type = $atts['type'];
+  if ($atts['type'] == '') {
+    $type = 'post';
+  }
 
   $query = new WP_Query(array(
-      'category_name' => 'item,item',
-      'tag' => 'item,item',
-      'post_type' => 'post',
-      'posts_per_page' => 4,
-      'order' => 'ASC',
-      'orderby' => 'date'
+      'category_name' => $cat,
+      'tag' => $tag,
+      'post_type' => $type,
+      'posts_per_page' => $limit,
+      'order' => $sort,
+      'orderby' => $sortby
   ));
-
-  echo 'pull in a template file, load up with query obj';
-  echo '<br>';
-  // echo var_dump($query);
 
   $template = $atts['template'];
 
