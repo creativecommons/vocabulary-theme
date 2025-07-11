@@ -294,3 +294,54 @@ function remove_get_edit_post_link( $link ) {
 }
 
 add_filter( 'get_edit_post_link', 'remove_get_edit_post_link' );
+
+// add custom shortcode to do dynamic loop lists, with templated display
+function shortcode_loop($atts = '') {
+
+  $cat = sanitize_text_field($atts['category']);
+  $tag = sanitize_text_field($atts['tags']);
+
+  $limit = sanitize_text_field($atts['limit']);
+  if ($atts['limit'] == '') {
+    $limit = 5;
+  }
+
+  $sort = sanitize_text_field($atts['sort']);
+  if ($atts['sort'] == '') {
+    $sort = 'ASC';
+  }
+
+  $sortby = sanitize_text_field($atts['sortby']);
+  if ($atts['sortby'] == '') {
+    $sortby = 'date';
+  }
+
+  $type = sanitize_text_field($atts['type']);
+  if ($atts['type'] == '') {
+    $type = 'post';
+  }
+
+  $query = new WP_Query(array(
+      'category_name' => $cat,
+      'tag' => $tag,
+      'post_type' => $type,
+      'posts_per_page' => $limit,
+      'order' => $sort,
+      'orderby' => $sortby
+  ));
+
+  $template = sanitize_text_field($atts['template']);
+
+  if (false === get_template_part('shortcode-templates/list', $template, array('query' => $query))) {
+    get_template_part('shortcode-templates/list', 'default', array('query' => $query));
+  }
+
+}
+
+function list_shortcode($atts) {
+  ob_start(); 
+  shortcode_loop($atts);
+  return ob_get_clean(); 
+}         
+
+add_shortcode('list', 'list_shortcode');
