@@ -48,6 +48,39 @@ The theme development work should be done within the `src/` directory.
    - TODO: automate this step
 
 
+### Shortcodes
+
+The theme comes with a custom  `[list]` shortcode for displaying a list of queried objects that builds from a simplified WP Query obj
+
+The shortcode operates as follows: 
+
+`````
+
+[list cat="category" tag="tag,tag,tag" type="post" limit="10" sort="ASC" sortby="date" template="blog_posts"]
+
+`````
+
+The most minimal usecase: 
+
+`````
+
+[list]
+
+`````
+The defaults are as follows: 
+
+* category: 
+* tag:
+* type: post
+* limit: 5
+* sort: ASC
+* sortby: date
+* template: default
+
+The template can be set to a custom partial, loaded from the `shortcode-templates` folder, if no template is set, it will instead display as the default template (a bulleted list of links)
+
+The arguments accept the counterpart values from the subset of [args in the WPQuery Class](https://developer.wordpress.org/reference/classes/wp_query/). This means that the `category` and `tag` arguments can be a single or comma separate list of values. `sort` maps to `order` and `sortby` maps to `orderby` for some beneficial UX for endusers to be more clear in purpose.
+
 ### Docker containers
 
 The [`docker-compose.yml`](docker-comose.yml) file defines the following
