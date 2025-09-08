@@ -339,9 +339,9 @@ function shortcode_loop($atts = '') {
 }
 
 function list_shortcode($atts) {
-  ob_start(); 
+  ob_start();
   shortcode_loop($atts);
-  return ob_get_clean(); 
-}         
+  return ob_get_clean();
+}
 
 add_shortcode('list', 'list_shortcode');
