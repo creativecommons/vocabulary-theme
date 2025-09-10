@@ -52,7 +52,7 @@ The theme development work should be done within the `src/` directory.
 
 The theme comes with a custom  `[list]` shortcode for displaying a list of queried objects that builds from a simplified WP Query obj
 
-The shortcode operates as follows: 
+The shortcode operates as follows:
 
 `````
 
@@ -60,16 +60,16 @@ The shortcode operates as follows:
 
 `````
 
-The most minimal usecase: 
+The most minimal usecase:
 
 `````
 
 [list]
 
 `````
-The defaults are as follows: 
+The defaults are as follows:
 
-* category: 
+* category:
 * tag:
 * type: post
 * limit: 5
