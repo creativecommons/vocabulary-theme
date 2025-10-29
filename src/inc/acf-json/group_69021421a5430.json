@@ -833,11 +833,11 @@
             "append": ""
         },
         {
-            "key": "field_690222ddf9ebc",
-            "label": "newsletter highlight text",
-            "name": "newsletter_highlight_text",
+            "key": "field_690229f3e640f",
+            "label": "newsletter link text",
+            "name": "newsletter_link_text",
             "aria-label": "",
-            "type": "wysiwyg",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -847,11 +847,11 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
-            "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_69022306898df",
@@ -885,7 +885,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "url",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -923,5 +923,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1761747899
+    "modified": 1761749638
 }

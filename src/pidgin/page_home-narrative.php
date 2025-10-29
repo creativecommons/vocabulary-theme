@@ -100,17 +100,57 @@ get_header('', array( 'body-classes' => 'home-narrative-interim') );
 
     <ul>
 
+    <?php
+    $query = new WP_Query(array(
+        // 'post__not_in' => $highlight_posts,
+        'post_type' => 'post',
+        'posts_per_page' => 3,
+        //'paged' => $paged,
+    ));
+    ?>
+
+<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
     <li>
         <article class="post">
             <header>
-            <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
+            <h3 class="title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-            <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-            <span class="categories"><a href="#">Open Culture</a></span>
+            <?php if ( get_field('authorship') ) : ?>
+            <span class="byline">by
+                <?php
+                $authors = get_field('authorship');
+                    if( $authors ):
+                    $i = 1;
+                    $count = count($authors);
+
+                    foreach( $authors as $author ):
+                        $permalink = get_permalink( $author->ID );
+                        $title = get_the_title( $author->ID );
+                        $custom_field = get_field( 'field_name', $author->ID );
+                        if ($i < $count) {
+                            $separator = ',';
+                        }
+                        else {
+                            $separator = '';
+                        }
+                ?>
+
+                <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                        <?php $i++; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+            </span>
+            <?php endif; ?>
+
+            <span class="categories">
+                <?php the_category(', ') ?>
+            </span>
             </header>
 
             <figure>
-                <img src="https://creativecommons.org/wp-content/uploads/2025/09/roadturn16x9-scaled.jpg" />
+                <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
             </figure>
             
             <!-- <p>The Creative Commons Open Education Team is pleased to provide a snapshot of progress made toward opening access and equity in education, through a look at our collective efforts in 2022.1 We laud the CC open education community for its important work throughout 2022. CC and community members' open education efforts in 2022 included, but </p> -->
@@ -118,89 +158,12 @@ get_header('', array( 'body-classes' => 'home-narrative-interim') );
         </article>
     </li>
 
-    <li>
-        <article class="post">
-            <header>
-            <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
-            <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-            <span class="categories"><a href="#">Open Culture</a></span>
+    <?php endwhile; ?>
 
-            </header>
+    <?php endif; ?>
 
-            <figure>
-                <img src="https://creativecommons.org/wp-content/uploads/2025/09/Blog-Image-Size.png" />
-            </figure>
+    <?php wp_reset_postdata(); ?>
 
-        </article>
-    </li>
-
-    <li>
-        <article class="post">
-            <header>
-            <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
-            <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-            <span class="categories"><a href="#">Open Culture</a></span>
-
-            </header>
-
-            <figure>
-                <img src="https://creativecommons.org/wp-content/uploads/2025/08/Blog-Image-Size-3.png" />
-            </figure>
-
-        </article>
-    </li>
-
-    <li>
-        <article class="post">
-            <header>
-            <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
-            <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-            <span class="categories"><a href="#">Open Culture</a></span>
-
-            </header>
-
-            <figure>
-                <img src="https://creativecommons.org/wp-content/uploads/2025/08/Blog-Image-Size-2.png" />
-            </figure>
-
-        </article>
-    </li>
-
-    <li>
-        <article class="post">
-            <header>
-            <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
-            <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-            <span class="categories"><a href="#">Open Culture</a></span>
-
-            </header>
-
-            <figure>
-                <img src="https://creativecommons.org/wp-content/uploads/2025/08/Blog-Image-Size.png" />
-
-                <!-- <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span> -->
-            </figure>
-
-        </article>
-    </li>
-
-    <li>
-        <article class="post">
-            <header>
-            <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
-            <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-            <span class="categories"><a href="#">Open Culture</a></span>
-
-            </header>
-
-            <figure>
-                <img src="https://creativecommons.org/wp-content/uploads/2025/07/Ocean-Coast-by-Maurice-Denis.-Public-Domain.-Swedish-National-Museum.png" />
-
-                <!-- <span class="attribution">"<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span> -->
-            </figure>
-
-        </article>
-    </li>
 
     </ul>
 
@@ -213,11 +176,11 @@ get_header('', array( 'body-classes' => 'home-narrative-interim') );
 <article class="newsletter">
     <h2>Newsletter highlights</h2>
     <div class="description">
-        <h3>A CC-Certified alumni team in Indonesia trained 129 teachers and librarians across five regions, helping them create and share openly licensed content</h3>
-        <a href="#">Sign up for the  CC's Community Newsletter by joining the CC Community &rarr;</a>
+        <h3><?php the_field('newsletter_highlight_title'); ?></h3>
+        <a href="<?php the_field('newsletter_highlight_link_url'); ?>"><?php the_field('newsletter_link_text'); ?> &rarr;</a>
     </div>
     <figure>
-        <img src="https://creativecommons.org/wp-content/uploads/2023/01/Open-Palms-Not-Clutching-Fists.png">
+        <img src="<?php the_field('newsletter_highlight_image' ); ?>">
     </figure>
     
 </article>
