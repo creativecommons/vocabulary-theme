@@ -35,12 +35,11 @@ get_header('', array( 'body-classes' => 'home-narrative-interim') );
 <article class="topic-summary legal-tools">
     
     <div class="description">
-        <h2>Tools for building the commons</h2>
-        <p>Our <a href="#">six licenses</a> and <a href=#">public domain dedication tool</a> give everyone from individual creators to large institutions a standardized way to grant the public permission to use their creative work under copyright law. </p>
-        <p>Used by <a href="#">Wikipedia</a>, <a href="#">Flickr</a>, <a href="#">The Met</a>, <a href="#">Khan Academy</a>, <a href="#">Godot</a>, and millions more globally! </p>
-        <a href="#">Explore our legal tools &rarr;</a>
-        <a href="#">Legal tools FAQ</a>
-        <a href="#">Need help choosing a license?</a>
+        <h2><?php the_field('legal_tools_title' ); ?></h2>
+        <?php the_field('legal_tools_text' ); ?>
+        <a href="<?php the_field('legal_tools_link_url_1' ); ?>"><?php the_field('legal_tools_link_text_1' ); ?> &rarr;</a>
+        <a href="<?php the_field('legal_tools_link_url_2' ); ?>"><?php the_field('legal_tools_link_text_2' ); ?></a>
+        <a href="<?php the_field('legal_tools_link_url_3' ); ?>"><?php the_field('legal_tools_link_text_3' ); ?></a>
     </div>
 
 </article>
@@ -120,13 +119,12 @@ get_header('', array( 'body-classes' => 'home-narrative-interim') );
 </article>
 
 <article class="support">
-    <h2>Support CC and Stay Connected </h2>
+    <h2><?php the_field('support_cc_title'); ?></h2>
     <div class="description">
-        <p>There are many ways to give. You can <a href="https://www.classy.org/give/313412/#!/donation/checkout?c_src=email&c_src2=EOY2024-1">make a one time donation</a> or <a href="#">become a recurring donor by joining our Open Infrastructure Circle</a>.</p>
-        <p class="share">Follow and share on <a href="#">BlueSky</a>, <a href="#">Mastodon</a>, <a href="#">Facebook</a>, <a href="#">Instagram</a>, and <a href="#">LinkedIn</a>.</p>
-        <a href="#">Support CC &rarr;</a>
-        <a href="#">Donation FAQ</a>
-        <a href="#">Join our mailing list</a>
+        <?php the_field('support_cc_description'); ?>
+        <a href="<?php the_field('support_cc_link_url_1' ); ?>"><?php the_field('support_cc_link_text_1' ); ?> &rarr;</a>
+        <a href="<?php the_field('support_cc_link_url_2' ); ?>"><?php the_field('support_cc_link_text_2' ); ?></a>
+        <a href="<?php the_field('support_cc_link_url_3' ); ?>"><?php the_field('support_cc_link_text_3' ); ?></a>
 
     </div>
 </article>
