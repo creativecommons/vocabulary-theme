@@ -18,14 +18,14 @@ get_header('', array( 'body-classes' => 'home-narrative-interim') );
         <p><?php the_field('lead_in_description' ); ?></p> 
         <p><?php the_field('lead_in_sub_description' ); ?></p>
         <ul>
-            <li><a href="#">Learn more &rarr;</a></li>
-            <li> <a href="#">Meet the team</a></li>
-            <li><a href="#">What we do</a></li>
+            <li><a href="<?php the_field('lead_in_link_url_1' ); ?>"><?php the_field('lead_in_link_text_1' ); ?> &rarr;</a></li>
+            <li> <a href="<?php the_field('lead_in_link_url_2' ); ?>"><?php the_field('lead_in_link_text_2' ); ?></a></li>
+            <li><a href="<?php the_field('lead_in_link_url_3' ); ?>"><?php the_field('lead_in_link_text_3' ); ?></a></li>
         </ul>
     </div>
 
       <figure>
-        <img src="#" />
+        <img src="<?php the_field('lead_in_image' ); ?>" />
         <figcaption>
             <!-- figcaption here -->
         </figcaption>
