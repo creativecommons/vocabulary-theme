@@ -14,9 +14,9 @@ get_header('', array( 'body-classes' => 'home-narrative-interim') );
 
 <article class="topic-summary intro"> 
     <div class="description">
-        <h2>The <strong>commons</strong> belongs to all of us</h2>
-        <p>Creative Commons safeguards and strengthens the global commons, which is made up of all shared knowledge and culture, so that it can power human creativity, equity, and innovation.</p> 
-        <p>We are a global nonprofit protecting your right to access and share information and participate in knowledge.</p>
+        <h2><?php the_field('lead_in_title' ); ?></h2>
+        <p><?php the_field('lead_in_description' ); ?></p> 
+        <p><?php the_field('lead_in_sub_description' ); ?></p>
         <ul>
             <li><a href="#">Learn more &rarr;</a></li>
             <li> <a href="#">Meet the team</a></li>
