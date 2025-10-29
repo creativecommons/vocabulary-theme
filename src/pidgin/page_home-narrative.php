@@ -46,76 +46,41 @@ get_header('', array( 'body-classes' => 'home-narrative-interim') );
 
 <article class="topic-summaries focus-areas">
 
-    <!-- <h2>"Focus Areas"</h2>
-    <p>some kind of intro here</p> -->
+    <?php
+        $focus_features = get_field('focus_features');
+        if( !empty($focus_features) ) :
+    ?>
 
-    <!-- possible larger grouping here to gather all the "topics" into a larger list of sorts? (maybe make a custom content type we could cycle them in and out?) -->
-    <article class="topic-summary focus-area">
-        <div class="description">
-            <h3>Join us in shaping what's next</h3>
-            <p>We steward the open infrastructure of sharing and contribute to a thriving creative commons with, and for, community.</p>
-            <a href="#">Learn more about how to get involved &rarr;</a>
-        </div>
-        <figure>
-            <img src="https://creativecommons.org/wp-content/uploads/2025/10/pottery-e1760626005610.png" />
-            <figcaption>
-                "Untitled" by Ken Rahaim, 2007, Center for Folklife and Cultural Heritage, Smithsonian.
-            </figcaption>
-        </figure>
-    </article>
+    <?php foreach($focus_features as $focus_feature) : ?>
+        <?php
+            $permalink = get_permalink( $focus_feature->ID );
+            $title = get_the_title( $focus_feature->ID );
+            $link_text = get_field( 'link_text', $focus_feature->ID );
+            $link_url = get_field( 'link_url', $focus_feature->ID );
+            // $content = get_the_content( $focus_feature->ID );
+            $content = get_post_field('post_content', $focus_feature->ID);
+            // $excerpt = get_the_excerpt( $staff_person->ID );
+         ?>
 
-    <article class="topic-summary focus-area">
-        <div class="description">
-            <h3>Empowering Access to Knowledge</h3>
-            <p>Whether through our CC Certificate courses, tailored facilitation, or legal office hours, we support organizations working to expand the global commons. Learn, collaborate, and lead with openness at the center.</p>
-            <a href="#">Request training or consulting today &rarr;</a>
-        </div>
-         <figure>
-            <img src="https://live.staticflickr.com/5458/9331931663_77a606ce12_h.jpg" />
-            <figcaption>"<a href="https://www.flickr.com/photos/82955120@N05/9331931663/in/photolist-d1jbTo-fdCAav-dw3FQk-dKKGtj-pTAppQ-dGi6yB-cKapnq-2kvMiqx-dvAa9i-dKKWQ3-dMiAV1-jrLYvM-dKejVY-MMZzbD-dvAa8D-dUuuX5-dvFK8d-deTUdD-e7ivfk-dKEEZk-2q28wxV-e7posu-jsZyMT-dKEyzp-ob9Y6K-deTUD5-D9aKeJ-eSsxdP-jrGhGX-dytxEb-MWJJvi-dw8Yfm-83962x-eSsx5e-moM7Ck-gTWqqc-dEEbKW-deTUyE-MLuqpJ-22RBTG5-deTUma-gYFsna-LZi81u-r6ZwdJ-gTYPV4-2mtmWhS-2n6ar89-bX6Rcv-838YMR-fTUxUv">Inpiration Arch Plaque</a>" by <a href="https://www.flickr.com/photos/karlsbad/">Nicolas Raymond</a> 2011, CC BY 3.0</figcaption>
-        </figure>
-    </article>
+         <article class="topic-summary focus-area">
+            <div class="description">
+                <h3><?php echo $title; ?></h3>
+                <p><?php echo $content; ?></p>
+                <a href="<?php echo $link_url; ?>"><?php echo $link_text; ?> &rarr;</a>
+            </div>
+            <figure>
+                <img src="<?php echo get_the_post_thumbnail_url( $focus_feature->ID, 'full' ); ?>" />
+                <figcaption>
+                    "Untitled" by Ken Rahaim, 2007, Center for Folklife and Cultural Heritage, Smithsonian.
+                </figcaption>
+            </figure>
+        </article>
 
-    <article class="topic-summary focus-area">
-        <div class="description">
-            <h3>The Commons is the Foundation of AI</h3>
-            <p>If we want ethical and equitable AI, we must protect and nourish the commons it relies on. Learn about how we’re adapting to address sharing in the age of AI, from developing new tools like CC signals, strengthening licensing guidance, and advocating for policies that keep access to knowledge open and equitable.</p>
-            <a href="#">Explore our AI and Commons work &rarr;</a>
-        </div>
-         <figure>
-            <img src="https://live.staticflickr.com/1253/5158483834_a0b08e38f1_b.jpg" />
-            <figcaption>"Mauretania Construction", 1906, Tyne & Wear Archives & Museums</figcaption>
-        </figure>
-    </article>
 
-    <article class="topic-summary focus-area">
-        <div class="description">
-            <h3>CC BY is the Best Option for Preprints</h3>
-            <p>If you are a researcher, scientist, or knowledge producer, you are a creator. The knowledge you record as a research output is the scaffolding for collaboration.</p>
-            <p>Our latest video that  explains open licenses for research outputs and encourages researchers to use CC licenses for data, preprints, manuscripts, and journal articles.</p>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1">Watch video &rarr;</a>
-        </div>
-         <figure>
-            <img src="https://images.pexels.com/photos/261909/pexels-photo-261909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
-            <figcaption>
-                "<a href="https://www.pexels.com/photo/person-behind-books-261909/">Person Behind Books</a>", 2016 CC0
-            </figcaption>
-        </figure>
-    </article>
+        <? endforeach; ?>
 
-    <article class="topic-summary focus-area">
-        <div class="description">
-            <h3>The TAROCH Coalition is on a Mission to advance open access to public domain cultural heritage</h3>
-            <p>The Towards a Recommendation on Open Cultural Heritage (TAROCH) Coalition unites over 60 institutions and organizations from 25 countries that share a belief in the transformative potential of open solutions. </p>
-            <a href="#">Show your support &rarr;</a>
-        </div>
-         <figure>
-            <img src="https://creativecommons.org/wp-content/uploads/2025/09/roadturn16x9-scaled.jpg" />
-            <figcaption>
-            "<a href="#">Watering Place at Marley</a>" by Alfred Sisley, 1875, CC0, Art Institute of Chicago, remixed with "TAROCH balloon" by Creative Commons/Dee Harris, 2025, CC0.
-            </figcaption>
-        </figure>
-    </article>
+    <? endif; ?>
+    
 </article>
 
 <article class="support">

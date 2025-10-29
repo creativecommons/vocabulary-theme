@@ -854,27 +854,6 @@
             "delay": 0
         },
         {
-            "key": "field_690222fe898de",
-            "label": "newsletter link text",
-            "name": "newsletter_link_text",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_69022306898df",
             "label": "newsletter link url",
             "name": "newsletter_link_url",
@@ -891,6 +870,32 @@
             "default_value": "",
             "allow_in_bindings": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_690223a82454f",
+            "label": "newsletter highlight image",
+            "name": "newsletter_highlight_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -918,5 +923,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1761747727
+    "modified": 1761747899
 }
