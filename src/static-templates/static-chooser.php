@@ -75,7 +75,7 @@
 
     <li>
     <fieldset id="require-attribution">
-        <legend>Attribution?</legend>
+        <legend>Require attribution for your work?</legend>
 
         <div>
             <input type="radio" id="yes-attribution" name="attribution" value="yes" />
@@ -93,7 +93,7 @@
 
     <li>
     <fieldset id="allow-commercial-use">
-        <legend>Commercial Use?</legend>
+        <legend>Allow others to use your work commercially?</legend>
 
         <div>
             <input type="radio" id="yes-commercial" name="commercial" value="yes" />
@@ -110,7 +110,7 @@
 
     <li>
     <fieldset id="allow-derivatives">
-        <legend>Derivative Works?</legend>
+        <legend>Allow others to remix, adapt, or build upon your work?</legend>
 
         <div>
             <input type="radio" id="yes-derivatives" name="derivatives" value="yes" />
@@ -127,7 +127,7 @@
 
     <li>
     <fieldset id="share-alike">
-        <legend>Sharing Requirements?</legend>
+        <legend>Require adaptions of your work to be licensed under the same CC license?</legend>
 
         <div>
             <input type="radio" id="yes-sharing-requirements" name="sharing-requirements" value="yes" />
