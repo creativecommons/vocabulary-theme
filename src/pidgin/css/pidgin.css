@@ -442,6 +442,8 @@
     object-fit: cover;
     width: 200%;
     height: auto;
+
+    clip-path: url('../svg/blob.svg#blob');
 }
 
 .home-narrative-interim article.topic-summaries.focus-areas .topic-summary:nth-child(even) figure img {
