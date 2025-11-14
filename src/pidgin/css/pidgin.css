@@ -372,7 +372,8 @@
 }
 
 .home-narrative-interim article.topic-summaries.focus-areas .topic-summary .description {
-    padding: 20% 0;
+    position: relative;
+    margin: 20% 0;
 }
 
 .home-narrative-interim article.topic-summaries.focus-areas .topic-summary .description h3 {
@@ -382,9 +383,17 @@
     font-weight: 100;
 }
 
-.home-narrative-interim article.topic-summaries.focus-areas .topic-summary .category {
+.home-narrative-interim article.topic-summaries.focus-areas .topic-summary .description .category {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    /* category position and styling here */
+    font-family: 'Source Sans Pro';
+    font-weight: bold;
+    text-transform: uppercase;
+
+    opacity: .5; /* temp */
 }
 
 
