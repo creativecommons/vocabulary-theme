@@ -2,7 +2,7 @@
 
 <?php
 
-get_header('', array( 'body-classes' => 'home-narrative-interim') );
+get_header('pidgin', array( 'body-classes' => 'home-narrative-interim') );
 
 ?>
 
@@ -279,4 +279,4 @@ get_header('', array( 'body-classes' => 'home-narrative-interim') );
 </main>
 
 
-<?php get_footer(); ?>
+<?php get_footer('pidgin'); ?>
