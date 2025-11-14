@@ -382,6 +382,11 @@
     font-weight: 100;
 }
 
+.home-narrative-interim article.topic-summaries.focus-areas .topic-summary .category {
+
+    /* category position and styling here */
+}
+
 
 .home-narrative-interim article.topic-summaries.focus-areas .topic-summary p {
     font-size: 1.2em;

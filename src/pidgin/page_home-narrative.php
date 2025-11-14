@@ -65,6 +65,7 @@ get_header('pidgin', array( 'body-classes' => 'home-narrative-interim') );
          <article class="topic-summary focus-area">
             <div class="description">
                 <h3><?php echo $title; ?></h3>
+                <span class="category">Open Culture</span>
                 <p><?php echo $content; ?></p>
                 <a href="<?php echo $link_url; ?>"><?php echo $link_text; ?> &rarr;</a>
             </div>
