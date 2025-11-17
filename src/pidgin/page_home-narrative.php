@@ -175,7 +175,7 @@ get_header('pidgin', array( 'body-classes' => 'home-narrative-interim') );
     </ul>
 
     <footer>
-        <a class="more" href="#">more posts</a>
+        <a class="more" href="/blog/archive/">more posts</a>
     </footer>
 
 </article>
