@@ -360,6 +360,7 @@
     /* display: grid;
     grid-template-columns: subgrid; */
     grid-column: 4/9;
+    grid-column: 3/10;
 }
 
 .home-narrative-interim article.topic-summaries.focus-areas .topic-summary {
@@ -440,7 +441,7 @@
 
 .home-narrative-interim article.topic-summaries.focus-areas .topic-summary figure img {
     object-fit: cover;
-    width: 200%;
+    width: 100%;
     height: auto;
 
     /* clip-path: url('../svg/blob.svg#blob'); */
@@ -448,6 +449,12 @@
     mask-image: url('../svg/blob.svg#blob');
     mask-repeat: no-repeat;
     mask-position: top center;
+    mask-size: 95% 100%;
+
+    transition: .2s ease;
+}
+
+.home-narrative-interim article.topic-summaries.focus-areas .topic-summary figure img:hover {
     mask-size: 100% 100%;
 }
 
