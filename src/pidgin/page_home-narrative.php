@@ -57,6 +57,7 @@ get_header('pidgin', array( 'body-classes' => 'home-narrative-interim') );
         <?php
             $permalink = get_permalink( $focus_feature->ID );
             $title = get_the_title( $focus_feature->ID );
+            $category = get_field( 'category', $focus_feature->ID );
             $link_text = get_field( 'link_text', $focus_feature->ID );
             $link_url = get_field( 'link_url', $focus_feature->ID );
             // $content = get_the_content( $focus_feature->ID );
@@ -67,7 +68,7 @@ get_header('pidgin', array( 'body-classes' => 'home-narrative-interim') );
          <article class="topic-summary focus-area">
             <div class="description">
                 <h3><?php echo $title; ?></h3>
-                <span class="category">Open Culture</span>
+                <span class="category"><?php echo $category; ?></span>
                 <p><?php echo $content; ?></p>
                 <a href="<?php echo $link_url; ?>"><?php echo $link_text; ?> &rarr;</a>
             </div>
