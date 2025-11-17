@@ -239,7 +239,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 2em;
     margin-top: 6em;
+    margin-top: 2em;
     padding: 6em 25% 8em 25%;
+    padding: 2em 25% 6em 25%;
 
     background: var(--vocabulary-color-light-grey);
 
@@ -370,6 +372,7 @@
     gap: 2em;
 
     margin: 12em 0;
+    margin: 4em 0;
     overflow-x: hidden;
 }
 
