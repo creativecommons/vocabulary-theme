@@ -7,7 +7,9 @@ get_header('pidgin', array( 'body-classes' => 'home-narrative-interim') );
 ?>
 
 <link rel="stylesheet" media="all" href="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/css/pidgin.css" />
-
+<style>
+    <?php the_field('css_dev_hotfixes' ); ?>
+</style>
 
 
 <main>
