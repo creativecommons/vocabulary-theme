@@ -695,6 +695,11 @@
     font-style: italic;
 }
 
+.home-narrative-interim article.attribution-list a {
+    color: black;
+}
+
+
 /* main .attribution button.expand-attribution {
     top: .4em;
     right: 1em;
