@@ -85,14 +85,17 @@ get_header('pidgin', array( 'body-classes' => 'home-narrative-interim') );
 </article>
 
 <article class="support">
-    <h2><?php the_field('support_cc_title'); ?></h2>
-    <div class="description">
-        <?php the_field('support_cc_description'); ?>
-        <a href="<?php the_field('support_cc_link_url_1' ); ?>"><?php the_field('support_cc_link_text_1' ); ?> &rarr;</a>
-        <a href="<?php the_field('support_cc_link_url_2' ); ?>"><?php the_field('support_cc_link_text_2' ); ?></a>
-        <a href="<?php the_field('support_cc_link_url_3' ); ?>"><?php the_field('support_cc_link_text_3' ); ?></a>
+    <div>
+        <h2><?php the_field('support_cc_title'); ?></h2>
+        <div class="description">
+            <?php the_field('support_cc_description'); ?>
+            <a href="<?php the_field('support_cc_link_url_1' ); ?>"><?php the_field('support_cc_link_text_1' ); ?> &rarr;</a>
+            <a href="<?php the_field('support_cc_link_url_2' ); ?>"><?php the_field('support_cc_link_text_2' ); ?></a>
+            <a href="<?php the_field('support_cc_link_url_3' ); ?>"><?php the_field('support_cc_link_text_3' ); ?></a>
 
+        </div>
     </div>
+    <img src="<?php the_field('support_cc_background_image'); ?>" class="background-decoration" />
 </article>
 
 <article class="posts">

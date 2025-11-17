@@ -158,6 +158,7 @@
 .home-narrative-interim article.topic-summary.intro img {
     width: 200%;
     width: 140%;
+    width: 100%;
 }
 
 .home-narrative-interim article.topic-summary.intro figure {
@@ -487,10 +488,30 @@
 .home-narrative-interim article.support {
     grid-column: 5/8;
     grid-column: 1/12;
-    padding: 4em 25% 8em 25%;
+    /* padding: 4em 25% 8em 25%; */
     margin-bottom: 6em;
+    position: relative;
+    overflow: hidden;
+    
+
+}
+
+.home-narrative-interim article.support > div {
+    margin: 5em 20% 5em 20%;
+    padding: 1em 4em 4em 4em;
 
     background: var(--vocabulary-color-light-grey);
+    border-radius: 10px;
+}
+
+.home-narrative-interim article.support img.background-decoration {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+
 }
 
 .home-narrative-interim article.support h2 {
