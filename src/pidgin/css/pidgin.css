@@ -155,14 +155,35 @@
     font-weight: 700;
 }
 
-.home-narrative-interim article.topic-summary.intro img {
+/* .home-narrative-interim article.topic-summary.intro img {
     width: 200%;
     width: 140%;
     width: 100%;
-}
+} */
 
 .home-narrative-interim article.topic-summary.intro figure {
     padding: 0;
+}
+
+
+.home-narrative-interim article.topic-summary.intro figure img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+
+    /* clip-path: url('../svg/blob.svg#blob'); */
+
+    mask-image: url('../svg/blob2.svg');
+    mask-repeat: no-repeat;
+    mask-position: top center;
+    mask-size: 86% 100%;
+
+    transition: .5s ease;
+}
+
+.home-narrative-interim article.topic-summary.intro figure img:hover {
+    mask-size: 100% 100%;
+    mask-image: url('../svg/blob.svg');
 }
 
 .home-narrative-interim article.topic-summary.intro figcaption {
