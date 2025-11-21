@@ -1,6 +1,6 @@
 {
     "key": "group_691b6fe2f23e6",
-    "title": "Dev Hotfixes",
+    "title": "Dev Settings",
     "fields": [
         {
             "key": "field_691b6fe3f7be1",
@@ -22,6 +22,33 @@
             "rows": "",
             "placeholder": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_6920a1493860b",
+            "label": "Brand Version",
+            "name": "brand_version",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "vocabulary1": "Vocabulary 1.x",
+                "vocabulary2": "Vocabulary 2.x"
+            },
+            "default_value": "vocabulary1",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -47,5 +74,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1763406070
+    "modified": 1763746317
 }
