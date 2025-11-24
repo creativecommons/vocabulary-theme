@@ -182,7 +182,7 @@
 }
 
 .home-narrative-interim article.topic-summary.intro figure img:hover {
-    mask-size: 100% 100%;
+    mask-size: 900% 500%;
     mask-image: url('../svg/blob.svg');
 }
 
