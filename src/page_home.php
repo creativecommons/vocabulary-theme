@@ -9,6 +9,15 @@ get_header('', array( 'body-classes' => 'home-narrative') );
 
 <main>
 
+<?php
+
+// feature flag IF here
+
+// IF version feature flag true, load alternative home
+// IF version feature flag false, load page as-is
+
+?>
+
 <article class="topic-summary">
     <h2>Better Sharing, Brighter Future</h2>
     <figure>
