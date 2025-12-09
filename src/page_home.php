@@ -15,6 +15,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
 
 // IF version feature flag true, load alternative home
 // IF version feature flag false, load page as-is
+// TODO: where to pull feature flag from (a specific page, or per page, or both?)
 
 ?>
 
