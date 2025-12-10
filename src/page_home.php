@@ -1,6 +1,6 @@
 <?php /* Template Name: Index - Home */ ?>
 
-<?php $feature_flag = false; ?>
+<?php $vocab2 = false; ?>
 
 <?php
 
@@ -21,7 +21,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
 
 ?>
 
-<?php if (!$feature_flag) : ?>
+<?php if (!$vocab2) : ?>
 
 <article class="topic-summary">
     <h2>Better Sharing, Brighter Future</h2>
@@ -231,7 +231,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
 <?php endif; ?>
 
 
-<?php elseif($feature_flag): ?>
+<?php elseif($vocab2): ?>
 
     <h1>Feature Flag is enabled</h1>
 
