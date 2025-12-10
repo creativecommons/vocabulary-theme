@@ -12,6 +12,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/favicon/apple-touch-icon.png" />
 
 <link rel="stylesheet" media="all" href="<?php echo get_bloginfo( 'template_directory' ); ?>/style.css" />
+<link rel="stylesheet" media="all" href="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/css/pidgin.css" />
+
 
 <?php wp_head(); ?>
 </head>
