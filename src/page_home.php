@@ -1,5 +1,7 @@
 <?php /* Template Name: Index - Home */ ?>
 
+<?php $feature_flag = false; ?>
+
 <?php
 
 get_header('', array( 'body-classes' => 'home-narrative') );
@@ -18,6 +20,8 @@ get_header('', array( 'body-classes' => 'home-narrative') );
 // TODO: where to pull feature flag from (a specific page, or per page, or both?)
 
 ?>
+
+<?php if (!$feature_flag) : ?>
 
 <article class="topic-summary">
     <h2>Better Sharing, Brighter Future</h2>
@@ -225,6 +229,14 @@ get_header('', array( 'body-classes' => 'home-narrative') );
     </footer>
 
 <?php endif; ?>
+
+
+<?php elseif($feature_flag): ?>
+
+    <h1>Feature Flag is enabled</h1>
+
+<?php endif; ?> 
+
 
 
 </main>
