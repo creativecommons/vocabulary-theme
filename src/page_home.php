@@ -1,5 +1,7 @@
 <?php /* Template Name: Index - Home */ ?>
 
+<?php $vocab2 = false; ?>
+
 <?php
 
 get_header('', array( 'body-classes' => 'home-narrative') );
@@ -8,6 +10,18 @@ get_header('', array( 'body-classes' => 'home-narrative') );
 
 
 <main>
+
+<?php
+
+// feature flag IF here
+
+// IF version feature flag true, load alternative home
+// IF version feature flag false, load page as-is
+// TODO: where to pull feature flag from (a specific page, or per page, or both?)
+
+?>
+
+<?php if (!$vocab2) : ?>
 
 <article class="topic-summary">
     <h2>Better Sharing, Brighter Future</h2>
@@ -215,6 +229,14 @@ get_header('', array( 'body-classes' => 'home-narrative') );
     </footer>
 
 <?php endif; ?>
+
+
+<?php elseif($vocab2): ?>
+
+    <h1>Feature Flag is enabled</h1>
+
+<?php endif; ?> 
+
 
 
 </main>
