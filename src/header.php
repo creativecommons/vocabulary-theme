@@ -84,11 +84,7 @@
                 <p>Become an expert in creating and engaging with openly licensed materials</p>
             </li>
             <li>
-                <a href="https://summit.creativecommons.org/" target="_blank">Global Summit</a>
-                <p>Attend our annual event, promoting the power of open licensing</p>
-            </li>
-            <li>
-                <a href="/choose" target="_blank">Chooser</a>
+                <a href="/chooser/" target="_blank">Chooser</a>
                 <p>Get help choosing the appropriate license for your work</p>
             </li>
             <li>
