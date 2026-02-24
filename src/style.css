@@ -126,7 +126,7 @@ main nav.pagination ul li {
     margin: 0 .5em;
 }
 
-main nav.pagination ul li a, main nav.pagination ul li span {
+/* main nav.pagination ul li a, main nav.pagination ul li span {
     padding: .4em .7em;
 
     background: #F5F5F5;
@@ -138,7 +138,7 @@ main nav.pagination ul li a, main nav.pagination ul li span {
     font-size: 1.2em;
     text-transform: none;
     text-decoration: none;
-}
+} */
 
 main nav.pagination ul li span.current {
     padding: .4em .7em;
