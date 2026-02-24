@@ -23,14 +23,14 @@
 <aside class="sidebar">
     <article class="event-meta">
         <h2>Date & Time</h2>
-        <p class="date">February 21, 2026</p>
-        <p class="time">2pm - 6pm</p>
+        <p class="date"><?php the_field('event_date'); ?></p>
+        <p class="time"><?php the_field('event_time_start'); ?> - <?php the_field('event_time_end'); ?></p>
 
         <h2>Location</h2>
 
-        <p class="location">123 Example St., Ottawa ON</p>
+        <p class="location"><?php the_field('event_location'); ?></p>
 
-        <a href="#">Register</a>
+        <a href="<?php the_field('event_registration_url'); ?>">Register</a>
     </article>
 </aside>
 
@@ -38,59 +38,40 @@
     <h2>Event Details</h2>
     <?php the_content(); ?>
 
-    <a href="#" class="files">Download Event Files</a>
+    <a href="<?php the_field('event_files_download_url'); ?>" class="files">Download Event Files</a>
+
+
+    <?php
+        $speaker_listing = get_field('event_speakers');
+        if( !empty($speaker_listing) ) :
+    ?>
 
     <article class="speakers">
         <h2>Meet the speakers</h2>
-
         <ul>
+            <?php foreach($speaker_listing as $speaker_person) : ?>
+            <?php
+                $permalink = get_permalink( $speaker_person->ID );
+                $title = get_the_title( $speaker_person->ID );
+                $position_title = get_field( 'position_title', $speaker_person->ID );
+                $excerpt = get_the_excerpt( $speaker_person->ID );
+            ?>
             <li>
                 <article class="speaker">
-                    <h3>Speaker Name</h3>
-                    <h4>Speaker Title</h4>
-
-                    <p>Short speaker bio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu maximus augue. Nulla ac velit sit amet nisi ultricies ultrices. Proin vel velit sed purus dictum eleifend vitae ut ipsum. Sed eu imperdiet ex. Nam leo erat, semper non aliquam eget, porta vitae arcu.</p>
+                    <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+                    <h4><?php echo $position_title; ?></h4>
+                    <p><?php echo wp_trim_words($excerpt, 50); ?></p>
 
                     <figure>
-
-                        <!-- <svg class="shape1">
-                            <use href="../../../../pidgin/svg/blob3.svg"></use>
-                        </svg> -->
-
-                        <figcaption>
-                            <!-- <p>attribution details here</p> -->
-                            
-                        </figcaption>
+                        <img src="<?php echo get_the_post_thumbnail_url( $speaker_person->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($staff_person->ID), '_wp_attachment_image_alt', true ); ?>" />
                     </figure>
-
 
                 </article>
             </li>
-
-            <li>
-                <article class="speaker">
-                    <h3>Speaker Name</h3>
-                    <h4>Speaker Title</h4>
-
-                    <p>Short speaker bio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu maximus augue. Nulla ac velit sit amet nisi ultricies ultrices. Proin vel velit sed purus dictum eleifend vitae ut ipsum. Sed eu imperdiet ex. Nam leo erat, semper non aliquam eget, porta vitae arcu.</p>
-
-                    <figure>
-
-                        <!-- <svg class="shape1">
-                            <use href="../../../../pidgin/svg/blob3.svg"></use>
-                        </svg> -->
-
-                        <figcaption>
-                            <!-- <p>attribution details here</p> -->
-                            
-                        </figcaption>
-                    </figure>
-
-
-                </article>
-            </li>
+            <?php endforeach; ?>
         </ul>
     </article>
+    <?php endif; ?>
 </div>
 
 <footer>

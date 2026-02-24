@@ -772,6 +772,21 @@ main nav.pagination ul li span.current {
   line-height: 1.8;
 }
 
+/* pidgin specific patches */
+
+.event-post .content .speakers .speaker figure img {
+  border-radius: 100px;
+}
+
+.event-post .content .speakers .speaker h4 {
+  color: black;
+}
+
+
+
+
+
+
 @media (min-width: 1500px) {
 
   .home-narrative .data-points .data-point.khan-academy h2 {
