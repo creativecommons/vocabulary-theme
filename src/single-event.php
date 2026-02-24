@@ -35,6 +35,7 @@
 </aside>
 
 <div class="content">
+    <h2>Event Details</h2>
     <?php the_content(); ?>
 
     <a href="#" class="files">Download Event Files</a>
