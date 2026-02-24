@@ -83,7 +83,7 @@
             "label": "Event Registration URL",
             "name": "event_registration_url",
             "aria-label": "",
-            "type": "link",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -92,15 +92,16 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
-            "allow_in_bindings": 0
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": ""
         },
         {
             "key": "field_699dbc8b73a1f",
             "label": "Event Files Download URL",
             "name": "event_files_download_url",
             "aria-label": "",
-            "type": "link",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -109,8 +110,9 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
-            "allow_in_bindings": 0
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": ""
         },
         {
             "key": "field_699dbceb0acc0",
@@ -161,5 +163,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1771945301
+    "modified": 1771950904
 }
