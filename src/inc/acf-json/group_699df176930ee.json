@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
+            "return_format": "url",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -83,6 +83,13 @@
                 "operator": "==",
                 "value": "page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
         ]
     ],
     "menu_order": 0,
@@ -94,5 +101,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1771959064
+    "modified": 1771966812
 }

@@ -11,7 +11,7 @@
 </div>
 
 <figure>
-        <!-- <img src="https://creativecommons.org/wp-content/uploads/2025/05/moon-3.jpg" class="photo" /> -->
+        <img src="<?php the_field('header_graphic') ?>" alt="" />
 
         <figcaption>
             <p>attribution details here</p>
@@ -77,9 +77,9 @@
 <footer>
     <nav class="pagination">
         <ul>
-            <li><a href="#" class="previous">Previous</a></li>
+            <!-- <li><a href="#" class="previous">Previous</a></li> -->
             <li><a href="#" class="more">View All Events</a></li>
-            <li><a href="#" class="next">Next</a></li>
+            <!-- <li><a href="#" class="next">Next</a></li> -->
         </ul>
         
     </nav>
