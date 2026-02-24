@@ -774,6 +774,20 @@ main nav.pagination ul li span.current {
 
 /* pidgin specific patches */
 
+.events-index .topic-summary.about {
+  grid-template-columns: 60% 40%;
+  gap: 1em;
+}
+
+.events-index .topic-summary.about .description {
+  display: flex;
+  align-items: center;
+}
+
+.events-index .topic-summary.about .description p {
+  font-size: 1.6em;
+}
+
 .event-post .content .speakers .speaker figure img {
   border-radius: 100px;
 }
@@ -781,6 +795,8 @@ main nav.pagination ul li span.current {
 .event-post .content .speakers .speaker h4 {
   color: black;
 }
+
+
 
 
 

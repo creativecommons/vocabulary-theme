@@ -23,12 +23,12 @@
 <article class="topic-summary about"> <!-- TODO: merge with prior article? -->
     <div class="description">
         <!-- <h2>The commons belongs to us all</h2> -->
-        <p>Creative Commons is a global nonprofit protecting your right to access and share information, and participate in knowledge.</p>
-
-        <p>We safeguard and strengthen the global commons, which is made up of all shared knowledge and culture, so that we can power human creativity, equity, and innovation. </p>
+        <?php the_field('subhead_intro') ?>
     </div>
 
-    <figure>       
+    <figure> 
+        
+        <img src="<?php the_field('subhead_graphic') ?>" />
         <!-- <svg class="shape1">
             <use href="../../../../pidgin/svg/blob3.svg"></use>
         </svg> -->
