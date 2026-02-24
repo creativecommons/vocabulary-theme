@@ -44,92 +44,52 @@
 <article class="events">
     <h2>Upcoming Events</h2>
     <ul>
-    <li>
-        <article class="event">
-            <div class="description">
-            <h3>Support CC and stay connected</h3>
-            <h4>Feb 23</h4>
-            <span class="time">2pm - 6pm</span>
-            <span class="location">123 Example St., Ottawa ON</span>
 
-            <p>There are many ways to give. You can make a one-time donation or become a recurring donor by joining our Open Infrastructure Circle.</p>
+    <?php
+    $query = new WP_Query(array(
+        'post_type' => 'event',
+        'posts_per_page' => 6,
+        //'paged' => $paged,
+    ));
+    ?>
 
-            <a href="#">See Event Details</a>
-        </div>
+    <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-        <figure>
+        <li>
+            <article class="event">
 
-            <!-- <svg class="shape1">
-                <use href="../../../../pidgin/svg/blob3.svg"></use>
-            </svg> -->
+                <div class="description">
+                <h3><?php the_title(); ?></h3>
+                <h4><?php the_field('event_date'); ?></h4>
+                <span class="time"><?php the_field('event_time_start'); ?> - <?php the_field('event_time_end'); ?></span>
+                <span class="location"><?php the_field('event_location'); ?></span>
 
-            <figcaption>
-                <!-- <p>attribution details here</p> -->
-                
-            </figcaption>
-        </figure>
+                <p><?php echo wp_trim_words($excerpt, 50); ?></p>
 
+                <a href="<?php echo the_permalink(); ?>">See Event Details</a>
+                </div>
 
-        </article>
-    </li>
+                <figure>
 
-    <li>
-        <article class="event">
-            <div class="description">
-            <h3>Support CC and stay connected</h3>
-            <h4>Feb 23</h4>
-            <span class="time">2pm - 6pm</span>
-            <span class="location">123 Example St., Ottawa ON</span>
-
-            <p>There are many ways to give. You can make a one-time donation or become a recurring donor by joining our Open Infrastructure Circle.</p>
-
-            <a href="#">See Event Details</a>
-        </div>
-
-        <figure>
-
-            <!-- <svg class="shape1">
-                <use href="../../../../pidgin/svg/blob3.svg"></use>
-            </svg> -->
-
-            <figcaption>
-                <!-- <p>attribution details here</p> -->
-                
-            </figcaption>
-        </figure>
+                    <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
 
 
-        </article>
-    </li>
+                    <!-- <svg class="shape1">
+                        <use href="../../../../pidgin/svg/blob3.svg"></use>
+                    </svg> -->
 
-    <li>
-        <article class="event">
-            <div class="description">
-            <h3>Support CC and stay connected</h3>
-            <h4>Feb 23</h4>
-            <span class="time">2pm - 6pm</span>
-            <span class="location">123 Example St., Ottawa ON</span>
+                    <figcaption>
+                        <!-- <p>attribution details here</p> -->
+                        
+                    </figcaption>
+                </figure>
 
-            <p>There are many ways to give. You can make a one-time donation or become a recurring donor by joining our Open Infrastructure Circle.</p>
+            </article>
+        </li>
 
-            <a href="#">See Event Details</a>
-        </div>
+        <?php endwhile; ?>
+        <?php endif; ?>
 
-        <figure>
-
-            <!-- <svg class="shape1">
-                <use href="../../../../pidgin/svg/blob3.svg"></use>
-            </svg> -->
-
-            <figcaption>
-                <!-- <p>attribution details here</p> -->
-                
-            </figcaption>
-        </figure>
-
-
-        </article>
-    </li>
     </ul>
 
     <footer>
