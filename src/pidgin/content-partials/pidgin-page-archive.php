@@ -1,47 +1,3 @@
-<!-- ///////////////////////////////////////////////////////////// -->
-
-<?php $devQuery = new WP_Query( array( 
-    'post_type' => 'page',
-    'pagename' => 'dev-settings' 
-    ) );
-    
-    $themeVersion = '';
-?>
-
-<?php if ( $devQuery->have_posts() ) : ?>
-<?php  while ( $devQuery->have_posts() ) : $devQuery->the_post(); ?>
-
-    <?php if( get_field('brand_version')) : ?>
-
-            <?php $themeVersion = get_field('brand_version') ?>
-
-    <?php endif; ?>
-
-<?php endwhile; ?>
-<?php endif; ?>
-<?php wp_reset_postdata(); ?>
-
-<!-- //////////////////////////////////////////////////////////// -->
-
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_header('pidgin', array( 'body-classes' => 'archive-page') ); ?>
-
-<?php else : ?>
-
-<?php get_header('', array( 'body-classes' => 'archive-page') ); ?>
-
-<?php endif; ?>
-
-<main>
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-    <?php get_template_part( 'pidgin/content-partials/pidgin', 'archive', '' ); ?>
-
-<?php else : ?>
-
 <header>
 
 <!-- <nav class="breadcrumbs">
@@ -51,35 +7,29 @@
     </ol>
 </nav> -->
 
+<div>
 <h1><?php the_archive_title(); ?></h1>
-
-<p><?php the_archive_description(); ?></p>
+</div>
 
 
 </header>
 
 <aside class="sidebar">
 
-
 <?php
     $categories = get_terms( 'category', 'orderby=asc&hide_empty=0&parent=0&exclude=1' );
-    $current_category = get_queried_object();
 ?>
 
-    <nav class="filter-menu">
-        <h2>Categories</h2>
+    <nav class="filter-menu" aria-labelledby="categories">
+        <h2 id="categories">Categories</h2>
         <ul>
-            <li><a href="/blog/archive/">All posts</a></li>
+            <li class="current"><a href="/blog/archive/">All posts</a></li>
         <?php foreach($categories as $category): ?>
                 <?php
                     $category_link = get_term_link( $category );
-
-                    if($category->term_taxonomy_id == $current_category->term_id )  {
-                        $current = "current";
-                    }  else {$current = '';}
                 ?>
 
-            <li class="<?php echo $current; ?>"><a href="<?php echo $category_link; ?>"><?php echo $category->name; ?></a></li>
+            <li><a href="<?php echo $category_link; ?>"><?php echo $category->name; ?></a></li>
 
             <?php endforeach; ?>
         </ul>
@@ -100,15 +50,26 @@
 
 <article class="posts">
 
-<?php while ( have_posts() ) : the_post(); ?>
+<?php
 
+//Protect against arbitrary paged values
+$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+
+$query = new WP_Query(array(
+    'post_type' => 'post',
+    'posts_per_page' => 10,
+    'paged' => $paged,
+));
+?>
+
+<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
 <article class="post">
     <header>
-        <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
-        <?php if ( get_field('authorship') ) : ?>
-        <span class="byline">by
-        <?php
+    <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
+    <?php if ( get_field('authorship') ) : ?>
+    <span class="byline">by
+            <?php
             $authors = get_field('authorship');
                 if( $authors ):
                 $i = 1;
@@ -140,19 +101,17 @@
     </header>
 
     <figure>
-        <?php //echo get_the_post_thumbnail( $post_id, 'full' );
-        ?>
-        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id(), '_wp_attachment_image_alt', true ); ?>" />
+        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
         <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
     </figure>
 
     <?php the_excerpt(); ?>
-
 </article>
+
 
 <?php endwhile; // end of the loop. ?>
-
 </article>
+
 
 <nav class="pagination" aria-label="Pagination">
 <?php
@@ -166,21 +125,9 @@ echo paginate_links( array(
     'next_text' => __( '>', 'textdomain' ),
 	'current' => max( 1, get_query_var('paged') ),
     'type' => 'list',
-	'total' => $wp_query->max_num_pages
+	'total' => $query->max_num_pages
 ) );
 ?>
 </nav>
-
-<?php endif; ?>
-
-</main>
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_footer('pidgin'); ?>
-
-<?php else : ?>
-
-<?php get_footer(); ?>
 
 <?php endif; ?>
