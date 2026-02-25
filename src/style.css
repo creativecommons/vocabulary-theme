@@ -774,6 +774,12 @@ main nav.pagination ul li span.current {
 
 /* pidgin specific patches */
 
+main > header figure {
+  height: auto;
+
+  background: transparent;
+}
+
 .events-index main > header > figure {
   height: auto;
 
