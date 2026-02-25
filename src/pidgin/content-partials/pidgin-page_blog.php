@@ -1,69 +1,17 @@
-<?php /* Template Name: Index - Blog */ ?>
-
-<!-- ///////////////////////////////////////////////////////////// -->
-
-<?php $devQuery = new WP_Query( array( 
-    'post_type' => 'page',
-    'pagename' => 'dev-settings' 
-    ) );
-    
-    $themeVersion = '';
-?>
-
-<?php if ( $devQuery->have_posts() ) : ?>
-<?php  while ( $devQuery->have_posts() ) : $devQuery->the_post(); ?>
-
-    <?php if( get_field('brand_version')) : ?>
-
-            <?php $themeVersion = get_field('brand_version') ?>
-
-    <?php endif; ?>
-
-<?php endwhile; ?>
-<?php endif; ?>
-<?php wp_reset_postdata(); ?>
-
-<!-- //////////////////////////////////////////////////////////// -->
-
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_header('pidgin', array( 'body-classes' => 'blog-index') ); ?>
-
-<?php else : ?>
-
-<?php get_header('', array( 'body-classes' => 'blog-index') ); ?>
-
-<?php endif; ?>
-
-<main>
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-    <?php get_template_part( 'pidgin/content-partials/pidgin', 'page_blog', '' ); ?>
-
-<?php else : ?>
-
 <header>
 
-<h1>Blog</h1>
+<div>
+<h1><?php the_title(); ?></h1>
+</div>
 
-<!-- <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span> -->
+<figure>
+        <img src="<?php the_field('header_graphic') ?>" alt="" />
 
-<?php
-    $introduction = get_field('introduction');
-    if( $introduction ):
-?>
-<p><?php echo esc_html( $introduction ); ?></p>
-<?php endif; ?>
-
-<!-- <span class="categories">
-    <a href="#">Open Culture</a>
-</span> -->
-
-
-<!-- <img src="#" /> -->
-
+        <figcaption>
+            <p>attribution details here</p>
+            
+        </figcaption>
+    </figure>
 </header>
 
 <?php
@@ -254,18 +202,3 @@ $query = new WP_Query(array(
     </article>
 
 </footer>
-
-<?php endif; ?>
-
-</main>
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_footer('pidgin'); ?>
-
-<?php else : ?>
-
-<?php get_footer(); ?>
-
-<?php endif; ?>
-
