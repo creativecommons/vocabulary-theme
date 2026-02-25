@@ -19,10 +19,10 @@
     if( $posts ):
 ?>
 
-<article class="posts featured">
-    <h2>Featured posts</h2>
+<!-- <article class="posts featured"> -->
+    <!-- <h2>Featured posts</h2> -->
 
-    <ul>
+    <!-- <ul> -->
 
     <?php
 
@@ -32,8 +32,8 @@
             $title = get_the_title( $post->ID );
             //$custom_field = get_field( 'field_name', $post->ID );
     ?>
-    <li>
-    <article class="post">
+    <!-- <li> -->
+    <article class="post featured">
         <header>
         <h3 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h3>
 
@@ -83,7 +83,7 @@
         <?php endif; ?>
 
     </article>
-    </li>
+    <!-- </li> -->
 
 
     <?php
@@ -94,9 +94,9 @@
     ?>
 
     <?php endforeach; ?>
-    </ul>
+    <!-- </ul> -->
 
-</article>
+<!-- </article> -->
 <?php endif; ?>
 
 
@@ -174,31 +174,5 @@ $query = new WP_Query(array(
 
 </article>
 
+<?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
 
-<footer>
-
-
-    <article class="attribution-list">
-        <?php array_shift($highlight_posts); ?>
-
-        <h2>Images Attri&shy;bution</h2>
-        <button class="expand-attribution">view</button>
-
-        <ul class="attribution-panel">
-            <?php foreach ($highlight_posts as $item) : ?>
-            <?php if( get_the_post_thumbnail_caption( $item ) ) : ?>
-            <li>
-                <article>
-                    <figure>
-
-                        <img src="<?php echo get_the_post_thumbnail_url( $item, 'medium' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($item), '_wp_attachment_image_alt', true ); ?>" />
-                        <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></figcaption>
-                    </figure>
-                </article>
-            </li>
-            <?php endif; ?>
-            <?php endforeach; ?>
-        </ul>
-    </article>
-
-</footer>
