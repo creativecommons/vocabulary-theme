@@ -40,3 +40,6 @@
 </div>
 
 <?php endwhile; // end of the loop. ?>
+
+<?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
+
