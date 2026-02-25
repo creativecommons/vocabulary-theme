@@ -776,8 +776,9 @@ main nav.pagination ul li span.current {
 
 main > header figure {
   height: auto;
-
   background: transparent;
+  overflow: visible;
+  border: transparent;
 }
 
 .events-index main > header > figure {
