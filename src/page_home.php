@@ -2,7 +2,7 @@
 
 <?php
 
-get_header('', array( 'body-classes' => 'home-narrative') );
+get_header('', array( 'body-classes' => 'home-index') );
 
 ?>
 
