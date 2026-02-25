@@ -1,50 +1,5 @@
-<?php /* Template Name: Index - Team */ ?>
-
-<!-- ///////////////////////////////////////////////////////////// -->
-
-<?php $devQuery = new WP_Query( array( 
-    'post_type' => 'page',
-    'pagename' => 'dev-settings' 
-    ) );
-    
-    $themeVersion = '';
-?>
-
-<?php if ( $devQuery->have_posts() ) : ?>
-<?php  while ( $devQuery->have_posts() ) : $devQuery->the_post(); ?>
-
-    <?php if( get_field('brand_version')) : ?>
-
-            <?php $themeVersion = get_field('brand_version') ?>
-
-    <?php endif; ?>
-
-<?php endwhile; ?>
-<?php endif; ?>
-<?php wp_reset_postdata(); ?>
-
-<!-- //////////////////////////////////////////////////////////// -->
-
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_header('pidgin', array( 'body-classes' => 'team-index') ); ?>
-
-<?php else : ?>
-
-<?php get_header('', array( 'body-classes' => 'team-index') ); ?>
-
-<?php endif; ?>
-
-<main>
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-    <?php get_template_part( 'pidgin/content-partials/pidgin', 'page_team', '' ); ?>
-
-<?php else : ?>
-
 <header>
+<div>
 <h1><?php the_title(); ?></h1>
 
 <?php
@@ -54,6 +9,20 @@
 <p><?php echo esc_html( $introduction ); ?></p>
 <?php endif; ?>
 
+</div>
+
+<figure>
+        <img src="<?php the_field('header_graphic') ?>" alt="" />
+
+        <figcaption>
+            <p>attribution details here</p>
+            
+        </figcaption>
+    </figure>
+</header>
+
+
+
 </header>
 
 <?php
@@ -62,7 +31,7 @@
 ?>
 
 <article class="persons">
-    <h2>Staff</h2>
+    <!-- <h2>Staff</h2> -->
     <ul>
         <?php foreach($staff_listing as $staff_person) : ?>
         <?php
@@ -226,19 +195,3 @@
 
 
 <?php endif; ?>
-
-<?php endif; ?>
-
-
-</main>
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_footer('pidgin'); ?>
-
-<?php else : ?>
-
-<?php get_footer(); ?>
-
-<?php endif; ?>
-
