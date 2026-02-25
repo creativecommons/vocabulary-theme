@@ -46,93 +46,95 @@
 
 <article class="posts">
 
-    <article class="post">
-        <header>
-        <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-        <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-        <span class="categories"><a href="#">Open Culture</a></span>
-        <span class="type">post</span>
+<?php if ( have_posts() ) : ?>
 
-        </header>
-
-        <figure>
-            <img src="https://creativecommons.org/wp-content/uploads/2025/09/roadturn16x9-scaled.jpg" />
-            <figcaption class="attribution">
-                "<a href="https://thegreats.co/artworks/the-more-we-share-the-more-we-have-series-22">The More We Share, The More We Have (series 1/2)</a>" by <a href="https://thegreats.co/artists/pietro-soldi">Pietro Soldi</a> for Creative Commons &amp; Fine Acts is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
-            </figcaption>
-        </figure>
-        
-        <p>As part of our #20CC anniversary, last year we joined forces with Fine Acts to spark a global dialogue on what better sharing looks like in action. Our #BetterSharing collection of illustrations was the result — we gathered insights from 12 prominent open advocates around the world and tasked 12 renowned artists who embrace openness</p>
-        <!-- <ul>
-            <li><a href="#">category</a></li>
-        </ul> -->
-    </article>
-
-    <article class="post">
-        <header>
-        <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-
-        <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-        <span class="categories"><a href="#">Open Culture</a></span>
-        <span class="type">page</span>
-
-        </header>
-        <figure>
-            <img src="https://creativecommons.org/wp-content/uploads/2025/09/roadturn16x9-scaled.jpg" />
-            <figcaption class="attribution">
-                "<a href="https://www.flickr.com/photos/47691521@N07/8249753855" target="_blank" rel="noopener noreferrer">Creative Commons a vessel ideas</a>" by <a href="https://www.flickr.com/photos/47691521@N07" target="_blank" rel="noopener noreferrer">opensourceway</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a>
-            </figcaption>
-        </figure>
-        
-        <p>The Creative Commons Open Education Team is pleased to provide a snapshot of progress made toward opening access and equity in education, through a look at our collective efforts in 2022.1 We laud the CC open education community for its important work throughout 2022. CC and community members’ open education efforts in 2022 included, but </p>
-
-    </article>
-
-    <article class="post">
-        <header>
-        <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-        <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-        <span class="categories"><a href="#">Open Culture</a></span>
-
-        </header>
-        <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-    </article>
-
-    <article class="post">
-        <header>
-        <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-        <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-        <span class="categories"><a href="#">Open Culture</a></span>
-
-        </header>
-        <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-    </article>
-
-    <article class="post">
-        <header>
-        <h2><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h2>
-        <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-        <span class="categories"><a href="#">Open Culture</a></span>
-
-        </header>
-        <p>In search of answers, we looked at past research, notably Andrea Wallace's Barriers to Open Access — Open GLAM, and asked more than 30 experts in the open culture movement. You can watch what they told us in our CC Open Culture VOICES vlog series. Here's a small sample of what we heard</p>
-    </article>
+<?php while ( have_posts() ) : the_post(); ?>
 
 
+<article class="post">
+    <header>
+        <?php if (get_post_type() != 'faq_item') : ?>
+        <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <?php else : ?>
+        <h2><a href="/faqs/#<?php echo (str_replace(' ', '-', strtolower($post->post_title))); ?>"><?php the_title(); ?></a></h2>
+        <?php endif; ?>
+
+        <?php if ( get_field('authorship' ) ) : ?>
+        <span class="byline">by
+        <?php
+            $authors = get_field('authorship');
+                if( $authors ):
+                $i = 1;
+                $count = count($authors);
+
+                foreach( $authors as $author ):
+                    $permalink = get_permalink( $author->ID );
+                    $title = get_the_title( $author->ID );
+                    $custom_field = get_field( 'field_name', $author->ID );
+                    if ($i < $count) {
+                        $separator = ',';
+                    }
+                    else {
+                        $separator = '';
+                    }
+            ?>
+
+            <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                    <?php $i++; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+        </span>
+        <?php endif; ?>
+
+        <?php if(get_post_type() != 'program') : ?>
+        <span class="categories">
+            <?php the_category(', ') ?>
+        </span>
+        <?php endif; ?>
+
+        <span class="type">
+            <?php
+            if (get_post_type() != 'faq_item') {
+                echo get_post_type();
+            } else {
+                echo 'FAQ';
+            }
+            ?>
+        </span>
+
+
+
+    </header>
+
+    <?php if ( has_post_thumbnail() ) : ?>
+    <figure>
+        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+        <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaptionn>
+    </figure>
+    <?php endif; ?>
+
+    <?php the_excerpt(); ?>
 </article>
 
+    <?php endwhile; // end of the loop. ?>
+
 <nav class="pagination" aria-label="Pagination">
-    <ol>
-        <li class="current"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>&hellip;</li>
-        <li><a href="#">527</a></li>
+<?php
+$big = 999999999; // need an unlikely integer
 
-        <!-- <li><a href="#"><</a></li> -->
-        <li><a href="#">></a></li>
-    </ol>
-
+echo paginate_links( array(
+	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	'format' => '?paged=%#%',
+    'mid_size'  => 2,
+    'prev_text' => __( '<', 'textdomain' ),
+    'next_text' => __( '>', 'textdomain' ),
+	'current' => max( 1, get_query_var('paged') ),
+    'type' => 'list',
+	'total' => $wp_query->max_num_pages
+) );
+?>
 </nav>
+
+    <?php endif; ?>
+</article>

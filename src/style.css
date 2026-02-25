@@ -829,6 +829,56 @@ main nav.pagination ul li span.current {
   justify-content: center;
 }
 
+main nav.pagination ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+    text-indent: none;
+    font-size: 1em;
+    list-style: none;
+}
+
+main nav.pagination ul li a {
+    padding: .4em .7em;
+
+    background: #F5F5F5;
+    --underline-background-color: #F5F5F5;
+    color: black;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2em;
+    text-transform: none;
+    text-decoration: none;
+}
+
+main nav.pagination ul li span.current {
+    --underline-background-color: black;
+
+    padding: .5em 1em;
+    background: black;
+    color: white;
+    border-radius: 5px;
+
+}
+
+main nav.pagination ul li a {
+    font-family: "DM Sans";
+}
+
+main nav.pagination ul li a {
+    /* --underline-background-color: white; */
+    /* background: none; */
+
+    color:#2E1FB8;
+    border-radius: 5px;
+
+}
+
 
 
 
