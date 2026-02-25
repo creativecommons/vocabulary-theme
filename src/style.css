@@ -150,22 +150,22 @@ main nav.pagination ul li span.current {
 
 
 
-/* Theme specific context rules (mostly home-narrative) */
+/* Theme specific context rules (mostly home-index) */
 
-/* .home-narrative > article:nth-of-type(3) {
+/* .home-index > article:nth-of-type(3) {
   background:var(--vocabulary-brand-color-tomato);
 }
 
-.home-narrative > article:nth-of-type(3) footer {
+.home-index > article:nth-of-type(3) footer {
   background: white;
 } */
 
-/* .home-narrative > article:nth-of-type(4) {
+/* .home-index > article:nth-of-type(4) {
   background:var(--vocabulary-brand-color-gold);
 } */
 
 
-.home-narrative main {
+.home-index main {
   margin-top: 3.4em;
   margin-right: 0;
   margin-bottom: 0;
@@ -175,11 +175,11 @@ main nav.pagination ul li span.current {
   font-weight: 400;
 }
 
-.home-narrative main > header {
+.home-index main > header {
   margin-bottom: 0;
 }
 
-.home-narrative main > article > h2 {
+.home-index main > article > h2 {
   margin-bottom: .2em;
 
   font-style: normal;
@@ -188,22 +188,22 @@ main nav.pagination ul li span.current {
   font-size: 2.865em;
 }
 
-.home-narrative main > article:nth-of-type(1) > h2 {
+.home-index main > article:nth-of-type(1) > h2 {
   margin-top: 0;
 
   font-size: 3.56em;
 }
 
-.home-narrative main p {
+.home-index main p {
   font-size: 1.5em;
   line-height: 150%;
 }
 
-.home-narrative main ul {
+.home-index main ul {
   font-size: 1rem;
 }
 
-.home-narrative .topic-summary {
+.home-index .topic-summary {
   grid-column: 2 / span 9;
   display: grid;
   grid-template:
@@ -216,11 +216,11 @@ main nav.pagination ul li span.current {
   gap: 0 4em;
 }
 
-.home-narrative .topic-summary h2 {
+.home-index .topic-summary h2 {
   grid-area: title;
 }
 
-.home-narrative .topic-summary img {
+.home-index .topic-summary img {
   width: 100%;
   height: 200px;
   grid-area: graphic;
@@ -229,7 +229,7 @@ main nav.pagination ul li span.current {
   background: black;
 }
 
-.home-narrative .topic-summary figure {
+.home-index .topic-summary figure {
   width: 100%;
   grid-area: graphic;
   margin: 0;
@@ -237,21 +237,21 @@ main nav.pagination ul li span.current {
   margin-top: .6em;
 }
 
-.home-narrative .topic-summary figure iframe {
+.home-index .topic-summary figure iframe {
   height: 70%;
 
   background: black;
 }
 
-.home-narrative .topic-summary .description {
+.home-index .topic-summary .description {
   grid-area: description;
 }
 
-.home-narrative .topic-summary .description p {
+.home-index .topic-summary .description p {
   margin-bottom: 1em;
 }
 
-.home-narrative .topic-summary .description a {
+.home-index .topic-summary .description a {
   display: inline;
   box-sizing: border-box;
   grid-column-start: 1;
@@ -262,7 +262,7 @@ main nav.pagination ul li span.current {
   font-weight: 700;
 }
 
-.home-narrative .case-studies {
+.home-index .case-studies {
   grid-column: 1 / span 11;
   padding: 0 5%;
   padding-top: 3.5em;
@@ -271,7 +271,7 @@ main nav.pagination ul li span.current {
   color: white;
 }
 
-.home-narrative .case-studies:before {
+.home-index .case-studies:before {
   content: '';
   width: 100%;
   height: 75%;
@@ -283,12 +283,12 @@ main nav.pagination ul li span.current {
   background: var(--vocabulary-brand-color-tomato);
 }
 
-.home-narrative .case-studies > ul a {
+.home-index .case-studies > ul a {
   color: white;
   --underline-background-color: var(--vocabulary-brand-color-tomato);
 }
 
-.home-narrative .case-studies > ul {
+.home-index .case-studies > ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2em;
@@ -298,17 +298,17 @@ main nav.pagination ul li span.current {
   list-style: none;
 }
 
-.home-narrative .case-studies > ul figure {
+.home-index .case-studies > ul figure {
   margin-bottom: 0;
 }
 
-.home-narrative .case-studies > ul figure img {
+.home-index .case-studies > ul figure img {
   object-fit: cover;
   height: 200px;
 
 }
 
-.home-narrative .case-studies footer {
+.home-index .case-studies footer {
   margin: 0 0;
   margin-top: 4em;
   margin-bottom: 3em;
@@ -318,12 +318,12 @@ main nav.pagination ul li span.current {
   color: black;
 }
 
-.home-narrative .data-points {
+.home-index .data-points {
 
 
 }
 
-.home-narrative .data-points ul {
+.home-index .data-points ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3em;
@@ -333,12 +333,12 @@ main nav.pagination ul li span.current {
   list-style-type: none;
 }
 
-.home-narrative .data-points .data-point {
+.home-index .data-points .data-point {
   display: flex;
   flex-direction: column;
 }
 
-.home-narrative .data-points .data-point.wikipedia h2 {
+.home-index .data-points .data-point.wikipedia h2 {
   text-indent: -10000px;
   min-height: 150px;
   background: center center no-repeat;
@@ -347,7 +347,7 @@ main nav.pagination ul li span.current {
   margin-bottom: 0;
 }
 
-.home-narrative .data-points .data-point.the-met h2 {
+.home-index .data-points .data-point.the-met h2 {
   text-indent: -10000px;
   min-height: 150px;
   background: center center no-repeat;
@@ -358,7 +358,7 @@ main nav.pagination ul li span.current {
 
 }
 
-.home-narrative .data-points .data-point.khan-academy h2 {
+.home-index .data-points .data-point.khan-academy h2 {
   text-indent: -10000px;
   min-height: 150px;
   width: 90%;
@@ -370,28 +370,28 @@ main nav.pagination ul li span.current {
 
 }
 
-.home-narrative .data-points .data-point .stat {
+.home-index .data-points .data-point .stat {
   order: 3;
 
   text-transform: uppercase;
 }
 
-.home-narrative .data-points .data-point p {
+.home-index .data-points .data-point p {
   margin-bottom: 0;
 
   font-size: 1em;
 }
 
-.home-narrative main .posts {
+.home-index main .posts {
   grid-column: 2 / span 9;
   padding-top: 4em;
 }
 
-.home-narrative main .posts h2 {
+.home-index main .posts h2 {
   text-align: center;
 }
 
-.home-narrative main .posts ul {
+.home-index main .posts ul {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   margin-top: 8em;
@@ -405,66 +405,66 @@ main nav.pagination ul li span.current {
   list-style: none;
 }
 
-.home-narrative main .posts ul li {
+.home-index main .posts ul li {
   grid-column: span 4;
 }
 
-.home-narrative main .posts ul li h3 {
+.home-index main .posts ul li h3 {
   font-size: 1.5em;
 }
 
-.home-narrative main .posts .post figure {
+.home-index main .posts .post figure {
   order: -1;
 }
 
 /* targets the featured posts section */
-.home-narrative main .posts.featured {
+.home-index main .posts.featured {
   grid-column: 1 / span 11;
   margin-bottom: 3em;
 
   background: var(--vocabulary-neutral-color-lighter-gray);
 }
 
-.home-narrative main .posts.featured .post h3 {
+.home-index main .posts.featured .post h3 {
   font-size: 1.4em;
 }
 
-.home-narrative main .posts.featured ul li:nth-child(1) h3 {
+.home-index main .posts.featured ul li:nth-child(1) h3 {
   font-size: 2.1em;
 }
 
-.home-narrative main .posts.featured .post a {
+.home-index main .posts.featured .post a {
   --underline-background-color: var(--vocabulary-neutral-color-lighter-gray);
 }
 
-.home-narrative main .posts.featured li:nth-of-type(1) .post a {
+.home-index main .posts.featured li:nth-of-type(1) .post a {
   --underline-background-color: white;
 }
 
-.home-narrative main .posts.featured li:nth-of-type(1) .post figure {
+.home-index main .posts.featured li:nth-of-type(1) .post figure {
   order: initial;
 }
 
-.home-narrative main .posts.featured ul {
+.home-index main .posts.featured ul {
   padding: 0 var(--vocabulary-page-edges-space);
 }
 
-.home-narrative main .posts.featured ul li {
+.home-index main .posts.featured ul li {
   grid-column: span 3;
 }
 
-.home-narrative main .posts.featured ul li:nth-of-type(1) {
+.home-index main .posts.featured ul li:nth-of-type(1) {
   grid-column: span 12;
 
   background: white;
 }
 
-.home-narrative main .posts.featured ul li:nth-of-type(1) article.post {
+.home-index main .posts.featured ul li:nth-of-type(1) article.post {
   margin-bottom: 1em;
   padding: 4em;
 }
 
-.home-narrative main > footer {
+.home-index main > footer {
   grid-column: 1 / span 11;
   display: grid;
   grid-template-columns: subgrid;
@@ -474,7 +474,7 @@ main nav.pagination ul li span.current {
   background: var(--vocabulary-neutral-color-lighter-gray);
 }
 
-.home-narrative main > footer .attribution-list {
+.home-index main > footer .attribution-list {
   grid-column: 2 / span 9;
 
   background: none;
@@ -781,6 +781,10 @@ main > header figure {
   border: transparent;
 }
 
+.blog-index main .post.featured {
+  margin-top: 3em;
+}
+
 .events-index main > header > figure {
   height: auto;
 
@@ -837,54 +841,95 @@ main > header figure {
 }
 
 main nav.pagination ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    
-    text-indent: none;
-    font-size: 1em;
-    list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  
+  text-indent: none;
+  font-size: 1em;
+  list-style: none;
 }
 
 main nav.pagination ul li a {
-    padding: .4em .7em;
+  padding: .4em .7em;
 
-    background: #F5F5F5;
-    --underline-background-color: #F5F5F5;
-    color: black;
-    font-family: 'Roboto Condensed';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.2em;
-    text-transform: none;
-    text-decoration: none;
+  background: #F5F5F5;
+  --underline-background-color: #F5F5F5;
+  color: black;
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.2em;
+  text-transform: none;
+  text-decoration: none;
 }
 
 main nav.pagination ul li span.current {
-    --underline-background-color: black;
+  --underline-background-color: black;
 
-    padding: .5em 1em;
-    background: black;
-    color: white;
-    border-radius: 5px;
+  padding: .5em 1em;
+  background: black;
+  color: white;
+  border-radius: 5px;
 
 }
 
 main nav.pagination ul li a {
-    font-family: "DM Sans";
+  font-family: "DM Sans";
 }
 
 main nav.pagination ul li a {
-    /* --underline-background-color: white; */
-    /* background: none; */
+  /* --underline-background-color: white; */
+  /* background: none; */
 
-    color:#2E1FB8;
-    border-radius: 5px;
+  color:#2E1FB8;
+  border-radius: 5px;
 
 }
+
+.project-post header figure {
+  order: 1;
+}
+
+.project-post header h1 {
+  padding-left: 0;
+}
+
+main article.posts.related {
+  margin-bottom: 4em;
+  padding: 2em;
+  
+  background:#2E1FB8;
+  border: 4px solid black;
+  border-radius: 16px;
+  color: white;
+  font-family: "DM Sans";
+}
+
+main article.posts.related h2 {
+  font-family: "DM Sans";
+}
+
+main article.posts.related ul {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+main article.posts.related h3 a {
+  --underline-background-color:#2E1FB8;
+  color: white;
+}
+
+main article.posts.related a {
+  --underline-background-color:#2E1FB8;
+  color: white;
+}
+
+/* main article.posts.related .byline {
+  font-family: "DM Mono";
+} */
 
 
 
@@ -896,7 +941,7 @@ main nav.pagination ul li a {
 
 @media (min-width: 1500px) {
 
-  .home-narrative .data-points .data-point.khan-academy h2 {
+  .home-index .data-points .data-point.khan-academy h2 {
     text-indent: -6000px;
   }
 
@@ -904,7 +949,7 @@ main nav.pagination ul li a {
 
 @media (max-width: 1140px) {
 
-  .home-narrative main footer .attribution-list ul.expand {
+  .home-index main footer .attribution-list ul.expand {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -912,19 +957,19 @@ main nav.pagination ul li a {
 
 @media (max-width: 900px) {
 
-  .home-narrative main .case-studies {
+  .home-index main .case-studies {
     background: var(--vocabulary-brand-color-tomato);
     padding: 5%;
 
   }
 
-  .home-narrative .case-studies footer {
+  .home-index .case-studies footer {
     margin: 0;
     margin-top: 2em;
     padding: 0;
   }
 
-  .home-narrative .data-points ul {
+  .home-index .data-points ul {
     /* display: block; */
     box-sizing: border-box;
     width: 90%;
@@ -932,12 +977,12 @@ main nav.pagination ul li a {
     /* padding: 0 1em; */
   }
 
-  .home-narrative main .posts ul {
+  .home-index main .posts ul {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .home-narrative main footer {
+  .home-index main footer {
     width: 100%;
     box-sizing: border-box;
   }
@@ -950,32 +995,32 @@ main nav.pagination ul li a {
 
 @media (max-width: 705px) {
 
-  .home-narrative .topic-summary {
+  .home-index .topic-summary {
     display: block;
   }
 
-  .home-narrative .topic-summary figure {
+  .home-index .topic-summary figure {
     display: none;
   }
 
-  .home-narrative .case-studies > ul {
+  .home-index .case-studies > ul {
     grid-template-columns: 1fr 1fr;
   }
 
-  .home-narrative .data-points ul {
+  .home-index .data-points ul {
     display: block;
     padding-top: 2em;
   }
 
-   .home-narrative main article.posts.featured > ul li:nth-child(1) {
+   .home-index main article.posts.featured > ul li:nth-child(1) {
     padding: 2em;
   }
 
-  .home-narrative main .posts {
+  .home-index main .posts {
       padding: 0 var(--vocabulary-page-edges-space);
   }
 
-  .home-narrative main footer .attribution-list ul.expand {
+  .home-index main footer .attribution-list ul.expand {
       display: block;
   }
 }
@@ -988,11 +1033,11 @@ main nav.pagination ul li a {
 
 @media (max-width: 425px) {
 
-  .home-narrative .attribution-list {
+  .home-index .attribution-list {
     padding: 2em;
   }
 
-  .home-narrative .attribution-list h2 {
+  .home-index .attribution-list h2 {
     width: 50%;
 
     hyphens: auto;
@@ -1002,11 +1047,11 @@ main nav.pagination ul li a {
 }
 
 @media (max-width:480px) {
-  .home-narrative .case-studies > ul {
+  .home-index .case-studies > ul {
     display: block;
   }
 
-  .home-narrative .case-studies > ul li {
+  .home-index .case-studies > ul li {
     margin-bottom: 3em;
   }
 }
@@ -1015,11 +1060,11 @@ main nav.pagination ul li a {
 
 
 
-  .home-narrative .attribution-list {
+  .home-index .attribution-list {
     padding: 2em;
   }
 
-  .home-narrative .attribution-list h2 {
+  .home-index .attribution-list h2 {
     width: 50%;
     font-size: .5em;
     hyphens: auto;
