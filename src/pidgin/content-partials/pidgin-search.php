@@ -6,7 +6,7 @@
 <!-- <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span> -->
 
 <article class="search-form">
-    <form role="search" method="get" class="search-form" action="https://creativecommons.org/">
+    <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 
         <input type="search" class="search-field" placeholder="Search for..." value="" name="s" title="Search">
 

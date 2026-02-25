@@ -2,8 +2,8 @@
     <a class="identity-logo" href="#">Creative Commons</a>
 
     <div class="search">
-        <form action="" method="post" id="" name="" class="" target="_blank">
-            <input type="text" value="" name="" class="" id="" placeholder="Search">
+        <form method="get" id="" name="" class="" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <input type="text" value="" name="s" class="" id="s" placeholder="Search">
             <!-- <input type="submit" value="submit" id="" class=""> -->
 
             <button class="icon-attach fa-search">submit</button>
