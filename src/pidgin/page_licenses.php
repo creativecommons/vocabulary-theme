@@ -23,14 +23,14 @@
 <article class="topic-summary about"> <!-- TODO: merge with prior article? -->
     <div class="description">
         <!-- <h2>The commons belongs to us all</h2> -->
-        <p>Established in 2002, the CC licenses make it possible for everyone around the world to share knowledge, creativity, and culture, legally and freely.</p>
-
+        <?php the_field('subhead_intro') ?>
     </div>
 
     <figure>       
         <!-- <svg class="shape1">
             <use href="../../../../pidgin/svg/blob3.svg"></use>
         </svg> -->
+        <img src="<?php the_field('subhead_graphic') ?>" />
 
 
         <figcaption>
