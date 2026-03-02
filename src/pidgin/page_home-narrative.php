@@ -6,14 +6,15 @@
 
 <article class="topic-summary intro"> 
     <div class="description">
-        <h2>The commons belongs to us all</h2>
+        <h2><?php the_title(); ?></h2>
     </div>
 
     <figure>
-        <img src="https://creativecommons.org/wp-content/uploads/2025/05/moon-3.jpg" class="photo" />
+        <img src="<?php the_field('header_graphic') ?>" alt="" />
+        <!-- <img src="https://creativecommons.org/wp-content/uploads/2025/05/moon-3.jpg" class="photo" />
         <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/blob3.svg" class="shape1" />
         <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/blob4.svg" class="shape2" />
-        <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/repeat_c.svg" class="shape3" />
+        <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/repeat_c.svg" class="shape3" /> -->
         <!-- <svg class="shape1">
             <use href="../../../../pidgin/svg/blob3.svg"></use>
         </svg> -->
@@ -76,7 +77,7 @@
             <a href="<?php echo $link_url; ?>"><?php echo $link_text; ?></a>
         </div>
         <figure>
-            <img src="<?php echo get_the_post_thumbnail_url( $focus_feature->ID, 'full' ); ?>" />
+            <img src="<?php echo get_the_post_thumbnail_url( $topic_feature->ID, 'full' ); ?>" />
             <figcaption>
                 "Untitled" by Ken Rahaim, 2007, Center for Folklife and Cultural Heritage, Smithsonian.
             </figcaption>
@@ -88,81 +89,90 @@
 
 <? endif; ?>
 
+<!-- <blockquote>
+    <p>There would be a quote here doing things</p>
+</blockquote>
+
+<blockquote>
+    <p>There would be a quote here doing things</p>
+</blockquote> -->
+
 <article class="posts">
 
     <h2>Recently from the blog</h2>
 
     <ul>
 
+
+    <?php
+    $query = new WP_Query(array(
+        // 'post__not_in' => $highlight_posts,
+        'post_type' => 'post',
+        'posts_per_page' => 4,
+        //'paged' => $paged,
+    ));
+    ?>
+
+<?php $post_index = 0; ?>
+<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+<?php $post_index++; ?>
+
+
     <li>
         <article class="post">
             <header>
-            <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
+            <h3 class="title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-            <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-            <span class="categories"><a href="#">Open Culture</a></span>
+            <?php if ( get_field('authorship') ) : ?>
+            <span class="byline">by
+                <?php
+                $authors = get_field('authorship');
+                    if( $authors ):
+                    $i = 1;
+                    $count = count($authors);
+
+                    foreach( $authors as $author ):
+                        $permalink = get_permalink( $author->ID );
+                        $title = get_the_title( $author->ID );
+                        $custom_field = get_field( 'field_name', $author->ID );
+                        if ($i < $count) {
+                            $separator = ',';
+                        }
+                        else {
+                            $separator = '';
+                        }
+                ?>
+
+                <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                        <?php $i++; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+            </span>
+            <?php endif; ?>
+
+            <span class="categories">
+                <?php the_category(', ') ?>
+            </span>
             </header>
 
             <figure>
-                <img src="https://creativecommons.org/wp-content/uploads/2025/09/roadturn16x9-scaled.jpg" />
-                <figcaption>"A Turn in the Road" by Alfred Sisley (1873), CC0, Art Institute of Chicago, remixed with "TAROCH balloon" by Creative Commons/Dee Harris, 2025, CC0.</figcaption>
+                <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
             </figure>
             
+            <?php if ($post_index == 1) : ?>
             <p>The Creative Commons Open Education Team is pleased to provide a snapshot of progress made toward opening access and equity in education, through a look at our collective efforts in 2022.1 We laud the CC open education community for its important work throughout 2022. CC and community members' open education efforts in 2022 included, but </p>
+            <?php endif; ?>
 
         </article>
     </li>
 
-    <li>
-        <article class="post">
-            <header>
-            <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
-            <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-            <span class="categories"><a href="#">Open Culture</a></span>
+    
+    <?php endwhile; ?>
 
-            </header>
+    <?php endif; ?>
 
-            <figure>
-                <img src="https://creativecommons.org/wp-content/uploads/2025/09/Blog-Image-Size.png" />
-                <figcaption><a href="https://betterimagesofai.org/images?artist=LoneThomasky&title=DistortedForestPath">Distorted Forest Path</a> © 1999 by <a href="https://lone-thomasky.de/">Lone Thomasky & Bits&Bäume</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></figcaption>
-            </figure>
-
-        </article>
-    </li>
-
-    <li>
-        <article class="post">
-            <header>
-            <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
-            <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-            <span class="categories"><a href="#">Open Culture</a></span>
-
-            </header>
-
-            <figure>
-                <img src="https://creativecommons.org/wp-content/uploads/2025/08/Blog-Image-Size-3.png" />
-                <figcaption><a href="https://api.flickr.com/photos/dullhunk/52208530808/in/gallery-wanderlustoctopus-72157720941580111/">Community</a> © 2022 by <a href="https://api.flickr.com/photos/dullhunk/">Dunk</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></figcaption>
-            </figure>
-
-        </article>
-    </li>
-
-    <li>
-        <article class="post">
-            <header>
-            <h3 class="title"><a href="#">Open Access in Practice: A Conversation with President Larry Kramer of The Hewlett Foundation</a></h3>
-            <span class="byline">by <a href="#">Amanda Conway</a>, <a href="#">Ólafur Jónsson</a></span>
-            <span class="categories"><a href="#">Open Culture</a></span>
-
-            </header>
-
-            <figure>
-                <img src="https://creativecommons.org/wp-content/uploads/2025/08/Blog-Image-Size-2.png" />
-                <figcaption>Signals © 2021 by Hugo Parasol is licensed under CC BY-NC-SA 4.0</figcaption>
-            </figure>
-
-        </article>
-    </li>
+    <?php wp_reset_postdata(); ?>
 
     </ul>
 
