@@ -840,6 +840,36 @@ main > header figure {
   justify-content: center;
 }
 
+ 
+
+.home-narrative article.topic-summary.focus-area:nth-of-type(even) figure {
+    order: 1;
+}
+
+.home-narrative article.topic-summary.focus-area:nth-of-type(odd) figure {
+    order: inherit;
+}
+
+.home-narrative article.topic-summary.about {
+    grid-template-columns: 1fr 2fr;
+    gap: 4em;
+}
+
+.home-narrative article.topic-summary.about .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home-narrative article.topic-summary.about .description p {
+    margin: 0;
+    margin-top: 1.1em;
+}
+
+
+
+
+
 main nav.pagination ul {
   display: flex;
   flex-wrap: wrap;
@@ -930,6 +960,8 @@ main article.posts.related a {
 /* main article.posts.related .byline {
   font-family: "DM Mono";
 } */
+
+
 
 
 

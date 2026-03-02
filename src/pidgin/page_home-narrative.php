@@ -29,15 +29,14 @@
 <article class="topic-summary about"> <!-- TODO: merge with prior article? -->
     <div class="description">
         <!-- <h2>The commons belongs to us all</h2> -->
-        <p>Creative Commons is a global nonprofit protecting your right to access and share information, and participate in knowledge.</p>
-
-        <p>We safeguard and strengthen the global commons, which is made up of all shared knowledge and culture, so that we can power human creativity, equity, and innovation. </p>
+        <?php the_field('subhead_intro') ?>
     </div>
 
     <figure>       
         <!-- <svg class="shape1">
             <use href="../../../../pidgin/svg/blob3.svg"></use>
         </svg> -->
+        <img src="<?php the_field('subhead_graphic') ?>" />
 
 
         <figcaption>
@@ -47,176 +46,47 @@
     </figure>
 </article>
 
-<article class="topic-summary focus-area">
-    <div class="description">
-        <h2>Tools for building the commons</h2>
+<!-- topic features here -->
+ <?php
+    $topic_features = get_field('featured_topics');
+    if( !empty($topic_features) ) :
+?>
 
-        <p>The CC licenses and public domain tools give everyone from individuals to large institutions a standardized way to grant the public permission to use their work under copyright law.</p>
+<?php foreach($topic_features as $topic_feature) : ?>
+    <?php
+        $permalink = get_permalink( $topic_feature->ID );
+        $title = get_the_title( $topic_feature->ID );
+        $category = get_field( 'category', $topic_feature->ID );
+        $link_text = get_field( 'link_text', $topic_feature->ID );
+        $link_url = get_field( 'link_url', $topic_feature->ID );
+        $type = get_field( 'type', $topic_feature->ID );
+        if ($type == 'default') { $type = 'focus-area';}
+        // $content = get_the_content( $topic_feature->ID );
+        $content = get_post_field('post_content', $topic_feature->ID);
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        // $excerpt = get_the_excerpt( $staff_person->ID );
+        ?>
 
-        <p>Used by Wikipedia, Flickr, The Met, Khan Academy, and millions more globally!</p>
-
-        <a href="#">About CC Licenses</a>
-    </div>
-
-    <figure>
-
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-
-
-        <figcaption>
-            <!-- <p>attribution details here</p> -->
-            
-        </figcaption>
-    </figure>
-
-</article>
-
-<article class="topic-summary highlight community">
-    <div class="description">
-        <h2>Join us in shaping what's next</h2>
-
-        <p>We steward the open infrastructure of sharing and contribute to a thriving creative commons with, and for, community.</p>
-
-
-        <a href="#">Get Involved</a>
-    </div>
-
-    <figure>
-
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
+        <article class="topic-summary <?php echo $type; ?>">
+        <div class="description">
+            <h2><?php echo $title; ?></h2>
+            <span class="category"><?php echo $category; ?></span>
+            <?php echo $content; ?>
+            <a href="<?php echo $link_url; ?>"><?php echo $link_text; ?></a>
+        </div>
+        <figure>
+            <img src="<?php echo get_the_post_thumbnail_url( $focus_feature->ID, 'full' ); ?>" />
+            <figcaption>
+                "Untitled" by Ken Rahaim, 2007, Center for Folklife and Cultural Heritage, Smithsonian.
+            </figcaption>
+        </figure>
+    </article>
 
 
-        <figcaption>
-            <!-- <p>attribution details here</p> -->
-            
-        </figcaption>
-    </figure>
+    <? endforeach; ?>
 
-</article>
-
-<article class="topic-summary focus-area">
-    <div class="description">
-        <h2>Empowering access to knowledge</h2>
-
-        <p>Whether through our CC Certificate courses, tailored facilitation, or legal office hours, we support organizations working to expand the global commons. Learn, collaborate, and lead with openness at the center.</p>
-
-        <a href="#">Request Training or Consulting</a>
-    </div>
-
-    <figure>
-
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-
-        <figcaption>
-            <!-- <p>attribution details here</p> -->
-            
-        </figcaption>
-    </figure>
-
-</article>
-
-<article class="topic-summary focus-area">
-    <div class="description">
-        <h2>The Commons in the age of AI</h2>
-
-        <p>If we want ethical and equitable AI, we must protect and nourish the commons it relies on. Learn about how we’re adapting to address sharing in the age of AI, from developing new frameworks like CC signals, strengthening licensing guidance, and advocating for policies that keep access to knowledge open and equitable.</p>
-
-
-        <a href="#">Explore AI and the Commons</a>
-    </div>
-
-    <figure>
-
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-
-        <figcaption>
-            <!-- <p>attribution details here</p> -->
-            
-        </figcaption>
-    </figure>
-
-</article>
-
-<article class="topic-summary focus-area">
-    <div class="description">
-        <h2>CC BY is the best option for preprints</h2>
-
-        <p>If you are a researcher, scientist, or knowledge producer, you are a creator. The knowledge you record as a research output is the scaffolding for collaboration.</p>
-
-        <p>Our latest video that explains open licenses for research outputs and encourages researchers to use CC licenses for data, preprints, manuscripts, and journal articles.</p>
-
-
-        <a href="#">Watch the video</a>
-    </div>
-
-    <figure>
-
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-
-        <figcaption>
-            <!-- <p>attribution details here</p> -->
-            
-        </figcaption>
-    </figure>
-
-</article>
-
-
-<article class="topic-summary focus-area">
-    <div class="description">
-        <h2>Sign the Open Heritage Statement</h2>
-
-        <p>The Towards a Recommendation on Open Cultural Heritage (TAROCH) Coalition unites over 60 institutions and organizations from 25 countries that share a belief in the transformative potential of open solutions. Together, they developed the Open Heritage Statement: a global call for equitable access to public domain heritage in the digital environment.</p>
-
-        <a href="#">Sign the Statement</a>
-    </div>
-
-    <figure>
-
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-
-        <figcaption>
-            <!-- <p>attribution details here</p> -->
-            
-        </figcaption>
-    </figure>
-
-</article>
-
-<article class="topic-summary highlight support">
-    <div class="description">
-        <h2>Support CC and stay connected</h2>
-
-        <p>There are many ways to give. You can make a one-time donation or become a recurring donor by joining our Open Infrastructure Circle.</p>
-
-        <a href="#">Support CC</a>
-    </div>
-
-    <figure>
-
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-
-        <figcaption>
-            <!-- <p>attribution details here</p> -->
-            
-        </figcaption>
-    </figure>
-
-</article>
+<? endif; ?>
 
 <article class="posts">
 
