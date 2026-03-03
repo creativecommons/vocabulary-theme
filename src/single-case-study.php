@@ -69,11 +69,8 @@
     </aside>
 
     <aside class="insights">
-        <h2>Some Key Insights</h2>
-        <ul>
-            <li>While the use of CC licenses may be in place, the clarity of guidance and consistency in language across different systems remains a key barrier in the open sharing of climate data.</li>
-            <li>Attribution and license compatibility remain the two most impactful areas for enabling easy reuse.</li>
-        </ul>
+        <h2><?php the_field('key_insights_title'); ?></h2>
+        <?php the_field('key_insights_content'); ?>
     </aside>
 
 </div>
