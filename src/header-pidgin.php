@@ -183,6 +183,7 @@
             <ul>
                 <li>
                     <a href="#">Who We Are</a>
+                    <button class="expand icon-replace fa-angle-down">Expand</button>
                     
                     <ul>
                         <li><a href="#">Strategic Plan</a></li>
@@ -194,10 +195,13 @@
                 </li>
                 <li>
                     <a href="#">What We Do</a>
+                    <button class="expand icon-replace fa-angle-down">Expand</button>
 
                     <ul>
                         <li>
                             <a href="#">Build <br> Open Infrastructure</a>
+                            <button class="expand icon-replace fa-angle-down">Expand</button>
+
                              <ul>
                                 <li><a href="#">CC Licenses</a></li>
                                 <li><a href="#">CC Signals</a></li>
@@ -207,6 +211,8 @@
                         </li>
                         <li>
                             <a href="#">Implement <br> the Commons</a>
+                            <button class="expand icon-replace fa-angle-down">Expand</button>
+
                              <ul>
                                 <li><a href="#">Where CC Makes An Impact</a></li>
                                 <li><a href="#">Resources</a></li>
@@ -215,6 +221,8 @@
                         </li>
                         <li>
                             <a href="#">Engage <br> the People</a>
+                            <button class="expand icon-replace fa-angle-down">Expand</button>
+
                              <ul>
                                 <li><a href="#">Training + Webinars</a></li>
                                 <li><a href="#">Advocacy</a></li>
@@ -228,6 +236,8 @@
                 <li><a href="#">Blog</a></li>
                 <li>
                     <a href="#">Support Us</a>
+                    <button class="expand icon-replace fa-angle-down">Expand</button>
+                    
                     <ul>
                         <li><a href="#">Make a Gift</a></li>
                         <li><a href="#">Ways to Give</a></li>
