@@ -11,13 +11,14 @@
 </div>
 
 <figure>
-        <img src="<?php the_field('header_graphic') ?>" alt="" />
+    <?php $image = get_field('header_graphic'); ?>
+    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
-        <figcaption>
-            <p>attribution details here</p>
-            
-        </figcaption>
-    </figure>
+    <figcaption>
+        <p><?php echo $image['caption'] ?></p>
+        
+    </figcaption>
+</figure>
 </header>
 
 <?php $testimonial1 = get_field('testimonial_1_content'); ?>
@@ -38,14 +39,11 @@
     </div>
 
     <figure>
-        <img src="<?php the_field('subhead_graphic') ?>" alt="" />
-
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
+        <?php $image = get_field('subheader_graphic'); ?>
+        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
         <figcaption>
-            <!-- <p>attribution details here</p> -->
+            <p><?php echo $image['caption'] ?></p>
             
         </figcaption>
     </figure>
@@ -59,8 +57,8 @@
 
 
 <article class="topic-dive">
-    <h2>Upcoming Webinars and Office Hours</h2>
-    <p>Flexible, accessible, and designed for global audiences.</p>
+    <h2><?php the_field('training_events_title') ?>"</h2>
+    <p><?php the_field('training_events_tagline') ?>"</p>
 
     <article class="topic-summary focus-area">
         <div class="description">
@@ -71,13 +69,11 @@
         </div>
 
         <figure>
-
-            <!-- <svg class="shape1">
-                <use href="../../../../pidgin/svg/blob3.svg"></use>
-            </svg> -->
+            <?php $image = get_field('training_events_graphic'); ?>
+            <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
             <figcaption>
-                <!-- <p>attribution details here</p> -->
+                <p><?php echo $image['caption'] ?></p>
                 
             </figcaption>
         </figure>
@@ -181,9 +177,10 @@
             <?php endif; ?>
         </div>
         <figure>
-            <img src="<?php echo get_the_post_thumbnail_url( $topic_feature->ID, 'full' ); ?>" />
+            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+
             <figcaption>
-                "Untitled" by Ken Rahaim, 2007, Center for Folklife and Cultural Heritage, Smithsonian.
+                <?php echo get_the_post_thumbnail_caption( $post_id ); ?>
             </figcaption>
         </figure>
     </article>

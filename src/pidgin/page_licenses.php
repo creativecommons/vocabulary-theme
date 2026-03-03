@@ -11,13 +11,14 @@
 </div>
 
 <figure>
-        <img src="<?php the_field('header_graphic') ?>" alt="" />
+    <?php $image = get_field('header_graphic'); ?>
+    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
-        <figcaption>
-            <p>attribution details here</p>
-            
-        </figcaption>
-    </figure>
+    <figcaption>
+        <p><?php echo $image['caption'] ?></p>
+        
+    </figcaption>
+</figure>
 </header>
 
 <article class="topic-summary about"> <!-- TODO: merge with prior article? -->
@@ -26,15 +27,12 @@
         <?php the_field('subhead_intro') ?>
     </div>
 
-    <figure>       
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-        <img src="<?php the_field('subhead_graphic') ?>" />
-
+    <figure>
+        <?php $image = get_field('subhead_graphic'); ?>
+        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
         <figcaption>
-            <!-- <p>attribution details here</p> -->
+            <p><?php echo $image['caption'] ?></p>
             
         </figcaption>
     </figure>
@@ -50,15 +48,12 @@
 
     </div>
 
-    <figure>       
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-        <img src="<?php the_field('introductory_section_graphic'); ?>" />
-
+    <figure>
+        <?php $image = get_field('introductory_section_graphic'); ?>
+        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
         <figcaption>
-            <!-- <p>attribution details here</p> -->
+            <p><?php echo $image['caption'] ?></p>
             
         </figcaption>
     </figure>
@@ -80,15 +75,12 @@
 
     </div>
 
-    <figure>       
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-        <img src="<?php the_field('why_section_graphic'); ?>" />
-
+    <figure>
+        <?php $image = get_field('why_section_graphic'); ?>
+        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
         <figcaption>
-            <!-- <p>attribution details here</p> -->
+            <p><?php echo $image['caption'] ?></p>
             
         </figcaption>
     </figure>

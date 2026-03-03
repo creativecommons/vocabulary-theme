@@ -11,13 +11,14 @@
 </div>
 
 <figure>
-        <img src="<?php the_field('header_graphic') ?>" alt="" />
+    <?php $image = get_field('header_graphic'); ?>
+    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
-        <figcaption>
-            <p>attribution details here</p>
-            
-        </figcaption>
-    </figure>
+    <figcaption>
+        <p><?php echo $image['caption'] ?></p>
+        
+    </figcaption>
+</figure>
 </header>
 
 <article class="topic-summary focus-area">
@@ -29,12 +30,16 @@
     </div>
 
     <figure>
-            <img src="<?php the_field('subhead_graphic') ?>" alt="" />
+        <img src="<?php the_field('subhead_graphic') ?>" alt="" />
+
+        <figure>
+            <?php $image = get_field('subhead_graphic'); ?>
+            <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
             <figcaption>
-            <!-- <p>attribution details here</p> -->
-            
+                <p><?php echo $image['caption'] ?></p>
             </figcaption>
+        </figure>
     </figure>
 
     <footer>
@@ -65,11 +70,12 @@
     </div>
 
     <figure>
-        <img src="<?php the_field('middle_section_graphic') ?>" alt="" />
+        <?php $image = get_field('middle_section_graphic'); ?>
+        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
         <figcaption>
-        <!-- <p>attribution details here</p> -->
-        
+            <p><?php echo $image['caption'] ?></p>
+            
         </figcaption>
     </figure>
 
@@ -82,11 +88,12 @@
     </div>
 
     <figure>
-        <img src="<?php the_field('supporters_section_graphic') ?>" alt="" />
+        <?php $image = get_field('supporters_section_graphic'); ?>
+        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
         <figcaption>
-        <!-- <p>attribution details here</p> -->
-        
+            <p><?php echo $image['caption'] ?></p>
+            
         </figcaption>
     </figure>
 

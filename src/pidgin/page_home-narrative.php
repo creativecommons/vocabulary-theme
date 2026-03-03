@@ -9,22 +9,26 @@
         <h2><?php the_title(); ?></h2>
     </div>
 
-    <figure>
-        <img src="<?php the_field('header_graphic') ?>" alt="" />
-        <!-- <img src="https://creativecommons.org/wp-content/uploads/2025/05/moon-3.jpg" class="photo" />
-        <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/blob3.svg" class="shape1" />
-        <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/blob4.svg" class="shape2" />
-        <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/repeat_c.svg" class="shape3" /> -->
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
 
+    <figure>
+        <?php $image = get_field('header_graphic'); ?>
+        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+        <!-- <img src="https://creativecommons.org/wp-content/uploads/2025/05/moon-3.jpg" class="photo" />
+            <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/blob3.svg" class="shape1" />
+            <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/blob4.svg" class="shape2" />
+            <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/repeat_c.svg" class="shape3" /> -->
+            <!-- <svg class="shape1">
+                <use href="../../../../pidgin/svg/blob3.svg"></use>
+            </svg> -->
 
         <figcaption>
-            <p>attribution details here</p>
+            <p><?php echo $image['caption'] ?></p>
+            
             
         </figcaption>
     </figure>
+
+    
 </article>
 
 <article class="topic-summary about"> <!-- TODO: merge with prior article? -->
@@ -33,15 +37,12 @@
         <?php the_field('subhead_intro') ?>
     </div>
 
-    <figure>       
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-        <img src="<?php the_field('subhead_graphic') ?>" />
-
+    <figure>
+        <?php $image = get_field('subhead_graphic'); ?>
+        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
         <figcaption>
-            <!-- <p>attribution details here</p> -->
+            <p><?php echo $image['caption'] ?></p>
             
         </figcaption>
     </figure>
@@ -77,9 +78,10 @@
             <a href="<?php echo $link_url; ?>"><?php echo $link_text; ?></a>
         </div>
         <figure>
-            <img src="<?php echo get_the_post_thumbnail_url( $topic_feature->ID, 'full' ); ?>" />
+            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+
             <figcaption>
-                "Untitled" by Ken Rahaim, 2007, Center for Folklife and Cultural Heritage, Smithsonian.
+                <?php echo get_the_post_thumbnail_caption( $post_id ); ?>
             </figcaption>
         </figure>
     </article>
@@ -158,6 +160,9 @@
 
             <figure>
                 <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+                <figcaption>
+                    <?php echo get_the_post_thumbnail_caption( $post_id ); ?>
+                </figcaption>
             </figure>
             
             <?php if ($post_index == 1) : ?>

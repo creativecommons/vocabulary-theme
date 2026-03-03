@@ -11,13 +11,14 @@
 </div>
 
 <figure>
-        <img src="<?php the_field('header_graphic') ?>" alt="" />
+    <?php $image = get_field('header_graphic'); ?>
+    <img src="<?php echo $image['url'] ?>" alt="" />
 
-        <figcaption>
-            <p>attribution details here</p>
-            
-        </figcaption>
-    </figure>
+    <figcaption>
+        <p><?php echo $image['caption'] ?></p>
+        
+    </figcaption>
+</figure>
 </header>
 
 <aside class="sidebar">
@@ -61,6 +62,9 @@
                     <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                     <h4><?php echo $position_title; ?></h4>
                     <p><?php echo wp_trim_words($excerpt, 50); ?></p>
+
+                    <p><?php echo get_the_post_thumbnail_caption( $post_id ); ?></p>
+
 
                     <figure>
                         <img src="<?php echo get_the_post_thumbnail_url( $speaker_person->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($staff_person->ID), '_wp_attachment_image_alt', true ); ?>" />

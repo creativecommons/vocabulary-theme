@@ -11,31 +11,29 @@
 </div>
 
 <figure>
-        <img src="<?php the_field('header_graphic') ?>" alt="" />
+    <?php $image = get_field('header_graphic'); ?>
+    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
-        <figcaption>
-            <p>attribution details here</p>
-            
-        </figcaption>
-    </figure>
+    <figcaption>
+        <p><?php echo $image['caption'] ?></p>
+        
+    </figcaption>
+</figure>
 </header>
 
 <article class="topic-summary about"> <!-- TODO: merge with prior article? -->
     <div class="description">
         <!-- <h2>The commons belongs to us all</h2> -->
+        <?php the_field('subhead_title') ?>
         <?php the_field('subhead_intro') ?>
     </div>
 
-    <figure> 
-        
-        <img src="<?php the_field('subhead_graphic') ?>" />
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-
+    <figure>
+        <?php $image = get_field('subhead_graphic'); ?>
+        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
         <figcaption>
-            <!-- <p>attribution details here</p> -->
+            <p><?php echo $image['caption'] ?></p>
             
         </figcaption>
     </figure>
@@ -80,6 +78,7 @@
 
                     <figcaption>
                         <!-- <p>attribution details here</p> -->
+                         <?php echo get_the_post_thumbnail_caption( $post_id ); ?>
                         
                     </figcaption>
                 </figure>

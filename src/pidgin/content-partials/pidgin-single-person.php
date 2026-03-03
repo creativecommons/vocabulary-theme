@@ -10,12 +10,16 @@
 <?php endif; ?>
 <?php the_content(); ?>
 
+<?php if(get_the_post_thumbnail_caption( $post_id )) : ?>
+<p>Image attribution: <?php echo get_the_post_thumbnail_caption( $post_id ); ?></p>
+<?php endif; ?>
+
 </div>
 
 <?php if(get_post_thumbnail_id($post_id)) : ?>
 <figure>
     <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
-    <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
+    <!-- <figcaption class="attribution"></figcaption> -->
 </figure>
 <?php endif; ?>
 

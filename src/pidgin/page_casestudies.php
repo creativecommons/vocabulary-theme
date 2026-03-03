@@ -11,31 +11,29 @@
 </div>
 
 <figure>
-        <img src="<?php the_field('header_graphic') ?>" alt="" />
+    <?php $image = get_field('header_graphic'); ?>
+    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
-        <figcaption>
-            <p>attribution details here</p>
-            
-        </figcaption>
-    </figure>
+    <figcaption>
+        <p><?php echo $image['caption'] ?></p>
+        
+    </figcaption>
+</figure>
 </header>
 
 <article class="topic-summary about"> <!-- TODO: merge with prior article? -->
     <div class="description">
         <!-- <h2>The commons belongs to us all</h2> -->
-        <p>CC's licenses and tools were and continue to be developed to help people access knowledge, pushing humanity forward through a shared bedrock of knowledge.</p>
-
-        <p>From helping organizations strengthen and streamline their systems for sharing to advising on implementations of our licenses and tools, CC's expertise on copyright, open infrastructure, and sharing in the digital age help promote equity and accessibility across sectors.</p>
+         <?php the_field('subhead_title') ?>
+        <?php the_field('subhead_intro') ?>
     </div>
 
-    <figure>       
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-
+    <figure>
+        <?php $image = get_field('subhead_graphic'); ?>
+        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
 
         <figcaption>
-            <!-- <p>attribution details here</p> -->
+            <p><?php echo $image['caption'] ?></p>
             
         </figcaption>
     </figure>
