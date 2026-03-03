@@ -3,27 +3,6 @@
     "title": "Topic Feature Settings",
     "fields": [
         {
-            "key": "field_691b735fca6de",
-            "label": "category",
-            "name": "category",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_69021aaa07049",
             "label": "link text",
             "name": "link_text",
@@ -108,5 +87,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1772464971
+    "modified": 1772558796
 }

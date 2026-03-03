@@ -70,7 +70,9 @@
         "thumbnail",
         "custom-fields"
     ],
-    "taxonomies": "",
+    "taxonomies": [
+        "topic-feature-category"
+    ],
     "has_archive": false,
     "has_archive_slug": "",
     "rewrite": {
@@ -85,5 +87,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1772464929
+    "modified": 1772558293
 }

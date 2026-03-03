@@ -20,18 +20,25 @@
     </figure>
 </header>
 
+<?php $testimonial1 = get_field('testimonial_1_content'); ?>
+<?php $testimonial2 = get_field('testimonial_2_content'); ?>
+
+
 <article class="topic-summary about">
     <div class="description">
-        <h2>Training and Support for the Commons</h2>
+        <?php if (get_field('subhead_title')) : ?>
+        <h2><?php the_field('subhead_title') ?></h2>
+        <?php endif; ?>
 
-        <p>Creative Commons training empowers creators, educators, researchers, and institutions to share knowledge openly and confidently. Our training programs provide the practical skills, frameworks, and tools needed to use the CC licenses effectively and to participate meaningfully in the open movement - no matter your sector or experience level.</p>
+        <?php the_field('subhead_intro') ?>
 
-        <p>Foundational understanding of open licensing and the commons is more important than ever as AI continues to change how we share online. Our training programs include up-to-date considerations on the rapidly shifting AI environment and its impacts on sharing and the commons.</p>
-
-        <a href="#">Request Training</a>
+        <?php if (get_field('subhead_link_text')) : ?>
+        <a href="<?php the_field('subhead_link_url') ?>"><?php the_field('subhead_link_text') ?></a>
+        <?php endif; ?>
     </div>
 
     <figure>
+        <img src="<?php the_field('subhead_graphic') ?>" alt="" />
 
         <!-- <svg class="shape1">
             <use href="../../../../pidgin/svg/blob3.svg"></use>
@@ -47,9 +54,8 @@
 
 
     <blockquote>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu maximus augue. Nulla ac velit sit amet nisi ultricies ultrices. Proin vel velit sed purus dictum eleifend vitae ut ipsum. Sed eu imperdiet ex. Nam leo erat, semper non aliquam eget, porta vitae arcu. Mauris sapien mi, vestibulum in arcu quis, molestie blandit ex. Curabitur ut faucibus ex, et lacinia ex. Quisque id mauris efficitur nibh tempor maximus. Aliquam semper sapien id mauris gravida tincidunt. Ut congue et dolor eget feugiat.</p>
+        <p><?php echo $testimonial1;  ?></p>
     </blockquote>
-
 
 
 <article class="topic-dive">
@@ -78,73 +84,61 @@
 
         <article class="trainings">
             <ul>
+                <?php if(get_field('training_event_1_title')) : ?>
                 <li>
                     <article class="training">
-                        <h3>Foundations of Creative Commons Licensing</h3>
-                        <p>An introduction to the CC licenses for beginners or teams seeking a shared baseline understanding.</p>
+                        <h3><?php the_field('training_event_1_title'); ?></h3>
+                        <?php the_field('training_event_1_description'); ?>
 
-                        <h4>You'll learn:</h4>
+                        <h4><?php the_field('training_event_1_list_title'); ?></h4>
 
-                        <ul>
-                            <li>How CC licenses work within copyright law</li>
-                            <li>How to choose and apply a license</li>
-                            <li>What users can and cannot do with CC-licensed works</li>
-                            <li>Best practices for attribution and remixing</li>
-                        </ul>
-                        <a href="#">Learn more</a>
+                        <?php the_field('training_event_1_list_content'); ?>
+                        <a href="<?php the_field('training_event_1_link_url'); ?>"><?php the_field('training_event_1_link_text'); ?></a>
                     </article>
                 </li>
+                <?php endif; ?>
 
+                <?php if(get_field('training_event_2_title')) : ?>
                 <li>
                     <article class="training">
-                        <h3>Open Education & OER Training</h3>
-                        <p>Training for schools, universities, and educators looking to unlock the power of Open Educational Resources (OER).</p>
+                        <h3><?php the_field('training_event_2_title'); ?></h3>
+                        <?php the_field('training_event_2_description'); ?>
 
-                        <h4>You'll learn:</h4>
+                        <h4><?php the_field('training_event_2_list_title'); ?></h4>
 
-                        <ul>
-                            <li>How CC licenses work within copyright law</li>
-                            <li>How to choose and apply a license</li>
-                            <li>What users can and cannot do with CC-licensed works</li>
-                            <li>Best practices for attribution and remixing</li>
-                        </ul>
-                        <a href="#">Learn more</a>
+                        <?php the_field('training_event_2_list_content'); ?>
+                        <a href="<?php the_field('training_event_2_link_url'); ?>"><?php the_field('training_event_1_link_text'); ?></a>
                     </article>
                 </li>
+                <?php endif; ?>
 
+                <?php if(get_field('training_event_3_title')) : ?>
                 <li>
                     <article class="training">
-                        <h3>Open Culture Workshops</h3>
-                        <p>Training for schools, universities, and educators looking to unlock the power of Open Educational Resources (OER).</p>
+                        <h3><?php the_field('training_event_3_title'); ?></h3>
+                        <?php the_field('training_event_3_description'); ?>
 
-                        <h4>You'll learn:</h4>
+                        <h4><?php the_field('training_event_3_list_title'); ?></h4>
 
-                        <ul>
-                            <li>How CC licenses work within copyright law</li>
-                            <li>How to choose and apply a license</li>
-                            <li>What users can and cannot do with CC-licensed works</li>
-                            <li>Best practices for attribution and remixing</li>
-                        </ul>
-                        <a href="#">Learn more</a>
+                        <?php the_field('training_event_3_list_content'); ?>
+                        <a href="<?php the_field('training_event_3_link_url'); ?>"><?php the_field('training_event_1_link_text'); ?></a>
                     </article>
                 </li>
+                <?php endif; ?>
 
+                <?php if(get_field('training_event_4_title')) : ?>
                 <li>
                     <article class="training">
-                        <h3>Open Science & Research Training</h3>
-                        <p>Training for schools, universities, and educators looking to unlock the power of Open Educational Resources (OER).</p>
+                        <h3><?php the_field('training_event_4_title'); ?></h3>
+                        <?php the_field('training_event_4_description'); ?>
 
-                        <h4>You'll learn:</h4>
+                        <h4><?php the_field('training_event_4_list_title'); ?></h4>
 
-                        <ul>
-                            <li>How CC licenses work within copyright law</li>
-                            <li>How to choose and apply a license</li>
-                            <li>What users can and cannot do with CC-licensed works</li>
-                            <li>Best practices for attribution and remixing</li>
-                        </ul>
-                        <a href="#">Learn more</a>
+                        <?php the_field('training_event_4_list_content'); ?>
+                        <a href="<?php the_field('training_event_4_link_url'); ?>"><?php the_field('training_event_1_link_text'); ?></a>
                     </article>
                 </li>
+                <?php endif; ?>
             </ul>
         </article>
 
@@ -152,143 +146,60 @@
 
 </article>
 
-<article class="topic-summary focus-area">
-    <div class="description">
-        <h2>Custom Capacity-Building Programs and Consulting</h2>
+<!-- topic features here -->
+ <?php
+    $topic_features = get_field('topic_features');
+    if( !empty($topic_features) ) :
+?>
 
-        <p>For institutions and communities seeking tailored support, CC offers customizable training programs.</p>
+<?php $post_index = 0; ?>
+<?php foreach($topic_features as $topic_feature) : ?>
+    <?php $post_index++; ?>
+    <?php
+        $permalink = get_permalink( $topic_feature->ID );
+        $title = get_the_title( $topic_feature->ID );
+        $category = get_field( 'category', $topic_feature->ID );
+        $link_text = get_field( 'link_text', $topic_feature->ID );
+        $link_url = get_field( 'link_url', $topic_feature->ID );
+        $type = get_field( 'type', $topic_feature->ID );
+        if ($type == 'default') { $type = 'focus-area';}
+        // $content = get_the_content( $topic_feature->ID );
+        $content = get_post_field('post_content', $topic_feature->ID);
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        // $excerpt = get_the_excerpt( $staff_person->ID );
+        ?>
 
-        <p>Examples include:</p>
+        <article class="topic-summary <?php echo $type; ?>">
+        <div class="description">
+            <h2><?php echo $title; ?></h2>
+            <span class="category"><?php echo $category; ?></span>
+            <?php echo $content; ?>
 
-        <ul>
-            <li>How CC licenses work within copyright law</li>
-            <li>How to choose and apply a license</li>
-            <li>What users can and cannot do with CC-licensed works</li>
-            <li>Best practices for attribution and remixing</li>
-        </ul>
+            <?php if ($link_text) : ?>
+            <a href="<?php echo $link_url; ?>"><?php echo $link_text; ?></a>
+            <?php endif; ?>
+        </div>
+        <figure>
+            <img src="<?php echo get_the_post_thumbnail_url( $topic_feature->ID, 'full' ); ?>" />
+            <figcaption>
+                "Untitled" by Ken Rahaim, 2007, Center for Folklife and Cultural Heritage, Smithsonian.
+            </figcaption>
+        </figure>
+    </article>
 
-    </div>
+    <?php if ($post_index == 1) : ?>
 
-    <figure>
+        <blockquote>
+            <p><?php echo $testimonial2;  ?></p>
+        </blockquote>
 
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-
-        <figcaption>
-            <!-- <p>attribution details here</p> -->
-            
-        </figcaption>
-    </figure>
-
-</article>
-
-
-    <blockquote>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu maximus augue. Nulla ac velit sit amet nisi ultricies ultrices. Proin vel velit sed purus dictum eleifend vitae ut ipsum. Sed eu imperdiet ex. Nam leo erat, semper non aliquam eget, porta vitae arcu. Mauris sapien mi, vestibulum in arcu quis, molestie blandit ex. Curabitur ut faucibus ex, et lacinia ex. Quisque id mauris efficitur nibh tempor maximus. Aliquam semper sapien id mauris gravida tincidunt. Ut congue et dolor eget feugiat.</p>
-    </blockquote>
-
-
-
-<article class="topic-summary focus-area">
-    <div class="description">
-        <h2>Training Formats That Fit Your Needs</h2>
-
-        <p>Examples include:</p>
-
-        <ul>
-            <li>How CC licenses work within copyright law</li>
-            <li>How to choose and apply a license</li>
-            <li>What users can and cannot do with CC-licensed works</li>
-            <li>Best practices for attribution and remixing</li>
-        </ul>
-
-    </div>
-
-    <figure>
-
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-
-        <figcaption>
-            <!-- <p>attribution details here</p> -->
-            
-        </figcaption>
-    </figure>
-
-</article>
-
-<article class="topic-summary focus-area">
-    <div class="description">
-        <h2>Training Success Stories</h2>
-
-        <p>CC training results in real impact. Take a look at some of our past training programs and learn about their results.</p>
-
-        <a href="#">Watch the Video</a>
-
-    </div>
-
-    <figure>
-
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-
-        <figcaption>
-            <!-- <p>attribution details here</p> -->
-            
-        </figcaption>
-    </figure>
-
-</article>
-
-<article class="topic-summary focus-area">
-    <div class="description">
-        <h2>Bring CC Training to Your Organization</h2>
-
-        <p>Creative Commons partners with institutions, governments, and networks around the world to build capacity for openness at scale.</p>
-
-        <p>To explore opportunities or request a training, contact us - we'd love to collaborate.</p>
-
-        <a href="#">Request Training</a>
-
-    </div>
-
-    <figure>
-
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-
-        <figcaption>
-            <!-- <p>attribution details here</p> -->
-            
-        </figcaption>
-    </figure>
-
-</article>
+    <?php endif; ?>
 
 
-<article class="topic-summary focus-area">
-    <div class="description">
-        <h2>We've had the pleasure of working with some of the leading open organizations globally.</h2>
+    <? endforeach; ?>
 
-    </div>
-
-    <figure>
-
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
-
-        <figcaption>
-            <!-- <p>attribution details here</p> -->
-            
-        </figcaption>
-    </figure>
-
-</article>
+<? endif; ?>
 
 <?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
 

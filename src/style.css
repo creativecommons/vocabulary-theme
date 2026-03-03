@@ -896,6 +896,46 @@ main > header figure {
   font-size: 1.6em;
 }
 
+.training-index .topic-summary.about {
+  /* grid-template-columns: 1fr 2fr; */
+  gap: 4em;
+  margin-bottom: 6em;
+}
+
+.training-index .topic-summary.about .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.training-index .topic-summary.about .description p {
+  /* font-size: 1.6em; */
+}
+
+.training-index article.topic-summary.focus-area figure {
+  width: auto;
+  height: auto;
+}
+
+.training-index article.topic-summary figure {
+    background: transparent;
+}
+
+.training-index article.topic-summary figure img {
+  border-radius: 16px;
+}
+
+
+blockquote:nth-of-type(even):after {
+  background:#FF0000;
+  transform: rotate(90deg);
+}
+
+blockquote:nth-of-type(even) p:after {
+  background:#2E1FB8;
+  transform: rotate(-90deg);
+}
 
 
 

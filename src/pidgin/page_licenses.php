@@ -138,7 +138,7 @@
     
 </article>
 
-<article class="topic-summary focus-area"> <!-- TODO: merge with prior article? -->
+<!-- <article class="topic-summary focus-area"> 
     <div class="description">
         <h2>More Than a Legal Tool</h2>
         <p>CC licenses do more than function legally—they express values.
@@ -146,17 +146,15 @@ The CC icons, now recognized around the world, represent openness, collaboration
     </div>
 
     <figure>       
-        <!-- <svg class="shape1">
-            <use href="../../../../pidgin/svg/blob3.svg"></use>
-        </svg> -->
+
 
 
         <figcaption>
-            <!-- <p>attribution details here</p> -->
+            <p>attribution details here</p>
             
         </figcaption>
     </figure>
-</article>
+</article> -->
 
 
 <article class="licenses">
