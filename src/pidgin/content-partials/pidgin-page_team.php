@@ -13,10 +13,10 @@
 
 <figure>
     <?php $image = get_field('header_graphic'); ?>
-    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
     <figcaption>
-        <p><?php echo $image['caption'] ?></p>
+        <p><?php echo $image['caption']; ?></p>
         
     </figcaption>
 </figure>

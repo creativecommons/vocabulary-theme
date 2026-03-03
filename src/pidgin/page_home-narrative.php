@@ -12,7 +12,7 @@
 
     <figure>
         <?php $image = get_field('header_graphic'); ?>
-        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
         <!-- <img src="https://creativecommons.org/wp-content/uploads/2025/05/moon-3.jpg" class="photo" />
             <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/blob3.svg" class="shape1" />
             <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/blob4.svg" class="shape2" />
@@ -22,7 +22,7 @@
             </svg> -->
 
         <figcaption>
-            <p><?php echo $image['caption'] ?></p>
+            <p><?php echo $image['caption']; ?></p>
             
             
         </figcaption>
@@ -34,15 +34,15 @@
 <article class="topic-summary about"> <!-- TODO: merge with prior article? -->
     <div class="description">
         <!-- <h2>The commons belongs to us all</h2> -->
-        <?php the_field('subhead_intro') ?>
+        <?php the_field('subhead_intro'); ?>
     </div>
 
     <figure>
         <?php $image = get_field('subhead_graphic'); ?>
-        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
         <figcaption>
-            <p><?php echo $image['caption'] ?></p>
+            <p><?php echo $image['caption']; ?></p>
             
         </figcaption>
     </figure>

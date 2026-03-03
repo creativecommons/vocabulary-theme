@@ -12,10 +12,10 @@
 
 <figure>
     <?php $image = get_field('header_graphic'); ?>
-    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
     <figcaption>
-        <p><?php echo $image['caption'] ?></p>
+        <p><?php echo $image['caption']; ?></p>
         
     </figcaption>
 </figure>
@@ -28,22 +28,22 @@
 <article class="topic-summary about">
     <div class="description">
         <?php if (get_field('subhead_title')) : ?>
-        <h2><?php the_field('subhead_title') ?></h2>
+        <h2><?php the_field('subhead_title'); ?></h2>
         <?php endif; ?>
 
-        <?php the_field('subhead_intro') ?>
+        <?php the_field('subhead_intro'); ?>
 
         <?php if (get_field('subhead_link_text')) : ?>
-        <a href="<?php the_field('subhead_link_url') ?>"><?php the_field('subhead_link_text') ?></a>
+        <a href="<?php the_field('subhead_link_url'); ?>"><?php the_field('subhead_link_text'); ?></a>
         <?php endif; ?>
     </div>
 
     <figure>
-        <?php $image = get_field('subheader_graphic'); ?>
-        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+        <?php $image = get_field('subhead_graphic'); ?>
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
         <figcaption>
-            <p><?php echo $image['caption'] ?></p>
+            <p><?php echo $image['caption']; ?></p>
             
         </figcaption>
     </figure>
@@ -57,8 +57,8 @@
 
 
 <article class="topic-dive">
-    <h2><?php the_field('training_events_title') ?>"</h2>
-    <p><?php the_field('training_events_tagline') ?>"</p>
+    <h2><?php the_field('training_events_title'); ?></h2>
+    <p><?php the_field('training_events_tagline'); ?></p>
 
     <article class="topic-summary focus-area">
         <div class="description">
@@ -70,10 +70,10 @@
 
         <figure>
             <?php $image = get_field('training_events_graphic'); ?>
-            <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
             <figcaption>
-                <p><?php echo $image['caption'] ?></p>
+                <p><?php echo $image['caption']; ?></p>
                 
             </figcaption>
         </figure>
@@ -177,10 +177,10 @@
             <?php endif; ?>
         </div>
         <figure>
-            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+            <img src="<?php echo get_the_post_thumbnail_url( $topic_feature->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($topic_feature->ID), '_wp_attachment_image_alt', true ); ?>" />
 
             <figcaption>
-                <?php echo get_the_post_thumbnail_caption( $post_id ); ?>
+                <p><?php echo get_the_post_thumbnail_caption( $topic_feature->ID ); ?></p>
             </figcaption>
         </figure>
     </article>

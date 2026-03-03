@@ -12,10 +12,10 @@
 
 <figure>
     <?php $image = get_field('header_graphic'); ?>
-    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
     <figcaption>
-        <p><?php echo $image['caption'] ?></p>
+        <p><?php echo $image['caption']; ?></p>
         
     </figcaption>
 </figure>
@@ -24,20 +24,20 @@
 <article class="topic-summary focus-area">
     <div class="description">
         <?php if (get_field('subhead_title')) : ?>
-        <h2><?php the_field('subhead_title') ?></h2>
+        <h2><?php the_field('subhead_title'); ?></h2>
         <?php endif; ?>
-        <?php the_field('subhead_intro') ?>
+        <?php the_field('subhead_intro'); ?>
     </div>
 
     <figure>
-        <img src="<?php the_field('subhead_graphic') ?>" alt="" />
+        <img src="<?php the_field('subhead_graphic'); ?>" alt="" />
 
         <figure>
             <?php $image = get_field('subhead_graphic'); ?>
-            <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
             <figcaption>
-                <p><?php echo $image['caption'] ?></p>
+                <p><?php echo $image['caption']; ?></p>
             </figcaption>
         </figure>
     </figure>
@@ -45,18 +45,18 @@
     <footer>
         <ul class="payment-methods">
             <li>
-                <h3><?php the_field('payment_method_1_title') ?></h3>
-                <?php the_field('payment_method_1_content') ?>
+                <h3><?php the_field('payment_method_1_title'); ?></h3>
+                <?php the_field('payment_method_1_content'); ?>
             </li>
 
             <li>
-                <h3><?php the_field('payment_method_2_title') ?></h3>
-                <?php the_field('payment_method_2_content') ?>
+                <h3><?php the_field('payment_method_2_title'); ?></h3>
+                <?php the_field('payment_method_2_content'); ?>
             </li>
 
             <li>
-                <h3><?php the_field('payment_method_3_title') ?></h3>
-                <?php the_field('payment_method_3_content') ?>
+                <h3><?php the_field('payment_method_3_title'); ?></h3>
+                <?php the_field('payment_method_3_content'); ?>
             </li>
         </ul>
     </footer>
@@ -65,16 +65,16 @@
 
 <article class="topic-summary focus-area">
     <div class="description">
-        <h2><?php the_field('middle_section_title') ?></h2>
-        <?php the_field('middle_section_content') ?>
+        <h2><?php the_field('middle_section_title'); ?></h2>
+        <?php the_field('middle_section_content'); ?>
     </div>
 
     <figure>
         <?php $image = get_field('middle_section_graphic'); ?>
-        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
         <figcaption>
-            <p><?php echo $image['caption'] ?></p>
+            <p><?php echo $image['caption']; ?></p>
             
         </figcaption>
     </figure>
@@ -83,16 +83,16 @@
 
 <article class="topic-summary supporters">
     <div class="description">
-        <h2><?php the_field('supporters_section_title') ?></h2>
-        <?php the_field('supporters_section_content') ?>
+        <h2><?php the_field('supporters_section_title'); ?></h2>
+        <?php the_field('supporters_section_content'); ?>
     </div>
 
     <figure>
         <?php $image = get_field('supporters_section_graphic'); ?>
-        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
         <figcaption>
-            <p><?php echo $image['caption'] ?></p>
+            <p><?php echo $image['caption']; ?></p>
             
         </figcaption>
     </figure>

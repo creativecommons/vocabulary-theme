@@ -12,10 +12,10 @@
 
 <figure>
     <?php $image = get_field('header_graphic'); ?>
-    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
     <figcaption>
-        <p><?php echo $image['caption'] ?></p>
+        <p><?php echo $image['caption']; ?></p>
         
     </figcaption>
 </figure>
@@ -24,15 +24,15 @@
 <article class="topic-summary about"> <!-- TODO: merge with prior article? -->
     <div class="description">
         <!-- <h2>The commons belongs to us all</h2> -->
-        <?php the_field('subhead_intro') ?>
+        <?php the_field('subhead_intro'); ?>
     </div>
 
     <figure>
         <?php $image = get_field('subhead_graphic'); ?>
-        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
         <figcaption>
-            <p><?php echo $image['caption'] ?></p>
+            <p><?php echo $image['caption']; ?></p>
             
         </figcaption>
     </figure>
@@ -41,8 +41,8 @@
 
 <article class="topic-summary focus-area"> <!-- TODO: merge with prior article? -->
     <div class="description">
-        <h2><?php the_field('introductory_section_title') ?></h2>
-        <?php the_field('introductory_section_content') ?>
+        <h2><?php the_field('introductory_section_title'); ?></h2>
+        <?php the_field('introductory_section_content'); ?>
 
         <a href="<?php the_field('introductory_section_link_url'); ?>"><?php the_field('introductory_section_link_text'); ?></a>
 
@@ -50,10 +50,10 @@
 
     <figure>
         <?php $image = get_field('introductory_section_graphic'); ?>
-        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
         <figcaption>
-            <p><?php echo $image['caption'] ?></p>
+            <p><?php echo $image['caption']; ?></p>
             
         </figcaption>
     </figure>
@@ -77,10 +77,10 @@
 
     <figure>
         <?php $image = get_field('why_section_graphic'); ?>
-        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
         <figcaption>
-            <p><?php echo $image['caption'] ?></p>
+            <p><?php echo $image['caption']; ?></p>
             
         </figcaption>
     </figure>

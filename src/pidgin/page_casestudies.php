@@ -24,16 +24,16 @@
 <article class="topic-summary about"> <!-- TODO: merge with prior article? -->
     <div class="description">
         <!-- <h2>The commons belongs to us all</h2> -->
-         <?php the_field('subhead_title') ?>
-        <?php the_field('subhead_intro') ?>
+         <?php the_field('subhead_title'); ?>
+        <?php the_field('subhead_intro'); ?>
     </div>
 
     <figure>
         <?php $image = get_field('subhead_graphic'); ?>
-        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" />
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
         <figcaption>
-            <p><?php echo $image['caption'] ?></p>
+            <p><?php echo $image['caption']; ?></p>
             
         </figcaption>
     </figure>
