@@ -927,6 +927,40 @@ main > header figure {
 }
 
 
+
+.support-page article.topic-summary.focus-area figure {
+  width: auto;
+  height: auto;
+}
+
+.support-page article.topic-summary figure {
+    background: transparent;
+}
+
+.support-page article.topic-summary figure img {
+  border-radius: 16px;
+}
+
+
+.licenses-page article.topic-summary.focus-area figure {
+  width: auto;
+  height: auto;
+}
+
+.licenses-page article.topic-summary figure {
+    background: transparent;
+}
+
+.licenses-page article.topic-summary figure img {
+  border-radius: 16px;
+}
+
+.licenses-page article.topic-summary.highlight figure {
+  width: 100%;
+  margin-top: 0;
+}
+
+
 blockquote:nth-of-type(even):after {
   background:#FF0000;
   transform: rotate(90deg);

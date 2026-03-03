@@ -43,14 +43,10 @@
 
 <article class="topic-summary focus-area"> <!-- TODO: merge with prior article? -->
     <div class="description">
-        <h2>CC's Flagship Legal Tool Driving Contributions to the Commons</h2>
-        <p>CC licenses are a global digital public good and part of the essential infrastructure that makes sharing online possible. Today, there are tens of billions of CC-licensed works across the internet, spanning education, science, culture, and art, and more. 
+        <h2><?php the_field('introductory_section_title') ?></h2>
+        <?php the_field('introductory_section_content') ?>
 
-        <p>Like the public infrastructure we rely on every day, such as roads, clean water systems, public schools, and libraries, the legal and technical infrastructure behind CC licenses requires ongoing maintenance, updates, and support. Unlike most public infrastructure, CC licenses are not funded by taxes or user fees. As a public good, they depend on the support of the community that relies on them.</p>
-
-        <p>Become a patron of the commons by donating to Creative Commons</p>
-
-        <a href="#">Donate Today!</a>
+        <a href="<?php the_field('introductory_section_link_url'); ?>"><?php the_field('introductory_section_link_text'); ?></a>
 
     </div>
 
@@ -58,6 +54,7 @@
         <!-- <svg class="shape1">
             <use href="../../../../pidgin/svg/blob3.svg"></use>
         </svg> -->
+        <img src="<?php the_field('introductory_section_graphic'); ?>" />
 
 
         <figcaption>
@@ -70,22 +67,16 @@
 
 <article class="topic-summary highlight orgs">
     <div class="description">
-        <h2>Used by leading platforms and institutions worldwide</h2>
-        <p>[graphic here]</p>
+        <h2><?php the_field('orgs_section_title'); ?></h2>
+        <?php the_field('orgs_section_content'); ?>
     </div>
     
 </article>
 
 <article class="topic-summary focus-area"> <!-- TODO: merge with prior article? -->
     <div class="description">
-        <h2>Why Use a CC License</h2>
-        <p>CC licenses are a global digital public good and part of the essential infrastructure that makes sharing online possible. Today, there are tens of billions of CC-licensed works across the internet, spanning education, science, culture, and art, and more.</p>
-
-        <p>Without CC licenses, copyright offers only two extremes: “all rights reserved” or “no rights reserved.” That doesn’t reflect the many ways creators want their work to be shared.</p>
-
-        <p>Creative Commons licenses offer a standardized, legally-sound way to grant permission in advance, so that creators can clearly communicate how their work may be used, without negotiating individual permissions every time. This enables access to knowledge by offering a “some rights reserved” option for content that would otherwise be closed off.</p>
-
-        <p>Most creators share a basic belief: that knowledge and creativity grow through sharing, not locking it away.</p>
+        <h2><?php the_field('why_section_title'); ?></h2>
+        <?php the_field('why_section_content'); ?>
 
     </div>
 
@@ -93,6 +84,7 @@
         <!-- <svg class="shape1">
             <use href="../../../../pidgin/svg/blob3.svg"></use>
         </svg> -->
+        <img src="<?php the_field('why_section_graphic'); ?>" />
 
 
         <figcaption>
@@ -104,25 +96,13 @@
     <footer class="supporting">
 
         <div>
-        <h3>Creators choose CC licenses for many reasons: </h3>
-        <ul>
-            <li>Share their work widely while keeping credit
-            <li>Encourage remixing, collaboration, and learning</li>
-            <li>Reach global audiences more easily</li>
-            <li>Support open education, research, and culture</li>
-            <li>Build visibility, reputation, and impact</li>
-        </ul>
+        <h3><?php the_field('reasonings_list_1_title'); ?></h3>
+        <?php the_field('reasonings_list_1_content'); ?>
         </div>
 
         <div>
-        <h3>For the public, CC licenses:</h3>
-        <ul>
-            <li>Eliminate legal uncertainty around reuse</li>
-            <li>Make it easier to find openly usable content</li>
-            <li>Enable lawful remixing, adaptation, and redistribution</li>
-            <li>Support education, research, journalism, and creative work</li>
-            <li>Reduce permission friction across borders</li>
-        </ul>
+        <h3><?php the_field('reasonings_list_2_title'); ?></h3>
+        <?php the_field('reasonings_list_2_content'); ?>
         </div>
     </footer>
 </article>
@@ -158,14 +138,14 @@ The CC icons, now recognized around the world, represent openness, collaboration
 
 
 <article class="licenses">
-    <h2>The CC Licenses</h2>
-    <p>There are six different license types, listed from most to least permissive here:</p>
+    <h2><?php the_field('licenses_listing_title'); ?></h2>
+    <?php the_field('licenses_listing_introduction'); ?>
     <ul>
         <li>
             <article class="license">
-                <h3><a href="#">CC BY</a></h3>
+                <h3><a href="#"><?php the_field('license_1_title'); ?></a></h3>
                 <img src="#" class="badge" />
-                <p>This license enables reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. CC BY includes the following elements:</p>
+                <?php the_field('license_1_summary'); ?>
                 
                 <dl class="conditions-definitions">
                     <div>
@@ -178,9 +158,9 @@ The CC icons, now recognized around the world, represent openness, collaboration
 
         <li>
             <article class="license">
-                <h3><a href="#">CC BY-SA</a></h3>
+                <h3><a href="#"><?php the_field('license_2_title'); ?></a></h3>
                 <img src="#" class="badge" />
-                <p>This license enables reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms. CC BY-SA includes the following elements:</p>
+                <?php the_field('license_2_summary'); ?>
                 <dl class="conditions-definitions">
                     <div>
                         <dt class="icon-attach cc-by">BY</dt>
@@ -197,9 +177,9 @@ The CC icons, now recognized around the world, represent openness, collaboration
 
         <li>
             <article class="license">
-                <h3><a href="#">CC BY-ND</a></h3>
+                <h3><a href="#"><?php the_field('license_3_title'); ?></a></h3>
                 <img src="#" class="badge" />
-                <p>This license enables reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator. CC BY-NC includes the following elements:</p>
+                <?php the_field('license_3_summary'); ?>
                 <dl class="conditions-definitions">
 
                     <div>
@@ -217,9 +197,9 @@ The CC icons, now recognized around the world, represent openness, collaboration
 
         <li>
             <article class="license">
-                <h3><a href="#">CC BY-NC</a></h3>
+                <h3><a href="#"><?php the_field('license_4_title'); ?></a></h3>
                 <img src="#" class="badge" />
-                <p>This license enables reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator. If you remix, adapt, or build upon the material, you must license the modified material under identical terms. CC BY-NC-SA includes the following elements:</p>
+                <?php the_field('license_4_summary'); ?>
                 <dl class="conditions-definitions">
                     <div>
                         <dt class="icon-attach cc-by">BY</dt>
@@ -241,9 +221,9 @@ The CC icons, now recognized around the world, represent openness, collaboration
 
         <li>
             <article class="license">
-                <h3><a href="#">CC BY-NC-SA</a></h3>
+                <h3><a href="#"><?php the_field('license_5_title'); ?></a></h3>
                 <img src="#" class="badge" />
-                <p>This license enables reusers to copy and distribute the material in any medium or format in unadapted form only, and only so long as attribution is given to the creator. The license allows for commercial use. CC BY-ND includes the following elements:</p>
+                <?php the_field('license_5_summary'); ?>
                 <dl class="conditions-definitions">
                     <div>
                         <dt class="icon-attach cc-by">BY</dt>
@@ -268,9 +248,9 @@ The CC icons, now recognized around the world, represent openness, collaboration
 
         <li>
             <article class="license">
-                <h3><a href="#">CC BY-NC-ND</a></h3>
+                <h3><a href="#"><?php the_field('license_6_title'); ?></a></h3>
                 <img src="#" class="badge" />
-                <p>This license enables reusers to copy and distribute the material in any medium or format in unadapted form only, for noncommercial purposes only, and only so long as attribution is given to the creator. CC BY-NC-ND includes the following elements:</p>
+                <?php the_field('license_6_summary'); ?>
                 <dl class="conditions-definitions">
                     <div>
                         <dt class="icon-attach cc-by">BY</dt>
@@ -294,11 +274,10 @@ The CC icons, now recognized around the world, represent openness, collaboration
         </li>
     </ul>
 
-    <h2>Multilingual Support</h2>
-    <p>The deeds and legal codes of the CC licenses are translated into over XX languages.</p>
+    <?php the_content(); ?>
 
     <footer>
-        <a href="#" class="more">Learn More About CC License Use</a>
+        <a href="<?php the_field('more_url'); ?>" class="more"><?php the_field('more_text'); ?></a>
     </footer>
 </article>
 
