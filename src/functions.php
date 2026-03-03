@@ -345,3 +345,37 @@ function list_shortcode($atts) {
 }
 
 add_shortcode('list', 'list_shortcode');
+
+
+
+function highlighter($atts, $content = "" ) {
+
+  $output = '<div class="highlight">'.$content.'</div>';
+
+  return $output;
+}
+
+add_shortcode('highlight', 'highlighter');
+
+
+function stats($atts, $content = "" ) {
+
+  $output = '<article class="datapoints"><ul class="stats">'.do_shortcode($content).'</ul></article>';
+
+  return $output;
+}
+
+add_shortcode('stats', 'stats');
+
+
+function stat_item($atts) {
+
+  // $output = '<li class="stat">'.sanitize_text_field($atts['num']).'</li>';
+
+  $output = '<li><article class="datapoint"><p><span class="stat">'.sanitize_text_field($atts['num']).'</span>'.sanitize_text_field($atts['description']).'</p></article></li>';
+
+
+  return $output;
+}
+
+add_shortcode('stat', 'stat_item');
