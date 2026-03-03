@@ -78,10 +78,10 @@
             <a href="<?php echo $link_url; ?>"><?php echo $link_text; ?></a>
         </div>
         <figure>
-            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+            <img src="<?php echo get_the_post_thumbnail_url( $topic_feature->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($topic_feature->ID), '_wp_attachment_image_alt', true ); ?>" />
 
             <figcaption>
-                <?php echo get_the_post_thumbnail_caption( $post_id ); ?>
+                <p><?php echo get_the_post_thumbnail_caption( $topic_feature->ID ); ?></p>
             </figcaption>
         </figure>
     </article>
