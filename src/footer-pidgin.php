@@ -1,5 +1,5 @@
 <footer>
-    <a class="identity-logo" href="#">Creative Commons</a>
+    <a class="identity-logo" href="/">Creative Commons</a>
 
     <div class="search">
         <form method="get" id="" name="" class="" action="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -14,12 +14,12 @@
 
     <nav class="footer-menu" aria-label="Footer menu">
         <ul>
-            <li><a href="#">Who we are</a></li>
-            <li><a href="#">What we do</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Support us</a></li>
+            <li><a href="/who-we-are">Who we are</a></li>
+            <li><a href="/what-we-do">What we do</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/support">Support us</a></li>
             
-            <li><a href="/about/contact">Contact</a></li>
+            <li><a href="/contact">Contact</a></li>
             <li><a href="/privacy">Privacy</a></li>
             <li><a href="/policies">Policies</a></li>
             <li><a href="/terms">Terms</a></li>
@@ -47,7 +47,7 @@
 
     <div class="subscribe">
     <h2>Subscribe to our newsletter</h2>
-    <a href="#">Subscribe</a>
+    <a href="https://creativecommons.us4.list-manage.com/subscribe/post?u=fd30364b6577b471373d6076c&id=4603fe102a">Subscribe</a>
     </div>
 
     <!-- <div class="donate">

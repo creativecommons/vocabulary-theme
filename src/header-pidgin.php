@@ -182,67 +182,67 @@
         <nav class="primary-menu" aria-label="Primary navigation">
             <ul>
                 <li>
-                    <a href="#">Who We Are</a>
+                    <a href="/who-we-are">Who We Are</a>
                     <button class="expand icon-replace fa-angle-down">Expand</button>
                     
                     <ul>
-                        <li><a href="#">Strategic Plan</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Governance</a></li>
-                        <li><a href="#">Opportunities</a></li>
-                        <li><a href="#">Press</a></li>
+                        <li><a href="/strategic-plan">Strategic Plan</a></li>
+                        <li><a href="/team">Team</a></li>
+                        <li><a href="/governance">Governance</a></li>
+                        <li><a href="/opportunities">Opportunities</a></li>
+                        <li><a href="/press">Press</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">What We Do</a>
+                    <a href="/what-we-do">What We Do</a>
                     <button class="expand icon-replace fa-angle-down">Expand</button>
 
                     <ul>
                         <li>
-                            <a href="#">Build <br> Open Infrastructure</a>
+                            <a href="/build">Build <br> Open Infrastructure</a>
                             <button class="expand icon-replace fa-angle-down">Expand</button>
 
                              <ul>
-                                <li><a href="#">CC Licenses</a></li>
-                                <li><a href="#">CC Signals</a></li>
-                                <li><a href="#">Public Domain</a></li>
-                                <li><a href="#">FAQs</a></li>
+                                <li><a href="/cc-licenses">CC Licenses</a></li>
+                                <li><a href="/cc-signals">CC Signals</a></li>
+                                <li><a href="/public-domain">Public Domain</a></li>
+                                <li><a href="/faq">FAQs</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Implement <br> the Commons</a>
+                            <a href="/implement">Implement <br> the Commons</a>
                             <button class="expand icon-replace fa-angle-down">Expand</button>
 
                              <ul>
-                                <li><a href="#">Where CC Makes An Impact</a></li>
-                                <li><a href="#">Resources</a></li>
-                                <li><a href="#">Search the Commons</a></li>
+                                <li><a href="/impact">Where CC Makes An Impact</a></li>
+                                <li><a href="/resources">Resources</a></li>
+                                <li><a href="https://search.creativecommons.org">Search the Commons</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Engage <br> the People</a>
+                            <a href="/engage">Engage <br> the People</a>
                             <button class="expand icon-replace fa-angle-down">Expand</button>
 
                              <ul>
-                                <li><a href="#">Training + Webinars</a></li>
-                                <li><a href="#">Advocacy</a></li>
-                                <li><a href="#">Community</a></li>
-                                <li><a href="#">Partnerships</a></li>
-                                <li><a href="#">Events</a></li>
+                                <li><a href="/training-and-webinars">Training + Webinars</a></li>
+                                <li><a href="/advocacy">Advocacy</a></li>
+                                <li><a href="/community">Community</a></li>
+                                <li><a href="/partnerships">Partnerships</a></li>
+                                <li><a href="/events">Events</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="/blog">Blog</a></li>
                 <li>
-                    <a href="#">Support Us</a>
+                    <a href="/support">Support Us</a>
                     <button class="expand icon-replace fa-angle-down">Expand</button>
                     
                     <ul>
-                        <li><a href="#">Make a Gift</a></li>
-                        <li><a href="#">Ways to Give</a></li>
-                        <li><a href="#">Open Infrastructure Circle</a></li>
-                        <li><a href="#">Donor FAQ</a></li>
+                        <li><a href="/support/make-a-gift">Make a Gift</a></li>
+                        <li><a href="/support/ways-to-give">Ways to Give</a></li>
+                        <li><a href="/support/oic">Open Infrastructure Circle</a></li>
+                        <li><a href="/support/donor-faq">Donor FAQ</a></li>
                     </ul>
                 </li>
                 <li><a class="donate" href="#">Donate</a></li>
@@ -278,3 +278,9 @@ $noticeQuery = new WP_Query(array(
 <?php wp_reset_postdata(); ?>
 
 <span id="main-content-marker"></span>
+
+<?php if (get_field('css_dev_hotfixes' )) : ?>
+<style>
+    <?php the_field('css_dev_hotfixes' ); ?>
+</style>
+<?php endif; ?>
