@@ -19,12 +19,14 @@
             "choices": {
                 "deactivated": "Deactivated",
                 "top-of-site": "Top of Site (banner)",
-                "primary-menu": "Primary Menu (for summit)"
+                "primary-menu": "Primary Menu (for summit)",
+                "newsletter-promo": "Newsletter Promo (bottom of most pages)"
             },
             "default_value": "deactivated",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
@@ -66,6 +68,40 @@
             "placeholder": ""
         },
         {
+            "key": "field_69a84f3b10a34",
+            "label": "Graphic",
+            "name": "graphic",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64e61a2301304",
+                        "operator": "==",
+                        "value": "newsletter-promo"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
             "key": "field_64e61c57d938e",
             "label": "Message",
             "name": "message",
@@ -80,6 +116,13 @@
                         "operator": "!=",
                         "value": "top-of-site"
                     }
+                ],
+                [
+                    {
+                        "field": "field_64e61a2301304",
+                        "operator": "!=",
+                        "value": "newsletter-promo"
+                    }
                 ]
             ],
             "wrapper": {
@@ -89,6 +132,7 @@
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -122,6 +166,35 @@
             "delay": 0
         },
         {
+            "key": "field_69a84fcc33777",
+            "label": "Link Text",
+            "name": "link_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64e61a2301304",
+                        "operator": "==",
+                        "value": "newsletter-promo"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_64e61c8ad1036",
             "label": "URL",
             "name": "url",
@@ -136,6 +209,13 @@
                         "operator": "==",
                         "value": "primary-menu"
                     }
+                ],
+                [
+                    {
+                        "field": "field_64e61a2301304",
+                        "operator": "==",
+                        "value": "newsletter-promo"
+                    }
                 ]
             ],
             "wrapper": {
@@ -144,6 +224,7 @@
                 "id": ""
             },
             "default_value": "",
+            "allow_in_bindings": 1,
             "placeholder": ""
         }
     ],
@@ -169,5 +250,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699303892
+    "modified": 1772638190
 }
