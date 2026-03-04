@@ -1017,6 +1017,94 @@ body main article.topic-summary.newsletter figure img {
 /* ----------------- */
 
 
+/* attribution patches */
+
+.posts .attribution {
+  font-family: "DM Mono";
+}
+
+.blog-index main .posts h2, .home-narrative main .posts h2 {
+    margin-bottom: .5em;
+}
+
+main details.attribution {
+  margin-bottom: 2.5em;
+  width: 100%;
+
+  text-align: left;
+}
+
+main details.attribution summary {
+  display: inline-block;
+  font-family: "DM Mono";
+  font-size: .8em;
+  border-bottom: 2px solid #F5F5F5;
+}
+
+main details.attribution summary span {
+  display: inline-block;
+  
+  font-size: .5em;
+  transform: rotate(180deg);
+}
+
+main details.attribution:open summary span {
+  transform: none;
+}
+
+main details.attribution summary span:before {
+  padding-top: 1em;
+}
+
+main details.attribution:open {
+  border-bottom: 2px solid #F5F5F5;
+}
+
+
+main ul.attributions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0;
+    margin-top: 2em;
+    padding: 0;
+    gap: 2em;
+
+    font-size: 1em;
+    list-style: none;
+}
+
+main ul.attributions li {
+  grid-column: span 1;
+}
+
+main .attributions article {
+    margin-bottom: 1em;
+}
+
+main .attributions article a {
+    --underline-background-color: var(--vocabulary-brand-color-grey);
+}
+
+main .attributions article figure {
+    display: flex;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+main .attributions article img {
+    object-fit: cover;
+    width: 4em;
+    height: 4em;
+}
+
+main .attributions article figure .attribution {
+    margin-top: 0;
+}
+
+
+
+
+
 main nav.pagination ul {
   display: flex;
   flex-wrap: wrap;

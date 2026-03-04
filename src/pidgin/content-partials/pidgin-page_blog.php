@@ -36,7 +36,7 @@
     <!-- <li> -->
     <article class="post featured">
         <header>
-        <h3 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h3>
+        <h2 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h2>
 
         <?php if ( get_field('authorship') ) : ?>
         <span class="byline">by
@@ -105,8 +105,6 @@
 <article class="posts">
 <h2>Recent Posts</h2>
 
-<ul>
-
 <?php
 $query = new WP_Query(array(
     'post__not_in' => $highlight_posts,
@@ -115,6 +113,33 @@ $query = new WP_Query(array(
     //'paged' => $paged,
 ));
 ?>
+
+<details class="attribution">
+    <summary>Attribution <span class="icon icon-replace fa-angle-up"></span></summary>
+
+    <ul class="attributions">
+
+    <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+            <li>
+                <article>
+                    <figure>
+                        <?php //echo get_the_post_thumbnail( $post_id, 'full' );
+                        ?>
+                        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+                        
+                        <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
+                    </figure>
+                </article>
+            </li>
+            <?php endwhile; ?>
+
+        </ul>
+</details>
+
+<?php endif; ?>
+
+<ul>
 
 <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 

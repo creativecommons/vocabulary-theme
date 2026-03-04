@@ -103,9 +103,6 @@
 
     <h2>Recently from the blog</h2>
 
-    <ul>
-
-
     <?php
     $query = new WP_Query(array(
         // 'post__not_in' => $highlight_posts,
@@ -114,6 +111,34 @@
         //'paged' => $paged,
     ));
     ?>
+
+
+    <details class="attribution">
+    <summary>Attribution <span class="icon icon-replace fa-angle-up"></span></summary>
+
+    <ul class="attributions">
+
+    <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+            <li>
+                <article>
+                    <figure>
+                        <?php //echo get_the_post_thumbnail( $post_id, 'full' );
+                        ?>
+                        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+                        
+                        <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
+                    </figure>
+                </article>
+            </li>
+            <?php endwhile; ?>
+
+        </ul>
+</details>
+
+<?php endif; ?>
+
+    <ul>
 
 <?php $post_index = 0; ?>
 <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
