@@ -72,6 +72,8 @@
     </footer>
 
     <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/js/vocabulary.js"></script>
+        <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/js/pidgin.js"></script>
+
 
 <?php wp_footer(); ?>
 </body>

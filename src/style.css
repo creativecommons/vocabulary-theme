@@ -1071,6 +1071,15 @@ body main article.topic-summary.newsletter figure img {
   /* padding-top: 6em; */
 }
 
+main > aside.sidebar nav li:has(ul) button.expand {
+    position: absolute;
+    right: 0;
+}
+
+main > aside.sidebar nav li:has(ul) button.expand:before {
+    margin-left: 1em;
+}
+
 /* ----------------- */
 
 
