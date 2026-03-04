@@ -99,16 +99,37 @@
     </footer>
 </article>
 
+<?php
+$noticeQuery = new WP_Query(array(
+    'post_type' => 'notice',
+    'posts_per_page' => 1,
+    'meta_key' => 'type',
+    'meta_value' => 'newsletter-promo'
+    //'paged' => $paged,
+));
+?>
+<?php if ( $noticeQuery->have_posts() ) : while ( $noticeQuery->have_posts() ) : $noticeQuery->the_post(); ?>
+
 <article class="topic-summary newsletter embed">
     <div class="description">
         <h2><strong>Want to know more?</strong> Sign up for news and updates about the CC licenses. </h2>
-        <a href="#">Sign up for CC's Community Newsletter</a>
+        <a href="<?php the_field('url'); ?>">Sign up for CC's Community Newsletter</a>
     </div>
     <figure>
-        <!-- <img src="https://creativecommons.org/wp-content/uploads/2023/01/Open-Palms-Not-Clutching-Fists.png"> -->
+        <?php $image = get_field('graphic'); ?>
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+        <!-- <figcaption>
+            <p></p>
+        </figcaption> -->
     </figure>
     
 </article>
+
+<?php endwhile; ?>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>
+
 
 <!-- <article class="topic-summary focus-area"> 
     <div class="description">
