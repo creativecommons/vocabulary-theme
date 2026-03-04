@@ -42,5 +42,14 @@
 
 <?php endwhile; // end of the loop. ?>
 
+<?php if (get_field('more_links_display')) : ?>
+<aside class="more-links">
+    <nav>
+        <h2>More Links</h2>
+        <?php the_field('more_links_content'); ?>
+    </nav>
+</aside>
+<?php endif; ?>
+
 <?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
 

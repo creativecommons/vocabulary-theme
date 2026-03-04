@@ -331,19 +331,14 @@ The CC icons, now recognized around the world, represent openness, collaboration
 </div> -->
 
 
+<?php if (get_field('more_links_display')) : ?>
 <aside class="more-links">
     <nav>
         <h2>More Links</h2>
-        <ul>
-            <li><a href="#">Made with Creative Commons</a></li>
-            <li><a href="#">Made with CC Community</a></li>
-            <li><a href="#">Technology Platforms</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Use & Remix</a></li>
-            <li><a href="#">Search the Commons</a></li>
-        </ul>
+        <?php the_field('more_links_content'); ?>
     </nav>
 </aside>
+<?php endif; ?>
 
 <?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
 

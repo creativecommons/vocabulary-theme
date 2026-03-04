@@ -99,18 +99,14 @@
 
 </article>
 
+<?php if (get_field('more_links_display')) : ?>
 <aside class="more-links">
     <nav>
         <h2>More Links</h2>
-        <ul>
-            <li><a href="#">Open Infrastructure Circle</a></li>
-            <li><a href="#">Donor FAQ</a></li>
-            <li><a href="#">CC Contributions Policy</a></li>
-            <li><a href="#">CC Guidelines for Screening Donors</a></li>
-            <li><a href="#">US State Nonprofit Disclosures</a></li>
-        </ul>
+        <?php the_field('more_links_content'); ?>
     </nav>
 </aside>
+<?php endif; ?>
 
 <?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
 
