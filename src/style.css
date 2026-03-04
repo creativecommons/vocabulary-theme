@@ -781,6 +781,10 @@ main > header figure {
   border: transparent;
 }
 
+.blog-index main > header figcaption p {
+  text-align: right;
+}
+
 .blog-index main .post.featured {
   margin-top: 3em;
 }
@@ -1019,6 +1023,31 @@ body main article.topic-summary.newsletter figure img {
 
 /* attribution patches */
 
+main > header figcaption p {
+  font-family: "DM Mono";
+  font-size: .8em;
+  text-align: left;
+}
+
+article.topic-summary.highlight figure figcaption {
+  width: 80%;
+}
+
+.home-narrative article.topic-summary.focus-area:nth-of-type(odd) figure figcaption, 
+.home-narrative article.topic-summary.intro figure figcaption {
+  text-align: right;
+}
+
+article:nth-child(even of .topic-summary.highlight) figure figcaption {
+  text-align: right;
+  margin-left: 20%;
+}
+
+article.topic-summary figure figcaption p {
+  font-family: "DM Mono";
+  font-size: .8em;
+}
+
 .posts .attribution {
   font-family: "DM Mono";
 }
@@ -1060,7 +1089,6 @@ main details.attribution:open {
   border-bottom: 2px solid #F5F5F5;
 }
 
-
 main ul.attributions {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -1089,6 +1117,10 @@ main .attributions article figure {
     display: flex;
     gap: 1em;
     margin-top: 1em;
+}
+
+main .attributions article figure figcaption {
+    font-size: .9em;
 }
 
 main .attributions article img {
