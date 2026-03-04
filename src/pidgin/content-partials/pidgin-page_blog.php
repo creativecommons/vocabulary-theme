@@ -192,7 +192,9 @@ $query = new WP_Query(array(
 	<?php endwhile; ?>
     </ul>
 
-    <a class="more" href="/blog/archive/">more posts</a>
+    <footer>
+        <a class="more" href="/blog/archive/">more posts</a>
+    </footer>
 
 
 <?php endif; ?>
