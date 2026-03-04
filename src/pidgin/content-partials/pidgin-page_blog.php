@@ -128,7 +128,7 @@ $query = new WP_Query(array(
                         ?>
                         <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
                         
-                        <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
+                        <figcaption class="attribution"><p><?php echo get_the_post_thumbnail_caption( $post_id ); ?></p></figcaption>
                     </figure>
                 </article>
             </li>

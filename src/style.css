@@ -1017,6 +1017,10 @@ main > header figure {
   /* color:#2E1FB8; */
 }
 
+.project-post main > .posts {
+  grid-column: 2 / 11;
+}
+
 
 blockquote:nth-of-type(even):after {
   background:#FF0000;
@@ -1114,7 +1118,7 @@ article.topic-summary figure figcaption p {
   font-family: "DM Mono";
 }
 
-.blog-index main .posts h2, .home-narrative main .posts h2 {
+.blog-index main .posts h2, .home-narrative main .posts h2, .project-post main .posts h2 {
     margin-bottom: .5em;
 }
 
@@ -1183,6 +1187,12 @@ main .attributions article figure {
 
 main .attributions article figure figcaption {
     font-size: .9em;
+}
+
+main .attributions article figure figcaption p {
+    font-family: "DM Mono";
+    font-size: 1em;
+
 }
 
 main .attributions article img {

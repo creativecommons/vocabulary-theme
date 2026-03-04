@@ -81,6 +81,118 @@
 
 </div>
 
+
+<!-- related blog posts here -->
+ <?php
+    $project_blogs = get_field('blog_posts');
+    if( !empty($project_blogs) ) :
+?>
+
+<article class="posts">
+
+    <h2>Related Posts</h2>
+
+    <details class="attribution">
+    <summary>Attribution <span class="icon icon-replace fa-angle-up"></span></summary>
+
+    <ul class="attributions">
+
+            <?php foreach($project_blogs as $blog) : ?>
+            <li>
+                <article>
+                    <figure>
+                        <img src="<?php echo get_the_post_thumbnail_url( $blog->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($blog->ID), '_wp_attachment_image_alt', true ); ?>" />
+
+                        <figcaption>
+                            <p><?php echo get_the_post_thumbnail_caption( $blog->ID ); ?></p>
+                        </figcaption>
+                    </figure>
+                </article>
+            </li>
+            <?php endforeach; ?>
+
+        </ul>
+    </details>
+
+    <ul>
+
+
+    <?php foreach($project_blogs as $blog) : ?>
+    <?php
+        $permalink = get_permalink( $blog->ID );
+        $title = get_the_title( $blog->ID );
+        $category = get_field( 'category', $blog->ID );
+        $link_text = get_field( 'link_text', $blog->ID );
+        $link_url = get_field( 'link_url', $blog->ID );
+        // $type = get_field( 'type', $blog->ID );
+        // if ($type == 'default') { $type = 'focus-area';}
+        // $content = get_the_content( $topic_feature->ID );
+        // $content = get_post_field('post_content', $topic_feature->ID);
+        // $content = apply_filters('the_content', $content);
+        // $content = str_replace(']]>', ']]&gt;', $content);
+        // $excerpt = get_the_excerpt( $staff_person->ID );
+    ?>
+    <li>
+        <article class="post">
+            <header>
+            <h3 class="title"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+
+            <?php if ( get_field('authorship', $blog->ID) ) : ?>
+            <span class="byline">by
+                <?php
+                $authors = get_field('authorship', $blog->ID);
+                    if( $authors ):
+                    $i = 1;
+                    $count = count($authors);
+
+                    foreach( $authors as $author ):
+                        $permalink = get_permalink( $author->ID );
+                        $title = get_the_title( $author->ID );
+                        $custom_field = get_field( 'field_name', $author->ID );
+                        if ($i < $count) {
+                            $separator = ',';
+                        }
+                        else {
+                            $separator = '';
+                        }
+                ?>
+
+                <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                        <?php $i++; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+            </span>
+            <?php endif; ?>
+
+            <span class="categories">
+                <?php the_category(', ', $blog->ID) ?>
+            </span>
+            </header>
+
+            <figure>
+                <img src="<?php echo get_the_post_thumbnail_url( $blog->ID, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($blog->ID), '_wp_attachment_image_alt', true ); ?>" />
+                <figcaption>
+                    <?php echo get_the_post_thumbnail_caption( $blog->ID ); ?>
+                </figcaption>
+            </figure>
+
+        </article>
+    </li>
+
+    <?php endforeach; ?>
+
+    </ul>
+
+    <footer>
+        <!-- <a class="more" href="#">more posts</a> -->
+    </footer>
+
+</article>
+<? endif; ?>
+
+
+
 <?php endwhile; // end of the loop. ?>
 
 </main>
