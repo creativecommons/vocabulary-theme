@@ -789,6 +789,10 @@ main > header figure {
   margin-top: 3em;
 }
 
+.blog-post main > header figcaption p {
+  text-align: right;
+}
+
 .events-index main > header > figure {
   height: auto;
 
@@ -1263,6 +1267,10 @@ main article.posts.related ul {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+main article.posts.related ul li {
+  grid-column: span 1;
+}
+
 main article.posts.related h3 a {
   --underline-background-color:#2E1FB8;
   color: white;
@@ -1277,7 +1285,48 @@ main article.posts.related a {
   font-family: "DM Mono";
 } */
 
+main > header .default-image {
+    position: relative;
+    /* z-index: -1; */
+}
 
+main > header .default-image img.photo {
+  margin-left: -2em;
+    /* width: 100%; */
+    object-fit: cover;
+    mask-image: url(pidgin/svg/blob5.svg);
+    mask-repeat: no-repeat;
+    mask-position: top center;
+    mask-size: 86% 100%;
+    transition: .2s ease-in;
+    margin-top: 2.5em;
+}
+
+main > header .default-image img.shape1 {
+    width: 30%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    /* transform: rotate(180deg); */
+}
+
+main > header .default-image img.shape2 {
+    width: 40%;
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+    z-index: -10;
+}
+
+main > header .default-image img.shape3 {
+    width: 66%;
+    position: absolute;
+    top: -10%;
+    right: 0;
+    z-index: 5;
+    transform: rotate(45deg);
+}
 
 
 
