@@ -964,6 +964,55 @@ main > header figure {
   margin-top: 0;
 }
 
+.chooser-page > header p {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.chooser-page > footer  {
+  margin-top: 8em;
+}
+
+.chooser-page main h3 {
+  font-family: "DM Sans";
+}
+
+.chooser-page #tool-recommendation h4 {
+  font-family: "DM Sans";
+}
+
+.chooser-page details summary {
+  font-family: "DM Sans";
+}
+
+.chooser-page #tool-recommendation .conditions-definitions {
+  font-family: "DM Mono";
+}
+
+.chooser-page header p:nth-child(2) {
+  font-size: 1.3em;
+}
+
+.chooser-page form#chooser fieldset {
+  border-radius: 12px;
+}
+
+.chooser-page aside #empty {
+  border-radius: 16px;
+}
+
+.chooser-page #tool-recommendation .tool {
+  background:#FFD9CC;
+  border-radius: 16px;
+}
+
+.chooser-page #tool-recommendation .tool a {
+  --underline-background-color: #FFD9CC;
+
+  font-family: "DM Sans";
+  /* color:#2E1FB8; */
+}
+
 
 blockquote:nth-of-type(even):after {
   background:#FF0000;
