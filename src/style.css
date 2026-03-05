@@ -1211,7 +1211,7 @@ main .attributions article figure .attribution {
 
 main nav.pagination ul {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
   width: 100%;
   margin: 0;
