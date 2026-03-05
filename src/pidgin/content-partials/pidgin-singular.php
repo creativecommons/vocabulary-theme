@@ -135,7 +135,7 @@ $query = new WP_Query(array(
     'cat' => $catIDs,
     'post__not_in' => array($queried_object->ID),
     'post_type' => 'post',
-    'posts_per_page' => 4,
+    'posts_per_page' => 3,
     //'paged' => $paged,
 ));
 ?>
