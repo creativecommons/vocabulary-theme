@@ -1,0 +1,75 @@
+{
+    "key": "group_69a87177b37d4",
+    "title": "Page More Links Meta",
+    "fields": [
+        {
+            "key": "field_69a871f7cf8c5",
+            "label": "Display More Links?",
+            "name": "more_links_display",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_69a87197cf8c4",
+            "label": "More Links Content",
+            "name": "more_links_content",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "This should only be a bulleted list of links, putting anything else here will cause errors.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69a871f7cf8c5",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "<ul>\r\n<li><a href=\"#\">Link 1<\/a><\/li>\r\n<li><a href=\"#\">Link 2<\/a><\/li>\r\n<li><a href=\"#\">Link 3<\/a><\/li>\r\n<li><a href=\"#\">Link 4<\/a><\/li>\r\n<li><a href=\"#\">Link 5<\/a><\/li>\r\n<\/ul>",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1772647597
+}
