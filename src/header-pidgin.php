@@ -245,7 +245,7 @@
                         <li><a href="/support/donor-faq">Donor FAQ</a></li>
                     </ul>
                 </li>
-                <li><a class="donate" href="#">Donate</a></li>
+                <li><a class="donate" href="https://www.classy.org/give/313412/#!/donation/checkout?c_src=website&c_src2=top-of-page-banner">Donate</a></li>
                 <!-- <li><a class="donate" href="#">Support Us</a></li> -->
             </ul>
         </nav>
