@@ -781,6 +781,10 @@ main > header figure {
   border: transparent;
 }
 
+main h3 {
+  font-family: "DM Sans";
+}
+
 .blog-index main > header figcaption p {
   text-align: right;
 }
