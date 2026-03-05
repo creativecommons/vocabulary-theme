@@ -949,7 +949,7 @@ main h3 {
 .home-narrative article.topic-summary.about {
     grid-template-columns: 1fr 2fr;
     gap: 4em;
-    margin-bottom: 8em;
+    margin-bottom: 4.5em;
 }
 
 .home-narrative article.topic-summary.about .description {
