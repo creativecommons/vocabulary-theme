@@ -87,9 +87,9 @@
     </article>
 
 
-    <? endforeach; ?>
+    <?php endforeach; ?>
 
-<? endif; ?>
+<?php endif; ?>
 
 <!-- <blockquote>
     <p>There would be a quote here doing things</p>

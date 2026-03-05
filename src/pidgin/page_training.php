@@ -194,9 +194,9 @@
     <?php endif; ?>
 
 
-    <? endforeach; ?>
+    <?php endforeach; ?>
 
-<? endif; ?>
+<?php endif; ?>
 
 <?php if (get_field('more_links_display')) : ?>
 <aside class="more-links">
