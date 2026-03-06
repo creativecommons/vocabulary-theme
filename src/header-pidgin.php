@@ -245,7 +245,7 @@
                         <li><a href="/support/donor-faq">Donor FAQ</a></li>
                     </ul>
                 </li>
-                <li><a class="donate" href="#">Donate</a></li>
+                <li><a class="donate" href="https://www.classy.org/give/313412/#!/donation/checkout?c_src=website&c_src2=top-of-page-banner">Donate</a></li>
                 <!-- <li><a class="donate" href="#">Support Us</a></li> -->
             </ul>
         </nav>
@@ -270,7 +270,20 @@ $noticeQuery = new WP_Query(array(
 <?php endif; ?>
 
 <article class="attention <?php echo $importance_level; ?>">
+<div>
+<h2><?php the_field('message'); ?></h2>
 <?php the_field('message_rich_text'); ?>
+<a href="<?php the_field('link_url'); ?>"><?php the_field('link_text'); ?></a>
+</div>
+
+<figure>
+    <?php $image = get_field('graphic'); ?>
+    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+    <!-- <figcaption>
+        <p></p>
+    </figcaption> -->
+</figure>
 </article>
 
 <?php endwhile; ?>

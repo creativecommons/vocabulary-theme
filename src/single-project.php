@@ -189,7 +189,7 @@
     </footer>
 
 </article>
-<? endif; ?>
+<?php endif; ?>
 
 
 

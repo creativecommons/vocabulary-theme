@@ -3,7 +3,7 @@ Theme Name: CC Vocabulary Theme
 Author: the Creative Commons team; possumbilities, Timid Robot
 Author URI: https://opensource.creativecommons.org/
 Description: Theme based on the Vocabulary Design System
-Version: 2.0
+Version: 2.0.1
 Requires at least: 5.0
 Tested up to: 6.2.2
 Requires PHP: 7.0
@@ -774,11 +774,100 @@ main nav.pagination ul li span.current {
 
 /* pidgin specific patches */
 
+body > article.attention {
+  grid-column: 2/11;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  margin-bottom: 2em;
+  padding: 1em;
+  position: relative;
+
+  background:#F5F5F5;
+  background: #E0FF00;
+  border: 4px solid black;
+  border-radius: 16px;
+}
+
+body > article.attention:before {
+  display: inline-block;
+  content: '';
+  height: 1.5em;
+  width: 1.5em;
+  position: absolute;
+  top: -1em;
+  right: 2em;
+  z-index: 5;
+
+  background:#F5F5F5;
+  background:#E0FF00;
+  border-top: 4px solid black;
+  border-right: 4px solid black;
+
+  transform: rotate(-45deg);
+}
+
+body > article.attention div {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1em 2em 2em 2em;
+}
+
+body > article.attention figure img {
+  width: 100%;
+}
+
+body > article.attention h2 {
+  margin-bottom: 0;
+
+  font-family: "DM Sans";
+  font-size: 1.8em;
+  line-height: 1.5;
+  text-align: left;
+}
+
+body > article.attention p {
+  font-size: 1.4em;
+  /* margin-bottom: 1em; */
+}
+
+body > article.attention a {
+  --underline-background-color:black;
+  display: inline-block;
+  margin-top: 1em;
+  padding: .6em 1.6em;
+
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 1em;
+  color: white;
+  background:black;
+  border-radius: 60px;
+  text-transform: capitalize;
+  box-sizing: border-box;
+  border: 4px solid transparent;
+  text-decoration: none;
+}
+
+body > article.attention a:hover {
+  --underline-background-color:white;
+  background: white;
+
+  color: black;
+  border-color: black;
+}
+
 main > header figure {
   height: auto;
   background: transparent;
   overflow: visible;
   border: transparent;
+}
+
+main h3 {
+  font-family: "DM Sans";
 }
 
 .blog-index main > header figcaption p {
@@ -860,7 +949,7 @@ main > header figure {
 .home-narrative article.topic-summary.about {
     grid-template-columns: 1fr 2fr;
     gap: 4em;
-    margin-bottom: 8em;
+    margin-bottom: 4.5em;
 }
 
 .home-narrative article.topic-summary.about .description {
@@ -1211,7 +1300,7 @@ main .attributions article figure .attribution {
 
 main nav.pagination ul {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
   width: 100%;
   margin: 0;

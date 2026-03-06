@@ -82,6 +82,13 @@
                         "operator": "==",
                         "value": "newsletter-promo"
                     }
+                ],
+                [
+                    {
+                        "field": "field_64e61a2301304",
+                        "operator": "==",
+                        "value": "top-of-site"
+                    }
                 ]
             ],
             "wrapper": {
@@ -180,6 +187,13 @@
                         "operator": "==",
                         "value": "newsletter-promo"
                     }
+                ],
+                [
+                    {
+                        "field": "field_64e61a2301304",
+                        "operator": "==",
+                        "value": "top-of-site"
+                    }
                 ]
             ],
             "wrapper": {
@@ -216,6 +230,13 @@
                         "operator": "==",
                         "value": "newsletter-promo"
                     }
+                ],
+                [
+                    {
+                        "field": "field_64e61a2301304",
+                        "operator": "==",
+                        "value": "top-of-site"
+                    }
                 ]
             ],
             "wrapper": {
@@ -250,5 +271,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1772638190
+    "modified": 1772744433
 }
