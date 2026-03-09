@@ -1314,6 +1314,10 @@ main ul.attributions li {
   grid-column: span 1;
 }
 
+ul.attributions li:nth-child(1) article {
+  display: initial;
+}
+
 main .attributions article {
     margin-bottom: 1em;
 }
