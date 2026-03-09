@@ -82,7 +82,7 @@
     <nav class="pagination">
         <ul>
             <!-- <li><a href="#" class="previous">Previous</a></li> -->
-            <li><a href="#" class="more">View All Events</a></li>
+            <li><a href="#" class="/events">View All Events</a></li>
             <!-- <li><a href="#" class="next">Next</a></li> -->
         </ul>
         

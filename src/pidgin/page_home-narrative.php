@@ -207,7 +207,7 @@
     </ul>
 
     <footer>
-        <a class="more" href="#">more posts</a>
+        <a class="more" href="/blog/archive/">more posts</a>
     </footer>
 
 </article>
