@@ -1048,7 +1048,7 @@ article.topic-summary p a {
 }
 
 .training-index .topic-summary.about {
-  /* grid-template-columns: 1fr 2fr; */
+  grid-template-columns: 1fr 2fr;
   gap: 4em;
   margin-bottom: 6em;
 }
