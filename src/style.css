@@ -866,9 +866,22 @@ main > header figure {
   border: transparent;
 }
 
-main h3 {
+main h3, main h4, main h5, main h6 {
   font-family: "DM Sans";
 }
+
+main h4 {
+  font-size: 1.5em;
+}
+
+main h5 {
+  font-size: 1.4em;
+}
+
+main h6 {
+  font-size: 1.3em;
+}
+
 
 article.topic-summary p a {
   --underline-background-color: none;
