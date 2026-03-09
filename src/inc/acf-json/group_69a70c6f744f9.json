@@ -791,6 +791,24 @@
             "placeholder": ""
         },
         {
+            "key": "field_69aeeb2777730",
+            "label": "Topic Features",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 1,
+            "selected": 0
+        },
+        {
             "key": "field_69a70d0b864b9",
             "label": "Topic Features",
             "name": "topic_features",
@@ -842,5 +860,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1772569054
+    "modified": 1773071178
 }

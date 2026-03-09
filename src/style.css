@@ -870,6 +870,26 @@ main h3 {
   font-family: "DM Sans";
 }
 
+article.topic-summary p a {
+  --underline-background-color: none;
+
+  display: inline;
+
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+
+  font-size: 1em;
+  font-weight: 400;
+  text-transform: none;
+
+  color:#2E1FB8;
+  text-decoration: underline;
+
+}
+
 .blog-index main > header figcaption p {
   text-align: right;
 }
