@@ -18,6 +18,7 @@
             <li><a href="/what-we-do">What we do</a></li>
             <li><a href="/blog">Blog</a></li>
             <li><a href="/support">Support us</a></li>
+            <li><a href="https://creative-commons-shop.fourthwall.com/">Store</a></li>
             
             <li><a href="/contact">Contact</a></li>
             <li><a href="/privacy">Privacy</a></li>
