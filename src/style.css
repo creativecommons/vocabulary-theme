@@ -1027,6 +1027,10 @@ article.topic-summary p a {
   border-radius: 16px;
 }
 
+.home-narrative article.topic-summary.highlight figure {
+  height: auto;
+}
+
 /* generalize these three rules? */
 .licenses-page .topic-summary.about {
   grid-template-columns: 1fr 2fr;
