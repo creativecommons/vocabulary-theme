@@ -88,7 +88,7 @@
     </ul>
 
     <footer>
-        <a class="more" href="/case-studies">more case studies</a>
+        <a class="more" href="/case-studies-archive">more case studies</a>
     </footer>
 
 
