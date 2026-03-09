@@ -937,6 +937,23 @@ main h3 {
   justify-content: center;
 }
 
+.casestudies-index .topic-summary.about {
+  grid-template-columns: 35% 60%;
+  gap: 4em;
+  box-sizing: border-box;
+}
+
+.casestudies-index .topic-summary.about .description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.casestudies-index .topic-summary.about .description p {
+  font-size: 1.6em;
+  margin-bottom: 0;
+}
+
  
 .home-narrative article.topic-summary.focus-area:nth-of-type(even) figure {
     order: -1;
