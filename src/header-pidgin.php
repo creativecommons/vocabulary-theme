@@ -240,7 +240,7 @@
                     
                     <ul>
                         <li><a href="https://www.classy.org/give/313412/#!/donation/checkout?c_src=website&c_src2=top-of-page-banner">Make a Gift</a></li>
-                        <li><a href="/support/ways-to-give">Ways to Give</a></li>
+                        <!-- <li><a href="/support/#ways-to-give">Ways to Give</a></li> -->
                         <li><a href="/support/oic">Open Infrastructure Circle</a></li>
                         <li><a href="/support/donor-faq">Donor FAQ</a></li>
                     </ul>
