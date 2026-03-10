@@ -1577,7 +1577,11 @@ main > header .default-image img.shape3 {
   } 
 
   article.topic-summary.highlight figure {
-    margin-bottom: 7em;
+    margin-bottom: 2em;
+  }
+
+  main ul.attributions {
+    display: block;
   }
 }
 
