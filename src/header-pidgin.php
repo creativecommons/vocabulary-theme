@@ -199,7 +199,7 @@
 
                     <ul>
                         <li>
-                            <a href="/build">Build <br> Open Infrastructure</a>
+                            <a href="/build/">Build <br> Open Infrastructure</a>
                             <button class="expand icon-replace fa-angle-down">Expand</button>
 
                              <ul>
@@ -210,7 +210,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="/implement">Implement <br> the Commons</a>
+                            <a href="/implement/">Implement <br> the Commons</a>
                             <button class="expand icon-replace fa-angle-down">Expand</button>
 
                              <ul>
@@ -220,7 +220,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="/engage">Engage <br> the People</a>
+                            <a href="/engage/">Engage <br> the People</a>
                             <button class="expand icon-replace fa-angle-down">Expand</button>
 
                              <ul>
