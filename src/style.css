@@ -1051,6 +1051,14 @@ article.topic-summary p a {
   font-size: 1.6em;
 }
 
+.licenses-page .license h3 {
+  margin-bottom: 0;
+}
+
+.licenses-page .license img.badge {
+  margin-bottom: 1.5em;
+}
+
 .training-index .topic-summary.about {
   grid-template-columns: 1fr 2fr;
   gap: 4em;
@@ -1251,9 +1259,14 @@ article.topic-summary.highlight figure figcaption {
   text-align: right;
 }
 
-article:nth-child(even of .topic-summary.highlight) figure figcaption {
+article.topic-summary.highlight figure figcaption {
   text-align: right;
   margin-left: 20%;
+}
+
+article:nth-child(even).topic-summary.highlight figure figcaption {
+  text-align: left;
+  margin-left: 0%;
 }
 
 article.topic-summary figure figcaption p {
