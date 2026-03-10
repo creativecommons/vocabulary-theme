@@ -13,17 +13,9 @@
     <figure>
         <?php $image = get_field('header_graphic'); ?>
         <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-        <!-- <img src="https://creativecommons.org/wp-content/uploads/2025/05/moon-3.jpg" class="photo" />
-            <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/blob3.svg" class="shape1" />
-            <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/blob4.svg" class="shape2" />
-            <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/repeat_c.svg" class="shape3" /> -->
-            <!-- <svg class="shape1">
-                <use href="../../../../pidgin/svg/blob3.svg"></use>
-            </svg> -->
 
         <figcaption>
             <p><?php echo $image['caption']; ?></p>
-            
             
         </figcaption>
     </figure>
