@@ -1274,6 +1274,14 @@ article.topic-summary figure figcaption p {
   font-size: .8em;
 }
 
+article.topic-summary .category {
+  display: block;
+  margin-bottom: 1em;
+  order: -1;
+
+  font-family: "DM Mono";
+}
+
 .posts .attribution {
   font-family: "DM Mono";
 }
