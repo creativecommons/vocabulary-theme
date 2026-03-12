@@ -1595,6 +1595,10 @@ main > header .default-image img.shape3 {
 
 @media (max-width: 765px) {
 
+  body main header {
+    display: block;
+  }
+
   body main article.topic-summary.about figure {
     display: none;
   }
