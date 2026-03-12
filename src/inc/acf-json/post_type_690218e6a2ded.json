@@ -43,7 +43,7 @@
         "item_link_description": "A link to a topic feature."
     },
     "description": "",
-    "public": true,
+    "public": false,
     "hierarchical": false,
     "exclude_from_search": false,
     "publicly_queryable": true,
@@ -87,5 +87,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1772558293
+    "modified": 1773327486
 }
