@@ -227,7 +227,7 @@
                                 <li><a href="/training-and-webinars">Training + Webinars</a></li>
                                 <li><a href="/advocacy">Advocacy</a></li>
                                 <li><a href="/community">Community</a></li>
-                                <li><a href="/partnerships">Partnerships</a></li>
+                                <!-- <li><a href="/partnerships">Partnerships</a></li> -->
                                 <li><a href="/events">Events</a></li>
                             </ul>
                         </li>
