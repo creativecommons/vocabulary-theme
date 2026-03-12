@@ -31,7 +31,9 @@
 
         <p class="location"><?php the_field('event_location'); ?></p>
 
+        <?php if (get('event_registration_url')) : ?>
         <a href="<?php the_field('event_registration_url'); ?>">Register</a>
+        <?php endif; ?>
     </article>
 </aside>
 
@@ -39,7 +41,9 @@
     <h2>Event Details</h2>
     <?php the_content(); ?>
 
+    <?php if(get('event_files_download_url')) : ?>
     <a href="<?php the_field('event_files_download_url'); ?>" class="files">Download Event Files</a>
+    <?php endif; ?>
 
 
     <?php
@@ -82,23 +86,14 @@
     <nav class="pagination">
         <ul>
             <!-- <li><a href="#" class="previous">Previous</a></li> -->
-            <li><a href="#" class="/events">View All Events</a></li>
+            <li><a href="/events" class="more">View All Events</a></li>
             <!-- <li><a href="#" class="next">Next</a></li> -->
         </ul>
         
     </nav>
 </footer>
 
-<article class="topic-summary newsletter">
-    <div class="description">
-        <h2>Get the latest CC news, and join the community to empower individuals and communities around the world.</h2>
-        <a href="#">Sign up for CC's Community Newsletter</a>
-    </div>
-    <figure>
-        <!-- <img src="https://creativecommons.org/wp-content/uploads/2023/01/Open-Palms-Not-Clutching-Fists.png"> -->
-    </figure>
-    
-</article>
+<?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
 
 <?php endwhile; // end of the loop. ?>
 
