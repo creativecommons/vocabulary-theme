@@ -92,7 +92,7 @@
     </ul>
 
     <footer>
-        <a class="more" href="#">more events</a>
+        <a class="more" href="/events-archive">more events</a>
     </footer>
 
 

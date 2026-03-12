@@ -199,7 +199,7 @@
 
                     <ul>
                         <li>
-                            <a href="/build">Build <br> Open Infrastructure</a>
+                            <a href="/build/">Build <br> Open Infrastructure</a>
                             <button class="expand icon-replace fa-angle-down">Expand</button>
 
                              <ul>
@@ -210,7 +210,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="/implement">Implement <br> the Commons</a>
+                            <a href="/implement/">Implement <br> the Commons</a>
                             <button class="expand icon-replace fa-angle-down">Expand</button>
 
                              <ul>
@@ -220,14 +220,14 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="/engage">Engage <br> the People</a>
+                            <a href="/engage/">Engage <br> the People</a>
                             <button class="expand icon-replace fa-angle-down">Expand</button>
 
                              <ul>
                                 <li><a href="/training-and-webinars">Training + Webinars</a></li>
                                 <li><a href="/advocacy">Advocacy</a></li>
                                 <li><a href="/community">Community</a></li>
-                                <li><a href="/partnerships">Partnerships</a></li>
+                                <!-- <li><a href="/partnerships">Partnerships</a></li> -->
                                 <li><a href="/events">Events</a></li>
                             </ul>
                         </li>
@@ -239,8 +239,8 @@
                     <button class="expand icon-replace fa-angle-down">Expand</button>
                     
                     <ul>
-                        <li><a href="/support/make-a-gift">Make a Gift</a></li>
-                        <li><a href="/support/ways-to-give">Ways to Give</a></li>
+                        <li><a href="https://www.classy.org/give/313412/#!/donation/checkout?c_src=website&c_src2=top-of-page-banner">Make a Gift</a></li>
+                        <!-- <li><a href="/support/#ways-to-give">Ways to Give</a></li> -->
                         <li><a href="/support/oic">Open Infrastructure Circle</a></li>
                         <li><a href="/support/donor-faq">Donor FAQ</a></li>
                     </ul>

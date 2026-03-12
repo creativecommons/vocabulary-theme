@@ -198,9 +198,228 @@ $query = new WP_Query(array(
 
 
 <?php endif; ?>
+<?php wp_reset_postdata(); ?>
 
 
 </article>
+
+<?php if (get_field('display_section_1')): ?>
+<article class="posts">
+<h2><?php the_field('section_1_title'); ?></h2>
+
+<?php
+
+$cat = get_field('section_1_filter_by_category');
+
+$query = new WP_Query(array(
+    // 'post__not_in' => $highlight_posts,
+    'post_type' => 'post',
+    'posts_per_page' => 3,
+    'cat' => get_field('section_1_filter_by_category'),
+    //'paged' => $paged,
+));
+?>
+
+<details class="attribution">
+    <summary>Attribution <span class="icon icon-replace fa-angle-up"></span></summary>
+
+    <ul class="attributions">
+
+    <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+            <li>
+                <article>
+                    <figure>
+                        <?php //echo get_the_post_thumbnail( $post_id, 'full' );
+                        ?>
+                        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+                        
+                        <figcaption class="attribution"><p><?php echo get_the_post_thumbnail_caption( $post_id ); ?></p></figcaption>
+                    </figure>
+                </article>
+            </li>
+            <?php endwhile; ?>
+
+        </ul>
+</details>
+
+<?php endif; ?>
+
+<ul>
+
+<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+    <li>
+	<article class="post">
+        <header>
+        <h3 class="title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
+        <?php if ( get_field('authorship') ) : ?>
+        <span class="byline">by
+            <?php
+            $authors = get_field('authorship');
+                if( $authors ):
+                $i = 1;
+                $count = count($authors);
+
+                foreach( $authors as $author ):
+                    $permalink = get_permalink( $author->ID );
+                    $title = get_the_title( $author->ID );
+                    $custom_field = get_field( 'field_name', $author->ID );
+                    if ($i < $count) {
+                        $separator = ',';
+                    }
+                    else {
+                        $separator = '';
+                    }
+            ?>
+
+            <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                    <?php $i++; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+        </span>
+        <?php endif; ?>
+        <span class="categories">
+            <?php the_category(', ') ?>
+        </span>
+        </header>
+
+        <figure>
+            <?php //echo get_the_post_thumbnail( $post_id, 'full' );
+            ?>
+            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+        </figure>
+    </article>
+    </li>
+
+    <?php $highlight_posts[] = $post->ID; ?>
+
+	<?php endwhile; ?>
+    </ul>
+
+    <footer>
+        <a class="more" href="/blog/archive/">more posts</a>
+    </footer>
+
+
+<?php endif; ?>
+
+
+</article>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>
+
+
+<?php if (get_field('display_section_2')): ?>
+<article class="posts">
+<h2><?php the_field('section_2_title'); ?></h2>
+
+<?php
+$cat = get_field('section_2_filter_by_category');
+
+$query = new WP_Query(array(
+    // 'post__not_in' => $highlight_posts,
+    'post_type' => 'post',
+    'posts_per_page' => 3,
+    'cat' => $cat,
+    //'paged' => $paged,
+));
+?>
+
+<details class="attribution">
+    <summary>Attribution <span class="icon icon-replace fa-angle-up"></span></summary>
+
+    <ul class="attributions">
+
+    <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+            <li>
+                <article>
+                    <figure>
+                        <?php //echo get_the_post_thumbnail( $post_id, 'full' );
+                        ?>
+                        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+                        
+                        <figcaption class="attribution"><p><?php echo get_the_post_thumbnail_caption( $post_id ); ?></p></figcaption>
+                    </figure>
+                </article>
+            </li>
+            <?php endwhile; ?>
+
+        </ul>
+</details>
+
+<?php endif; ?>
+
+<ul>
+
+<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+    <li>
+	<article class="post">
+        <header>
+        <h3 class="title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
+        <?php if ( get_field('authorship') ) : ?>
+        <span class="byline">by
+            <?php
+            $authors = get_field('authorship');
+                if( $authors ):
+                $i = 1;
+                $count = count($authors);
+
+                foreach( $authors as $author ):
+                    $permalink = get_permalink( $author->ID );
+                    $title = get_the_title( $author->ID );
+                    $custom_field = get_field( 'field_name', $author->ID );
+                    if ($i < $count) {
+                        $separator = ',';
+                    }
+                    else {
+                        $separator = '';
+                    }
+            ?>
+
+            <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                    <?php $i++; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+        </span>
+        <?php endif; ?>
+        <span class="categories">
+            <?php the_category(', ') ?>
+        </span>
+        </header>
+
+        <figure>
+            <?php //echo get_the_post_thumbnail( $post_id, 'full' );
+            ?>
+            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+        </figure>
+    </article>
+    </li>
+
+    <?php $highlight_posts[] = $post->ID; ?>
+
+	<?php endwhile; ?>
+    </ul>
+
+    <footer>
+        <a class="more" href="/blog/archive/">more posts</a>
+    </footer>
+
+
+<?php endif; ?>
+
+
+</article>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>
+
+
+
+
 
 <?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
 

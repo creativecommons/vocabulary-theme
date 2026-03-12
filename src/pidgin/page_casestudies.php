@@ -88,24 +88,12 @@
     </ul>
 
     <footer>
-        <a class="more" href="#">more case studies</a>
+        <a class="more" href="/case-studies-archive">more case studies</a>
     </footer>
 
 
 </article>
 
-
-
-<article class="topic-summary newsletter">
-    <div class="description">
-        <h2>Get the latest CC news, and join the community to empower individuals and communities around the world.</h2>
-        <a href="#">Sign up for CC's Community Newsletter</a>
-    </div>
-    <figure>
-        <!-- <img src="https://creativecommons.org/wp-content/uploads/2023/01/Open-Palms-Not-Clutching-Fists.png"> -->
-    </figure>
-    
-</article>
 
 
 <?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>

@@ -50,10 +50,11 @@
 
 </article>
 
-
+    <?php if($testimonial1) : ?>
     <blockquote>
         <p><?php echo $testimonial1;  ?></p>
     </blockquote>
+    <?php endif; ?>
 
 
 <article class="topic-dive">
@@ -187,9 +188,13 @@
 
     <?php if ($post_index == 1) : ?>
 
+        <?php if ($testimonial2) : ?>
+
         <blockquote>
             <p><?php echo $testimonial2;  ?></p>
         </blockquote>
+
+        <?php endif; ?>
 
     <?php endif; ?>
 

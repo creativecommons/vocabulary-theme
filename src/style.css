@@ -237,6 +237,10 @@ main nav.pagination ul li span.current {
   margin-top: .6em;
 }
 
+body main article.topic-summary.intro figure {
+  z-index: 1;
+}
+
 .home-index .topic-summary figure iframe {
   height: 70%;
 
@@ -866,8 +870,41 @@ main > header figure {
   border: transparent;
 }
 
-main h3 {
+main h3, main h4, main h5, main h6 {
   font-family: "DM Sans";
+}
+
+main h4 {
+  font-size: 1.5em;
+}
+
+main h5 {
+  font-size: 1.4em;
+}
+
+main h6 {
+  font-size: 1.3em;
+}
+
+
+article.topic-summary p a {
+  --underline-background-color: none;
+
+  display: inline;
+
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+
+  font-size: 1em;
+  font-weight: 400;
+  text-transform: none;
+
+  color:#2E1FB8;
+  text-decoration: underline;
+
 }
 
 .blog-index main > header figcaption p {
@@ -937,6 +974,23 @@ main h3 {
   justify-content: center;
 }
 
+.casestudies-index .topic-summary.about {
+  grid-template-columns: 35% 60%;
+  gap: 4em;
+  box-sizing: border-box;
+}
+
+.casestudies-index .topic-summary.about .description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.casestudies-index .topic-summary.about .description p {
+  font-size: 1.6em;
+  margin-bottom: 0;
+}
+
  
 .home-narrative article.topic-summary.focus-area:nth-of-type(even) figure {
     order: -1;
@@ -977,6 +1031,10 @@ main h3 {
   border-radius: 16px;
 }
 
+.home-narrative article.topic-summary.highlight figure {
+  height: auto;
+}
+
 /* generalize these three rules? */
 .licenses-page .topic-summary.about {
   grid-template-columns: 1fr 2fr;
@@ -993,8 +1051,16 @@ main h3 {
   font-size: 1.6em;
 }
 
+.licenses-page .license h3 {
+  margin-bottom: 0;
+}
+
+.licenses-page .license img.badge {
+  margin-bottom: 1.5em;
+}
+
 .training-index .topic-summary.about {
-  /* grid-template-columns: 1fr 2fr; */
+  grid-template-columns: 1fr 2fr;
   gap: 4em;
   margin-bottom: 6em;
 }
@@ -1184,6 +1250,12 @@ main > header figcaption p {
   text-align: left;
 }
 
+article.topic-summary.highlight .description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 article.topic-summary.highlight figure figcaption {
   width: 80%;
 }
@@ -1193,14 +1265,27 @@ article.topic-summary.highlight figure figcaption {
   text-align: right;
 }
 
-article:nth-child(even of .topic-summary.highlight) figure figcaption {
+article.topic-summary.highlight figure figcaption {
   text-align: right;
   margin-left: 20%;
+}
+
+article:nth-child(even).topic-summary.highlight figure figcaption {
+  text-align: left;
+  margin-left: 0%;
 }
 
 article.topic-summary figure figcaption p {
   font-family: "DM Mono";
   font-size: .8em;
+}
+
+article.topic-summary .category {
+  display: block;
+  margin-bottom: 1em;
+  order: -1;
+
+  font-family: "DM Mono";
 }
 
 .posts .attribution {
@@ -1258,6 +1343,10 @@ main ul.attributions {
 
 main ul.attributions li {
   grid-column: span 1;
+}
+
+ul.attributions li:nth-child(1) article {
+  display: initial;
 }
 
 main .attributions article {
@@ -1506,6 +1595,10 @@ main > header .default-image img.shape3 {
 
 @media (max-width: 765px) {
 
+  body main header {
+    display: block;
+  }
+
   body main article.topic-summary.about figure {
     display: none;
   }
@@ -1515,7 +1608,11 @@ main > header .default-image img.shape3 {
   } 
 
   article.topic-summary.highlight figure {
-    margin-bottom: 7em;
+    margin-bottom: 2em;
+  }
+
+  main ul.attributions {
+    display: block;
   }
 }
 
