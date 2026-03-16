@@ -31,7 +31,7 @@
 
         <p class="location"><?php the_field('event_location'); ?></p>
 
-        <?php if (get('event_registration_url')) : ?>
+        <?php if (get_field('event_registration_url')) : ?>
         <a href="<?php the_field('event_registration_url'); ?>">Register</a>
         <?php endif; ?>
     </article>
@@ -41,7 +41,7 @@
     <h2>Event Details</h2>
     <?php the_content(); ?>
 
-    <?php if(get('event_files_download_url')) : ?>
+    <?php if(get_field('event_files_download_url')) : ?>
     <a href="<?php the_field('event_files_download_url'); ?>" class="files">Download Event Files</a>
     <?php endif; ?>
 
