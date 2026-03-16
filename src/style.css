@@ -1565,7 +1565,7 @@ main > header .default-image img.shape3 {
 }
 
 
-@media (min-width: 1500px) {
+@media (min-width: 1600px) {
 
   body {
     /* width: 100px; */
@@ -1576,6 +1576,10 @@ main > header .default-image img.shape3 {
 
   .home-index .data-points .data-point.khan-academy h2 {
     text-indent: -6000px;
+  }
+
+  .home-narrative article.posts ul li:nth-child(1) article.post {
+    margin-bottom: 2em;
   }
 
 }
