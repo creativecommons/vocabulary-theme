@@ -1525,13 +1525,30 @@ main > header .default-image img.shape3 {
     transform: rotate(45deg);
 }
 
-@media (min-width: 2500px) {
+
+@media (min-width: 2400px) {
+
+  body {
+    width: 2400px;
+    /* grid-template-columns: 5% 3% 6% 6% 15% 30% 15% 6% 6% 3% 5%; */
+    grid-template-columns: 27% 1% 1% 1% 10% 20% 10% 1% 1% 1% 27%;
+    /* margin: 0 auto; */
+
+    font-size: 20px;
+  }
+
+}
+
+
+@media (min-width: 2200px) {
 
   body {
     /* width: 100px; */
     /* grid-template-columns: 5% 3% 6% 6% 15% 30% 15% 6% 6% 3% 5%; */
-    grid-template-columns: 25% 1% 1% 1% 12% 20% 12% 1% 1% 1% 25%;
+    grid-template-columns: 27% 1% 1% 1% 10% 20% 10% 1% 1% 1% 27%;
     /* margin: 0 auto; */
+
+    font-size: 18px;
   }
 
 }
