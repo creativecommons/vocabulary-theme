@@ -1037,6 +1037,7 @@ article.topic-summary p a {
 
 .home-narrative article.topic-summary.highlight figure {
   height: auto;
+  z-index: 1;
 }
 
 /* generalize these three rules? */
