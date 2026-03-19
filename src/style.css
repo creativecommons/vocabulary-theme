@@ -948,6 +948,10 @@ article.topic-summary p a {
   border-radius: 16px;
 }
 
+/* .events-index .event figcaption p {
+  font-family: "DM Mono";
+} */
+
 .events-index .event {
   margin-bottom: 8em;
 }
@@ -1523,6 +1527,14 @@ main > header .default-image img.shape3 {
     right: 0;
     z-index: 5;
     transform: rotate(45deg);
+}
+
+main > footer .search button {
+  z-index: 1;
+}
+
+body > footer .footer-menu ul {
+  min-height: 10em;
 }
 
 
