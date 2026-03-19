@@ -48,7 +48,7 @@
 
     <div class="subscribe">
     <h2>Subscribe to our newsletter</h2>
-    <a href="https://creativecommons.us4.list-manage.com/subscribe/post?u=fd30364b6577b471373d6076c&id=4603fe102a">Subscribe</a>
+    <a href="https://mail.creativecommons.org/subscribe">Subscribe</a>
     </div>
 
     <!-- <div class="donate">
