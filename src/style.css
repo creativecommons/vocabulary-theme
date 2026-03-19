@@ -1060,12 +1060,20 @@ article.topic-summary p a {
   font-size: 1.6em;
 }
 
+.licenses-page .topic-summary.orgs figure {
+  z-index: 10;
+}
+
 .licenses-page .license h3 {
   margin-bottom: 0;
 }
 
 .licenses-page .license img.badge {
   margin-bottom: 1.5em;
+}
+
+.licenses-page footer .license {
+  display: grid;
 }
 
 .training-index .topic-summary.about {
