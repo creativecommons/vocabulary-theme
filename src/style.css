@@ -974,6 +974,10 @@ article.topic-summary p a {
   color:#FF0000;
 }
 
+.event-post .content .speakers .speaker .caption {
+  margin-top: 0;
+}
+
 .event-post main footer nav ul {
   justify-content: center;
 }

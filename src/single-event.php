@@ -12,10 +12,10 @@
 
 <figure>
     <?php $image = get_field('header_graphic'); ?>
-    <img src="<?php echo $image['url'] ?>" alt="" />
+    <img src="<?php echo $image['url']; ?>" alt="" />
 
     <figcaption>
-        <p><?php echo $image['caption'] ?></p>
+        <p><?php echo $image['caption']; ?></p>
         
     </figcaption>
 </figure>
@@ -67,7 +67,7 @@
                     <h4><?php echo $position_title; ?></h4>
                     <p><?php echo wp_trim_words($excerpt, 50); ?></p>
 
-                    <p><?php echo get_the_post_thumbnail_caption( $post_id ); ?></p>
+                    <p class="caption">attribution: <?php echo get_the_post_thumbnail_caption( $post_id ); ?></p>
 
 
                     <figure>
