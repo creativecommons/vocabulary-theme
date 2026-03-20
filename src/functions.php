@@ -386,3 +386,10 @@ function appearAsButton( $atts, $content = null ) {
 }
 
 add_shortcode('button', 'appearAsButton');
+
+
+function topicSummary( $atts, $content = null ) {
+	return '<article class="topic-summary focus-area"><div><h2>' . sanitize_text_field($atts['heading']) . '</h2><p>'. $atts['description'] .'</p></div>' . $content . '</article>';
+}
+
+add_shortcode('topic-summary', 'topicSummary');
