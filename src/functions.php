@@ -393,3 +393,24 @@ function topicSummary( $atts, $content = null ) {
 }
 
 add_shortcode('topic-summary', 'topicSummary');
+
+
+
+function columns($atts, $content = null ) {
+
+  $output = '<div class="appear-as-columns"><ul>'.do_shortcode($content).'</ul></div>';
+
+  return $output;
+}
+
+add_shortcode('columns', 'columns');
+
+
+function column($atts, $content = null) {
+
+  $output = '<li>'. do_shortcode($content) .'</li>';
+
+  return $output;
+}
+
+add_shortcode('column', 'column');
