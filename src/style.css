@@ -1551,6 +1551,32 @@ main .content p > img {
   height: auto;
 }
 
+main .content span.appear-as-button a {
+  --underline-background-color: black;
+    display: inline-block;
+    margin-top: 1em;
+    padding: .6em 1.6em;
+    font-family: "DM Sans";
+    font-weight: 700;
+    font-size: 1.2em;
+    color: white;
+    background: black;
+    border-radius: 60px;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    border: 4px solid transparent;
+}
+
+main .content span.appear-as-button a:hover {
+  --underline-background-color: white;
+
+  color: black;
+  background: white;
+  border-color: black;
+}
+
+
+
 body > footer .footer-menu ul {
   min-height: 10em;
 }

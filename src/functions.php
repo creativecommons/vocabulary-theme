@@ -381,11 +381,8 @@ function stat_item($atts) {
 add_shortcode('stat', 'stat_item');
 
 
-function appearAsButton($atts, $content = "") {
-
-  $output = '<span class="appear-as-button">'.$content.'</span>';
-
-  return $output;
+function appearAsButton( $atts, $content = null ) {
+	return '<span class="appear-as-button">' . $content . '</span>';
 }
 
 add_shortcode('button', 'appearAsButton');
