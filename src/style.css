@@ -3,7 +3,7 @@ Theme Name: CC Vocabulary Theme
 Author: the Creative Commons team; possumbilities, Timid Robot
 Author URI: https://opensource.creativecommons.org/
 Description: Theme based on the Vocabulary Design System
-Version: 2.1
+Version: 2.2
 Requires at least: 5.0
 Tested up to: 6.2.2
 Requires PHP: 7.0
@@ -948,6 +948,10 @@ article.topic-summary p a {
   border-radius: 16px;
 }
 
+/* .events-index .event figcaption p {
+  font-family: "DM Mono";
+} */
+
 .events-index .event {
   margin-bottom: 8em;
 }
@@ -968,6 +972,10 @@ article.topic-summary p a {
 
 .event-post .content .speakers .speaker h3 a:hover {
   color:#FF0000;
+}
+
+.event-post .content .speakers .speaker .caption {
+  margin-top: 0;
 }
 
 .event-post main footer nav ul {
@@ -1033,6 +1041,7 @@ article.topic-summary p a {
 
 .home-narrative article.topic-summary.highlight figure {
   height: auto;
+  z-index: 1;
 }
 
 /* generalize these three rules? */
@@ -1051,12 +1060,20 @@ article.topic-summary p a {
   font-size: 1.6em;
 }
 
+.licenses-page .topic-summary.orgs figure {
+  z-index: 10;
+}
+
 .licenses-page .license h3 {
   margin-bottom: 0;
 }
 
 .licenses-page .license img.badge {
   margin-bottom: 1.5em;
+}
+
+.licenses-page footer .license {
+  display: grid;
 }
 
 .training-index .topic-summary.about {
@@ -1525,24 +1542,103 @@ main > header .default-image img.shape3 {
     transform: rotate(45deg);
 }
 
+main > footer .search button {
+  z-index: 1;
+}
+
+main .content p > img {
+  width: 100%;
+  height: auto;
+}
+
+main .content span.appear-as-button a {
+  --underline-background-color: black;
+    display: inline-block;
+    margin-top: 1em;
+    padding: .6em 1.6em;
+    font-family: "DM Sans";
+    font-weight: 700;
+    font-size: 1.2em;
+    color: white;
+    background: black;
+    border-radius: 60px;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    border: 4px solid transparent;
+}
+
+main .content span.appear-as-button a:hover {
+  --underline-background-color: white;
+
+  color: black;
+  background: white;
+  border-color: black;
+}
 
 
 
+body > footer .footer-menu ul {
+  min-height: 10em;
+}
 
-@media (max-width: 1190px) {
-  
+
+.home-narrative article.topic-summary.about .description p {
+  font-size: 1.5em;
+}
+
+article.topic-summary.highlight figure {
+  height: auto;
+}
+
+.home-narrative article.posts ul {
+  gap: 3em 5em;
+}
+
+
+@media (min-width: 1300px) {
+
+  body {
+    width: 1300px;
+    margin: 0 auto;
+  }
+
+  article.topic-summary, article.topic-summary.focus-area, article.topic-summary.highlight, .home-narrative article.posts, body main article.topic-summary.newsletter {
+    grid-column: 3 / 10;
+  }
+
+  body main article.topic-summary.intro {
+    grid-column: 2 / 11;
+  }
+
   body main article.topic-summary.newsletter {
-    display: block;
+    gap: 4em;
+  }
+
+  body footer {
+    border-radius: 16px;
+    margin-bottom: 4em;
   }
 
 }
-
 
 
 @media (min-width: 1500px) {
 
   .home-index .data-points .data-point.khan-academy h2 {
     text-indent: -6000px;
+  }
+
+  .home-narrative article.posts ul li:nth-child(1) article.post {
+    /* margin-bottom: 2em; */
+  }
+
+}
+
+
+@media (max-width: 1190px) {
+  
+  body main article.topic-summary.newsletter {
+    display: block;
   }
 
 }

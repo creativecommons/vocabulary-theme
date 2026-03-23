@@ -78,7 +78,7 @@
 
                     <figcaption>
                         <!-- <p>attribution details here</p> -->
-                         <?php echo get_the_post_thumbnail_caption( $post_id ); ?>
+                         <p><?php echo get_the_post_thumbnail_caption( $post_id ); ?></p>
                         
                     </figcaption>
                 </figure>

@@ -379,3 +379,38 @@ function stat_item($atts) {
 }
 
 add_shortcode('stat', 'stat_item');
+
+
+function appearAsButton( $atts, $content = null ) {
+	return '<span class="appear-as-button">' . $content . '</span>';
+}
+
+add_shortcode('button', 'appearAsButton');
+
+
+function topicSummary( $atts, $content = null ) {
+	return '<article class="topic-summary focus-area"><div><h2>' . sanitize_text_field($atts['heading']) . '</h2><p>'. $atts['description'] .'</p></div>' . $content . '</article>';
+}
+
+add_shortcode('topic-summary', 'topicSummary');
+
+
+
+function columns($atts, $content = null ) {
+
+  $output = '<div class="appear-as-columns"><ul>'.do_shortcode($content).'</ul></div>';
+
+  return $output;
+}
+
+add_shortcode('columns', 'columns');
+
+
+function column($atts, $content = null) {
+
+  $output = '<li>'. do_shortcode($content) .'</li>';
+
+  return $output;
+}
+
+add_shortcode('column', 'column');
