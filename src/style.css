@@ -1581,6 +1581,11 @@ body > footer .footer-menu ul {
   min-height: 10em;
 }
 
+body > footer .search {
+  position: relative;
+  z-index: 10;
+}
+
 
 .home-narrative article.topic-summary.about .description p {
   font-size: 1.5em;
