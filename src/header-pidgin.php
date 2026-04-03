@@ -190,6 +190,8 @@
                         <li><a href="/team">Team</a></li>
                         <li><a href="/governance">Governance</a></li>
                         <li><a href="/opportunities">Opportunities</a></li>
+                        <li><a href="/annual-reports/">Annual Reports & Financials</a></li>
+                        <li><a href="/history/">History</a></li>
                         <li><a href="/press">Press</a></li>
                     </ul>
                 </li>
@@ -206,6 +208,7 @@
                                 <li><a href="/cc-licenses">CC Licenses</a></li>
                                 <li><a href="/cc-signals">CC Signals</a></li>
                                 <li><a href="/public-domain">Public Domain</a></li>
+                                <li><a href="/chooser">Chooser</a></li>
                                 <li><a href="/faq">FAQs</a></li>
                             </ul>
                         </li>
