@@ -89,14 +89,9 @@ $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
 </div>
 
 <footer>
-    <nav class="pagination">
-        <ul>
-            <!-- <li><a href="#" class="previous">Previous</a></li> -->
-            <li><a href="/events" class="more">View All Events</a></li>
-            <!-- <li><a href="#" class="next">Next</a></li> -->
-        </ul>
-        
-    </nav>
+  
+    <a href="/events" class="more">View All Events</a>
+
 </footer>
 
 <?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
