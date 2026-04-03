@@ -17,7 +17,7 @@
                 "id": ""
             },
             "display_format": "d\/m\/Y",
-            "return_format": "F j, Y",
+            "return_format": "Ymd",
             "first_day": 1,
             "allow_in_bindings": 0
         },
@@ -56,6 +56,27 @@
             "display_format": "g:i a",
             "return_format": "g:i a",
             "allow_in_bindings": 0
+        },
+        {
+            "key": "field_69cff781a292e",
+            "label": "Event Timezone",
+            "name": "event_timezone",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_699db8a414b3e",
@@ -163,5 +184,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1771950904
+    "modified": 1775237749
 }

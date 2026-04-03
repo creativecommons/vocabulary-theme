@@ -58,11 +58,15 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
+<?php 
+$date = DateTime::createFromFormat('Ymd', get_field('event_date'));
+?>
+
 
 <article class="post">
     <header>
         <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
-        <span><?php the_field('event_date'); ?>, <?php the_field('event_time_start'); ?> - <?php the_field('event_time_end'); ?> | <?php the_field('event_location'); ?></span>
+        <span><?php echo $date->format('F j, Y'); ?>, <?php the_field('event_time_start'); ?> - <?php the_field('event_time_end'); ?> <?php the_field('event_timezone'); ?> | <?php the_field('event_location'); ?></span>
         <?php if ( get_field('authorship') ) : ?>
         <span class="byline">by
         <?php
