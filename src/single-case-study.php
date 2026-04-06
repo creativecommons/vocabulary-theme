@@ -71,10 +71,12 @@
     </div>
     <?php endif; ?>
 
+    <?php if (get_field('key_insights_content')): ?>
     <aside class="insights">
         <h2><?php the_field('key_insights_title'); ?></h2>
         <?php the_field('key_insights_content'); ?>
     </aside>
+    <?php endif; ?>
 
 </div>
 

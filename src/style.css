@@ -3,7 +3,7 @@ Theme Name: CC Vocabulary Theme
 Author: the Creative Commons team; possumbilities, Timid Robot
 Author URI: https://opensource.creativecommons.org/
 Description: Theme based on the Vocabulary Design System
-Version: 2.2
+Version: 2.3
 Requires at least: 5.0
 Tested up to: 6.2.2
 Requires PHP: 7.0
@@ -1579,6 +1579,11 @@ main .content span.appear-as-button a:hover {
 
 body > footer .footer-menu ul {
   min-height: 10em;
+}
+
+body > footer .search {
+  position: relative;
+  z-index: 10;
 }
 
 

@@ -4,6 +4,10 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
+<?php
+$date = DateTime::createFromFormat('Ymd', get_field('event_date'));
+?>
+
 <header>
 
 <div>
@@ -24,8 +28,8 @@
 <aside class="sidebar">
     <article class="event-meta">
         <h2>Date & Time</h2>
-        <p class="date"><?php the_field('event_date'); ?></p>
-        <p class="time"><?php the_field('event_time_start'); ?> - <?php the_field('event_time_end'); ?></p>
+        <p class="date"><?php echo $date->format('F j, Y'); ?></p>
+        <p class="time"><?php the_field('event_time_start'); ?> - <?php the_field('event_time_end'); ?> <?php the_field('event_timezone'); ?></p>
 
         <h2>Location</h2>
 
@@ -67,7 +71,9 @@
                     <h4><?php echo $position_title; ?></h4>
                     <p><?php echo wp_trim_words($excerpt, 50); ?></p>
 
+                    <?php if (get_the_post_thumbnail_caption( $post_id )) : ?>
                     <p class="caption">attribution: <?php echo get_the_post_thumbnail_caption( $post_id ); ?></p>
+                    <?php endif; ?>
 
 
                     <figure>
@@ -83,14 +89,9 @@
 </div>
 
 <footer>
-    <nav class="pagination">
-        <ul>
-            <!-- <li><a href="#" class="previous">Previous</a></li> -->
-            <li><a href="/events" class="more">View All Events</a></li>
-            <!-- <li><a href="#" class="next">Next</a></li> -->
-        </ul>
-        
-    </nav>
+  
+    <a href="/events" class="more">View All Events</a>
+
 </footer>
 
 <?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>

@@ -190,6 +190,8 @@
                         <li><a href="/team">Team</a></li>
                         <li><a href="/governance">Governance</a></li>
                         <li><a href="/opportunities">Opportunities</a></li>
+                        <li><a href="/annual-reports/">Annual Reports & Financials</a></li>
+                        <li><a href="/history/">History</a></li>
                         <li><a href="/press">Press</a></li>
                     </ul>
                 </li>
@@ -206,6 +208,7 @@
                                 <li><a href="/cc-licenses">CC Licenses</a></li>
                                 <li><a href="/cc-signals">CC Signals</a></li>
                                 <li><a href="/public-domain">Public Domain</a></li>
+                                <li><a href="/chooser">Chooser</a></li>
                                 <li><a href="/faq">FAQs</a></li>
                             </ul>
                         </li>
@@ -239,13 +242,13 @@
                     <button class="expand icon-replace fa-angle-down">Expand</button>
                     
                     <ul>
-                        <li><a href="https://www.classy.org/give/313412/#!/donation/checkout?c_src=website&c_src2=top-of-page-banner">Make a Gift</a></li>
+                        <li><a href="https://giving.gofundme.com/campaign/778218/donate">Make a Gift</a></li>
                         <!-- <li><a href="/support/#ways-to-give">Ways to Give</a></li> -->
                         <li><a href="/support/oic">Open Infrastructure Circle</a></li>
                         <li><a href="/support/donor-faq">Donor FAQ</a></li>
                     </ul>
                 </li>
-                <li><a class="donate" href="https://www.classy.org/give/313412/#!/donation/checkout?c_src=website&c_src2=top-of-page-banner">Donate</a></li>
+                <li><a class="donate" href="https://giving.gofundme.com/campaign/778218/donate">Donate</a></li>
                 <!-- <li><a class="donate" href="#">Support Us</a></li> -->
             </ul>
         </nav>

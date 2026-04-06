@@ -44,22 +44,38 @@
     <ul>
 
     <?php
+
+    $today = date('Ymd', strtotime("now")); 
+	$falloff = date('Ymd', strtotime("+12 months"));
+
     $query = new WP_Query(array(
         'post_type' => 'event',
-        'posts_per_page' => 6,
+        'posts_per_page' => 12,
+        'meta_key' => 'event_date',
+		'meta_compare' => 'BETWEEN',
+        'meta_type' => 'numeric',
+		'meta_value' => array($today, $falloff),
+		'orderby' => 'meta_value_num',
+		'order' => 'ASC'
         //'paged' => $paged,
     ));
     ?>
 
     <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
+    <?php
+
+    $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
+   
+    ?>
+
         <li>
             <article class="event">
 
                 <div class="description">
                 <h3><?php the_title(); ?></h3>
-                <h4><?php the_field('event_date'); ?></h4>
-                <span class="time"><?php the_field('event_time_start'); ?> - <?php the_field('event_time_end'); ?></span>
+                <h4><?php echo $date->format('F j, Y'); ?></h4>
+                <span class="time"><?php the_field('event_time_start'); ?> - <?php the_field('event_time_end'); ?> <?php the_field('event_timezone'); ?></span>
                 <span class="location"><?php the_field('event_location'); ?></span>
 
                 <p><?php echo wp_trim_words($excerpt, 50); ?></p>
