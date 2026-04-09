@@ -64,9 +64,9 @@
     <article class="topic-summary focus-area">
         <div class="description">
 
-            <p>Looking for a place to start? Our CC Certificate program is our premiere course that offers individual learners everything they need to know to start using CC licenses with confidence.</p>
+            <?php the_field('training_events_content'); ?>
 
-            <a href="#">Register Today</a>
+            <a href="<?php the_field('training_events_url'); ?>"><?php the_field('training_events_link_text'); ?></a>
         </div>
 
         <figure>
