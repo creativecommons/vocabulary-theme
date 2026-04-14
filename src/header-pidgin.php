@@ -218,6 +218,7 @@
 
                              <ul>
                                 <li><a href="/impact">Where CC Makes An Impact</a></li>
+                                <li><a href="/discover-the-commons/">Discover the Commons</a></li>
                                 <li><a href="/resources">Resources</a></li>
                                 <li><a href="https://search.creativecommons.org">Search the Commons</a></li>
                             </ul>

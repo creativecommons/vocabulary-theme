@@ -213,7 +213,7 @@
             "label": "Training Events URL",
             "name": "training_events_url",
             "aria-label": "",
-            "type": "url",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -223,8 +223,11 @@
                 "id": ""
             },
             "default_value": "",
-            "allow_in_bindings": 0,
-            "placeholder": ""
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_69a70d4b3b2c4",
@@ -860,5 +863,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1773071178
+    "modified": 1775745352
 }
