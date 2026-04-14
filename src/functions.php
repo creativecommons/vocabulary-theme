@@ -414,3 +414,16 @@ function column($atts, $content = null) {
 }
 
 add_shortcode('column', 'column');
+
+
+function events_pre_get_posts($query) {   
+
+    if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'event'  && is_archive()) {
+        $query->set('orderby', 'meta_value_num');
+        $query->set('meta_key', 'event_date');
+        $query->set('order', 'ASC');
+        return $query;
+    }
+}
+
+add_action('pre_get_posts', 'events_pre_get_posts');
