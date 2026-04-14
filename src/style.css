@@ -1551,6 +1551,23 @@ main .content p > img {
   height: auto;
 }
 
+/* make embedded video responsive */
+main .content p:has(iframe) {
+  padding-top: 56.25%; /* matches 16:9 ratio */
+  position: relative;
+  overflow: hidden;
+}
+
+main .content p iframe {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border: 0;
+}
+
 main .content span.appear-as-button a {
   --underline-background-color: black;
     display: inline-block;
