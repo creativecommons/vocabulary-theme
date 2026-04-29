@@ -285,6 +285,14 @@ function add_embedded() {
     $wp->add_query_var('embedded');
 }
 
+// register custom filter URL parameter for events-archive template
+
+add_action('init','add_filtered');
+function add_filtered() {
+    global $wp;
+    $wp->add_query_var('filtered');
+}
+
 // remove edit_post_link from non-editors
 function remove_get_edit_post_link( $link ) {
   if ( current_user_can( 'edit_posts' ) ) {

@@ -45,7 +45,22 @@
     </ol>
 </nav> -->
 
-<h1><?php the_archive_title(); ?></h1>
+<?php
+
+global $wp;
+if (array_key_exists('filtered', $wp->query_vars) && isset($wp->query_vars['filtered'])) {
+    if ($wp->query_vars['filtered'] == 'past') {
+        $eventsFiltered = 'Past';
+    } elseif ($wp->query_vars['filtered'] == 'future') {
+        $eventsFiltered = 'Upcoming';
+    } else {
+        $eventsFiltered = '';
+    }
+}
+
+?>
+
+<h1><?php the_archive_title(); ?><?php if(!empty($eventsFiltered)) {echo ', '.$eventsFiltered;} ?></h1>
 
 <p><?php the_archive_description(); ?></p>
 
