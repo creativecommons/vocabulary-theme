@@ -293,6 +293,20 @@ function add_filtered() {
     $wp->add_query_var('filtered');
 }
 
+
+// alter query params for loop on events-archive
+function customize_event_archive_display ( $query ) {
+        if ($query->is_main_query()) {
+          // TODO: customize to specifics
+          // $query->set( 'post_type', 'directory' );                 
+          // $query->set( 'meta_key', 'event_date' );           
+          // $query->set( 'orderby', 'meta_value' );
+          // $query->set( 'order', 'ASC' );
+        }
+    }
+
+add_action( 'pre_get_posts', 'customize_event_archive_display' );
+
 // remove edit_post_link from non-editors
 function remove_get_edit_post_link( $link ) {
   if ( current_user_can( 'edit_posts' ) ) {
