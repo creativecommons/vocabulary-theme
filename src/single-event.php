@@ -71,8 +71,8 @@ $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
                     <h4><?php echo $position_title; ?></h4>
                     <p><?php echo wp_trim_words($excerpt, 50); ?></p>
 
-                    <?php if (get_the_post_thumbnail_caption( $post_id )) : ?>
-                    <p class="caption">attribution: <?php echo get_the_post_thumbnail_caption( $post_id ); ?></p>
+                    <?php if (get_the_post_thumbnail_caption( $speaker_person->ID )) : ?>
+                    <p class="caption">attribution: <?php echo get_the_post_thumbnail_caption( $speaker_person->ID ); ?></p>
                     <?php endif; ?>
 
 
