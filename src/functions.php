@@ -298,7 +298,7 @@ function add_filtered() {
 function customize_event_archive_display ( $query ) {
         if ($query->is_main_query()) {
           // TODO: customize to specifics
-          // $query->set( 'post_type', 'directory' );                 
+          // $query->set( 'post_type', 'event' );                 
           // $query->set( 'meta_key', 'event_date' );           
           // $query->set( 'orderby', 'meta_value' );
           // $query->set( 'order', 'ASC' );
