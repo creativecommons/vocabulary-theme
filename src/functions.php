@@ -302,7 +302,7 @@ function customize_event_archive_display ( $query ) {
         global $wp;
         if (array_key_exists('filtered', $wp->query_vars) && isset($wp->query_vars['filtered'])) {
             if ($wp->query_vars['filtered'] == 'past') {
-                if ($query->is_main_query()) {
+                if ($query->is_main_query() && is_post_type_archive( 'event' )) {
                   // $query->set( 'post_type', 'event' );                 
                   $query->set( 'meta_key', 'event_date' );  
                   $query->set( 'meta_compare', '<' );
