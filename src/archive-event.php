@@ -68,6 +68,20 @@ if (array_key_exists('filtered', $wp->query_vars) && isset($wp->query_vars['filt
 </header>
 
 
+<aside class="sidebar">   
+
+    <nav class="filter-menu">
+        <h2>Related Links</h2>
+        <ul>
+            <li class="<?php if($eventsFiltered == ''){echo 'current';} ?>"><a href="/events-archive/?filtered=all">All</a></li>
+            <li class="<?php if($eventsFiltered == 'Upcoming'){echo 'current';} ?>"><a href="/events-archive/?filtered=future">Upcoming</a></li>
+            <li class="<?php if($eventsFiltered == 'Past'){echo 'current';} ?>"><a href="/events-archive/?filtered=past">Past</a></li>
+        </ul>
+    </nav>
+
+</aside>
+
+
 
 <article class="posts">
 
