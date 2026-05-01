@@ -296,12 +296,34 @@ function add_filtered() {
 
 // alter query params for loop on events-archive
 function customize_event_archive_display ( $query ) {
-        if ($query->is_main_query()) {
-          // TODO: customize to specifics
-          // $query->set( 'post_type', 'event' );                 
-          // $query->set( 'meta_key', 'event_date' );           
-          // $query->set( 'orderby', 'meta_value' );
-          // $query->set( 'order', 'ASC' );
+
+        $today = date('Ymd', strtotime("now"));
+
+        global $wp;
+        if (array_key_exists('filtered', $wp->query_vars) && isset($wp->query_vars['filtered'])) {
+            if ($wp->query_vars['filtered'] == 'past') {
+                if ($query->is_main_query()) {
+                  // $query->set( 'post_type', 'event' );                 
+                  $query->set( 'meta_key', 'event_date' );  
+                  $query->set( 'meta_compare', '<' );
+                  $query->set( 'meta_type', 'numberic' );
+                  $query->set( 'meta_value', $today );         
+                  $query->set( 'orderby', 'meta_value_num' );
+                  $query->set( 'order', 'ASC' ); 
+                }
+            } elseif ($wp->query_vars['filtered'] == 'future') {
+                if ($query->is_main_query()) {
+                  // $query->set( 'post_type', 'event' );                 
+                  $query->set( 'meta_key', 'event_date' );  
+                  $query->set( 'meta_compare', '>=' );
+                  $query->set( 'meta_type', 'numberic' );
+                  $query->set( 'meta_value', $today );         
+                  $query->set( 'orderby', 'meta_value_num' );
+                  $query->set( 'order', 'ASC' ); 
+                }
+            } else {
+                // do nothing
+            }
         }
     }
 
