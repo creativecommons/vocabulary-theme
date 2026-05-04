@@ -45,12 +45,41 @@
     </ol>
 </nav> -->
 
-<h1><?php the_archive_title(); ?></h1>
+<?php
+
+global $wp;
+if (array_key_exists('filtered', $wp->query_vars) && isset($wp->query_vars['filtered'])) {
+    if ($wp->query_vars['filtered'] == 'past') {
+        $eventsFiltered = 'Past';
+    } elseif ($wp->query_vars['filtered'] == 'future') {
+        $eventsFiltered = 'Upcoming';
+    } else {
+        $eventsFiltered = '';
+    }
+}
+
+?>
+
+<h1><?php the_archive_title(); ?><?php if(!empty($eventsFiltered)) {echo ', '.$eventsFiltered;} ?></h1>
 
 <p><?php the_archive_description(); ?></p>
 
 
 </header>
+
+
+<aside class="sidebar">   
+
+    <nav class="filter-menu">
+        <h2>Related Links</h2>
+        <ul>
+            <li class="<?php if($eventsFiltered == ''){echo 'current';} ?>"><a href="/events-archive/?filtered=all">All</a></li>
+            <li class="<?php if($eventsFiltered == 'Upcoming'){echo 'current';} ?>"><a href="/events-archive/?filtered=future">Upcoming</a></li>
+            <li class="<?php if($eventsFiltered == 'Past'){echo 'current';} ?>"><a href="/events-archive/?filtered=past">Past</a></li>
+        </ul>
+    </nav>
+
+</aside>
 
 
 

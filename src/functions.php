@@ -285,6 +285,50 @@ function add_embedded() {
     $wp->add_query_var('embedded');
 }
 
+// register custom filter URL parameter for events-archive template
+
+add_action('init','add_filtered');
+function add_filtered() {
+    global $wp;
+    $wp->add_query_var('filtered');
+}
+
+
+// alter query params for loop on events-archive
+function customize_event_archive_display ( $query ) {
+
+        $today = date('Ymd', strtotime("now"));
+
+        global $wp;
+        if (array_key_exists('filtered', $wp->query_vars) && isset($wp->query_vars['filtered'])) {
+            if ($wp->query_vars['filtered'] == 'past') {
+                if ($query->is_main_query() && is_post_type_archive( 'event' )) {
+                  // $query->set( 'post_type', 'event' );                 
+                  $query->set( 'meta_key', 'event_date' );  
+                  $query->set( 'meta_compare', '<' );
+                  $query->set( 'meta_type', 'numberic' );
+                  $query->set( 'meta_value', $today );         
+                  $query->set( 'orderby', 'meta_value_num' );
+                  $query->set( 'order', 'ASC' ); 
+                }
+            } elseif ($wp->query_vars['filtered'] == 'future') {
+                if ($query->is_main_query()) {
+                  // $query->set( 'post_type', 'event' );                 
+                  $query->set( 'meta_key', 'event_date' );  
+                  $query->set( 'meta_compare', '>=' );
+                  $query->set( 'meta_type', 'numberic' );
+                  $query->set( 'meta_value', $today );         
+                  $query->set( 'orderby', 'meta_value_num' );
+                  $query->set( 'order', 'ASC' ); 
+                }
+            } else {
+                // do nothing
+            }
+        }
+    }
+
+add_action( 'pre_get_posts', 'customize_event_archive_display' );
+
 // remove edit_post_link from non-editors
 function remove_get_edit_post_link( $link ) {
   if ( current_user_can( 'edit_posts' ) ) {

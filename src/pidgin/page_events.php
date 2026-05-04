@@ -114,6 +114,80 @@
 
 </article>
 
+<article class="events">
+    <h2>Recent Events</h2>
+    <ul>
+
+    <?php
+
+    $today = date('Ymd', strtotime("now")); 
+
+    $query = new WP_Query(array(
+        'post_type' => 'event',
+        'posts_per_page' => 4,
+        'meta_key' => 'event_date',
+		'meta_compare' => '<',
+        'meta_type' => 'numeric',
+		'meta_value' => array($today),
+		'orderby' => 'meta_value_num',
+		'order' => 'ASC'
+        //'paged' => $paged,
+    ));
+    ?>
+
+    <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+    <?php
+
+    $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
+   
+    ?>
+
+        <li>
+            <article class="event">
+
+                <div class="description">
+                <h3><?php the_title(); ?></h3>
+                <h4><?php echo $date->format('F j, Y'); ?></h4>
+                <span class="time"><?php the_field('event_time_start'); ?> - <?php the_field('event_time_end'); ?> <?php the_field('event_timezone'); ?></span>
+                <span class="location"><?php the_field('event_location'); ?></span>
+
+                <p><?php echo wp_trim_words($excerpt, 50); ?></p>
+
+                <a href="<?php echo the_permalink(); ?>">See Event Details</a>
+                </div>
+
+                <figure>
+
+                    <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+
+
+                    <!-- <svg class="shape1">
+                        <use href="../../../../pidgin/svg/blob3.svg"></use>
+                    </svg> -->
+
+                    <figcaption>
+                        <!-- <p>attribution details here</p> -->
+                         <p><?php echo get_the_post_thumbnail_caption( $post_id ); ?></p>
+                        
+                    </figcaption>
+                </figure>
+
+            </article>
+        </li>
+
+        <?php endwhile; ?>
+        <?php endif; ?>
+
+    </ul>
+
+    <footer>
+        <a class="more" href="/events-archive/?filtered=past">more events</a>
+    </footer>
+
+
+</article>
+
 <?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
 
 </main>
