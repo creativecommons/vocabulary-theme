@@ -150,7 +150,7 @@ body > header .masthead .identity-logo:before {
     cursor: pointer;
 
     /* standard pattern for setting logo in lieu of background color manipulation */
-    /* background: url('../svg/cc/logos/cc/logomark.svg') left top no-repeat; */
+    /* background: url('../../vocabulary/svg/cc/logos/cc/logomark.svg') left top no-repeat; */
 }
 
 body > header .masthead .identity-logo:hover:before {
