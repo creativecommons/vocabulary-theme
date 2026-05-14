@@ -16,7 +16,7 @@
 
     <figcaption>
         <p><?php echo $image['caption'] ?></p>
-        
+
     </figcaption>
 </figure>
 </header>
@@ -34,7 +34,7 @@
 
         <figcaption>
             <p><?php echo $image['caption']; ?></p>
-            
+
         </figcaption>
     </figure>
 </article>
@@ -75,7 +75,7 @@
 
                 <figcaption>
                     <!-- <p>attribution details here</p> -->
-                    
+
                 </figcaption>
             </figure>
 

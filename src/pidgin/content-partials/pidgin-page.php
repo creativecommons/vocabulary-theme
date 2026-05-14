@@ -13,7 +13,7 @@
 
     <figcaption>
         <p><?php echo $image['caption']; ?></p>
-        
+
     </figcaption>
 
     <?php else : ?>
@@ -24,7 +24,7 @@
     <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/blob3.svg" class="shape2" />
     <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/pidgin/svg/repeat_c.svg" class="shape3" />
     </div>
-    
+
     <figcaption>
         <p>Melies color Voyage dans la lune, by <a href="https://en.wikipedia.org/wiki/Georges_M%C3%A9li%C3%A8s" target="_blank" rel="noopener">Georges Méliès</a>, Public Domain.</p>
     </figcaption>

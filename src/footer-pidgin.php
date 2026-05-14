@@ -19,7 +19,7 @@
             <li><a href="/blog">Blog</a></li>
             <li><a href="/support">Support us</a></li>
             <li><a href="https://creative-commons-shop.fourthwall.com/">Store</a></li>
-            
+
             <li><a href="/contact">Contact</a></li>
             <li><a href="/privacy">Privacy</a></li>
             <li><a href="/policies">Policies</a></li>
@@ -27,7 +27,7 @@
         </ul>
     </nav>
 
-    
+
 
     <div class="contact">
     <!-- this area lacks a heading? -->

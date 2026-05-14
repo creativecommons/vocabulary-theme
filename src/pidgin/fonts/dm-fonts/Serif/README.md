@@ -1,6 +1,6 @@
 # DM Serif
 
-DM Serif is a four style type family based off of [Source Serif Pro](http://adobe-fonts.github.io/source-serif-pro/). 
+DM Serif is a four style type family based off of [Source Serif Pro](http://adobe-fonts.github.io/source-serif-pro/).
 
 [Original Source Serif — Source files](https://github.com/adobe-fonts/source-sans-pro/tree/master)
 
