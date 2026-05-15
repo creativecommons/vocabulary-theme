@@ -20,7 +20,7 @@ $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
 
     <figcaption>
         <p><?php echo $image['caption']; ?></p>
-        
+
     </figcaption>
 </figure>
 </header>
@@ -89,7 +89,7 @@ $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
 </div>
 
 <footer>
-  
+
     <a href="/events" class="more">View All Events</a>
 
 </footer>

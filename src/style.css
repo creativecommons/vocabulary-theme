@@ -3,7 +3,7 @@ Theme Name: CC Vocabulary Theme
 Author: the Creative Commons team; possumbilities, Timid Robot
 Author URI: https://opensource.creativecommons.org/
 Description: Theme based on the Vocabulary Design System
-Version: 2.5
+Version: 2.6
 Requires at least: 5.0
 Tested up to: 6.2.2
 Requires PHP: 7.0
@@ -999,7 +999,7 @@ article.topic-summary p a {
   margin-bottom: 0;
 }
 
- 
+
 .home-narrative article.topic-summary.focus-area:nth-of-type(even) figure {
     order: -1;
 }
@@ -1031,7 +1031,7 @@ article.topic-summary p a {
   background: transparent;
 }
 
-.home-narrative article.topic-summary figure { 
+.home-narrative article.topic-summary figure {
   background: transparent;
 }
 
@@ -1236,7 +1236,7 @@ body main article.topic-summary.newsletter {
 
 body main article.topic-summary.newsletter figure {
   height: auto;
-  
+
   background: transparent;
 }
 
@@ -1277,7 +1277,7 @@ article.topic-summary.highlight figure figcaption {
   width: 80%;
 }
 
-.home-narrative article.topic-summary.focus-area:nth-of-type(odd) figure figcaption, 
+.home-narrative article.topic-summary.focus-area:nth-of-type(odd) figure figcaption,
 .home-narrative article.topic-summary.intro figure figcaption {
   text-align: right;
 }
@@ -1329,7 +1329,7 @@ main details.attribution summary {
 
 main details.attribution summary span {
   display: inline-block;
-  
+
   font-size: .5em;
   transform: rotate(180deg);
 }
@@ -1411,7 +1411,7 @@ main nav.pagination ul {
   width: 100%;
   margin: 0;
   padding: 0;
-  
+
   text-indent: none;
   font-size: 1em;
   list-style: none;
@@ -1465,7 +1465,7 @@ main nav.pagination ul li a {
 main article.posts.related {
   margin-bottom: 4em;
   padding: 2em;
-  
+
   background:#2E1FB8;
   border: 4px solid black;
   border-radius: 16px;
@@ -1658,7 +1658,7 @@ article.topic-summary.highlight figure {
 
 
 @media (max-width: 1190px) {
-  
+
   body main article.topic-summary.newsletter {
     display: block;
   }
@@ -1723,7 +1723,7 @@ article.topic-summary.highlight figure {
 
   .home-narrative article.topic-summary.focus-area:nth-of-type(odd) figure {
     order: -1;
-  } 
+  }
 
   article.topic-summary.highlight figure {
     margin-bottom: 2em;

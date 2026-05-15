@@ -23,7 +23,7 @@ $noticeQuery = new WP_Query(array(
             <p></p>
         </figcaption> -->
     </figure>
-    
+
 </article>
 
 <?php endwhile; ?>

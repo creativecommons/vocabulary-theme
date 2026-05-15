@@ -1,6 +1,6 @@
 # DM Sans
 
-DM Sans is a six style type family based off of [Poppins](https://fonts.google.com/specimen/Poppins). 
+DM Sans is a six style type family based off of [Poppins](https://fonts.google.com/specimen/Poppins).
 
 [Original Poppins — Source files](https://github.com/google/fonts/tree/master/ofl/poppins)
 

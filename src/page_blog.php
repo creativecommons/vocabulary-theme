@@ -2,11 +2,11 @@
 
 <!-- ///////////////////////////////////////////////////////////// -->
 
-<?php $devQuery = new WP_Query( array( 
+<?php $devQuery = new WP_Query( array(
     'post_type' => 'page',
-    'pagename' => 'dev-settings' 
+    'pagename' => 'dev-settings'
     ) );
-    
+
     $themeVersion = '';
 ?>
 

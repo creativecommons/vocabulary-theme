@@ -16,7 +16,7 @@
 
     <figcaption>
         <p><?php echo $image['caption']; ?></p>
-        
+
     </figcaption>
 </figure>
 </header>
@@ -34,7 +34,7 @@
 
         <figcaption>
             <p><?php echo $image['caption']; ?></p>
-            
+
         </figcaption>
     </figure>
 </article>
@@ -45,7 +45,7 @@
 
     <?php
 
-    $today = date('Ymd', strtotime("now")); 
+    $today = date('Ymd', strtotime("now"));
 	$falloff = date('Ymd', strtotime("+12 months"));
 
     $query = new WP_Query(array(
@@ -66,7 +66,7 @@
     <?php
 
     $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
-   
+
     ?>
 
         <li>
@@ -95,7 +95,7 @@
                     <figcaption>
                         <!-- <p>attribution details here</p> -->
                          <p><?php echo get_the_post_thumbnail_caption( $post_id ); ?></p>
-                        
+
                     </figcaption>
                 </figure>
 
@@ -120,7 +120,7 @@
 
     <?php
 
-    $today = date('Ymd', strtotime("now")); 
+    $today = date('Ymd', strtotime("now"));
 
     $query = new WP_Query(array(
         'post_type' => 'event',
@@ -140,7 +140,7 @@
     <?php
 
     $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
-   
+
     ?>
 
         <li>
@@ -169,7 +169,7 @@
                     <figcaption>
                         <!-- <p>attribution details here</p> -->
                          <p><?php echo get_the_post_thumbnail_caption( $post_id ); ?></p>
-                        
+
                     </figcaption>
                 </figure>
 

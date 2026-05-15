@@ -1,10 +1,10 @@
 <!-- ///////////////////////////////////////////////////////////// -->
 
-<?php $devQuery = new WP_Query( array( 
+<?php $devQuery = new WP_Query( array(
     'post_type' => 'page',
-    'pagename' => 'dev-settings' 
+    'pagename' => 'dev-settings'
     ) );
-    
+
     $themeVersion = '';
 ?>
 
@@ -68,7 +68,7 @@ if (array_key_exists('filtered', $wp->query_vars) && isset($wp->query_vars['filt
 </header>
 
 
-<aside class="sidebar">   
+<aside class="sidebar">
 
     <nav class="filter-menu">
         <h2>Related Links</h2>
@@ -87,7 +87,7 @@ if (array_key_exists('filtered', $wp->query_vars) && isset($wp->query_vars['filt
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-<?php 
+<?php
 $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
 ?>
 
