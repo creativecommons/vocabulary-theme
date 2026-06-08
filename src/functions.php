@@ -471,3 +471,9 @@ function events_pre_get_posts($query) {
 }
 
 add_action('pre_get_posts', 'events_pre_get_posts');
+
+// disable WP default favicon handling
+add_action( 'wp_head', 'remove_do_favicon' );
+function remove_do_favicon() {
+	remove_action( 'wp_footer', 'do_favicon' );
+}
