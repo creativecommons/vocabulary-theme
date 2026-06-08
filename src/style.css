@@ -3,7 +3,7 @@ Theme Name: CC Vocabulary Theme
 Author: the Creative Commons team; possumbilities, Timid Robot
 Author URI: https://opensource.creativecommons.org/
 Description: Theme based on the Vocabulary Design System
-Version: 2.6
+Version: 2.6.1
 Requires at least: 5.0
 Tested up to: 6.2.2
 Requires PHP: 7.0
@@ -738,6 +738,14 @@ body main article.topic-summary.intro figure {
 
 .course-embedded nav.breadcrumbs ul li:last-child:after, .course-page nav.breadcrumbs ul li:last-child:after, .course-index nav.breadcrumbs ul li:last-child:after {
   display: none;
+}
+
+.course-embedded main .content p > img, .course-page main .content p > img, .course-index main .content p > img {
+    width: initial;
+}
+
+.course-embedded main .content figure > img, .course-page main .content figure > img, .course-index main .content figure > img {
+    width: initial;
 }
 
 .course-page details {
