@@ -15,7 +15,7 @@ main p.dm-sans-specimen {
 
 main p.dm-mono-specimen {
     display: none;
-    
+
     font-family: "DM Mono";
 }
 
@@ -144,7 +144,7 @@ body > header .masthead .identity-logo:before {
 
     /* allows for color manipulation of svg */
     background-color: black;
-    
+
     mask-image: url('../../vocabulary/svg/cc/logos/cc/logomark.svg');
     mask-repeat: no-repeat;
     cursor: pointer;
@@ -412,7 +412,7 @@ body > footer:after {
     transform: rotate(-190deg);
 }
 
-body > footer .identity-logo { 
+body > footer .identity-logo {
     height: 82px;
     width: 340px;
     position: relative;
@@ -482,7 +482,7 @@ body > footer .footer-menu ul li a:hover {
     text-shadow: 0.03em 0 var(--underline-background-color), -0.03em 0 var(--underline-background-color), 0 0.03em var(--underline-background-color), 0 -0.03em var(--underline-background-color), 0.06em 0 var(--underline-background-color), -0.06em 0 var(--underline-background-color), 0.09em 0 var(--underline-background-color), -0.09em 0 var(--underline-background-color), 0.12em 0 var(--underline-background-color), -0.12em 0 var(--underline-background-color), 0.15em 0 var(--underline-background-color), -0.15em 0 var(--underline-background-color);
     background-position: 0% 93%, 100% 93%, 0% 93%;
     /* background-position-y: 87%, 87%, 87%; */
-    
+
     color:#FF9CFF;
 }
 
@@ -538,11 +538,11 @@ body > footer .search input:nth-of-type(1) {
     border: none;
     border-radius: 60px;
     border-top-right-radius: 0;
-    border-bottom-right-radius: 0; 
+    border-bottom-right-radius: 0;
 }
 
 body > footer .search input:nth-of-type(2), body > footer .search button {
-    
+
     border: none;
     border-radius: 60px;
     border-top-left-radius: 0;
@@ -575,7 +575,7 @@ body > footer .subscribe {
     height: 60%;
     margin-left: 5%;
     z-index: 2;
-    
+
 
     font-family: "DM Sans";
     background: white;
@@ -593,7 +593,7 @@ body > footer .subscribe h2 {
 
 body > footer .subscribe a {
     padding: .8em 1.8em;
-    
+
     font-family: "DM Sans";
     font-weight: 700;
     font-size: 1.2em;
@@ -704,7 +704,7 @@ article.topic-summary.highlight {
     grid-column: 2 / 11;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-areas: 
+    grid-template-areas:
         "d d d d g g g"
         "d d d d g g g"
         "d d d d g g g"
@@ -756,19 +756,19 @@ article.topic-summary.highlight figure {
     width: 120%;
     margin-left: -20%;
     height: 450px;
-    z-index: -10; 
+    z-index: -10;
 }
 
 
 article:nth-child(even).topic-summary.highlight {
-    grid-template-areas: 
+    grid-template-areas:
         "g g g p p p p"
         "g g g d d d d"
         "g g g d d d d"
         "c c c e e e e";
 }
 
-article:nth-child(even).topic-summary.highlight figure { 
+article:nth-child(even).topic-summary.highlight figure {
     margin-left: 0;
 }
 
@@ -885,7 +885,7 @@ body main article.topic-summary.intro h2 {
     /* width: 8em; */
     margin-top: 45%;
     margin-left: 5%;
-   
+
 }
 
 
@@ -1123,12 +1123,12 @@ article.posts .post a:hover {
 
 article.posts a.more {
     /* padding: 12px;
-    
+
     color: white;
     border-radius: 60px; */
 
     padding: .8em 1.8em;
-    
+
     font-family: "DM Sans";
     font-weight: 700;
     font-size: 1.2em;
@@ -1220,7 +1220,7 @@ main ul, main ol {
 main figure {
     margin-bottom: 2em;
 }
-    
+
 main > header {
     grid-column: 2 / 11;
     display: grid;
@@ -1232,7 +1232,7 @@ main > header div {
     flex-direction: column;
     align-content: middle;
     justify-content: center;
-    height: 100%; 
+    height: 100%;
 
     text-align: left;
     font-family: "DM Sans";
@@ -1279,7 +1279,7 @@ main > header figure {
 
     background: var(--vocabulary-neutral-color-lighter-gray);
     border-radius: 16px;
-   
+
 }
 
 main > header figure img {
@@ -1345,7 +1345,7 @@ main > aside.sidebar nav > ul > li {
     padding-top: .5em;
     padding-bottom: .5em;
     border-bottom: 1px solid var(--vocabulary-neutral-color-lighter-gray);
-    
+
     position: relative;
 }
 
@@ -1383,7 +1383,7 @@ main > aside.sidebar nav li:has(ul.hide) button.expand:before {
 } */
 
 /* temp testing */
-/* main > aside.sidebar nav > ul > li:has(ul):after { 
+/* main > aside.sidebar nav > ul > li:has(ul):after {
     content: '^';
     display: inline-block;
     position: absolute;
@@ -1391,7 +1391,7 @@ main > aside.sidebar nav li:has(ul.hide) button.expand:before {
     right: 0;
 } */
 
-main aside.opening, main aside.closing { 
+main aside.opening, main aside.closing {
     padding: 2.5em;
     box-sizing: border-box;
 
@@ -1399,25 +1399,25 @@ main aside.opening, main aside.closing {
     border-radius: 20px;
 }
 
-main aside.opening h2, main aside.closing h2 { 
+main aside.opening h2, main aside.closing h2 {
     margin-top: 0;
 }
 
-main aside.opening a, main aside.closing a { 
+main aside.opening a, main aside.closing a {
     color: black;
 }
 
 main aside.opening {
     background:#FF9CFF;
-} 
+}
 
 main aside.opening a {
     --underline-background-color:#FF9CFF;
-} 
+}
 
 main aside.closing {
     background: #E0FF00;
-} 
+}
 
 main aside.closing a {
     --underline-background-color:#E0FF00;
@@ -1955,7 +1955,7 @@ main nav.pagination ol li.current a {
     color: black;
 }
 
-/* 
+/*
 .events-index .events li:nth-child(1) figure {
     order: -1;
 }
@@ -1977,7 +1977,7 @@ main nav.pagination ol li.current a {
     display: inline-block;
 
     padding: .8em 1.8em;
-    
+
     font-family: "DM Sans";
     font-weight: 700;
     font-size: 1.4em;
@@ -2025,8 +2025,8 @@ main nav.pagination ol li.current a {
     margin: 0;
 }
 
-.event-post aside.sidebar .event-meta .date, 
-.event-post aside.sidebar .event-meta .time, 
+.event-post aside.sidebar .event-meta .date,
+.event-post aside.sidebar .event-meta .time,
 .event-post aside.sidebar .event-meta .location {
     font-family: "DM Mono";
 }
@@ -2055,8 +2055,8 @@ main nav.pagination ol li.current a {
     width: 100%;
     margin-top: 1em;
     padding: .8em 1.8em;
-    
-    
+
+
     font-family: "DM Sans";
     font-weight: 700;
     font-size: 1.2em;
@@ -2085,8 +2085,8 @@ main nav.pagination ol li.current a {
     /* width: 100%; */
     margin-top: 1em;
     padding: .6em 1.6em;
-    
-    
+
+
     font-family: "DM Sans";
     font-weight: 700;
     font-size: 1.2em;
@@ -2219,8 +2219,8 @@ main nav.pagination ol li.current a {
     /* width: 100%; */
     margin-top: 1em;
     padding: .6em 1.6em;
-    
-    
+
+
     font-family: "DM Sans";
     font-weight: 700;
     font-size: 1.2em;
@@ -2327,12 +2327,12 @@ main nav.pagination ol li.current a {
 
 .training-index .topic-summary .trainings > ul > li:nth-child(3) {
     border-color:#FFD9CC;
-    
+
 }
 
 .training-index .topic-summary .trainings > ul > li:nth-child(3) a {
     --underline-background-color:#FFD9CC;
-    background-color:#FFD9CC; 
+    background-color:#FFD9CC;
 }
 
 .training-index .topic-summary .trainings > ul > li:nth-child(4) {
@@ -2511,7 +2511,7 @@ main nav.pagination ol li.current a {
     display: inline-block;
 
     padding: .8em 1.8em;
-    
+
     font-family: "DM Sans";
     font-weight: 700;
     font-size: 1.4em;
@@ -2528,33 +2528,16 @@ main nav.pagination ol li.current a {
     border-color: black;
 }
 
-.casestudy-post .content {
-    grid-column: 2/11;
-
-}
-
-.casestudy-post .content > h2 {
-    width: 60%;
-}
-
-.casestudy-post .content > p {
-    width: 60%;
-}
-
 .casestudy-post .content > blockquote {
-    width: 75%;
+    /* width: 75%; */
+    margin: 0 -8em;
 }
-
-.casestudy-post .content > ul, .casestudy-post .content > ol {
-    width: 60%;
-}
-
 
 .casestudy-post .content > .datapoints ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2em;
-    margin: 0;
+    margin: 0 -8em;
 
     list-style: none;
 }
@@ -2572,12 +2555,14 @@ main nav.pagination ol li.current a {
 }
 
 .casestudy-post aside.insights {
-    width: 75%;
-    margin-bottom: 6em;
+    /* width: 75%; */
+    margin: 0 -6em 3em -6em;
     padding: 3em;
 
     color: white;
     background:#2E1FB8;
+    border-radius: 16px;
+    border: 4px solid #E0FF00;
 }
 
 .casestudy-post aside.insights h2 {
@@ -2780,8 +2765,8 @@ main > aside.sidebar nav.filter-menu ul li.current {
     height: auto;
     position: inherit;
 
-    background: none; 
-} 
+    background: none;
+}
 
 .person-page main > header figure:before {
     position: absolute;
@@ -3002,7 +2987,7 @@ main > aside.sidebar nav.filter-menu ul li.current {
     grid-column: span 2;
     display: grid;
     margin-top: 2em;
-    
+
     grid-template-columns: 1fr 1fr;
 }
 
@@ -3121,7 +3106,7 @@ article:nth-child(odd of .topic-summary.highlight) {
     margin-top: 10em;
     margin-left: 40%;
     width: 60%;
-    
+
     background:#ADFF00;
 }
 
@@ -3200,12 +3185,12 @@ article:nth-child(odd of .topic-summary.highlight) {
 
 /* .licenses-page .topic-summary .licenses > ul > li:nth-child(3) {
     border-color:#FFD9CC;
-    
+
 } */
 
 /* .licenses-page .topic-summary .licenses > ul > li:nth-child(3) a {
     --underline-background-color:#FFD9CC;
-    background-color:#FFD9CC; 
+    background-color:#FFD9CC;
 } */
 
 /* .licenses-page .topic-summary .licenses > ul > li:nth-child(4) {
@@ -3216,7 +3201,7 @@ article:nth-child(odd of .topic-summary.highlight) {
     --underline-background-color:#E0FF00;
     background-color:#E0FF00;
 } */
-.licenses-page .license { 
+.licenses-page .license {
     display: flex;
     flex-direction: column;
     /* justify-content: space-around; */
@@ -3225,7 +3210,7 @@ article:nth-child(odd of .topic-summary.highlight) {
 
 .licenses-page .license h3 {
     margin-top: 0;
-    
+
     font-family: "DM Sans";
 }
 
@@ -3289,7 +3274,7 @@ article:nth-child(odd of .topic-summary.highlight) {
     display: inline-block;
 
     padding: .8em 1.8em;
-    
+
     font-family: "DM Sans";
     font-weight: 700;
     font-size: 1.4em;
@@ -3426,7 +3411,7 @@ main .content figure:has(img.alignright), .blog-post main figure:has(img.alignri
 }
 
 @media (max-width: 1170px) {
-    
+
     article.posts ul {
         /* grid-template-columns: 1fr 1fr 1fr 1fr; */
         gap: 0 2em;
@@ -3448,7 +3433,7 @@ main .content figure:has(img.alignright), .blog-post main figure:has(img.alignri
         display: flex;
         gap: 2em;
     }
-    
+
 }
 
 
@@ -3515,7 +3500,19 @@ main .content figure:has(img.alignright), .blog-post main figure:has(img.alignri
     }
 
     .casestudy-post aside.insights {
-        width: 85%;
+        /* width: 85%; */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .casestudy-post .content > blockquote {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .casestudy-post .content > .datapoints ul, .casestudy-post .content > .datapoints ol {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .team-index main .persons ul {
@@ -3597,7 +3594,7 @@ main .content figure:has(img.alignright), .blog-post main figure:has(img.alignri
         grid-template-columns: 2fr 1fr;
     }
 
-    
+
 
     main > header figure {
         height: auto;
@@ -3607,7 +3604,7 @@ main .content figure:has(img.alignright), .blog-post main figure:has(img.alignri
     /* order: -1; */
     margin: 0;
     /* padding: 0; */
-    } 
+    }
 
     main > header div h1 {
         padding: 0;
@@ -3628,7 +3625,7 @@ main .content figure:has(img.alignright), .blog-post main figure:has(img.alignri
         order: -1;
     }
 
-    article.topic-summary.highlight { 
+    article.topic-summary.highlight {
         display: flex;
         flex-wrap: wrap;
     }
@@ -3645,7 +3642,7 @@ main .content figure:has(img.alignright), .blog-post main figure:has(img.alignri
         bottom: initial;
         left: initial;
         margin-left: 0;
-        margin-right: 0; 
+        margin-right: 0;
     }
 
     article.posts ul {
@@ -3733,7 +3730,7 @@ main .content figure:has(img.alignright), .blog-post main figure:has(img.alignri
         border: 4px solid black;
     }
 
-    body > header .masthead .primary-menu ul ul { 
+    body > header .masthead .primary-menu ul ul {
         /* display: block; */
         position: relative;
 
@@ -3783,7 +3780,7 @@ main .content figure:has(img.alignright), .blog-post main figure:has(img.alignri
         box-shadow: none;
     }
 
-    
+
 
 }
 
@@ -3804,7 +3801,7 @@ main .content figure:has(img.alignright), .blog-post main figure:has(img.alignri
         grid-template-columns: 1fr;
     }
 
-    
+
 }
 
 

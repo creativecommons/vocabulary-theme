@@ -184,7 +184,7 @@
                 <li>
                     <a href="/who-we-are">Who We Are</a>
                     <button class="expand icon-replace fa-angle-down">Expand</button>
-                    
+
                     <ul>
                         <li><a href="/strategic-plan">Strategic Plan</a></li>
                         <li><a href="/team">Team</a></li>
@@ -241,15 +241,15 @@
                 <li>
                     <a href="/support">Support Us</a>
                     <button class="expand icon-replace fa-angle-down">Expand</button>
-                    
+
                     <ul>
-                        <li><a href="https://giving.gofundme.com/campaign/778218/donate">Make a Gift</a></li>
+                        <li><a href="https://giving.gofundme.com/campaign/778218/donate?c_src=website&c_src2=makeagift">Make a Gift</a></li>
                         <!-- <li><a href="/support/#ways-to-give">Ways to Give</a></li> -->
                         <li><a href="/support/oic">Open Infrastructure Circle</a></li>
                         <li><a href="/support/donor-faq">Donor FAQ</a></li>
                     </ul>
                 </li>
-                <li><a class="donate" href="https://giving.gofundme.com/campaign/778218/donate">Donate</a></li>
+                <li><a class="donate" href="https://giving.gofundme.com/campaign/778218/donate?c_src=website&c_src2=button">Donate</a></li>
                 <!-- <li><a class="donate" href="#">Support Us</a></li> -->
             </ul>
         </nav>

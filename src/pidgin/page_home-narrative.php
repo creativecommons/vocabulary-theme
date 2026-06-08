@@ -4,7 +4,7 @@
 
 <main>
 
-<article class="topic-summary intro"> 
+<article class="topic-summary intro">
     <div class="description">
         <h2><?php the_title(); ?></h2>
     </div>
@@ -16,11 +16,11 @@
 
         <figcaption>
             <p><?php echo $image['caption']; ?></p>
-            
+
         </figcaption>
     </figure>
 
-    
+
 </article>
 
 <article class="topic-summary about"> <!-- TODO: merge with prior article? -->
@@ -35,7 +35,7 @@
 
         <figcaption>
             <p><?php echo $image['caption']; ?></p>
-            
+
         </figcaption>
     </figure>
 </article>
@@ -118,7 +118,7 @@
                         <?php //echo get_the_post_thumbnail( $post_id, 'full' );
                         ?>
                         <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
-                        
+
                         <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
                     </figure>
                 </article>
@@ -181,7 +181,7 @@
                     <?php echo get_the_post_thumbnail_caption( $post_id ); ?>
                 </figcaption>
             </figure>
-            
+
             <?php if ($post_index == 1) : ?>
             <?php the_excerpt(); ?>
             <?php endif; ?>
@@ -189,7 +189,7 @@
         </article>
     </li>
 
-    
+
     <?php endwhile; ?>
 
     <?php endif; ?>

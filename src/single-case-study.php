@@ -1,10 +1,10 @@
 <!-- ///////////////////////////////////////////////////////////// -->
 
-<?php $devQuery = new WP_Query( array( 
+<?php $devQuery = new WP_Query( array(
     'post_type' => 'page',
-    'pagename' => 'dev-settings' 
+    'pagename' => 'dev-settings'
     ) );
-    
+
     $themeVersion = '';
 ?>
 
@@ -50,7 +50,7 @@
 
     <figcaption>
         <p><?php echo $image['caption'] ?></p>
-        
+
     </figcaption>
 </figure>
 </header>
@@ -65,17 +65,17 @@
 
     <?php the_content(); ?>
 
-    <?php if (get_field('closing_copy')): ?>
-    <div class="closing">
-        <?php the_field('closing_copy'); ?>
-    </div>
-    <?php endif; ?>
-
-    <?php if (get_field('key_insights_content')): ?>
+     <?php if (get_field('key_insights_content')): ?>
     <aside class="insights">
         <h2><?php the_field('key_insights_title'); ?></h2>
         <?php the_field('key_insights_content'); ?>
     </aside>
+    <?php endif; ?>
+
+    <?php if (get_field('closing_copy')): ?>
+    <div class="closing">
+        <?php the_field('closing_copy'); ?>
+    </div>
     <?php endif; ?>
 
 </div>

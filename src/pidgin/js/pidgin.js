@@ -10,7 +10,7 @@ menusWithChildren.forEach((menu) => {
     expandButton.classList.add('icon-replace');
     expandButton.classList.add('fa-angle-down');
     expandButton.textContent = 'Expand';
-    
+
     menu.insertAdjacentElement("afterend", expandButton);
 
     console.log(menu);
@@ -22,7 +22,7 @@ const collapsedButtons = document.querySelectorAll('button.expand');
 collapsedButtons.forEach((expander) => {
 
     expander.parentElement.querySelector('ul').classList.toggle('hide');
-    
+
     expander.addEventListener('click', (event) => {
         // event.target.parentElement.querySelector('ul').classList.toggle('expand');
 
