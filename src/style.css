@@ -982,6 +982,13 @@ article.topic-summary p a {
   color:#FF0000;
 }
 
+.event-post .content .speakers .speaker p {
+  margin-top: .5em;
+  margin-left: 20%;
+
+  font-size: 1em;
+}
+
 .event-post .content .speakers .speaker .caption {
   margin-top: 0;
 }
@@ -1678,6 +1685,23 @@ article.topic-summary.highlight figure {
   .home-index main footer .attribution-list ul.expand {
     grid-template-columns: 1fr 1fr;
   }
+
+  .event-post .content .speakers .speaker {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .event-post .content .speakers .speaker h3, .event-post .content .speakers .speaker h4, .event-post .content .speakers .speaker p {
+        margin-left: 0;
+    }
+
+    .event-post .content .speakers .speaker figure {
+        position: relative;
+        float: none;
+        order: -1;
+
+
+    }
 
 }
 
