@@ -24,17 +24,7 @@
 <?php wp_reset_postdata(); ?>
 
 <!-- //////////////////////////////////////////////////////////// -->
-
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_header('pidgin', array( 'body-classes' => 'blog-index') ); ?>
-
-<?php else : ?>
-
 <?php get_header('', array( 'body-classes' => 'blog-index') ); ?>
-
-<?php endif; ?>
 
 <main>
 
@@ -259,13 +249,6 @@ $query = new WP_Query(array(
 
 </main>
 
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_footer('pidgin'); ?>
-
-<?php else : ?>
-
 <?php get_footer(); ?>
 
-<?php endif; ?>
 

@@ -23,16 +23,7 @@
 
 <!-- //////////////////////////////////////////////////////////// -->
 
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_header('pidgin', array( 'body-classes' => 'project-post') ); ?>
-
-<?php else : ?>
-
 <?php get_header('', array( 'body-classes' => 'project-post') ); ?>
-
-<?php endif; ?>
 
 <main>
 
@@ -200,14 +191,4 @@
 
 </main>
 
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_footer('pidgin'); ?>
-
-<?php else : ?>
-
 <?php get_footer(); ?>
-
-<?php endif; ?>
-
-

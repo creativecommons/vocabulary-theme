@@ -1,4 +1,4 @@
-<?php get_header('pidgin', array( 'body-classes' => 'event-post') ); ?>
+<?php get_header('', array( 'body-classes' => 'event-post') ); ?>
 
 <main>
 
