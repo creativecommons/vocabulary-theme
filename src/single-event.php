@@ -94,10 +94,10 @@ $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
 
 </footer>
 
-<?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
+<?php get_template_part( 'content-partials', 'newsletter_promo', '' ); ?>
 
 <?php endwhile; // end of the loop. ?>
 
 </main>
 
-<?php get_footer('pidgin'); ?>
+<?php get_footer(); ?>

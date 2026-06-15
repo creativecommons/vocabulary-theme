@@ -1,37 +1,6 @@
-<!-- ///////////////////////////////////////////////////////////// -->
-
-<?php $devQuery = new WP_Query( array(
-    'post_type' => 'page',
-    'pagename' => 'dev-settings'
-    ) );
-
-    $themeVersion = '';
-?>
-
-<?php if ( $devQuery->have_posts() ) : ?>
-<?php  while ( $devQuery->have_posts() ) : $devQuery->the_post(); ?>
-
-    <?php if( get_field('brand_version')) : ?>
-
-            <?php $themeVersion = get_field('brand_version') ?>
-
-    <?php endif; ?>
-
-<?php endwhile; ?>
-<?php endif; ?>
-<?php wp_reset_postdata(); ?>
-
-<!-- //////////////////////////////////////////////////////////// -->
-
 <?php get_header('', array( 'body-classes' => 'archive-page') ); ?>
 
 <main>
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-    <?php get_template_part( 'pidgin/content-partials/pidgin', 'archive', '' ); ?>
-
-<?php else : ?>
 
 <header>
 
@@ -42,9 +11,11 @@
     </ol>
 </nav> -->
 
+<div>
 <h1><?php the_archive_title(); ?></h1>
 
 <p><?php the_archive_description(); ?></p>
+</div>
 
 
 </header>
@@ -161,8 +132,6 @@ echo paginate_links( array(
 ) );
 ?>
 </nav>
-
-<?php endif; ?>
 
 </main>
 

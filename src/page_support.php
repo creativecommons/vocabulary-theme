@@ -108,7 +108,7 @@
 </aside>
 <?php endif; ?>
 
-<?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
+<?php get_template_part( 'content-partials', 'newsletter_promo', '' ); ?>
 
 
 </main>
