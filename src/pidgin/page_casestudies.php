@@ -1,6 +1,6 @@
 <?php /* Template Name: Index - Case Studies */ ?>
 
-<?php get_header('pidgin', array( 'body-classes' => 'casestudies-index') ); ?>
+<?php get_header('', array( 'body-classes' => 'casestudies-index') ); ?>
 
 <main>
 
@@ -101,4 +101,4 @@
 
 </main>
 
-<?php get_footer('pidgin'); ?>
+<?php get_footer(); ?>

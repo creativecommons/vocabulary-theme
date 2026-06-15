@@ -1,6 +1,6 @@
 <?php /* Template Name: Page - Support */ ?>
 
-<?php get_header('pidgin', array( 'body-classes' => 'support-page') ); ?>
+<?php get_header('', array( 'body-classes' => 'support-page') ); ?>
 
 <main>
 
@@ -113,4 +113,4 @@
 
 </main>
 
-<?php get_footer('pidgin'); ?>
+<?php get_footer(); ?>

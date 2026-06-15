@@ -1,6 +1,6 @@
 <?php /* Template Name: Index - Events */ ?>
 
-<?php get_header('pidgin', array( 'body-classes' => 'events-index') ); ?>
+<?php get_header('', array( 'body-classes' => 'events-index') ); ?>
 
 <main>
 
@@ -192,4 +192,4 @@
 
 </main>
 
-<?php get_footer('pidgin'); ?>
+<?php get_footer(); ?>
