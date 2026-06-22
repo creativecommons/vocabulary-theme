@@ -1,6 +1,6 @@
 <?php /* Template Name: Index - Home Narrative */ ?>
 
-<?php get_header('pidgin', array( 'body-classes' => 'home-narrative') ); ?>
+<?php get_header('', array( 'body-classes' => 'home-narrative') ); ?>
 
 <main>
 
@@ -209,9 +209,9 @@
 
 
 
-<?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
+<?php get_template_part( 'content-partials', 'newsletter_promo', '' ); ?>
 
 
 </main>
 
-<?php get_footer('pidgin'); ?>
+<?php get_footer(); ?>

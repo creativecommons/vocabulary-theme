@@ -1,67 +1,31 @@
-<!-- ///////////////////////////////////////////////////////////// -->
-
-<?php $devQuery = new WP_Query( array(
-    'post_type' => 'page',
-    'pagename' => 'dev-settings'
-    ) );
-
-    $themeVersion = '';
-?>
-
-<?php if ( $devQuery->have_posts() ) : ?>
-<?php  while ( $devQuery->have_posts() ) : $devQuery->the_post(); ?>
-
-    <?php if( get_field('brand_version')) : ?>
-
-            <?php $themeVersion = get_field('brand_version') ?>
-
-    <?php endif; ?>
-
-<?php endwhile; ?>
-<?php endif; ?>
-<?php wp_reset_postdata(); ?>
-
-<!-- //////////////////////////////////////////////////////////// -->
-
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_header('pidgin', array( 'body-classes' => 'person-page') ); ?>
-
-<?php else : ?>
-
 <?php get_header('', array( 'body-classes' => 'person-page') ); ?>
 
-<?php endif; ?>
-
 <main>
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-    <?php get_template_part( 'pidgin/content-partials/pidgin', 'single-person', '' ); ?>
-
-<?php else : ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
 <header>
 
+<div>
 <h1><?php the_title(); ?></h1>
 <span class="title"><?php the_field('position_title'); ?></span>
 <?php if(get_field('pronouns') ) : ?>
 <span class="pronouns">(<?php the_field('pronouns'); ?>)</span>
 <?php endif; ?>
+<?php the_content(); ?>
+
+<?php if(get_the_post_thumbnail_caption( $post_id )) : ?>
+<p>Image attribution: <?php echo get_the_post_thumbnail_caption( $post_id ); ?></p>
+<?php endif; ?>
+
+</div>
 
 <?php if(get_post_thumbnail_id($post_id)) : ?>
 <figure>
     <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
-    <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
+    <!-- <figcaption class="attribution"></figcaption> -->
 </figure>
 <?php endif; ?>
-
-<div class="bio">
-    <?php the_content(); ?>
-</div>
 
 </header>
 
@@ -176,16 +140,6 @@ echo paginate_links( array(
 
 <?php endwhile; // end of the loop. ?>
 
-<?php endif; ?>
-
 </main>
 
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_footer('pidgin'); ?>
-
-<?php else : ?>
-
 <?php get_footer(); ?>
-
-<?php endif; ?>

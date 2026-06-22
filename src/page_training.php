@@ -1,6 +1,6 @@
 <?php /* Template Name: Page - Training */ ?>
 
-<?php get_header('pidgin', array( 'body-classes' => 'training-index') ); ?>
+<?php get_header('', array( 'body-classes' => 'training-index') ); ?>
 
 <main>
 
@@ -212,8 +212,8 @@
 </aside>
 <?php endif; ?>
 
-<?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
+<?php get_template_part( 'content-partials', 'newsletter_promo', '' ); ?>
 
 </main>
 
-<?php get_footer('pidgin'); ?>
+<?php get_footer(); ?>

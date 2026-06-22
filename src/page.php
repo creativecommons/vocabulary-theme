@@ -1,69 +1,39 @@
-<!-- ///////////////////////////////////////////////////////////// -->
-
-<?php $devQuery = new WP_Query( array(
-    'post_type' => 'page',
-    'pagename' => 'dev-settings'
-    ) );
-
-    $themeVersion = '';
-?>
-
-<?php if ( $devQuery->have_posts() ) : ?>
-<?php  while ( $devQuery->have_posts() ) : $devQuery->the_post(); ?>
-
-    <?php if( get_field('brand_version')) : ?>
-
-            <?php $themeVersion = get_field('brand_version') ?>
-
-    <?php endif; ?>
-
-<?php endwhile; ?>
-<?php endif; ?>
-<?php wp_reset_postdata(); ?>
-
-<!-- //////////////////////////////////////////////////////////// -->
-
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_header('pidgin', array( 'body-classes' => '') ); ?>
-
-<?php else : ?>
-
 <?php get_header('', array( 'body-classes' => '') ); ?>
 
-<?php endif; ?>
-
 <main>
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-    <?php get_template_part( 'pidgin/content-partials/pidgin', 'page', '' ); ?>
-
-<?php else : ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
 <header>
 
+<div>
 <h1><?php the_title(); ?></h1>
+</div>
 
-<?php if (!class_exists('ACF')): ?>
+<figure>
+    <?php if(get_field('header_graphic')) : ?>
+    <?php $image = get_field('header_graphic'); ?>
+    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
-<!-- display raw post_meta, if ACF not installed & activated -->
-<?php if ( get_post_meta( get_the_ID(), 'lead_in_copy', true ) ) : ?>
-<p><?php echo get_post_meta( get_the_ID(), 'lead_in_copy', true ); ?></p>
-<?php endif; ?>
+    <figcaption>
+        <p><?php echo $image['caption']; ?></p>
 
-<?php else : ?>
+    </figcaption>
 
-<!-- display ACF field, if ACF installed & activated -->
-<?php if ( get_field('lead_in_copy') ) : ?>
-<p><?php the_field('lead_in_copy'); ?></p>
-<?php endif; ?>
+    <?php else : ?>
 
-<?php endif; ?>
+    <div class="default-image">
+    <img src="https://creativecommons.org/wp-content/uploads/2025/05/moon-3.jpg" class="photo" />
+    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/blob4.svg" class="shape1" />
+    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/blob3.svg" class="shape2" />
+    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/repeat_c.svg" class="shape3" />
+    </div>
 
+    <figcaption>
+        <p>Melies color Voyage dans la lune, by <a href="https://en.wikipedia.org/wiki/Georges_M%C3%A9li%C3%A8s" target="_blank" rel="noopener">Georges Méliès</a>, Public Domain.</p>
+    </figcaption>
+    <?php endif; ?>
+</figure>
 </header>
 
 
@@ -76,24 +46,35 @@
 
 <div class="content">
 
+    <?php if (get_field('lead_in_copy')): ?>
+    <aside class="opening">
+        <?php the_field('lead_in_copy'); ?>
+    </aside>
+    <?php endif; ?>
+
     <?php the_content(); ?>
+
+    <?php if (get_field('closing_copy')): ?>
+    <div class="closing">
+        <?php the_field('closing_copy'); ?>
+    </div>
+    <?php endif; ?>
 
 </div>
 
 <?php endwhile; // end of the loop. ?>
 
+<?php if (get_field('more_links_display')) : ?>
+<aside class="more-links">
+    <nav>
+        <h2>More Links</h2>
+        <?php the_field('more_links_content'); ?>
+    </nav>
+</aside>
 <?php endif; ?>
+
+<?php get_template_part( 'content-partials', 'newsletter_promo', '' ); ?>
 
 </main>
 
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_footer('pidgin'); ?>
-
-<?php else : ?>
-
 <?php get_footer(); ?>
-
-<?php endif; ?>
-
-

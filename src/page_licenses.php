@@ -1,6 +1,6 @@
 <?php /* Template Name: Page - Licenses */ ?>
 
-<?php get_header('pidgin', array( 'body-classes' => 'licenses-page') ); ?>
+<?php get_header('', array( 'body-classes' => 'licenses-page') ); ?>
 
 <main>
 
@@ -311,8 +311,8 @@ The CC icons, now recognized around the world, represent openness, collaboration
 </aside>
 <?php endif; ?>
 
-<?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
+<?php get_template_part( 'content-partials', 'newsletter_promo', '' ); ?>
 
 </main>
 
-<?php get_footer('pidgin'); ?>
+<?php get_footer(); ?>

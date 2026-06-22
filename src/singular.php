@@ -1,51 +1,12 @@
-<!-- ///////////////////////////////////////////////////////////// -->
-
-<?php $devQuery = new WP_Query( array(
-    'post_type' => 'page',
-    'pagename' => 'dev-settings'
-    ) );
-
-    $themeVersion = '';
-?>
-
-<?php if ( $devQuery->have_posts() ) : ?>
-<?php  while ( $devQuery->have_posts() ) : $devQuery->the_post(); ?>
-
-    <?php if( get_field('brand_version')) : ?>
-
-            <?php $themeVersion = get_field('brand_version') ?>
-
-    <?php endif; ?>
-
-<?php endwhile; ?>
-<?php endif; ?>
-<?php wp_reset_postdata(); ?>
-
-<!-- //////////////////////////////////////////////////////////// -->
-
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_header('pidgin', array( 'body-classes' => 'blog-post') ); ?>
-
-<?php else : ?>
-
 <?php get_header('', array( 'body-classes' => 'blog-post') ); ?>
 
-<?php endif; ?>
-
 <main>
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-    <?php get_template_part( 'pidgin/content-partials/pidgin', 'singular', '' ); ?>
-
-<?php else : ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
 <header>
 
+<div>
 <h1><?php the_title(); ?></h1>
 
 <?php if ( get_field('authorship') ) : ?>
@@ -86,9 +47,33 @@
 <span class="categories">
     <?php the_category(', ') ?>
 </span>
+</div>
 
 
-<!-- <img src="#" /> -->
+<figure>
+    <?php if(get_field('header_graphic')) : ?>
+    <?php $image = get_field('header_graphic'); ?>
+    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+    <figcaption>
+        <p><?php echo $image['caption']; ?></p>
+
+    </figcaption>
+
+    <?php else : ?>
+
+    <div class="default-image">
+    <img src="https://creativecommons.org/wp-content/uploads/2025/05/moon-3.jpg" class="photo" />
+    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/blob4.svg" class="shape1" />
+    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/blob3.svg" class="shape2" />
+    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/repeat_c.svg" class="shape3" />
+    </div>
+
+    <figcaption>
+        <p>Melies color Voyage dans la lune, by <a href="https://en.wikipedia.org/wiki/Georges_M%C3%A9li%C3%A8s" target="_blank" rel="noopener">Georges Méliès</a>, Public Domain.</p>
+    </figcaption>
+    <?php endif; ?>
+</figure>
 
 </header>
 
@@ -154,7 +139,7 @@ $query = new WP_Query(array(
     'cat' => $catIDs,
     'post__not_in' => array($queried_object->ID),
     'post_type' => 'post',
-    'posts_per_page' => 4,
+    'posts_per_page' => 3,
     //'paged' => $paged,
 ));
 ?>
@@ -164,7 +149,7 @@ $query = new WP_Query(array(
 <?php if ( $query->have_posts() ) : ?>
 
 <article class="posts related">
-    <h2>Related posts</h2>
+    <h2>You might also like...</h2>
 
     <ul>
 
@@ -217,16 +202,7 @@ $query = new WP_Query(array(
 <?php endif; ?>
 
 <?php endwhile; // end of the loop. ?>
-<?php endif; ?>
 
 </main>
 
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_footer('pidgin'); ?>
-
-<?php else : ?>
-
 <?php get_footer(); ?>
-
-<?php endif; ?>

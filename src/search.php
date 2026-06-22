@@ -1,51 +1,12 @@
-<!-- ///////////////////////////////////////////////////////////// -->
-
-<?php $devQuery = new WP_Query( array(
-    'post_type' => 'page',
-    'pagename' => 'dev-settings'
-    ) );
-
-    $themeVersion = '';
-?>
-
-<?php if ( $devQuery->have_posts() ) : ?>
-<?php  while ( $devQuery->have_posts() ) : $devQuery->the_post(); ?>
-
-    <?php if( get_field('brand_version')) : ?>
-
-            <?php $themeVersion = get_field('brand_version') ?>
-
-    <?php endif; ?>
-
-<?php endwhile; ?>
-<?php endif; ?>
-<?php wp_reset_postdata(); ?>
-
-<!-- //////////////////////////////////////////////////////////// -->
-
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_header('pidgin', array( 'body-classes' => 'search-index') ); ?>
-
-<?php else : ?>
-
 <?php get_header('', array( 'body-classes' => 'search-index') ); ?>
 
-<?php endif; ?>
-
 <main>
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-    <?php get_template_part( 'pidgin/content-partials/pidgin', 'search', '' ); ?>
-
-<?php else : ?>
-
 
 <header>
 
 <h1>Search</h1>
+
+<!-- <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span> -->
 
 <article class="search-form">
     <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -55,6 +16,13 @@
         <button type="submit" value="Search">Search</button>
     </form>
 </article>
+
+<!-- <span class="categories">
+    <a href="#">Open Culture</a>
+</span> -->
+
+
+<!-- <img src="#" /> -->
 
 </header>
 
@@ -174,17 +142,6 @@ echo paginate_links( array(
     <?php endif; ?>
 </article>
 
-<?php endif; ?>
-
 </main>
 
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_footer('pidgin'); ?>
-
-<?php else : ?>
-
 <?php get_footer(); ?>
-
-<?php endif; ?>

@@ -23,16 +23,7 @@
 
 <!-- //////////////////////////////////////////////////////////// -->
 
-
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_header('pidgin', array( 'body-classes' => 'casestudy-post') ); ?>
-
-<?php else : ?>
-
 <?php get_header('', array( 'body-classes' => 'casestudy-post') ); ?>
-
-<?php endif; ?>
 
 <main>
 
@@ -82,18 +73,10 @@
 
 <?php endwhile; // end of the loop. ?>
 
-<?php get_template_part( 'pidgin/content-partials/pidgin', 'newsletter_promo', '' ); ?>
+<?php get_template_part( 'content-partials', 'newsletter_promo', '' ); ?>
 
 
 
 </main>
 
-<?php if ($themeVersion == 'vocabulary2') : ?>
-
-<?php get_footer('pidgin'); ?>
-
-<?php else : ?>
-
 <?php get_footer(); ?>
-
-<?php endif; ?>
