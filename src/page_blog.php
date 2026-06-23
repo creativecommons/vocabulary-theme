@@ -447,7 +447,7 @@ $query = new WP_Query(array(
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
 
-<?php get_template_part( 'content-partials', 'newsletter_promo', '' ); ?>
+<?php get_template_part( 'content-partials/bottom', 'newsletter_promo', '' ); ?>
 
 
 </main>

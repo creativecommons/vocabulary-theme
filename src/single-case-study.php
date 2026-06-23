@@ -73,7 +73,7 @@
 
 <?php endwhile; // end of the loop. ?>
 
-<?php get_template_part( 'content-partials', 'newsletter_promo', '' ); ?>
+<?php get_template_part( 'content-partials/bottom', 'newsletter_promo', '' ); ?>
 
 
 
