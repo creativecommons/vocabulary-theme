@@ -934,7 +934,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "pidgin\/page_home-narrative.php"
+                "value": "page_home-narrative.php"
             }
         ]
     ],
@@ -949,5 +949,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1772053608
+    "modified": 1782326579
 }

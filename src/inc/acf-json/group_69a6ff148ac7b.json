@@ -360,7 +360,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "pidgin\/page_support.php"
+                "value": "page_support.php"
             }
         ]
     ],
@@ -375,5 +375,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1772568383
+    "modified": 1782326528
 }

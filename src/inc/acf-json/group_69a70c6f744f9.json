@@ -848,7 +848,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "pidgin\/page_training.php"
+                "value": "page_training.php"
             }
         ]
     ],
@@ -863,5 +863,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1775745352
+    "modified": 1782326556
 }
