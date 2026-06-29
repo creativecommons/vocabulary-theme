@@ -1062,7 +1062,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "pidgin\/page_licenses.php"
+                "value": "page_licenses.php"
             }
         ]
     ],
@@ -1075,5 +1075,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1772568434
+    "modified": 1782326619
 }
