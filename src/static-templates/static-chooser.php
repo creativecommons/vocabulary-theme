@@ -340,62 +340,62 @@
     </div>
 
     <div id="help">
-        <h2>Confused? Need Help?</h2>
+        <h2><?php echo __( 'Confused? Need Help?', 'vocabulary-theme' ); ?></h2>
 
         <details name="help">
-            <summary>What are Creative Commons licenses?</summary>
-            <p>Creative Commons licenses are legal tools that help you grant copyright permissions to the general public. Our CC legal tools include <a href="https://creativecommons.org/licenses/" target="_blank" rel="noopener noreferrer">six different licenses</a> and <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank" rel="noopener noreferrer">one public domain dedication tool</a>. It is important to specify which one of the 7 legal tools you are applying to your material. The license chooser can help you decide which license is right for you.</p>
-            <p>CC licenses may be applied to any type of copyrightable work. The only types of works for which CC does not recommend its licenses are computer software and hardware, where we recommend a standard free software license instead. For works that are already in the public domain we recommend that you mark them with the <a href="https://creativecommons.org/about/pdm" target="_blank" rel="noopener noreferrer">Public Domain Mark</a>. If you hold the rights to a work but would like to place it into the public domain, you can use the Chooser to select CC0.</p>
+            <summary><?php echo __( 'What are Creative Commons licenses?', 'vocabulary-theme' ); ?></summary>
+            <p><?php echo __( 'Creative Commons licenses are legal tools that help you grant copyright permissions to the general public. Our CC legal tools include <a href="https://creativecommons.org/licenses/" target="_blank" rel="noopener noreferrer">six different licenses</a> and <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank" rel="noopener noreferrer">one public domain dedication tool</a>. It is important to specify which one of the 7 legal tools you are applying to your material. The license chooser can help you decide which license is right for you.', 'vocabulary-theme' ); ?></p>
+            <p><?php echo __( 'CC licenses may be applied to any type of copyrightable work. The only types of works for which CC does not recommend its licenses are computer software and hardware, where we recommend a standard free software license instead. For works that are already in the public domain we recommend that you mark them with the <a href="https://creativecommons.org/about/pdm" target="_blank" rel="noopener noreferrer">Public Domain Mark</a>. If you hold the rights to a work but would like to place it into the public domain, you can use the Chooser to select CC0.', 'vocabulary-theme' ); ?></p>
         </details>
 
         <details name="help">
-            <summary>How to apply a Creative Commons license</summary>
-            <p>You can license your work by marking it with the specific CC license you choose. This marking can be as simple as a bit of text stating the license in a copyright notice, or as complex as embedding the license information on your website using the HTML code associated with the particular license. We strongly recommend including a link to the applicable license (e.g., <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/4.0/</a>).</p>
+            <summary><?php echo __( 'How to apply a Creative Commons license', 'vocabulary-theme' ); ?></summary>
+            <p><?php echo __( 'You can license your work by marking it with the specific CC license you choose. This marking can be as simple as a bit of text stating the license in a copyright notice, or as complex as embedding the license information on your website using the HTML code associated with the particular license. We strongly recommend including a link to the applicable license (e.g., <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/4.0/</a>).', 'vocabulary-theme' ); ?></p>
         </details>
 
         <details name="help">
-            <summary>What should I consider?</summary>
-            <p>As a creator licensing a work, among <a href="https://wiki.creativecommons.org/wiki/Considerations_for_licensors_and_licensees#Considerations_for_licensors" target="_blank" rel="noopener noreferrer">other considerations</a>, you should:</p>
+            <summary><?php echo __( 'What should I consider?', 'vocabulary-theme' ); ?></summary>
+            <p><?php echo __( 'As a creator licensing a work, among <a href="https://wiki.creativecommons.org/wiki/Considerations_for_licensors_and_licensees#Considerations_for_licensors" target="_blank" rel="noopener noreferrer">other considerations</a>, you should:', 'vocabulary-theme' ); ?></p>
             <ul>
-                <li><a href="https://wiki.creativecommons.org/wiki/Considerations_for_licensors_and_licensees#Remember_the_license_may_not_be_revoked." target="_blank" rel="noopener noreferrer">Remember that once you have applied a CC license, you cannot revoke it</a>.</li>
-                <li><a href="https://wiki.creativecommons.org/wiki/Considerations_for_licensors_and_licensees#Think_about_how_you_want_the_material_to_be_used." target="_blank" rel="noopener noreferrer">Choose your license based on how you want the material to be used</a>.</li>
-                <li><a href="https://wiki.creativecommons.org/wiki/Considerations_for_licensors_and_licensees#Specify_attribution_information_if_desired." target="_blank" rel="noopener noreferrer">Let people know how to credit you (or whether you want credit at all)</a>.</li>
+                <li><a href="https://wiki.creativecommons.org/wiki/Considerations_for_licensors_and_licensees#Remember_the_license_may_not_be_revoked." target="_blank" rel="noopener noreferrer"><?php echo __( 'Remember that once you have applied a CC license, you cannot revoke it', 'vocabulary-theme' ); ?></a>.</li>
+                <li><a href="https://wiki.creativecommons.org/wiki/Considerations_for_licensors_and_licensees#Think_about_how_you_want_the_material_to_be_used." target="_blank" rel="noopener noreferrer"><?php echo __( 'Choose your license based on how you want the material to be used', 'vocabulary-theme' ); ?></a>.</li>
+                <li><a href="https://wiki.creativecommons.org/wiki/Considerations_for_licensors_and_licensees#Specify_attribution_information_if_desired." target="_blank" rel="noopener noreferrer"><?php echo __( 'Let people know how to credit you (or whether you want credit at all)', 'vocabulary-theme' ); ?></a>.</li>
             </ul>
         </details>
 
         <details name="help">
-            <summary>What do the icons mean?</summary>
-            <p> The icons represent key features of the different CC license options: </p>
+            <summary><?php echo __( 'What do the icons mean?', 'vocabulary-theme' ); ?></summary>
+            <p> <?php echo __( 'The icons represent key features of the different CC license options: ', 'vocabulary-theme' ); ?></p>
             <dl class="conditions-definitions">
                 <div>
-                    <dt class="icon-attach cc-by">Attribution Required (BY)</dt>
-                    <dd>Credit must be given to you, the creator.</dd>
+                    <dt class="icon-attach cc-by"><?php echo __( 'Attribution Required (BY)', 'vocabulary-theme' ); ?></dt>
+                    <dd><?php echo __( 'Credit must be given to you, the creator.', 'vocabulary-theme' ); ?></dd>
                 </div>
 
                 <div>
-                    <dt class="icon-attach cc-nc">Commercial Use Not Allowed (NC/NonCommercial)</dt>
+                    <dt class="icon-attach cc-nc"><?php echo __( 'Commercial Use Not Allowed (NC/NonCommercial)', 'vocabulary-theme' ); ?></dt>
                     <dd>
-                        Only noncommercial use of your work is permitted.
-                        <em>Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</em>
+                        <?php echo __( 'Only noncommercial use of your work is permitted.', 'vocabulary-theme' ); ?>
+                        <em><?php echo __( 'Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.', 'vocabulary-theme' ); ?></em>
                     </dd>
                 </div>
 
                 <div>
-                    <dt class="icon-attach cc-sa">Distributed on Same Terms (SA/ShareAlike)</dt>
-                    <dd>Adaptations must be shared under the same terms.</dd>
+                    <dt class="icon-attach cc-sa"><?php echo __( 'Distributed on Same Terms (SA/ShareAlike)', 'vocabulary-theme' ); ?></dt>
+                    <dd><?php echo __( 'Copy', 'vocabulary-theme' ); ?>Adaptations must be shared under the same terms.</dd>
                 </div>
 
                 <div>
-                    <dt class="icon-attach cc-nd">Modifying Not Allowed (ND/NoDerivatives)</dt>
-                    <dd>No derivatives or adaptations of your work are permitted.</dd>
+                    <dt class="icon-attach cc-nd"><?php echo __( 'Modifying Not Allowed (ND/NoDerivatives)', 'vocabulary-theme' ); ?></dt>
+                    <dd><?php echo __( 'No derivatives or adaptations of your work are permitted.', 'vocabulary-theme' ); ?></dd>
                 </div>
             </dl>
         </details>
 
         <details name="help">
-            <summary>What if I have other questions?</summary>
-            <p>You can find a full list of our <a href="https://creativecommons.org/faq/" target="_blank" rel="noopener noreferrer">frequently asked questions</a> on our site.</p>
-            <p>If you would like peer support in learning the best way to utilize this resource or choosing the best legal tool for you, you can become a part of CC’s Community by filling out the <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2HY_wHq5SlgP_0U0ZWQKGXKwocNhm_vCPY34bUQrQ_hWoAQ/viewform?usp=dialog">Creative Commons Community Intake Form</a>. You should receive an invitation to our chat platform, Zulip, in 5-10 business days..</p>
+            <summary><?php echo __( 'What if I have other questions?', 'vocabulary-theme' ); ?></summary>
+            <p><?php echo __( 'You can find a full list of our <a href="https://creativecommons.org/faq/" target="_blank" rel="noopener noreferrer">frequently asked questions</a> on our site.', 'vocabulary-theme' ); ?></p>
+            <p><?php echo __( 'If you would like peer support in learning the best way to utilize this resource or choosing the best legal tool for you, you can become a part of CC’s Community by filling out the <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2HY_wHq5SlgP_0U0ZWQKGXKwocNhm_vCPY34bUQrQ_hWoAQ/viewform?usp=dialog">Creative Commons Community Intake Form</a>. You should receive an invitation to our chat platform, Zulip, in 5-10 business days..', 'vocabulary-theme' ); ?></p>
         </details>
 
     </div>
