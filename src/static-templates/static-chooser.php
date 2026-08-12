@@ -250,7 +250,7 @@
     </div>
 
     <div id="tool-recommendation">
-        <h2><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Recommended Choice</h2>
+        <h2><?php echo __( 'Recommended Choice', 'vocabulary-theme' ); ?></h2>
 
         <article class="tool">
 
@@ -259,32 +259,32 @@
 
     <div id="mark-your-work">
         <header>
-            <h3><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Mark Your Work</h3>
-            <p><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Choose the kind of work to get appropriate license code or public domain marking.</p>
+            <h3><?php echo __( 'Mark Your Work', 'vocabulary-theme' ); ?></h3>
+            <p><?php echo __( 'Choose the kind of work to get appropriate license code or public domain marking.', 'vocabulary-theme' ); ?></p>
         </header>
 
         <details class="medium">
 
-        <summary><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Website</summary>
+        <summary><?php echo __( 'Website', 'vocabulary-theme' ); ?></summary>
 
-            <p><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>If you are licensing or marking one work, paste the code next to it. If you are licensing or marking the whole page or blog, you can paste the code at the bottom of the page.</p>
+            <p><?php echo __( 'If you are licensing or marking one work, paste the code next to it. If you are licensing or marking the whole page or blog, you can paste the code at the bottom of the page.', 'vocabulary-theme' ); ?></p>
 
             <article>
                 <details class="format" name="website" open>
-                <summary><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Rich Text</summary>
+                <summary><?php echo __( 'Rich Text', 'vocabulary-theme' ); ?></summary>
 
                     <p class="rich-text mark">[contextually formatted mark here]</p>
 
                     <footer>
                         <div>
                             <input type="checkbox" id="rich-text-full-name" name="rich-text-full-name" value="rich-text-full-name" />
-                            <label for="rich-text-full-name"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>full tool name</label>
+                            <label for="rich-text-full-name"><?php echo __( 'full tool name', 'vocabulary-theme' ); ?></label>
                         </div>
                         <div>
                             <input type="checkbox" id="rich-text-generic-mark" name="rich-text-generic-mark" value="rich-text-generic-mark" />
-                            <label for="rich-text-generic-mark"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>generic mark</label>
+                            <label for="rich-text-generic-mark"><?php echo __( 'generic mark', 'vocabulary-theme' ); ?></label>
                         </div>
-                        <button id="copy-rich-text-mark"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Copy</button>
+                        <button id="copy-rich-text-mark"><?php echo __( 'Copy', 'vocabulary-theme' ); ?></button>
                     </footer>
                 </details>
             </article>
@@ -298,13 +298,13 @@
                     <footer>
                         <div>
                             <input type="checkbox" id="html-full-name" name="html-full-name" value="html-full-name" />
-                            <label for="html-full-name"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>full tool name</label>
+                            <label for="html-full-name"><?php echo __( 'full tool name', 'vocabulary-theme' ); ?></label>
                         </div>
                         <div>
                             <input type="checkbox" id="html-generic-mark" name="html-generic-mark" value="html-generic-mark" />
-                            <label for="html-generic-mark"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>generic mark</label>
+                            <label for="html-generic-mark"><?php echo __( 'generic mark', 'vocabulary-theme' ); ?></label>
                         </div>
-                        <button id="copy-html-mark"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Copy</button>
+                        <button id="copy-html-mark"><?php echo __( 'Copy', 'vocabulary-theme' ); ?></button>
                     </footer>
                 </details>
             </article>
@@ -312,26 +312,26 @@
         </details>
 
         <details class="medium">
-        <summary><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Print Work or Media</summary>
+        <summary><?php echo __( 'Print Work or Media', 'vocabulary-theme' ); ?></summary>
 
-            <p><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Copy the text below and paste it on the title and/or copyright page of your print work or presentation, or in the credits of your media.</p>
+            <p><?php echo __( 'Copy the text below and paste it on the title and/or copyright page of your print work or presentation, or in the credits of your media.', 'vocabulary-theme' ); ?></p>
 
             <article>
             <details class="format" name="print" open>
-                <summary><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Plain Text</summary>
+                <summary><?php echo __( 'Plain Text', 'vocabulary-theme' ); ?></summary>
 
                     <p class="plain-text mark">[contextually formatted mark here]</p>
 
                     <footer>
                         <div>
                             <input type="checkbox" id="plain-text-full-name" name="plain-text-full-name" value="plain-text-full-name" />
-                            <label for="plain-text-full-name"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>full tool name</label>
+                            <label for="plain-text-full-name"><?php echo __( 'full tool name', 'vocabulary-theme' ); ?></label>
                         </div>
                         <div>
                             <input type="checkbox" id="plain-text-generic-mark" name="plain-text-generic-mark" value="plain-text-generic-mark" />
-                            <label for="plain-text-generic-mark"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>generic mark</label>
+                            <label for="plain-text-generic-mark"><?php echo __( 'generic mark', 'vocabulary-theme' ); ?></label>
                         </div>
-                        <button id="copy-plain-text-mark"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Copy</button>
+                        <button id="copy-plain-text-mark"><?php echo __( 'Copy', 'vocabulary-theme' ); ?></button>
                     </footer>
             </details>
             </article>

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-12T19:23:18+00:00\n"
+"POT-Creation-Date: 2026-08-12T19:28:25+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: vocabulary-theme\n"
@@ -160,4 +160,58 @@ msgstr ""
 
 #: static-templates/static-chooser.php:249
 msgid "Waiting for required fields..."
+msgstr ""
+
+#: static-templates/static-chooser.php:253
+msgid "Recommended Choice"
+msgstr ""
+
+#: static-templates/static-chooser.php:262
+msgid "Mark Your Work"
+msgstr ""
+
+#: static-templates/static-chooser.php:263
+msgid "Choose the kind of work to get appropriate license code or public domain marking."
+msgstr ""
+
+#: static-templates/static-chooser.php:268
+msgid "Website"
+msgstr ""
+
+#: static-templates/static-chooser.php:270
+msgid "If you are licensing or marking one work, paste the code next to it. If you are licensing or marking the whole page or blog, you can paste the code at the bottom of the page."
+msgstr ""
+
+#: static-templates/static-chooser.php:274
+msgid "Rich Text"
+msgstr ""
+
+#: static-templates/static-chooser.php:281
+#: static-templates/static-chooser.php:301
+#: static-templates/static-chooser.php:328
+msgid "full tool name"
+msgstr ""
+
+#: static-templates/static-chooser.php:285
+#: static-templates/static-chooser.php:305
+#: static-templates/static-chooser.php:332
+msgid "generic mark"
+msgstr ""
+
+#: static-templates/static-chooser.php:287
+#: static-templates/static-chooser.php:307
+#: static-templates/static-chooser.php:334
+msgid "Copy"
+msgstr ""
+
+#: static-templates/static-chooser.php:315
+msgid "Print Work or Media"
+msgstr ""
+
+#: static-templates/static-chooser.php:317
+msgid "Copy the text below and paste it on the title and/or copyright page of your print work or presentation, or in the credits of your media."
+msgstr ""
+
+#: static-templates/static-chooser.php:321
+msgid "Plain Text"
 msgstr ""
