@@ -95,16 +95,16 @@
 
     <li>
     <fieldset id="allow-commercial-use">
-        <legend>Allow others to use your work commercially?</legend>
+        <legend><?php echo __( 'Allow others to use your work commercially?', 'vocabulary-theme' ); ?></legend>
 
         <div>
             <input type="radio" id="yes-commercial" name="commercial" value="yes" />
-            <label for="yes-commercial">Yes</label>
+            <label for="yes-commercial"><?php echo __( 'Yes', 'vocabulary-theme' ); ?></label>
         </div>
 
         <div>
             <input type="radio" id="no-commercial" name="commercial" value="no" />
-            <label for="no-commercial">No</label>
+            <label for="no-commercial"><?php echo __( 'No', 'vocabulary-theme' ); ?></label>
         </div>
 
     </fieldset>
@@ -112,16 +112,16 @@
 
     <li>
     <fieldset id="allow-derivatives">
-        <legend>Allow others to remix, adapt, or build upon your work?</legend>
+        <legend><?php echo __( 'Allow others to remix, adapt, or build upon your work?', 'vocabulary-theme' ); ?></legend>
 
         <div>
             <input type="radio" id="yes-derivatives" name="derivatives" value="yes" />
-            <label for="yes-derivatives">Yes</label>
+            <label for="yes-derivatives"><?php echo __( 'Yes', 'vocabulary-theme' ); ?></label>
         </div>
 
         <div>
             <input type="radio" id="no-derivatives" name="derivatives" value="no" />
-            <label for="no-derivatives">No</label>
+            <label for="no-derivatives"><?php echo __( 'No', 'vocabulary-theme' ); ?></label>
         </div>
 
     </fieldset>
@@ -129,16 +129,16 @@
 
     <li>
     <fieldset id="share-alike">
-        <legend>Require adaptions of your work to be licensed under the same CC license?</legend>
+        <legend><?php echo __( 'Require adaptions of your work to be licensed under the same CC license?', 'vocabulary-theme' ); ?></legend>
 
         <div>
             <input type="radio" id="yes-sharing-requirements" name="sharing-requirements" value="yes" />
-            <label for="yes-sharing-requirements">Yes</label>
+            <label for="yes-sharing-requirements"><?php echo __( 'Yes', 'vocabulary-theme' ); ?></label>
         </div>
 
         <div>
             <input type="radio" id="no-sharing-requirements" name="sharing-requirements" value="no" />
-            <label for="no-sharing-requirements">No</label>
+            <label for="no-sharing-requirements"><?php echo __( 'No', 'vocabulary-theme' ); ?></label>
         </div>
 
     </fieldset>
@@ -148,17 +148,17 @@
 
     <li>
     <fieldset id="waive-your-copyright">
-        <legend>Waive your copyright</legend>
+        <legend><?php echo __( 'Waive your copyright', 'vocabulary-theme' ); ?></legend>
         <!-- [T]: needs another box here to verify ownership similar to "confirmation" -->
 
         <div>
             <input type="checkbox" id="waive" name="waive" value="waive" />
-            <label for="waive">I hereby waive all copyright and related or neighboring rights together with all associated claims and causes of action with respect to this work to the extent possible under the law.</label>
+            <label for="waive"><?php echo __( 'I hereby waive all copyright and related or neighboring rights together with all associated claims and causes of action with respect to this work to the extent possible under the law.', 'vocabulary-theme' ); ?></label>
         </div>
 
         <div>
             <input type="checkbox" id="read" name="read" value="read" />
-            <label for="read">I have read and understand the terms and intended legal effect of CC0, and hereby voluntarily elect to apply it to this work.</label>
+            <label for="read"><?php echo __( 'I have read and understand the terms and intended legal effect of CC0, and hereby voluntarily elect to apply it to this work.', 'vocabulary-theme' ); ?></label>
         </div>
 
     </fieldset>
@@ -166,21 +166,21 @@
 
     <li>
     <fieldset id="confirmation">
-        <legend>Confirm that CC Licensing is appropriate</legend>
+        <legend><?php echo __( 'Confirm that CC Licensing is appropriate', 'vocabulary-theme' ); ?></legend>
 
         <div>
             <input type="checkbox" id="ownership" name="ownership" value="ownership" />
-            <label for="ownership">I own or have authority to license the work.</label>
+            <label for="ownership"><?php echo __( 'I own or have authority to license the work.', 'vocabulary-theme' ); ?></label>
         </div>
 
         <div>
             <input type="checkbox" id="read" name="read" value="read" />
-            <label for="read">I have read and understand the terms of the license.</label>
+            <label for="read"><?php echo __( 'I have read and understand the terms of the license.', 'vocabulary-theme' ); ?></label>
         </div>
 
         <div>
             <input type="checkbox" id="revocation" name="revocation" value="revocation" />
-            <label for="revocation">I understand that CC licensing is not revocable.</label>
+            <label for="revocation"><?php echo __( 'I understand that CC licensing is not revocable.', 'vocabulary-theme' ); ?></label>
         </div>
 
     </fieldset>
@@ -190,32 +190,32 @@
 
     <li>
     <fieldset id="attribution-details">
-        <legend>Attribution details (optional)</legend>
+        <legend><?php echo __( 'Attribution details (optional)', 'vocabulary-theme' ); ?></legend>
 
-        <span>This helps others attribute your work to you, and fills in machine-readable code.</span>
+        <span><?php echo __( 'This helps others attribute your work to you, and fills in machine-readable code.', 'vocabulary-theme' ); ?></span>
 
         <div>
-            <label for="title">Title of work</label>
+            <label for="title"><?php echo __( 'Title of work', 'vocabulary-theme' ); ?></label>
             <input type="text" id="title" name="title" placeholder="Untitled" />
         </div>
 
         <div>
-            <label for="creator">Creator of work</label>
+            <label for="creator"><?php echo __( 'Creator of work', 'vocabulary-theme' ); ?></label>
             <input type="text" id="creator" name="creator" placeholder="Jane Doe" />
         </div>
 
         <div>
-            <label for="work-link">Link to work</label>
+            <label for="work-link"><?php echo __( 'Link to work', 'vocabulary-theme' ); ?></label>
             <input type="url" id="work-link" name="work-link" placeholder="https://example.com" />
         </div>
 
         <div>
-            <label for="creator-link">Link to Creator Profile</label>
+            <label for="creator-link"><?php echo __( 'Link to Creator Profile', 'vocabulary-theme' ); ?></label>
             <input type="url" id="creator-link" name="creator-link" placeholder="https://example.com" />
         </div>
 
         <div>
-            <label for="work-creation-year">Year of creation</label>
+            <label for="work-creation-year"><?php echo __( 'Year of creation', 'vocabulary-theme' ); ?></label>
             <input type="text" id="work-creation-year" name="work-creation-year" placeholder="1999" />
         </div>
 
@@ -224,12 +224,12 @@
             <hr />
 
             <div>
-                <label for="tool-title">Title of recommended tool (read only)</label>
+                <label for="tool-title"><?php echo __( 'Title of recommended tool (read only)', 'vocabulary-theme' ); ?></label>
                 <input type="text" id="tool-title" name="tool-title" value="recommended tool title" readonly="true" />
             </div>
 
             <div>
-                <label for="tool-url">URL of recommended tool (read only)</label>
+                <label for="tool-url"><?php echo __( 'URL of recommended tool (read only)', 'vocabulary-theme' ); ?></label>
                 <input type="text" id="tool-url" name="tool-url" value="https://creativecommons.org/licenses/by/4.0/" readonly="true" />
             </div>
 
@@ -246,11 +246,11 @@
 
     <aside>
     <div id="empty">
-        <p>Waiting for required fields...</p>
+        <p><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?></p>
     </div>
 
     <div id="tool-recommendation">
-        <h2>Recommended Choice</h2>
+        <h2><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Recommended Choice</h2>
 
         <article class="tool">
 
@@ -259,32 +259,32 @@
 
     <div id="mark-your-work">
         <header>
-            <h3>Mark Your Work</h3>
-            <p>Choose the kind of work to get appropriate license code or public domain marking.</p>
+            <h3><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Mark Your Work</h3>
+            <p><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Choose the kind of work to get appropriate license code or public domain marking.</p>
         </header>
 
         <details class="medium">
 
-        <summary>Website</summary>
+        <summary><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Website</summary>
 
-            <p>If you are licensing or marking one work, paste the code next to it. If you are licensing or marking the whole page or blog, you can paste the code at the bottom of the page.</p>
+            <p><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>If you are licensing or marking one work, paste the code next to it. If you are licensing or marking the whole page or blog, you can paste the code at the bottom of the page.</p>
 
             <article>
                 <details class="format" name="website" open>
-                <summary>Rich Text</summary>
+                <summary><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Rich Text</summary>
 
                     <p class="rich-text mark">[contextually formatted mark here]</p>
 
                     <footer>
                         <div>
                             <input type="checkbox" id="rich-text-full-name" name="rich-text-full-name" value="rich-text-full-name" />
-                            <label for="rich-text-full-name">full tool name</label>
+                            <label for="rich-text-full-name"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>full tool name</label>
                         </div>
                         <div>
                             <input type="checkbox" id="rich-text-generic-mark" name="rich-text-generic-mark" value="rich-text-generic-mark" />
-                            <label for="rich-text-generic-mark">generic mark</label>
+                            <label for="rich-text-generic-mark"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>generic mark</label>
                         </div>
-                        <button id="copy-rich-text-mark">Copy</button>
+                        <button id="copy-rich-text-mark"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Copy</button>
                     </footer>
                 </details>
             </article>
@@ -298,13 +298,13 @@
                     <footer>
                         <div>
                             <input type="checkbox" id="html-full-name" name="html-full-name" value="html-full-name" />
-                            <label for="html-full-name">full tool name</label>
+                            <label for="html-full-name"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>full tool name</label>
                         </div>
                         <div>
                             <input type="checkbox" id="html-generic-mark" name="html-generic-mark" value="html-generic-mark" />
-                            <label for="html-generic-mark">generic mark</label>
+                            <label for="html-generic-mark"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>generic mark</label>
                         </div>
-                        <button id="copy-html-mark">Copy</button>
+                        <button id="copy-html-mark"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Copy</button>
                     </footer>
                 </details>
             </article>
@@ -312,26 +312,26 @@
         </details>
 
         <details class="medium">
-        <summary>Print Work or Media</summary>
+        <summary><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Print Work or Media</summary>
 
-            <p>Copy the text below and paste it on the title and/or copyright page of your print work or presentation, or in the credits of your media.</p>
+            <p><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Copy the text below and paste it on the title and/or copyright page of your print work or presentation, or in the credits of your media.</p>
 
             <article>
             <details class="format" name="print" open>
-                <summary>Plain Text</summary>
+                <summary><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Plain Text</summary>
 
                     <p class="plain-text mark">[contextually formatted mark here]</p>
 
                     <footer>
                         <div>
                             <input type="checkbox" id="plain-text-full-name" name="plain-text-full-name" value="plain-text-full-name" />
-                            <label for="plain-text-full-name">full tool name</label>
+                            <label for="plain-text-full-name"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>full tool name</label>
                         </div>
                         <div>
                             <input type="checkbox" id="plain-text-generic-mark" name="plain-text-generic-mark" value="plain-text-generic-mark" />
-                            <label for="plain-text-generic-mark">generic mark</label>
+                            <label for="plain-text-generic-mark"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>generic mark</label>
                         </div>
-                        <button id="copy-plain-text-mark">Copy</button>
+                        <button id="copy-plain-text-mark"><?php echo __( 'Waiting for required fields...', 'vocabulary-theme' ); ?>Copy</button>
                     </footer>
             </details>
             </article>

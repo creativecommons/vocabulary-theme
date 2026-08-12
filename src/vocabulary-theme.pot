@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-12T19:15:48+00:00\n"
+"POT-Creation-Date: 2026-08-12T19:23:18+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: vocabulary-theme\n"
@@ -52,11 +52,17 @@ msgstr ""
 
 #: static-templates/static-chooser.php:31
 #: static-templates/static-chooser.php:84
+#: static-templates/static-chooser.php:102
+#: static-templates/static-chooser.php:119
+#: static-templates/static-chooser.php:136
 msgid "Yes"
 msgstr ""
 
 #: static-templates/static-chooser.php:36
 #: static-templates/static-chooser.php:89
+#: static-templates/static-chooser.php:107
+#: static-templates/static-chooser.php:124
+#: static-templates/static-chooser.php:141
 msgid "No"
 msgstr ""
 
@@ -74,4 +80,84 @@ msgstr ""
 
 #: static-templates/static-chooser.php:80
 msgid "Require attribution for your work?"
+msgstr ""
+
+#: static-templates/static-chooser.php:98
+msgid "Allow others to use your work commercially?"
+msgstr ""
+
+#: static-templates/static-chooser.php:115
+msgid "Allow others to remix, adapt, or build upon your work?"
+msgstr ""
+
+#: static-templates/static-chooser.php:132
+msgid "Require adaptions of your work to be licensed under the same CC license?"
+msgstr ""
+
+#: static-templates/static-chooser.php:151
+msgid "Waive your copyright"
+msgstr ""
+
+#: static-templates/static-chooser.php:156
+msgid "I hereby waive all copyright and related or neighboring rights together with all associated claims and causes of action with respect to this work to the extent possible under the law."
+msgstr ""
+
+#: static-templates/static-chooser.php:161
+msgid "I have read and understand the terms and intended legal effect of CC0, and hereby voluntarily elect to apply it to this work."
+msgstr ""
+
+#: static-templates/static-chooser.php:169
+msgid "Confirm that CC Licensing is appropriate"
+msgstr ""
+
+#: static-templates/static-chooser.php:173
+msgid "I own or have authority to license the work."
+msgstr ""
+
+#: static-templates/static-chooser.php:178
+msgid "I have read and understand the terms of the license."
+msgstr ""
+
+#: static-templates/static-chooser.php:183
+msgid "I understand that CC licensing is not revocable."
+msgstr ""
+
+#: static-templates/static-chooser.php:193
+msgid "Attribution details (optional)"
+msgstr ""
+
+#: static-templates/static-chooser.php:195
+msgid "This helps others attribute your work to you, and fills in machine-readable code."
+msgstr ""
+
+#: static-templates/static-chooser.php:198
+msgid "Title of work"
+msgstr ""
+
+#: static-templates/static-chooser.php:203
+msgid "Creator of work"
+msgstr ""
+
+#: static-templates/static-chooser.php:208
+msgid "Link to work"
+msgstr ""
+
+#: static-templates/static-chooser.php:213
+msgid "Link to Creator Profile"
+msgstr ""
+
+#: static-templates/static-chooser.php:218
+msgid "Year of creation"
+msgstr ""
+
+#: static-templates/static-chooser.php:227
+msgid "Title of recommended tool (read only)"
+msgstr ""
+
+#: static-templates/static-chooser.php:232
+msgid "URL of recommended tool (read only)"
+msgstr ""
+
+#: static-templates/static-chooser.php:249
+msgid "Waiting for required fields..."
 msgstr ""
