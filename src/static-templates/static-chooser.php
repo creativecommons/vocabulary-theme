@@ -421,17 +421,17 @@
     </header>
 
     <div class="description">
-        <p>By marking the work with a CC0 public domain dedication, the creator is giving up their copyright and allowing reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes.</p>
+        <p><?php echo __( 'By marking the work with a CC0 public domain dedication, the creator is giving up their copyright and allowing reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes.', 'vocabulary-theme' ); ?></p>
     </div>
 
     <dl class="conditions-definitions">
         <div>
             <dt class="icon-attach cc-zero">CC0</dt>
-            <dd>This work has been marked as dedicated to the public domain.</dd>
+            <dd><?php echo __( 'This work has been marked as dedicated to the public domain.', 'vocabulary-theme' ); ?></dd>
         </div>
     </dl>
 
-    <a href="https://creativecommons.org/publicdomain/zero/1.0/">See the License Deed</a>
+    <a href="https://creativecommons.org/publicdomain/zero/1.0/"><?php echo __( 'See the License Deed', 'vocabulary-theme' ); ?></a>
 </template>
 
 <template id="cc-by" class="tool license">
@@ -449,17 +449,17 @@
     </header>
 
     <div class="description">
-        <p>This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes.</p>
+        <p><?php echo __( 'This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes.', 'vocabulary-theme' ); ?></p>
     </div>
 
     <dl class="conditions-definitions">
         <div>
             <dt class="icon-attach cc-by">BY</dt>
-            <dd>Credit must be given to you, the creator.</dd>
+            <dd><?php echo __( 'Credit must be given to you, the creator.', 'vocabulary-theme' ); ?></dd>
         </div>
     </dl>
 
-    <a href="https://creativecommons.org/licenses/by/4.0/">See the License Deed</a>
+    <a href="https://creativecommons.org/licenses/by/4.0/"><?php echo __( 'See the License Deed', 'vocabulary-theme' ); ?></a>
 </template>
 
 <template id="cc-by-sa" class="tool license">
@@ -480,22 +480,22 @@
     </header>
 
     <div class="description">
-        <p>This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes. If others remix, adapt, or build upon the material, they must license the modified material under identical terms.</p>
+        <p><?php echo __( 'This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes. If others remix, adapt, or build upon the material, they must license the modified material under identical terms.', 'vocabulary-theme' ); ?></p>
     </div>
 
     <dl class="conditions-definitions">
         <div>
             <dt class="icon-attach cc-by">BY</dt>
-            <dd>Credit must be given to you, the creator.</dd>
+            <dd><?php echo __( 'Credit must be given to you, the creator.', 'vocabulary-theme' ); ?></dd>
         </div>
 
         <div>
             <dt class="icon-attach cc-sa">SA</dt>
-            <dd>Adaptations must be shared under the same terms.</dd>
+            <dd><?php echo __( 'Adaptations must be shared under the same terms.', 'vocabulary-theme' ); ?></dd>
         </div>
     </dl>
 
-    <a href="https://creativecommons.org/licenses/by-sa/4.0/">See the License Deed</a>
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/"><?php echo __( 'See the License Deed', 'vocabulary-theme' ); ?></a>
 </template>
 
 <template id="cc-by-nd" class="tool license">
@@ -516,23 +516,23 @@
     </header>
 
     <div class="description">
-        <p>This license requires that reusers give credit to the creator. It allows reusers to copy and distribute the material in any medium or format in unadapted form only, even for commercial purposes.</p>
+        <p><?php echo __( 'This license requires that reusers give credit to the creator. It allows reusers to copy and distribute the material in any medium or format in unadapted form only, even for commercial purposes.', 'vocabulary-theme' ); ?></p>
     </div>
 
     <dl class="conditions-definitions">
 
         <div>
             <dt class="icon-attach cc-by">BY</dt>
-            <dd>Credit must be given to you, the creator.</dd>
+            <dd><?php echo __( 'Credit must be given to you, the creator.', 'vocabulary-theme' ); ?></dd>
         </div>
 
         <div>
             <dt class="icon-attach cc-nd">ND</dt>
-            <dd>No derivatives or adaptations of your work are permitted.</dd>
+            <dd><?php echo __( 'No derivatives or adaptations of your work are permitted.', 'vocabulary-theme' ); ?></dd>
         </div>
     </dl>
 
-    <a href="https://creativecommons.org/licenses/by-nd/4.0/">See the License Deed</a>
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/"><?php echo __( 'See the License Deed', 'vocabulary-theme' ); ?></a>
 </template>
 
 <template id="cc-by-nc" class="tool license">
@@ -553,27 +553,27 @@
     </header>
 
     <div class="description">
-        <p>This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, for noncommercial purposes only.</p>
+        <p><?php echo __( 'This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, for noncommercial purposes only.', 'vocabulary-theme' ); ?></p>
     </div>
 
     <dl class="conditions-definitions">
         <div>
             <dt class="icon-attach cc-by">BY</dt>
-            <dd>Credit must be given to you, the creator.</dd>
+            <dd><?php echo __( 'Credit must be given to you, the creator.', 'vocabulary-theme' ); ?></dd>
         </div>
 
         <div>
             <dt class="icon-attach cc-nc">NC</dt>
             <dd>
-                Only noncommercial use of your work is permitted.
-                <em>Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</em>
+                <?php echo __( 'Only noncommercial use of your work is permitted.', 'vocabulary-theme' ); ?>
+                <em><?php echo __( 'Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.', 'vocabulary-theme' ); ?></em>
             </dd>
         </div>
 
 
     </dl>
 
-    <a href="https://creativecommons.org/licenses/by-nc/4.0/">See the License Deed</a>
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/"><?php echo __( 'See the License Deed', 'vocabulary-theme' ); ?></a>
 </template>
 
 <template id="cc-by-nc-sa" class="tool license">
@@ -597,30 +597,30 @@
     </header>
 
     <div class="description">
-        <p>This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, for noncommercial purposes only. If others modify or adapt the material, they must license the modified material under identical terms.</p>
+        <p><?php echo __( 'This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, for noncommercial purposes only. If others modify or adapt the material, they must license the modified material under identical terms.', 'vocabulary-theme' ); ?></p>
     </div>
 
     <dl class="conditions-definitions">
         <div>
             <dt class="icon-attach cc-by">BY</dt>
-            <dd>Credit must be given to you, the creator.</dd>
+            <dd><?php echo __( 'Credit must be given to you, the creator.', 'vocabulary-theme' ); ?></dd>
         </div>
 
         <div>
             <dt class="icon-attach cc-nc">NC</dt>
             <dd>
-                Only noncommercial use of your work is permitted.
-                <em>Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</em>
+                <?php echo __( 'Only noncommercial use of your work is permitted.', 'vocabulary-theme' ); ?>
+                <em><?php echo __( 'Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.', 'vocabulary-theme' ); ?></em>
             </dd>
         </div>
 
         <div>
             <dt class="icon-attach cc-sa">SA</dt>
-            <dd>Adaptations must be shared under the same terms.</dd>
+            <dd><?php echo __( 'Adaptations must be shared under the same terms.', 'vocabulary-theme' ); ?></dd>
         </div>
     </dl>
 
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">See the License Deed</a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><?php echo __( 'See the License Deed', 'vocabulary-theme' ); ?></a>
 </template>
 
 <template id="cc-by-nc-nd" class="tool license">
@@ -644,30 +644,30 @@
     </header>
 
     <div class="description">
-        <p>This license requires that reusers give credit to the creator. It allows reusers to copy and distribute the material in any medium or format in unadapted form and for noncommercial purposes only.</p>
+        <p><?php echo __( 'This license requires that reusers give credit to the creator. It allows reusers to copy and distribute the material in any medium or format in unadapted form and for noncommercial purposes only.', 'vocabulary-theme' ); ?></p>
     </div>
 
     <dl class="conditions-definitions">
         <div>
             <dt class="icon-attach cc-by">BY</dt>
-            <dd>Credit must be given to you, the creator.</dd>
+            <dd><?php echo __( 'Credit must be given to you, the creator.', 'vocabulary-theme' ); ?></dd>
         </div>
 
         <div>
             <dt class="icon-attach cc-nc">NC</dt>
             <dd>
-                Only noncommercial use of your work is permitted.
-                <em>Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</em>
+                <?php echo __( 'Only noncommercial use of your work is permitted.', 'vocabulary-theme' ); ?>
+                <em><?php echo __( 'Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.', 'vocabulary-theme' ); ?></em>
             </dd>
         </div>
 
         <div>
             <dt class="icon-attach cc-nd">ND</dt>
-            <dd>No derivatives or adaptations of your work are permitted.</dd>
+            <dd><?php echo __( 'No derivatives or adaptations of your work are permitted.', 'vocabulary-theme' ); ?></dd>
         </div>
     </dl>
 
-    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">See the License Deed</a>
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><?php echo __( 'See the License Deed', 'vocabulary-theme' ); ?></a>
 </template>
 
 <template id="plain-text" class="mark">

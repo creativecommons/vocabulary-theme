@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-12T19:39:33+00:00\n"
+"POT-Creation-Date: 2026-08-12T19:48:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: vocabulary-theme\n"
@@ -274,6 +274,12 @@ msgid "Attribution Required (BY)"
 msgstr ""
 
 #: static-templates/static-chooser.php:372
+#: static-templates/static-chooser.php:458
+#: static-templates/static-chooser.php:489
+#: static-templates/static-chooser.php:526
+#: static-templates/static-chooser.php:562
+#: static-templates/static-chooser.php:606
+#: static-templates/static-chooser.php:653
 msgid "Credit must be given to you, the creator."
 msgstr ""
 
@@ -282,10 +288,16 @@ msgid "Commercial Use Not Allowed (NC/NonCommercial)"
 msgstr ""
 
 #: static-templates/static-chooser.php:378
+#: static-templates/static-chooser.php:568
+#: static-templates/static-chooser.php:612
+#: static-templates/static-chooser.php:659
 msgid "Only noncommercial use of your work is permitted."
 msgstr ""
 
 #: static-templates/static-chooser.php:379
+#: static-templates/static-chooser.php:569
+#: static-templates/static-chooser.php:613
+#: static-templates/static-chooser.php:660
 msgid "Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation."
 msgstr ""
 
@@ -298,6 +310,8 @@ msgid "Modifying Not Allowed (ND/NoDerivatives)"
 msgstr ""
 
 #: static-templates/static-chooser.php:390
+#: static-templates/static-chooser.php:531
+#: static-templates/static-chooser.php:666
 msgid "No derivatives or adaptations of your work are permitted."
 msgstr ""
 
@@ -311,4 +325,51 @@ msgstr ""
 
 #: static-templates/static-chooser.php:398
 msgid "If you would like peer support in learning the best way to utilize this resource or choosing the best legal tool for you, you can become a part of CC’s Community by filling out the <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSf2HY_wHq5SlgP_0U0ZWQKGXKwocNhm_vCPY34bUQrQ_hWoAQ/viewform?usp=dialog\">Creative Commons Community Intake Form</a>. You should receive an invitation to our chat platform, Zulip, in 5-10 business days.."
+msgstr ""
+
+#: static-templates/static-chooser.php:424
+msgid "By marking the work with a CC0 public domain dedication, the creator is giving up their copyright and allowing reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes."
+msgstr ""
+
+#: static-templates/static-chooser.php:430
+msgid "This work has been marked as dedicated to the public domain."
+msgstr ""
+
+#: static-templates/static-chooser.php:434
+#: static-templates/static-chooser.php:462
+#: static-templates/static-chooser.php:498
+#: static-templates/static-chooser.php:535
+#: static-templates/static-chooser.php:576
+#: static-templates/static-chooser.php:623
+#: static-templates/static-chooser.php:670
+msgid "See the License Deed"
+msgstr ""
+
+#: static-templates/static-chooser.php:452
+msgid "This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes."
+msgstr ""
+
+#: static-templates/static-chooser.php:483
+msgid "This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes. If others remix, adapt, or build upon the material, they must license the modified material under identical terms."
+msgstr ""
+
+#: static-templates/static-chooser.php:494
+#: static-templates/static-chooser.php:619
+msgid "Adaptations must be shared under the same terms."
+msgstr ""
+
+#: static-templates/static-chooser.php:519
+msgid "This license requires that reusers give credit to the creator. It allows reusers to copy and distribute the material in any medium or format in unadapted form only, even for commercial purposes."
+msgstr ""
+
+#: static-templates/static-chooser.php:556
+msgid "This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, for noncommercial purposes only."
+msgstr ""
+
+#: static-templates/static-chooser.php:600
+msgid "This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, for noncommercial purposes only. If others modify or adapt the material, they must license the modified material under identical terms."
+msgstr ""
+
+#: static-templates/static-chooser.php:647
+msgid "This license requires that reusers give credit to the creator. It allows reusers to copy and distribute the material in any medium or format in unadapted form and for noncommercial purposes only."
 msgstr ""
