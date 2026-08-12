@@ -4,11 +4,11 @@
 
 <header>
 
-<h1>Choose a License for Your Work</h1>
+<h1><?php echo __( 'Choose a License for Your Work', 'vocabulary-theme' ); ?></h1>
 
 <div>
-<p>Follow the steps to select the appropriate license for your work.</p>
-<p>This site does not store any information.</p>
+<p><?php echo __( 'Follow the steps to select the appropriate license for your work.', 'vocabulary-theme' ); ?></p>
+<p><?php echo __( 'This site does not store any information.', 'vocabulary-theme' ); ?></p>
 </div>
 
 </header>
@@ -22,18 +22,18 @@
 
     <li>
     <fieldset id="do-you-know-which-license-you-need">
-        <legend>Do you know which license you need?</legend>
+        <legend><?php echo __( 'Do you know which license you need?', 'vocabulary-theme' ); ?></legend>
         <!-- <legend>Choose a License</legend> -->
 
 
         <div>
             <input type="radio" id="yes-choose" name="choose" value="yes" checked />
-            <label for="yes-choose">Yes</label>
+            <label for="yes-choose"><?php echo __( 'Yes', 'vocabulary-theme' ); ?></label>
         </div>
 
         <div>
             <input type="radio" id="no-choose" name="choose" value="no" />
-            <label for="no-choose">No</label>
+            <label for="no-choose"><?php echo __( 'No', 'vocabulary-theme' ); ?></label>
         </div>
     <!--
         <div>
@@ -51,11 +51,11 @@
     <li>
     <fieldset id="which-license-do-you-need">
         <!-- <legend>Choose a License</legend> -->
-        <legend>Which license do you need?</legend>
+        <legend><?php echo __( 'Which license do you need?', 'vocabulary-theme' ); ?></legend>
 
-        <label for="tool">License</label>
+        <label for="tool"><?php echo __( 'License', 'vocabulary-theme' ); ?></label>
         <select name="tool" id="tool">
-            <option value="noselect" selected>&mdash;choose a license&mdash;</option>
+            <option value="noselect" selected>&mdash;<?php echo __( 'choose a license', 'vocabulary-theme' ); ?>&mdash;</option>
             <option value="cc-0">CC0 1.0</option>
             <option value="cc-by">CC-BY 4.0</option>
             <option value="cc-by-sa">CC-BY-SA 4.0</option>
@@ -77,16 +77,16 @@
 
     <li>
     <fieldset id="require-attribution">
-        <legend>Require attribution for your work?</legend>
+        <legend><?php echo __( 'Require attribution for your work?', 'vocabulary-theme' ); ?></legend>
 
         <div>
             <input type="radio" id="yes-attribution" name="attribution" value="yes" />
-            <label for="yes-attribution">Yes</label>
+            <label for="yes-attribution"><?php echo __( 'Yes', 'vocabulary-theme' ); ?></label>
         </div>
 
         <div>
             <input type="radio" id="no-attribution" name="attribution" value="no" />
-            <label for="no-attribution">No</label>
+            <label for="no-attribution"><?php echo __( 'No', 'vocabulary-theme' ); ?></label>
         </div>
 
     </fieldset>
