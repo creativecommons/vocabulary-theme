@@ -73,7 +73,7 @@
                             <button class="expand icon-replace fa-angle-down">Expand</button>
 
                              <ul>
-                                <li><a href="/training-and-webinars">Training + Webinars</a></li>
+                                <li><a href="/cc-training-center">CC Training Center</a></li>
                                 <li><a href="/advocacy">Advocacy</a></li>
                                 <li><a href="/community">Community</a></li>
                                 <!-- <li><a href="/partnerships">Partnerships</a></li> -->
