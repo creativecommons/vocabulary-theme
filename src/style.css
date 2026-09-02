@@ -578,6 +578,12 @@ article.training-flow details .flow-content {
     font-family: "DM Mono";
 }
 
+main > header .default-image img.photo {
+
+    mask-image: url('vocabulary/svg/blob5.svg');
+  
+}
+
 @media (max-width: 765px) {
     article.training-flow {
         padding: 2em 1em;
