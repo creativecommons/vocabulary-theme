@@ -387,9 +387,6 @@ article.training-flow .post .byline, article.training-flow .post .categories {
     display: none;
 }
 
-
-
-
 article.training-flow {
     grid-column: 1 / 12;
     padding: 2em 4em;
@@ -430,7 +427,6 @@ article.training-flow ol > li {
     margin: 0;
     padding: 0;
 }
-
 
 article.training-flow ol > li details {
     /* display: grid; */
@@ -533,6 +529,53 @@ article.training-flow details .flow-content {
     padding: 0 2em;
     padding-top: 3em;
 
+}
+
+.training-index .topic-summary .trainings ul li a {
+    color: black;
+}
+
+.training-index .topic-summary .trainings ul li:nth-child(1) a {
+     --underline-background-color: #FF9CFF;
+    background-color: #FF9CFF;
+}
+
+.training-index .topic-summary .trainings ul li:nth-child(2) a {
+    --underline-background-color: #ADFF00;
+    background-color: #ADFF00;
+}
+
+.training-index .topic-summary .trainings ul li:nth-child(3) a {
+    --underline-background-color: #FFD9CC;
+    background-color: #FFD9CC; 
+}
+
+.training-index .topic-summary .trainings ul li:nth-child(4) a {
+    --underline-background-color: #E0FF00;
+    background-color: #E0FF00;
+}
+
+.training-index .topic-summary .trainings  ul li a:hover {
+    --underline-background-color: black;
+    background: black;
+    color: white;
+}
+
+.training-index main p {
+    font-size: 1.3em;
+}
+
+article.training-flow details .flow-content {
+    font-size: .8em;
+}
+
+.training-index main figure figcaption p {
+    font-family: "DM Mono";
+    font-size: .8em;
+}
+
+.training-index main figure figcaption p a {
+    font-family: "DM Mono";
 }
 
 @media (max-width: 765px) {
