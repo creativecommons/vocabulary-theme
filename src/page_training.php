@@ -143,6 +143,11 @@
 </article>
 <?php endif; ?>
 
+<?php if($testimonial1) : ?>
+<blockquote>
+    <p><?php echo $testimonial1;  ?></p>
+</blockquote>
+<?php endif; ?>
 
 <?php if(get_field('display_training_flow_section')) : ?>
 
@@ -372,12 +377,6 @@
     </article>
 
 <?php endif; ?>
-
-    <?php if($testimonial1) : ?>
-    <blockquote>
-        <p><?php echo $testimonial1;  ?></p>
-    </blockquote>
-    <?php endif; ?>
 
 
 
