@@ -1,6 +1,0 @@
-filters:
-- filter_type: file
-  file_format: POT
-  source_file: languages/vocabulary-theme.pot
-  source_language: en
-  translation_files_expression: 'languages/vocabulary-theme-<lang>.mo'
