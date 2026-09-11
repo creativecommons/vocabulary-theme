@@ -3,4 +3,4 @@ filters:
   file_format: POT
   source_file: src/languages/vocabulary-theme.pot
   source_language: en
-  translation_files_expression: 'src/languages/vocabulary-theme-<lang>.mo'
+  translation_files_expression: 'src/languages/vocabulary-theme-<lang>.po'
