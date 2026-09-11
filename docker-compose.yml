@@ -91,7 +91,9 @@ services:
     networks:
       - backend
     volumes:
+      - ./src:/var/www/html/wp-content/${WP_MOD_TYPE:?err}s/${WP_MOD_NAME:?err}
       - wp_data:/var/www/html
+    working_dir: /var/www/html/wp-content/themes/vocabulary-theme/
 
 volumes:
   db_data:

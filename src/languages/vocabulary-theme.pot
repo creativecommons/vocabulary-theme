@@ -1,0 +1,375 @@
+# Copyright (C) 2026 the Creative Commons team; possumbilities, Timid Robot
+# This file is distributed under the MIT License.
+msgid ""
+msgstr ""
+"Project-Id-Version: CC Vocabulary Theme 2.7\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/vocabulary-theme\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-08-12T19:58:15+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: chooser\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "CC Vocabulary Theme"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Theme based on the Vocabulary Design System"
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "the Creative Commons team; possumbilities, Timid Robot"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://opensource.creativecommons.org/"
+msgstr ""
+
+#: static-templates/static-chooser.php:7
+msgid "Choose a License for Your Work"
+msgstr ""
+
+#: static-templates/static-chooser.php:10
+msgid "Follow the steps to select the appropriate license for your work."
+msgstr ""
+
+#: static-templates/static-chooser.php:11
+msgid "This site does not store any information."
+msgstr ""
+
+#: static-templates/static-chooser.php:25
+msgid "Do you know which license you need?"
+msgstr ""
+
+#: static-templates/static-chooser.php:31
+#: static-templates/static-chooser.php:84
+#: static-templates/static-chooser.php:102
+#: static-templates/static-chooser.php:119
+#: static-templates/static-chooser.php:136
+msgid "Yes"
+msgstr ""
+
+#: static-templates/static-chooser.php:36
+#: static-templates/static-chooser.php:89
+#: static-templates/static-chooser.php:107
+#: static-templates/static-chooser.php:124
+#: static-templates/static-chooser.php:141
+msgid "No"
+msgstr ""
+
+#: static-templates/static-chooser.php:54
+msgid "Which license do you need?"
+msgstr ""
+
+#: static-templates/static-chooser.php:56
+msgid "License"
+msgstr ""
+
+#: static-templates/static-chooser.php:58
+msgid "choose a license"
+msgstr ""
+
+#: static-templates/static-chooser.php:80
+msgid "Require attribution for your work?"
+msgstr ""
+
+#: static-templates/static-chooser.php:98
+msgid "Allow others to use your work commercially?"
+msgstr ""
+
+#: static-templates/static-chooser.php:115
+msgid "Allow others to remix, adapt, or build upon your work?"
+msgstr ""
+
+#: static-templates/static-chooser.php:132
+msgid "Require adaptions of your work to be licensed under the same CC license?"
+msgstr ""
+
+#: static-templates/static-chooser.php:151
+msgid "Waive your copyright"
+msgstr ""
+
+#: static-templates/static-chooser.php:156
+msgid "I hereby waive all copyright and related or neighboring rights together with all associated claims and causes of action with respect to this work to the extent possible under the law."
+msgstr ""
+
+#: static-templates/static-chooser.php:161
+msgid "I have read and understand the terms and intended legal effect of CC0, and hereby voluntarily elect to apply it to this work."
+msgstr ""
+
+#: static-templates/static-chooser.php:169
+msgid "Confirm that CC Licensing is appropriate"
+msgstr ""
+
+#: static-templates/static-chooser.php:173
+msgid "I own or have authority to license the work."
+msgstr ""
+
+#: static-templates/static-chooser.php:178
+msgid "I have read and understand the terms of the license."
+msgstr ""
+
+#: static-templates/static-chooser.php:183
+msgid "I understand that CC licensing is not revocable."
+msgstr ""
+
+#: static-templates/static-chooser.php:193
+msgid "Attribution details (optional)"
+msgstr ""
+
+#: static-templates/static-chooser.php:195
+msgid "This helps others attribute your work to you, and fills in machine-readable code."
+msgstr ""
+
+#: static-templates/static-chooser.php:198
+msgid "Title of work"
+msgstr ""
+
+#: static-templates/static-chooser.php:203
+msgid "Creator of work"
+msgstr ""
+
+#: static-templates/static-chooser.php:208
+msgid "Link to work"
+msgstr ""
+
+#: static-templates/static-chooser.php:213
+msgid "Link to Creator Profile"
+msgstr ""
+
+#: static-templates/static-chooser.php:218
+msgid "Year of creation"
+msgstr ""
+
+#: static-templates/static-chooser.php:227
+msgid "Title of recommended tool (read only)"
+msgstr ""
+
+#: static-templates/static-chooser.php:232
+msgid "URL of recommended tool (read only)"
+msgstr ""
+
+#: static-templates/static-chooser.php:249
+msgid "Waiting for required fields..."
+msgstr ""
+
+#: static-templates/static-chooser.php:253
+msgid "Recommended Choice"
+msgstr ""
+
+#: static-templates/static-chooser.php:262
+msgid "Mark Your Work"
+msgstr ""
+
+#: static-templates/static-chooser.php:263
+msgid "Choose the kind of work to get appropriate license code or public domain marking."
+msgstr ""
+
+#: static-templates/static-chooser.php:268
+msgid "Website"
+msgstr ""
+
+#: static-templates/static-chooser.php:270
+msgid "If you are licensing or marking one work, paste the code next to it. If you are licensing or marking the whole page or blog, you can paste the code at the bottom of the page."
+msgstr ""
+
+#: static-templates/static-chooser.php:274
+msgid "Rich Text"
+msgstr ""
+
+#: static-templates/static-chooser.php:281
+#: static-templates/static-chooser.php:301
+#: static-templates/static-chooser.php:328
+msgid "full tool name"
+msgstr ""
+
+#: static-templates/static-chooser.php:285
+#: static-templates/static-chooser.php:305
+#: static-templates/static-chooser.php:332
+msgid "generic mark"
+msgstr ""
+
+#: static-templates/static-chooser.php:287
+#: static-templates/static-chooser.php:307
+#: static-templates/static-chooser.php:334
+#: static-templates/static-chooser.php:385
+msgid "Copy"
+msgstr ""
+
+#: static-templates/static-chooser.php:315
+msgid "Print Work or Media"
+msgstr ""
+
+#: static-templates/static-chooser.php:317
+msgid "Copy the text below and paste it on the title and/or copyright page of your print work or presentation, or in the credits of your media."
+msgstr ""
+
+#: static-templates/static-chooser.php:321
+msgid "Plain Text"
+msgstr ""
+
+#: static-templates/static-chooser.php:343
+msgid "Confused? Need Help?"
+msgstr ""
+
+#: static-templates/static-chooser.php:346
+msgid "What are Creative Commons licenses?"
+msgstr ""
+
+#: static-templates/static-chooser.php:347
+msgid "Creative Commons licenses are legal tools that help you grant copyright permissions to the general public. Our CC legal tools include <a href=\"https://creativecommons.org/licenses/\" target=\"_blank\" rel=\"noopener noreferrer\">six different licenses</a> and <a href=\"https://creativecommons.org/share-your-work/public-domain/cc0/\" target=\"_blank\" rel=\"noopener noreferrer\">one public domain dedication tool</a>. It is important to specify which one of the 7 legal tools you are applying to your material. The license chooser can help you decide which license is right for you."
+msgstr ""
+
+#: static-templates/static-chooser.php:348
+msgid "CC licenses may be applied to any type of copyrightable work. The only types of works for which CC does not recommend its licenses are computer software and hardware, where we recommend a standard free software license instead. For works that are already in the public domain we recommend that you mark them with the <a href=\"https://creativecommons.org/about/pdm\" target=\"_blank\" rel=\"noopener noreferrer\">Public Domain Mark</a>. If you hold the rights to a work but would like to place it into the public domain, you can use the Chooser to select CC0."
+msgstr ""
+
+#: static-templates/static-chooser.php:352
+msgid "How to apply a Creative Commons license"
+msgstr ""
+
+#: static-templates/static-chooser.php:353
+msgid "You can license your work by marking it with the specific CC license you choose. This marking can be as simple as a bit of text stating the license in a copyright notice, or as complex as embedding the license information on your website using the HTML code associated with the particular license. We strongly recommend including a link to the applicable license (e.g., <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener noreferrer\">https://creativecommons.org/licenses/by/4.0/</a>)."
+msgstr ""
+
+#: static-templates/static-chooser.php:357
+msgid "What should I consider?"
+msgstr ""
+
+#: static-templates/static-chooser.php:358
+msgid "As a creator licensing a work, among <a href=\"https://wiki.creativecommons.org/wiki/Considerations_for_licensors_and_licensees#Considerations_for_licensors\" target=\"_blank\" rel=\"noopener noreferrer\">other considerations</a>, you should:"
+msgstr ""
+
+#: static-templates/static-chooser.php:360
+msgid "Remember that once you have applied a CC license, you cannot revoke it"
+msgstr ""
+
+#: static-templates/static-chooser.php:361
+msgid "Choose your license based on how you want the material to be used"
+msgstr ""
+
+#: static-templates/static-chooser.php:362
+msgid "Let people know how to credit you (or whether you want credit at all)"
+msgstr ""
+
+#: static-templates/static-chooser.php:367
+msgid "What do the icons mean?"
+msgstr ""
+
+#: static-templates/static-chooser.php:368
+msgid "The icons represent key features of the different CC license options: "
+msgstr ""
+
+#: static-templates/static-chooser.php:371
+msgid "Attribution Required (BY)"
+msgstr ""
+
+#: static-templates/static-chooser.php:372
+#: static-templates/static-chooser.php:458
+#: static-templates/static-chooser.php:489
+#: static-templates/static-chooser.php:526
+#: static-templates/static-chooser.php:562
+#: static-templates/static-chooser.php:606
+#: static-templates/static-chooser.php:653
+msgid "Credit must be given to you, the creator."
+msgstr ""
+
+#: static-templates/static-chooser.php:376
+msgid "Commercial Use Not Allowed (NC/NonCommercial)"
+msgstr ""
+
+#: static-templates/static-chooser.php:378
+#: static-templates/static-chooser.php:568
+#: static-templates/static-chooser.php:612
+#: static-templates/static-chooser.php:659
+msgid "Only noncommercial use of your work is permitted."
+msgstr ""
+
+#: static-templates/static-chooser.php:379
+#: static-templates/static-chooser.php:569
+#: static-templates/static-chooser.php:613
+#: static-templates/static-chooser.php:660
+msgid "Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation."
+msgstr ""
+
+#: static-templates/static-chooser.php:384
+msgid "Distributed on Same Terms (SA/ShareAlike)"
+msgstr ""
+
+#: static-templates/static-chooser.php:389
+msgid "Modifying Not Allowed (ND/NoDerivatives)"
+msgstr ""
+
+#: static-templates/static-chooser.php:390
+#: static-templates/static-chooser.php:531
+#: static-templates/static-chooser.php:666
+msgid "No derivatives or adaptations of your work are permitted."
+msgstr ""
+
+#: static-templates/static-chooser.php:396
+msgid "What if I have other questions?"
+msgstr ""
+
+#: static-templates/static-chooser.php:397
+msgid "You can find a full list of our <a href=\"https://creativecommons.org/faq/\" target=\"_blank\" rel=\"noopener noreferrer\">frequently asked questions</a> on our site."
+msgstr ""
+
+#: static-templates/static-chooser.php:398
+msgid "If you would like peer support in learning the best way to utilize this resource or choosing the best legal tool for you, you can become a part of CC’s Community by filling out the <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSf2HY_wHq5SlgP_0U0ZWQKGXKwocNhm_vCPY34bUQrQ_hWoAQ/viewform?usp=dialog\">Creative Commons Community Intake Form</a>. You should receive an invitation to our chat platform, Zulip, in 5-10 business days.."
+msgstr ""
+
+#: static-templates/static-chooser.php:424
+msgid "By marking the work with a CC0 public domain dedication, the creator is giving up their copyright and allowing reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes."
+msgstr ""
+
+#: static-templates/static-chooser.php:430
+msgid "This work has been marked as dedicated to the public domain."
+msgstr ""
+
+#: static-templates/static-chooser.php:434
+#: static-templates/static-chooser.php:462
+#: static-templates/static-chooser.php:498
+#: static-templates/static-chooser.php:535
+#: static-templates/static-chooser.php:576
+#: static-templates/static-chooser.php:623
+#: static-templates/static-chooser.php:670
+msgid "See the License Deed"
+msgstr ""
+
+#: static-templates/static-chooser.php:452
+msgid "This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes."
+msgstr ""
+
+#: static-templates/static-chooser.php:483
+msgid "This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes. If others remix, adapt, or build upon the material, they must license the modified material under identical terms."
+msgstr ""
+
+#: static-templates/static-chooser.php:494
+#: static-templates/static-chooser.php:619
+msgid "Adaptations must be shared under the same terms."
+msgstr ""
+
+#: static-templates/static-chooser.php:519
+msgid "This license requires that reusers give credit to the creator. It allows reusers to copy and distribute the material in any medium or format in unadapted form only, even for commercial purposes."
+msgstr ""
+
+#: static-templates/static-chooser.php:556
+msgid "This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, for noncommercial purposes only."
+msgstr ""
+
+#: static-templates/static-chooser.php:600
+msgid "This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, for noncommercial purposes only. If others modify or adapt the material, they must license the modified material under identical terms."
+msgstr ""
+
+#: static-templates/static-chooser.php:647
+msgid "This license requires that reusers give credit to the creator. It allows reusers to copy and distribute the material in any medium or format in unadapted form and for noncommercial purposes only."
+msgstr ""
