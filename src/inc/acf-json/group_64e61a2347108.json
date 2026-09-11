@@ -88,6 +88,11 @@
                         "field": "field_64e61a2301304",
                         "operator": "==",
                         "value": "top-of-site"
+                    },
+                    {
+                        "field": "field_65494ffa78ac0",
+                        "operator": "==",
+                        "value": "default"
                     }
                 ]
             ],
@@ -129,6 +134,11 @@
                         "field": "field_64e61a2301304",
                         "operator": "!=",
                         "value": "newsletter-promo"
+                    },
+                    {
+                        "field": "field_65494ffa78ac0",
+                        "operator": "!=",
+                        "value": "low-importance"
                     }
                 ]
             ],
@@ -150,7 +160,7 @@
             "name": "message_rich_text",
             "aria-label": "",
             "type": "wysiwyg",
-            "instructions": "",
+            "instructions": "Please keep formatting strickly to bold, emphasis, strikethrough, and links. Please do not attempt to utilize text-alignment, blockquotes, bulleted\/numbered lists, etc.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -167,6 +177,7 @@
                 "id": ""
             },
             "default_value": "",
+            "allow_in_bindings": 1,
             "tabs": "visual",
             "toolbar": "basic",
             "media_upload": 0,
@@ -193,6 +204,11 @@
                         "field": "field_64e61a2301304",
                         "operator": "==",
                         "value": "top-of-site"
+                    },
+                    {
+                        "field": "field_65494ffa78ac0",
+                        "operator": "!=",
+                        "value": "low-importance"
                     }
                 ]
             ],
@@ -236,6 +252,11 @@
                         "field": "field_64e61a2301304",
                         "operator": "==",
                         "value": "top-of-site"
+                    },
+                    {
+                        "field": "field_65494ffa78ac0",
+                        "operator": "!=",
+                        "value": "low-importance"
                     }
                 ]
             ],
@@ -271,5 +292,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1772744433
+    "modified": 1787167313
 }
