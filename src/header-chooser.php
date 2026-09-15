@@ -23,6 +23,7 @@
 
 <!-- translation support element here -->
 <?php $languages = get_available_languages(get_template_directory().'/languages'); ?>
+
 <div class="locale icon-attach fa-globe">
     <select id="languages-dropdown">
         <option disabled="">Languages available</option>
@@ -31,8 +32,7 @@
             
         <?php $language = $language; ?>
 
-            
-        <option data-link="/chooser/?lang=<?php echo $language; ?>" id="option-<?php echo $language; ?>" selected="" value="<?php echo $language; ?>">
+        <option data-link="/chooser/?lang=<?php echo $language; ?>" id="option-<?php echo $language; ?>" <?php if ($language == get_locale()) {echo 'selected=""';} ?> value="<?php echo $language; ?>">
         <?php echo locale_get_display_name($language); ?>
         </option>
             
