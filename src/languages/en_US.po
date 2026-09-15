@@ -61,7 +61,7 @@ msgstr "Do you know which license you need?"
 #: static-templates/static-chooser.php:119
 #: static-templates/static-chooser.php:136
 msgid "Yes"
-msgstr "Yes"
+msgstr "Yep"
 
 #: static-templates/static-chooser.php:36
 #: static-templates/static-chooser.php:89
@@ -69,7 +69,7 @@ msgstr "Yes"
 #: static-templates/static-chooser.php:124
 #: static-templates/static-chooser.php:141
 msgid "No"
-msgstr "No"
+msgstr "Nope"
 
 #: static-templates/static-chooser.php:54
 msgid "Which license do you need?"
