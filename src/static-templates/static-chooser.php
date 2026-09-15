@@ -1,4 +1,4 @@
-<?php get_header('', array( 'body-classes' => 'chooser-page') ); ?>
+<?php get_header('chooser', array( 'body-classes' => 'chooser-page') ); ?>
 
 <main>
 
