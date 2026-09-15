@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html <?php language_attributes(); ?>>
 <head>
 
 <title><?php wp_title('-',true,'right'); //this requires YOAST SEO plugin to be active to output ?></title>
