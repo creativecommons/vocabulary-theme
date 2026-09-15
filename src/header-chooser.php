@@ -29,11 +29,11 @@
 
         <?php foreach ($languages as $language) : ?>
             
-        <?php $language = locale_get_display_name($language); ?>
+        <?php $language = $language; ?>
 
             
-        <option data-link="<?php echo $language; ?>" id="option-<?php echo $language; ?>" selected="" value="<?php echo $language; ?>">
-        <?php echo $language; ?>
+        <option data-link="/chooser/?lang=<?php echo $language; ?>" id="option-<?php echo $language; ?>" selected="" value="<?php echo $language; ?>">
+        <?php echo locale_get_display_name($language); ?>
         </option>
             
         <?php endforeach; ?>

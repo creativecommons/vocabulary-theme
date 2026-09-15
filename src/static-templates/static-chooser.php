@@ -679,5 +679,5 @@
 </template>
 
 <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/chooser/js/chooser.js"></script>
-
+<script src="<?php echo get_bloginfo( 'template_directory' ); ?>/chooser/js/locale.js"></script>
 <?php get_footer(); ?>
