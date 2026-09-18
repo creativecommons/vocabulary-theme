@@ -14,26 +14,6 @@ msgstr ""
 "X-Domain: chooser\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
-#. Theme Name of the theme
-#: style.css
-msgid "CC Vocabulary Theme"
-msgstr ""
-
-#. Description of the theme
-#: style.css
-msgid "Theme based on the Vocabulary Design System"
-msgstr ""
-
-#. Author of the theme
-#: style.css
-msgid "the Creative Commons team; possumbilities, Timid Robot"
-msgstr ""
-
-#. Author URI of the theme
-#: style.css
-msgid "https://opensource.creativecommons.org/"
-msgstr ""
-
 #: static-templates/static-chooser.php:7
 msgid "Choose a License for Your Work"
 msgstr "Choose a License for Your Work"
