@@ -19,11 +19,9 @@
 <body class="<?php echo $args['body-classes']; ?>">
 <a class="skip-to-content" href="#main-content-marker">Skip to content</a>
 
-
-
-<!-- translation support element here -->
 <?php $languages = get_available_languages(get_template_directory().'/languages'); ?>
-
+<?php if ($languages) : ?>
+<!-- translation support element here -->
 <div class="locale icon-attach fa-globe">
     <select id="languages-dropdown">
         <option disabled="">Languages available</option>
@@ -40,6 +38,7 @@
         
     </select>
 </div>
+<?php endif; ?>
 
 <header>
     <div class="masthead">
