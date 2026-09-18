@@ -19,6 +19,27 @@
 <body class="<?php echo $args['body-classes']; ?>">
 <a class="skip-to-content" href="#main-content-marker">Skip to content</a>
 
+<?php $languages = get_available_languages(get_template_directory().'/languages'); ?>
+<?php if ($languages) : ?>
+<!-- translation support element here -->
+<div class="locale icon-attach fa-globe">
+    <select id="languages-dropdown">
+        <option disabled="">Languages available</option>
+
+        <?php foreach ($languages as $language) : ?>
+            
+        <?php $language = $language; ?>
+
+        <option data-link="/chooser/?lang=<?php echo $language; ?>" id="option-<?php echo $language; ?>" <?php if ($language == get_locale()) {echo 'selected=""';} ?> value="<?php echo $language; ?>">
+        <?php echo locale_get_display_name($language); ?>
+        </option>
+            
+        <?php endforeach; ?>
+        
+    </select>
+</div>
+<?php endif; ?>
+
 <header>
     <div class="masthead">
         <h1><a class="identity-logo" href="/">Creative Commons</a></h1>
