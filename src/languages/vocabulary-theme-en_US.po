@@ -5,9 +5,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: CC Vocabulary Theme 2.7\n"
+"Project-Id-Version: CC Vocabulary Theme 2.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/vocabulary-theme\n"
-"POT-Creation-Date: 2026-08-12T19:58:15+00:00\n"
+"POT-Creation-Date: 2026-09-23T20:38:10+00:00\n"
 "PO-Revision-Date: 2026-09-11 19:27+0000\n"
 "Last-Translator: Sara Lovell, 2026\n"
 "Language-Team: English (United States) (https://app.transifex.com/creativecommons/teams/11342/en_US/)\n"
@@ -212,7 +212,6 @@ msgstr "generic mark"
 #: static-templates/static-chooser.php:287
 #: static-templates/static-chooser.php:307
 #: static-templates/static-chooser.php:334
-#: static-templates/static-chooser.php:385
 msgid "Copy"
 msgstr "Copy"
 
@@ -384,6 +383,12 @@ msgstr ""
 msgid "Distributed on Same Terms (SA/ShareAlike)"
 msgstr "Distributed on Same Terms (SA/ShareAlike)"
 
+#: static-templates/static-chooser.php:385
+#: static-templates/static-chooser.php:494
+#: static-templates/static-chooser.php:619
+msgid "Adaptations must be shared under the same terms."
+msgstr "Adaptations must be shared under the same terms."
+
 #: static-templates/static-chooser.php:389
 msgid "Modifying Not Allowed (ND/NoDerivatives)"
 msgstr "Modifying Not Allowed (ND/NoDerivatives)"
@@ -424,6 +429,10 @@ msgstr ""
 " Commons Community Intake Form</a>. You should receive an invitation to our "
 "chat platform, Zulip, in 5-10 business days.."
 
+#: static-templates/static-chooser.php:420
+msgid "CC0 1.0 Universal"
+msgstr ""
+
 #: static-templates/static-chooser.php:424
 msgid ""
 "By marking the work with a CC0 public domain dedication, the creator is "
@@ -450,6 +459,10 @@ msgstr "This work has been marked as dedicated to the public domain."
 msgid "See the License Deed"
 msgstr "See the License Deed"
 
+#: static-templates/static-chooser.php:448
+msgid "Creative Commons Attribution 4.0 International"
+msgstr ""
+
 #: static-templates/static-chooser.php:452
 msgid ""
 "This license requires that reusers give credit to the creator. It allows "
@@ -459,6 +472,10 @@ msgstr ""
 "This license requires that reusers give credit to the creator. It allows "
 "reusers to distribute, remix, adapt, and build upon the material in any "
 "medium or format, even for commercial purposes."
+
+#: static-templates/static-chooser.php:479
+msgid "Creative Commons Attribution-ShareAlike 4.0 International"
+msgstr ""
 
 #: static-templates/static-chooser.php:483
 msgid ""
@@ -474,10 +491,9 @@ msgstr ""
 "build upon the material, they must license the modified material under "
 "identical terms."
 
-#: static-templates/static-chooser.php:494
-#: static-templates/static-chooser.php:619
-msgid "Adaptations must be shared under the same terms."
-msgstr "Adaptations must be shared under the same terms."
+#: static-templates/static-chooser.php:515
+msgid "Creative Commons Attribution-NoDerivatives 4.0 International"
+msgstr ""
 
 #: static-templates/static-chooser.php:519
 msgid ""
@@ -489,6 +505,10 @@ msgstr ""
 "reusers to copy and distribute the material in any medium or format in "
 "unadapted form only, even for commercial purposes."
 
+#: static-templates/static-chooser.php:552
+msgid "Creative Commons Attribution-NonCommercial 4.0 International"
+msgstr ""
+
 #: static-templates/static-chooser.php:556
 msgid ""
 "This license requires that reusers give credit to the creator. It allows "
@@ -498,6 +518,11 @@ msgstr ""
 "This license requires that reusers give credit to the creator. It allows "
 "reusers to distribute, remix, adapt, and build upon the material in any "
 "medium or format, for noncommercial purposes only."
+
+#: static-templates/static-chooser.php:596
+msgid ""
+"Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"
+msgstr ""
 
 #: static-templates/static-chooser.php:600
 msgid ""
@@ -512,6 +537,11 @@ msgstr ""
 "medium or format, for noncommercial purposes only. If others modify or adapt"
 " the material, they must license the modified material under identical "
 "terms."
+
+#: static-templates/static-chooser.php:643
+msgid ""
+"Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International"
+msgstr ""
 
 #: static-templates/static-chooser.php:647
 msgid ""
