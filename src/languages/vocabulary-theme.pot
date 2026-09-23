@@ -2,14 +2,14 @@
 # This file is distributed under the MIT License.
 msgid ""
 msgstr ""
-"Project-Id-Version: CC Vocabulary Theme 2.7\n"
+"Project-Id-Version: CC Vocabulary Theme 2.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/vocabulary-theme\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-12T19:58:15+00:00\n"
+"POT-Creation-Date: 2026-09-23T20:38:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: chooser\n"
@@ -181,7 +181,6 @@ msgstr ""
 #: static-templates/static-chooser.php:287
 #: static-templates/static-chooser.php:307
 #: static-templates/static-chooser.php:334
-#: static-templates/static-chooser.php:385
 msgid "Copy"
 msgstr ""
 
@@ -285,6 +284,12 @@ msgstr ""
 msgid "Distributed on Same Terms (SA/ShareAlike)"
 msgstr ""
 
+#: static-templates/static-chooser.php:385
+#: static-templates/static-chooser.php:494
+#: static-templates/static-chooser.php:619
+msgid "Adaptations must be shared under the same terms."
+msgstr ""
+
 #: static-templates/static-chooser.php:389
 msgid "Modifying Not Allowed (ND/NoDerivatives)"
 msgstr ""
@@ -307,6 +312,10 @@ msgstr ""
 msgid "If you would like peer support in learning the best way to utilize this resource or choosing the best legal tool for you, you can become a part of CC’s Community by filling out the <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSf2HY_wHq5SlgP_0U0ZWQKGXKwocNhm_vCPY34bUQrQ_hWoAQ/viewform?usp=dialog\">Creative Commons Community Intake Form</a>. You should receive an invitation to our chat platform, Zulip, in 5-10 business days.."
 msgstr ""
 
+#: static-templates/static-chooser.php:420
+msgid "CC0 1.0 Universal"
+msgstr ""
+
 #: static-templates/static-chooser.php:424
 msgid "By marking the work with a CC0 public domain dedication, the creator is giving up their copyright and allowing reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes."
 msgstr ""
@@ -325,29 +334,48 @@ msgstr ""
 msgid "See the License Deed"
 msgstr ""
 
+#: static-templates/static-chooser.php:448
+msgid "Creative Commons Attribution 4.0 International"
+msgstr ""
+
 #: static-templates/static-chooser.php:452
 msgid "This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes."
+msgstr ""
+
+#: static-templates/static-chooser.php:479
+msgid "Creative Commons Attribution-ShareAlike 4.0 International"
 msgstr ""
 
 #: static-templates/static-chooser.php:483
 msgid "This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes. If others remix, adapt, or build upon the material, they must license the modified material under identical terms."
 msgstr ""
 
-#: static-templates/static-chooser.php:494
-#: static-templates/static-chooser.php:619
-msgid "Adaptations must be shared under the same terms."
+#: static-templates/static-chooser.php:515
+msgid "Creative Commons Attribution-NoDerivatives 4.0 International"
 msgstr ""
 
 #: static-templates/static-chooser.php:519
 msgid "This license requires that reusers give credit to the creator. It allows reusers to copy and distribute the material in any medium or format in unadapted form only, even for commercial purposes."
 msgstr ""
 
+#: static-templates/static-chooser.php:552
+msgid "Creative Commons Attribution-NonCommercial 4.0 International"
+msgstr ""
+
 #: static-templates/static-chooser.php:556
 msgid "This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, for noncommercial purposes only."
 msgstr ""
 
+#: static-templates/static-chooser.php:596
+msgid "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"
+msgstr ""
+
 #: static-templates/static-chooser.php:600
 msgid "This license requires that reusers give credit to the creator. It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, for noncommercial purposes only. If others modify or adapt the material, they must license the modified material under identical terms."
+msgstr ""
+
+#: static-templates/static-chooser.php:643
+msgid "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International"
 msgstr ""
 
 #: static-templates/static-chooser.php:647
