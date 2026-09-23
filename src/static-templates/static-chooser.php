@@ -382,7 +382,7 @@
 
                 <div>
                     <dt class="icon-attach cc-sa"><?php echo __( 'Distributed on Same Terms (SA/ShareAlike)', 'chooser' ); ?></dt>
-                    <dd><?php echo __( 'Copy', 'chooser' ); ?>Adaptations must be shared under the same terms.</dd>
+                    <dd><?php echo __( 'Adaptations must be shared under the same terms.', 'chooser' ); ?></dd>
                 </div>
 
                 <div>
@@ -417,7 +417,7 @@
                 <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-zero"></use>
             </svg>
         </span>
-        <h4>CC0 1.0 Universal</h4>
+        <h4><?php echo __( 'CC0 1.0 Universal', 'chooser' ); ?></h4>
     </header>
 
     <div class="description">
@@ -445,7 +445,7 @@
                 <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
             </svg>
         </span>
-        <h4>Creative Commons Attribution 4.0 International</h4>
+        <h4><?php echo __( 'Creative Commons Attribution 4.0 International', 'chooser' ); ?></h4>
     </header>
 
     <div class="description">
@@ -476,7 +476,7 @@
                 <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-sa"></use>
             </svg>
         </span>
-        <h4>Creative Commons Attribution-ShareAlike 4.0 International</h4>
+        <h4><?php echo __( 'Creative Commons Attribution-ShareAlike 4.0 International', 'chooser' ); ?></h4>
     </header>
 
     <div class="description">
@@ -512,7 +512,7 @@
                 <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-nd"></use>
             </svg>
         </span>
-        <h4>Creative Commons Attribution-NoDerivatives 4.0 International</h4>
+        <h4><?php echo __( 'Creative Commons Attribution-NoDerivatives 4.0 International', 'chooser' ); ?></h4>
     </header>
 
     <div class="description">
@@ -549,7 +549,7 @@
                 <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-nc"></use>
             </svg>
         </span>
-        <h4>Creative Commons Attribution-NonCommercial 4.0 International</h4>
+        <h4><?php echo __( 'Creative Commons Attribution-NonCommercial 4.0 International', 'chooser' ); ?></h4>
     </header>
 
     <div class="description">
@@ -593,7 +593,7 @@
                 <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-sa"></use>
             </svg>
         </span>
-        <h4>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</h4>
+        <h4><?php echo __( 'Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International', 'chooser' ); ?></h4>
     </header>
 
     <div class="description">
@@ -640,7 +640,7 @@
                 <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-nd"></use>
             </svg>
         </span>
-        <h4>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International</h4>
+        <h4><?php echo __( 'Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International', 'chooser' ); ?></h4>
     </header>
 
     <div class="description">
