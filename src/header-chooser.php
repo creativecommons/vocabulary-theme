@@ -20,7 +20,7 @@
 <a class="skip-to-content" href="#main-content-marker">Skip to content</a>
 
 <?php $languages = get_available_languages(get_template_directory().'/languages'); ?>
-<?php if ($languages) : ?>
+<?php if ($languages && count($languages) > 1) : ?>
 <!-- translation support element here -->
 <div class="locale icon-attach fa-globe">
     <select id="languages-dropdown">
