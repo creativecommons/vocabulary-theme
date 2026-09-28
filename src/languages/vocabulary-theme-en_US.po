@@ -431,7 +431,7 @@ msgstr ""
 
 #: static-templates/static-chooser.php:420
 msgid "CC0 1.0 Universal"
-msgstr ""
+msgstr "CC0 1.0 Universal"
 
 #: static-templates/static-chooser.php:424
 msgid ""
@@ -461,7 +461,7 @@ msgstr "See the License Deed"
 
 #: static-templates/static-chooser.php:448
 msgid "Creative Commons Attribution 4.0 International"
-msgstr ""
+msgstr "Creative Commons Attribution 4.0 International"
 
 #: static-templates/static-chooser.php:452
 msgid ""
@@ -475,7 +475,7 @@ msgstr ""
 
 #: static-templates/static-chooser.php:479
 msgid "Creative Commons Attribution-ShareAlike 4.0 International"
-msgstr ""
+msgstr "Creative Commons Attribution-ShareAlike 4.0 International"
 
 #: static-templates/static-chooser.php:483
 msgid ""
@@ -493,7 +493,7 @@ msgstr ""
 
 #: static-templates/static-chooser.php:515
 msgid "Creative Commons Attribution-NoDerivatives 4.0 International"
-msgstr ""
+msgstr "Creative Commons Attribution-NoDerivatives 4.0 International"
 
 #: static-templates/static-chooser.php:519
 msgid ""
@@ -507,7 +507,7 @@ msgstr ""
 
 #: static-templates/static-chooser.php:552
 msgid "Creative Commons Attribution-NonCommercial 4.0 International"
-msgstr ""
+msgstr "Creative Commons Attribution-NonCommercial 4.0 International"
 
 #: static-templates/static-chooser.php:556
 msgid ""
@@ -523,6 +523,7 @@ msgstr ""
 msgid ""
 "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"
 msgstr ""
+"Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"
 
 #: static-templates/static-chooser.php:600
 msgid ""
@@ -542,6 +543,7 @@ msgstr ""
 msgid ""
 "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International"
 msgstr ""
+"Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International"
 
 #: static-templates/static-chooser.php:647
 msgid ""
