@@ -83,7 +83,7 @@ The arguments accept the counterpart values from the subset of [args in the WPQu
 
 ### Chooser
 
-The basic english specific UX is contained upstream within the [creativecommons/chooser](https://github.com/creativecommons/chooser) repository. Further dynamic functionality that goes beyond the pathway selection interactivity provided by HTML, CSS, and JS alone is handled by `vocabulary-theme` via PHP and WordPress's internal handling of i18n.
+The basic english specific UX is contained upstream within the [creativecommons/chooser](https://github.com/creativecommons/chooser) repository. Further dynamic functionality that goes beyond the pathway selection interactivity provided by HTML, CSS, and JS alone is handled by `vocabulary-theme` via PHP and WordPress's internal handling of i18n. Currently this dynamic functionality is utilized to provide translation support for the Chooser through Transifex.
 
 1. The source `.pot` file is generated from `wpcli` (pulled from the wrapped strings in `static-chooser.php`): `wpcli i18n make-pot . languages/vocabulary-theme.pot --domain=chooser`, afterward the wordpress theme specific meta value strings like "theme name, description, etc." need to be manually deleted (TODO: automate this later, as wpcli lacks an option to exclude them at current)
 
