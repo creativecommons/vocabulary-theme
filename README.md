@@ -81,6 +81,24 @@ The template can be set to a custom partial, loaded from the `shortcode-template
 
 The arguments accept the counterpart values from the subset of [args in the WPQuery Class](https://developer.wordpress.org/reference/classes/wp_query/). This means that the `category` and `tag` arguments can be a single or comma separate list of values. `sort` maps to `order` and `sortby` maps to `orderby` for some beneficial UX for endusers to be more clear in purpose.
 
+### Chooser
+
+The basic english specific UX is contained upstream within the [creativecommons/chooser](https://github.com/creativecommons/chooser) repository. Further dynamic functionality that goes beyond the pathway selection interactivity provided by HTML, CSS, and JS alone is handled by `vocabulary-theme` via PHP and WordPress's internal handling of i18n. Currently this dynamic functionality is utilized to provide translation support for the Chooser through Transifex.
+
+1. The source `.pot` file is generated from `wpcli` (pulled from the wrapped strings in `static-chooser.php`): `wpcli i18n make-pot . languages/vocabulary-theme.pot --domain=chooser`, afterward the wordpress theme specific meta value strings like "theme name, description, etc." need to be manually deleted (TODO: automate this later, as wpcli lacks an option to exclude them at current)
+
+2. The file is read through Transifex via the `transifex.yml` config, and loaded in for manual translation within the Transifex editor, wherein an end-user can select an available language to begin a translation from the source (en)
+
+3. Once a translation is ready, Transifex can generate a language specific `.po` file, which is sync'd with GitHub via the GH Integration. The relevant `<lang>.po` file is added to the `src/languages` folder. **It is important that the `.po` file in question not have a theme or textdomain specific prefix**, as WordPress will not recognize the file otherwise.
+
+4. Once Transifex has reached an appropriate translation threshold and fired off the integration for `.po` generation, it will create a relevant PR, which can be approved, and merged.
+
+5. `wpcli` can then be used to generate a corresponding `.mo` file: `wpcli i18n make-mo languages/`. This can then be added a PR or appended to the PR created via Transifex.
+
+6. Logic within the theme should now allow the newly added `<lang>` to be selectable within the available translation dropdown, which operates by setting the `lang` parameter in the URI. EX: `?lang=en_US`
+
+7. If a valid `.mo` file is found to match the set `lang` parameter, then the appropriate language translation is loaded, otherwise it will default to the original source (en). The dropdown will not appear if only english is present.
+
 ### Docker containers
 
 The [`docker-compose.yml`](docker-comose.yml) file defines the following
