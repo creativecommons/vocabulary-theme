@@ -478,21 +478,7 @@ function remove_do_favicon() {
 	remove_action( 'wp_footer', 'do_favicon' );
 }
 
-
-// function redefine_locale($locale) {
-  
-//     $locale = 'en_US';
-  
-//     return $locale;
-// }
-// add_filter('locale', 'redefine_locale', 10, 2); 
-
-
-
-
-
-
-// CHANGE LOCAL LANGUAGE
+// change locale language
 // must be called before load_theme_textdomain()
 
 add_action('init','add_lang');
@@ -501,24 +487,18 @@ function add_lang() {
     $wp->add_query_var('lang');
 }
 
-
 add_filter( 'locale', 'chooser_localized' );
 
-/**
- * Switch to locale given as query parameter l, if present
- */
-function chooser_localized( $locale )
-{
-	if ( isset( $_GET['lang'] ) )
-	{
-		return sanitize_text_field($_GET['lang']); // does this need further sanitization?
+ // switch to locale given as query parameter l, if present
+function chooser_localized( $locale ) {
+	if ( isset( $_GET['lang'] ) ) {
+		return sanitize_text_field($_GET['lang']);
 	}
 
 	return $locale;
 }
 
-// SET THEME LANGUAGES DIRECTORY
-// Theme translations can be filed in the my_theme/languages/ directory
+// set theme languages directory
+// theme translations can be filed in the my_theme/languages/ directory
 // WordPress translations can be filed in the wp-content/languages/ directory
 load_theme_textdomain( 'chooser', get_template_directory().'/languages' );
-
