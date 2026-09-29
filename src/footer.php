@@ -3,6 +3,7 @@
 
     <div class="search">
         <form method="get" id="" name="" class="" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <label for="s" class="search-label">Search Creative Commons</label>
             <input type="text" value="" name="s" class="" id="s" placeholder="Search">
             <!-- <input type="submit" value="submit" id="" class=""> -->
 
