@@ -36,8 +36,8 @@ collapsedButtons.forEach((expander) => {
 const showNotice = localStorage.getItem('showNotice');
 const currentTime = Date.now();
 const noticeHiddenAt = localStorage.getItem('noticeHiddenAt'); // set to time when clicked.
-const hideNoticeInterval = 20000; // set to a number
-// const hideNoticeInterval = 3600000; // set to a number
+// const hideNoticeInterval = 20000; // set to a number
+const hideNoticeInterval = 3600000; // set to a number
 const elapsedHiddenTime = (currentTime - noticeHiddenAt); //time between now and noticeHiddenAt in ms
 
 if(showNotice === 'false' && elapsedHiddenTime <= hideNoticeInterval){
