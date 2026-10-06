@@ -154,14 +154,33 @@ $noticeQuery = new WP_Query(array(
 <?php endif; ?>
 </div>
 
+<?php $image = get_field('graphic'); ?>
+<?php if ($image) : ?>
 <figure>
-    <?php $image = get_field('graphic'); ?>
     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
     <!-- <figcaption>
         <p></p>
     </figcaption> -->
 </figure>
+<?php endif; ?>
+
+<?php if($importance_level == 'medium-importance') : ?>
+
+<?php if (!$image) :?>
+<figure>
+        <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/blob_c2.svg" alt="">
+        <span class="double"></span>
+
+    <!-- <figcaption>
+        <p></p>
+    </figcaption> -->
+</figure>
+<?php endif; ?>
+
+<button id="closeNotice">close</button>
+<?php endif; ?>
+
 </article>
 
 <?php endwhile; ?>

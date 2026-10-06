@@ -94,6 +94,18 @@
                         "operator": "==",
                         "value": "default"
                     }
+                ],
+                [
+                    {
+                        "field": "field_64e61a2301304",
+                        "operator": "==",
+                        "value": "top-of-site"
+                    },
+                    {
+                        "field": "field_65494ffa78ac0",
+                        "operator": "==",
+                        "value": "medium-importance"
+                    }
                 ]
             ],
             "wrapper": {
@@ -292,5 +304,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787167313
+    "modified": 1791230692
 }
