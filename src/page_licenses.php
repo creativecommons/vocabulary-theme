@@ -38,6 +38,11 @@
     </figure>
 </article>
 
+ <?php if (get_field('lead_in_copy')): ?>
+    <aside class="opening">
+        <?php the_field('lead_in_copy'); ?>
+    </aside>
+<?php endif; ?>
 
 <article class="topic-summary focus-area"> <!-- TODO: merge with prior article? -->
     <div class="description">
