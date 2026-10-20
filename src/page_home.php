@@ -1,223 +1,217 @@
 <?php /* Template Name: Index - Home */ ?>
 
-<?php
-
-get_header('', array( 'body-classes' => 'home-index') );
-
-?>
-
+<?php get_header('', array( 'body-classes' => 'home-narrative') ); ?>
 
 <main>
 
-<article class="topic-summary">
-    <h2>Better Sharing, Brighter Future</h2>
+<article class="topic-summary intro">
+    <div class="description">
+        <h2><?php the_title(); ?></h2>
+    </div>
+
+
     <figure>
-        <?php
-            $featured_media_notice = get_field('featured_media_notice');
-            if ( $featured_media_notice ) :
-        ?>
-        <span class="attention">
-            <span class="icon-attach fa-info"></span>
-            <?php echo $featured_media_notice; ?>
-        </span>
-        <?php endif; ?>
-        <iframe style="width: 100%;" title="Twenty Years of Creative Commons (in Sixty Seconds)" src="https://player.vimeo.com/video/777912896?h=016f97b875&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allowfullscreen="allowfullscreen" data-ready="true"></iframe>
-        <figcaption class="attribution">
-            “<a href="https://www.flickr.com/photos/creativecommons/52543574218/">Twenty Years of Creative Commons (in Sixty Seconds)</a>” by&nbsp;<a href="http://www.junell.net/">Ryan Junell</a>&nbsp;and&nbsp;<a href="https://www.linkedin.com/in/gotisbrown/">Glenn Otis Brown</a>&nbsp;for&nbsp;<a href="https://creativecommons.org/">Creative Commons</a>&nbsp;is licensed via&nbsp;<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>&nbsp;and includes adaptations of the multiple open and public domain works. View full licensing and attribution information about all works included in the video&nbsp;<a href="https://www.flickr.com/photos/creativecommons/52543574218/">on Flickr</a>.
+        <?php $image = get_field('header_graphic'); ?>
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+        <figcaption>
+            <p><?php echo $image['caption']; ?></p>
+
         </figcaption>
     </figure>
+
+
+</article>
+
+<article class="topic-summary about"> <!-- TODO: merge with prior article? -->
     <div class="description">
-        <p>Creative Commons is an international nonprofit organization that empowers people to grow and sustain the thriving commons of shared knowledge and culture we need to address the world's most pressing challenges and create a brighter future for all.</p>
-        <a href="/mission">Learn more</a>
+        <!-- <h2>The commons belongs to us all</h2> -->
+        <?php the_field('subhead_intro'); ?>
     </div>
+
+    <figure>
+        <?php $image = get_field('subhead_graphic'); ?>
+        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+        <figcaption>
+            <p><?php echo $image['caption']; ?></p>
+
+        </figcaption>
+    </figure>
 </article>
 
-
-
-
-<article class="case-studies">
-    <h2>The nonprofit behind the licenses and tools the world uses to share</h2>
-    <p>For over 20 years, Creative Commons has supported a global movement built on a belief in the power of open access to knowledge and creativity. From Wikipedia to the Smithsonian, organizations and individuals rely on our work to share billions of historic images, scientific articles, cultural artifacts, educational resources, music, and more!</p>
-
-    <?php
-        $case_studies = get_field('case_studies');
-        if ( $case_studies ) :
-    ?>
-    <ul>
-        <?php
-            foreach ($case_studies as $case_study) :
-            $case_study_img_url = wp_get_attachment_image_url( $case_study->ID, 'full' );
-            $case_study_img_id = attachment_url_to_postid( $case_study_img_url );
-            $case_study_caption = wp_get_attachment_caption($case_study->ID);
-            $case_study_alt = $image_alt = get_post_meta($case_study_img_id, '_wp_attachment_image_alt', TRUE);
-        ?>
-        <li>
-            <figure>
-                <img src="<?php echo $case_study_img_url; ?>" alt="<?php echo $case_study_alt; ?>"  />
-                <figcaption class="attribution"><?php echo $case_study_caption; ?></figcaption>
-            </figure>
-        </li>
-        <?php endforeach; ?>
-    </ul>
-    <?php endif; ?>
-
-    <footer>
-        <article class="data-points supporting">
-            <?php
-
-               $firstDataPointImage = get_field('first_data_point_image');
-               $secondDataPointImage = get_field('second_data_point_image');
-               $thirdDataPointImage = get_field('third_data_point_image');
-
-            ?>
-
-            <ul>
-                <li>
-                    <article class="data-point wikipedia">
-                        <h2 style="background-image: url('<?php echo $firstDataPointImage; ?>');">Wikipedia</h2>
-                        <h3 class="stat">55+ million articles</h3>
-                        <p>Every one of Wikipedia's 55 million plus articles are shared openly and freely using  a CC license.</p>
-                    </article>
-                </li>
-                <li>
-                    <article class="data-point the-met">
-                        <h2 style="background-image: url('<?php echo $secondDataPointImage; ?>');");">The Met</h2>
-                        <h3 class="stat">492,000+ images</h3>
-                        <p>All images of public-domain works in the Met's collection are openly available under Creative Commons Zero (CC0).</p>
-                    </article>
-                </li>
-                <li>
-                    <article class="data-point khan-academy">
-                        <h2 style="background-image: url('<?php echo $thirdDataPointImage; ?>');");">Khan Academy</h2>
-                        <h3 class="stat">100,000+ lessons</h3>
-                        <p>Many of the lessons found on Khan Academy are openly licensed under CC-BY-NC-SA.</p>
-                    </article>
-                </li>
-            </ul>
-        </article>
-    </footer>
-</article>
-
-
-
-<?php
-    $blog = get_page_by_path( 'blog' );
-    if( $blog ) {
-        $posts = get_field('featured_posts', $blog);
-    }
-
-    if( $posts ):
+<!-- topic features here -->
+ <?php
+    $topic_features = get_field('featured_topics');
+    if( !empty($topic_features) ) :
 ?>
 
-<article class="posts featured">
-    <h2>Latest News</h2>
-    <ul>
-
+<?php foreach($topic_features as $topic_feature) : ?>
     <?php
+        $permalink = get_permalink( $topic_feature->ID );
+        $title = get_the_title( $topic_feature->ID );
+        $category = get_field( 'category', $topic_feature->ID );
+        $link_text = get_field( 'link_text', $topic_feature->ID );
+        $link_url = get_field( 'link_url', $topic_feature->ID );
+        $type = get_field( 'type', $topic_feature->ID );
+        if ($type == 'default') { $type = 'focus-area';}
+        // $content = get_the_content( $topic_feature->ID );
+        $content = get_post_field('post_content', $topic_feature->ID);
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        // $excerpt = get_the_excerpt( $staff_person->ID );
+        ?>
 
-        $i=1;
-        foreach( $posts as $post ):
-            $permalink = get_permalink( $post->ID );
-            $title = get_the_title( $post->ID );
-            //$custom_field = get_field( 'field_name', $post->ID );
-    ?>
-
-    <li>
-    <article class="post">
-        <header>
-        <h3 class="title"><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h3>
-
-        <?php if ( get_field('authorship') ) : ?>
-        <span class="byline">by
-            <?php
-            $authors = get_field('authorship');
-                if( $authors ):
-                $ai = 1;
-                $count = count($authors);
-
-                foreach( $authors as $author ):
-                    $permalink = get_permalink( $author->ID );
-                    $title = get_the_title( $author->ID );
-                    $custom_field = get_field( 'field_name', $author->ID );
-                    if ($ai < $count) {
-                        $separator = ',';
-                    }
-                    else {
-                        $separator = '';
-                    }
-            ?>
-
-            <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
-
-                    <?php $ai++; ?>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-        </span>
-        <?php endif; ?>
-        <span class="categories">
-            <?php the_category(', ') ?>
-        </span>
-        </header>
-
+        <article class="topic-summary <?php echo $type; ?>">
+        <div class="description">
+            <h2><?php echo $title; ?></h2>
+            <span class="category"><?php echo $category; ?></span>
+            <?php echo $content; ?>
+            <a href="<?php echo $link_url; ?>"><?php echo $link_text; ?></a>
+        </div>
         <figure>
-            <?php //echo get_the_post_thumbnail( $post_id, 'full' );
-            ?>
-            <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
-            <?php if ($i == 1): ?>
-            <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
-            <?php endif; ?>
+            <img src="<?php echo get_the_post_thumbnail_url( $topic_feature->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($topic_feature->ID), '_wp_attachment_image_alt', true ); ?>" />
+
+            <figcaption>
+                <p><?php echo get_the_post_thumbnail_caption( $topic_feature->ID ); ?></p>
+            </figcaption>
         </figure>
-
-        <?php if ($i == 1): ?>
-            <?php the_excerpt(); ?>
-        <?php endif; ?>
-
     </article>
-    </li>
 
-
-    <?php
-    if ($i != 1) {
-        $highlight_posts[] = $post->ID;
-    }
-    $i++;
-    ?>
 
     <?php endforeach; ?>
-    </ul>
-    <a class="more" href="/blog/archive/">more posts</a>
-
-    </article>
-
-    <footer>
-
-        <article class="attribution-list">
-
-            <h2>Images Attri&shy;bution</h2>
-            <button class="expand-attribution">view</button>
-
-            <ul class="attribution-panel">
-                <?php foreach ($highlight_posts as $item) : ?>
-                <?php if( get_the_post_thumbnail_caption( $item ) ) : ?>
-                <li>
-                    <article>
-                        <figure>
-
-                            <img src="<?php echo get_the_post_thumbnail_url( $item, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($item), '_wp_attachment_image_alt', true ); ?>" />
-                            <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $item ); ?></figcaption>
-                        </figure>
-                    </article>
-                </li>
-                <?php endif; ?>
-                <?php endforeach; ?>
-            </ul>
-        </article>
-    </footer>
 
 <?php endif; ?>
 
+<!-- <blockquote>
+    <p>There would be a quote here doing things</p>
+</blockquote>
+
+<blockquote>
+    <p>There would be a quote here doing things</p>
+</blockquote> -->
+
+<article class="posts">
+
+    <h2>Recently from the blog</h2>
+
+    <?php
+    $query = new WP_Query(array(
+        // 'post__not_in' => $highlight_posts,
+        'post_type' => 'post',
+        'posts_per_page' => 4,
+        //'paged' => $paged,
+    ));
+    ?>
+
+
+    <details class="attribution">
+    <summary>Attribution <span class="icon icon-replace fa-angle-up"></span></summary>
+
+    <ul class="attributions">
+
+    <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+            <li>
+                <article>
+                    <figure>
+                        <?php //echo get_the_post_thumbnail( $post_id, 'full' );
+                        ?>
+                        <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+
+                        <figcaption class="attribution"><?php echo get_the_post_thumbnail_caption( $post_id ); ?></figcaption>
+                    </figure>
+                </article>
+            </li>
+            <?php endwhile; ?>
+
+        </ul>
+</details>
+
+<?php endif; ?>
+
+    <ul>
+
+<?php $post_index = 0; ?>
+<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+<?php $post_index++; ?>
+
+
+    <li>
+        <article class="post">
+            <header>
+            <h3 class="title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
+
+            <?php if ( get_field('authorship') ) : ?>
+            <span class="byline">by
+                <?php
+                $authors = get_field('authorship');
+                    if( $authors ):
+                    $i = 1;
+                    $count = count($authors);
+
+                    foreach( $authors as $author ):
+                        $permalink = get_permalink( $author->ID );
+                        $title = get_the_title( $author->ID );
+                        $custom_field = get_field( 'field_name', $author->ID );
+                        if ($i < $count) {
+                            $separator = ',';
+                        }
+                        else {
+                            $separator = '';
+                        }
+                ?>
+
+                <a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a><?php echo $separator; ?>
+
+                        <?php $i++; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+            </span>
+            <?php endif; ?>
+
+            <span class="categories">
+                <?php the_category(', ') ?>
+            </span>
+            </header>
+
+            <figure>
+                <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+                <figcaption>
+                    <?php echo get_the_post_thumbnail_caption( $post_id ); ?>
+                </figcaption>
+            </figure>
+
+            <?php if ($post_index == 1) : ?>
+            <?php the_excerpt(); ?>
+            <?php endif; ?>
+
+        </article>
+    </li>
+
+
+    <?php endwhile; ?>
+
+    <?php endif; ?>
+
+    <?php wp_reset_postdata(); ?>
+
+    </ul>
+
+    <footer>
+        <a class="more" href="/blog/archive/">more posts</a>
+    </footer>
+
+</article>
+
+
+
+
+
+
+<?php get_template_part( 'content-partials/bottom', 'newsletter_promo', '' ); ?>
+
 
 </main>
-
 
 <?php get_footer(); ?>
