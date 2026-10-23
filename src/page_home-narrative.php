@@ -100,8 +100,36 @@
         // 'post__not_in' => $highlight_posts,
         'post_type' => 'post',
         'posts_per_page' => 4,
+        // 'meta_key'      => 'hide_from_home_index',
+        // 'meta_value'    => ['0','NOT EXISTS']
+
+        // 'key' => 'hide_from_home_index',
+        // 'value' => '0',
+        // 'compare' => '!=',
+
+        // 'meta_key' => 'hide_from_home_index',
+        // 'compare' => 'NOT EXISTS',
+        // 'meta_value' => ''
+
         //'paged' => $paged,
     ));
+    
+    // $meta_query[] = [
+    //     'relation' => 'OR',
+    //     [
+    //             'meta_key' => 'hide_from_home_index',
+    //             'meta_value' => '',
+    //             'compare' => 'NOT EXISTS',
+    //     ],
+    //     [
+    //             'meta_key' => 'hide_from_home_index',
+    //             'meta_value' => '0',
+    //             'compare' => '!=',
+    //     ],
+    // ];
+
+    // $query->set('meta_query', $meta_query);
+
     ?>
 
 
