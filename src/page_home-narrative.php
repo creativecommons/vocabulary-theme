@@ -97,38 +97,24 @@
 
     <?php
     $query = new WP_Query(array(
-        // 'post__not_in' => $highlight_posts,
         'post_type' => 'post',
         'posts_per_page' => 4,
-        // 'meta_key'      => 'hide_from_home_index',
-        // 'meta_value'    => ['0','NOT EXISTS']
 
-        // 'key' => 'hide_from_home_index',
-        // 'value' => '0',
-        // 'compare' => '!=',
-
-        // 'meta_key' => 'hide_from_home_index',
-        // 'compare' => 'NOT EXISTS',
-        // 'meta_value' => ''
+        'meta_query' => array(
+            'relation' => 'OR',
+            array(
+                'key' => 'hide_from_home_index',
+				'compare' => 'NOT EXISTS',
+            ),
+            array(
+                'key' => 'hide_from_home_index',
+                'compare' => '=',
+                'value' => '0',
+            ),
+        ),
 
         //'paged' => $paged,
     ));
-    
-    // $meta_query[] = [
-    //     'relation' => 'OR',
-    //     [
-    //             'meta_key' => 'hide_from_home_index',
-    //             'meta_value' => '',
-    //             'compare' => 'NOT EXISTS',
-    //     ],
-    //     [
-    //             'meta_key' => 'hide_from_home_index',
-    //             'meta_value' => '0',
-    //             'compare' => '!=',
-    //     ],
-    // ];
-
-    // $query->set('meta_query', $meta_query);
 
     ?>
 
