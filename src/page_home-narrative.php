@@ -97,11 +97,25 @@
 
     <?php
     $query = new WP_Query(array(
-        // 'post__not_in' => $highlight_posts,
         'post_type' => 'post',
         'posts_per_page' => 4,
+
+        'meta_query' => array(
+            'relation' => 'OR',
+            array(
+                'key' => 'hide_from_home_index',
+				'compare' => 'NOT EXISTS',
+            ),
+            array(
+                'key' => 'hide_from_home_index',
+                'compare' => '=',
+                'value' => '0',
+            ),
+        ),
+
         //'paged' => $paged,
     ));
+
     ?>
 
 
