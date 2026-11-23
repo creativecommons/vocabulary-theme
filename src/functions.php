@@ -22,7 +22,10 @@ add_action('admin_menu', function () {
 });
 
 // remove GUI file editor
-define('DISALLOW_FILE_EDIT', TRUE);
+
+if (!defined('DISALLOW_FILE_EDIT')) {
+  define('DISALLOW_FILE_EDIT', TRUE);
+}
 
 // GENERAL WP
 // add menu locations
